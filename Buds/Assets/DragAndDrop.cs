@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//DragAndDrop.cs
+//Written by Santiago Ponce
+//Email: saponce@ucsc.edu
+
 public class DragAndDrop : MonoBehaviour
 {
     public bool toggle = true; //Switch between toggle and hold modes
