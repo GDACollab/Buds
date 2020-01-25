@@ -87,6 +87,7 @@ public class DragAndDrop : MonoBehaviour
 
 }
 
+//Simple explanation of single variables
 /*
  * if(main == NULL)
  * {
