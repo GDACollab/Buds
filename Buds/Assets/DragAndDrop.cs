@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//DragAndDrop.cs
-//Written by Santiago Ponce
-//Email: saponce@ucsc.edu
+/*
+ * DragAndDrop.cs
+ * Written by Santiago Ponce
+ * Email: saponce@ucsc.edu
+ * 
+ * This code is used to give objects drag-and-drop functionality with the mouse.
+ * Primarily intended for moving flowers from flowerpot to flowerpot in the gardening minigame.
+ */
 
 public class DragAndDrop : MonoBehaviour
 {
@@ -13,13 +18,23 @@ public class DragAndDrop : MonoBehaviour
     Rect screenRect = new Rect(0, 0, Screen.width, Screen.height); //This is used to prevent the block from moving while the mouse is offscreen
 
     GameObject[] flowerpots;
+    GameObject[] flowers; //Used for swapping if a flower is already occupying a pot
     bool snapped;
+    public float maxSnapDistance = 1.5f; //The maximum distance a flower can be from a pot before it will snap. Set to 0 if snap distance is infinite;
+
+    Vector2 oldPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         dragging = false;
         snapped = true;
+        oldPosition = this.transform.position; //Stores the last location of this object before it was moved by the mouse.
+
+        if(maxSnapDistance == 0)
+        {
+            maxSnapDistance = Mathf.Infinity;
+        }
     }
 
     // Update is called once per frame
@@ -62,7 +77,7 @@ public class DragAndDrop : MonoBehaviour
     private bool SnapToPot()
     {
         flowerpots = GameObject.FindGameObjectsWithTag("Flowerpot");
-        Vector2 moveTo = gameObject.transform.position;
+        GameObject moveTo = null;
 
         float difference = Mathf.Infinity;
 
@@ -76,19 +91,37 @@ public class DragAndDrop : MonoBehaviour
             float test = Vector2.Distance(flowerpot.transform.position, gameObject.transform.position);
 
             //Vector2 test = flowerpot.transform.position - gameObject.transform.position;
-            if(test < difference)
+            if(test < difference && test <= maxSnapDistance)
             {
-                moveTo = flowerpot.transform.position;
+                moveTo = flowerpot;
                 difference = test;
             }
             
         }
 
-        gameObject.transform.position = moveTo;
+        if (moveTo != null)
+        {
+            gameObject.transform.position = moveTo.transform.position;
+        }
+
+        //Check if overlapping another flower
+        //Swapping will only occur if both objects have the tag "flower"
+        //Admittedly this probably isn't the best way to do swapping but for the purposes of this game it likely won't matter
+        flowers = GameObject.FindGameObjectsWithTag("Flower");
+        foreach(GameObject flower in flowers)
+        {
+            if(flower.transform.position == this.transform.position && flower != this.gameObject)
+            {
+                flower.transform.position = this.oldPosition;
+                DragAndDrop flowerScript = flower.GetComponent<DragAndDrop>();
+                flowerScript.oldPosition = flower.transform.position;
+            }
+        }
+        
+        oldPosition = this.transform.position;
 
         return true;
     }
-
 }
 
 //Simple explanation of single variables

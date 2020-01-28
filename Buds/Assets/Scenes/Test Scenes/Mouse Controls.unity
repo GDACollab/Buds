@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flowerpot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3494323219669478755, guid: 4778a341a4385364e96b547c140f7890,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4778a341a4385364e96b547c140f7890, type: 3}
 --- !u!1 &364425395
@@ -442,6 +447,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473949368504186267, guid: a703e6752e2889b47828fa924814b0de,
+        type: 3}
+      propertyPath: toggle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473949368504186267, guid: a703e6752e2889b47828fa924814b0de,
+        type: 3}
+      propertyPath: maxSnapDistance
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3473949368504186269, guid: a703e6752e2889b47828fa924814b0de,
         type: 3}
@@ -800,6 +815,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flowerpot (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3494323219669478755, guid: 4778a341a4385364e96b547c140f7890,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4778a341a4385364e96b547c140f7890, type: 3}
 --- !u!1 &1885072465
@@ -958,6 +978,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3473949368504186267, guid: a703e6752e2889b47828fa924814b0de,
+        type: 3}
+      propertyPath: toggle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3473949368504186269, guid: a703e6752e2889b47828fa924814b0de,
         type: 3}
       propertyPath: m_Name
@@ -1031,6 +1056,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Flowerpot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494323219669478755, guid: 4778a341a4385364e96b547c140f7890,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4778a341a4385364e96b547c140f7890, type: 3}

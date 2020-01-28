@@ -2,6 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * ButtonTest.cs
+ * Written by Santiago Ponce
+ * Email: saponce@ucsc.edu
+ * 
+ * This is a test of UI buttons w/ the placeholder function changePosition();
+ * In the button component, this function can be selected so that when the button
+ * is pressed, the function is performed.
+ */
+
+
 public class ButtonTest : MonoBehaviour
 {
 
