@@ -4,20 +4,23 @@ using UnityEngine;
 
 /// <summary>
 /// Implements a singleton object that allows for the transfer of data between scenes.
-/// HOW TO USE:
-/// -To add a variable, simply declare it in the indicated area (line 19 as of this writing)
-///    -OPTIONAL: initialize it in the Initialize() function
-/// -To access a variable, reference "PersistentData.instance.yourVariableNameHere"
+/// Stores all entries in a hashtable accessible by user-defined keys (all of type string, e.g. "dataName")
+/// Access the various methods by referencing the PersistentData.instance singleton, e.g. PersistentData.instance.StoreData("key", yourVarHere);
+/// Available methods:
+///		void StoreData(string key, object value)		-stores "value" at the specified index
+///		object ReadData(string key)						-returns the data at the specified index
+///		void RemoveData(string key)						-removes the entry at the specified index
+///		bool ContainsKey(string key)					-returns whether there's an entry for the given key
 /// See PersistTest.cs and the TestPersistent1 and TestPersistent2 scenes for an example of how to use the system
 /// </summary>
 public class PersistentData : MonoBehaviour
 {
-	//globally-accessible instance used to access the data.
-	//To access a variable, reference "PersistentData.instance.variableName"
+	//Globally-accessible instance used to access the data.
+	//To access its methods, just call PersistentData.instance.StoreData("key", yourVarHere)
     public static PersistentData instance;
 
-    //put persistent variables here, ideally accompanied by a description of what they go to
-    public int exampleVar; //test variable. Used by PersistTest.cs to confirm basic functionality of the singleton 
+    //big hashtable to store all data
+    Hashtable dataStorage = new Hashtable();
 
     private void Awake ()
     {
@@ -36,9 +39,50 @@ public class PersistentData : MonoBehaviour
     	}
     }
 
-    //Initialize variables here
+    //If you need an entry to appear on startup, declare it here
     private void Initialize()
     {
-    	exampleVar = 0;
+    	dataStorage["testInt"] = 0;
+    }
+
+    //StoreData will write data to the master hashtable, which can then be accesed by a key.
+    //It will automatically create an entry if one doesn't already exist.
+    public void StoreData(string key, object value)
+    {
+    	dataStorage[key] = value;
+    }
+
+    //ReadData will retrieve the entry from the master hashtable with the given key.
+    //Returns null if the entry is not found.
+    public object ReadData(string key)
+    {
+    	if(dataStorage.ContainsKey(key))
+    	{
+    		return dataStorage[key];
+    	}
+    	else
+    	{
+    		Debug.Log("Error: no persistent data entry for key: " + key);
+    		return null;
+    	}
+    }
+
+    //RemoveData will remove the specified entry in the master hashtable
+    public void RemoveData(string key)
+    {
+    	if(dataStorage.ContainsKey(key))
+    	{
+    		dataStorage.Remove(key);
+    	}
+    	else
+    	{
+    		// Debug.Log("Error: no persistent data entry for key: " + key);
+    	}
+    }
+
+    //ContainsKey will return whether or not there is an entry for the given key
+    public bool ContainsKey(string key)
+    {
+    	return dataStorage.ContainsKey(key);
     }
 }
