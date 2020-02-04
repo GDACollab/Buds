@@ -6,4 +6,6 @@ public class FlowerPot : MonoBehaviour
 {
     // Start is called before the first frame update
     public DragAndDrop currentFlower;
+
+    public float sunlightLevel;
 }

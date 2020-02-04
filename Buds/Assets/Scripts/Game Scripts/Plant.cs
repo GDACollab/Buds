@@ -9,7 +9,7 @@ using UnityEngine;
  * and the plant's current status moment-to-moment.</summary>
  */
 
-public class PlantPlaceholder: MonoBehaviour
+public class Plant: MonoBehaviour
 {
     [Header("Species-Specific Data")]
 
