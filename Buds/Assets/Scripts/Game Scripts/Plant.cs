@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/** <summary>Keeps track of the data about a plant as it grows,
- * and updates that data when time passes or the plant is watered.</summary>
+/** <summary>
+ * Keeps track of the data about a plant as it grows,
+ * and updates that data when time passes or the plant is watered.
+ * </summary>
  *
  * This includes species-sepcific data, that doesn't change during gameplay,
- * and the plant's current status moment-to-moment.</summary>
+ * and the plant's current status moment-to-moment.
  */
 
 public class Plant: MonoBehaviour, IDraggable
@@ -50,8 +52,7 @@ public class Plant: MonoBehaviour, IDraggable
     private Color wateredSoilColor = new Color(0.54f, 0.36f, 0.16f);
     private Color unwateredSoilColor = new Color(0.78f, 0.62f, 0.44f);
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         daysToNextStage = daysBetweenStages;
 
@@ -59,7 +60,9 @@ public class Plant: MonoBehaviour, IDraggable
         sparkles = GetComponentInChildren<ParticleSystem>();
     }
 
-    // Fully replentishes the plant's hydration level
+    /// <summary>
+    /// Fully refills the plant's hydration level.
+    /// </summary>
     public void Water() {
         daysToNextWatering = daysOfWaterNeeded;
         hasEnoughWater = true;
@@ -67,7 +70,9 @@ public class Plant: MonoBehaviour, IDraggable
         UpdateAppearance();
     }
 
-    // Simulates plant's growth and water use for specified number of days
+    /// <summary>
+    /// Simulates plant's growth and water use for specified number of days.
+    /// </summary>
     public void PassTime(int days) {
         for (int i = 0; i < days; i++) {
             Grow();
@@ -77,7 +82,9 @@ public class Plant: MonoBehaviour, IDraggable
         UpdateAppearance();
     }
 
-    // Update the sun level when the plant is relocated
+    /// <summary>
+    /// Updates the sun level when the plant is relocated.
+    /// </summary>
     public void Drop(GameObject onto) {
         hasEnoughSun = onto.GetComponent<FlowerPot>().sunlightLevel >= sunlightNeeded;
 
@@ -101,8 +108,8 @@ public class Plant: MonoBehaviour, IDraggable
         }
     }
 
-    // Uses up one day of the plant's hydration level and sets it to parched if
-    // it runs out of water
+    // Uses up one day of the plant's hydration level and sets hasEnoughWater to
+    // false if it runs out of water
     private void UseWater() {
         daysToNextWatering--;
 
@@ -115,6 +122,8 @@ public class Plant: MonoBehaviour, IDraggable
         }
     }
 
+    // Updates soil color and sparkles based on whether the plant has enough
+    // water and sunlight
     private void UpdateAppearance() {
         soil.color = hasEnoughWater ? wateredSoilColor : unwateredSoilColor;
 

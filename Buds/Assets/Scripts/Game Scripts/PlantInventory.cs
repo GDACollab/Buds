@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/** <summary>A holder for plants that are not being grown in the cemetery.</summary>
+/** <summary>
+ * A holder for plants that are not being grown in the cemetery.
+ * </summary>
  */
 
 public class PlantInventory : MonoBehaviour
@@ -31,11 +33,5 @@ public class PlantInventory : MonoBehaviour
             new Vector3(transform.position.x - (displayDistance * ((plants.Length - 1) / 2.0f)),
                 transform.position.y,
                 transform.position.z);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
