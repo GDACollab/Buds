@@ -9,7 +9,7 @@ using UnityEngine;
  * and the plant's current status moment-to-moment.</summary>
  */
 
-public class Plant: MonoBehaviour
+public class Plant: MonoBehaviour, IDraggable
 {
     [Header("Species-Specific Data")]
 
@@ -42,18 +42,29 @@ public class Plant: MonoBehaviour
 
     public enum LifeStage {
         Seed, Seedling, Young, Mature, Flowering
-    }  
+    }
+
+    private SpriteRenderer soil;
+    private ParticleSystem sparkles;
+
+    private Color wateredSoilColor = new Color(0.54f, 0.36f, 0.16f);
+    private Color unwateredSoilColor = new Color(0.78f, 0.62f, 0.44f);
 
     // Start is called before the first frame update
     void Start()
     {
         daysToNextStage = daysBetweenStages;
+
+        soil = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        sparkles = GetComponentInChildren<ParticleSystem>();
     }
 
     // Fully replentishes the plant's hydration level
     public void Water() {
         daysToNextWatering = daysOfWaterNeeded;
         hasEnoughWater = true;
+
+        UpdateAppearance();
     }
 
     // Simulates plant's growth and water use for specified number of days
@@ -62,6 +73,15 @@ public class Plant: MonoBehaviour
             Grow();
             UseWater();
         }
+
+        UpdateAppearance();
+    }
+
+    // Update the sun level when the plant is relocated
+    public void Drop(GameObject onto) {
+        hasEnoughSun = onto.GetComponent<FlowerPot>().sunlightLevel >= sunlightNeeded;
+
+        UpdateAppearance();
     }
 
 
@@ -93,5 +113,16 @@ public class Plant: MonoBehaviour
         else {
             hasEnoughWater = true;
         }
-    }   
+    }
+
+    private void UpdateAppearance() {
+        soil.color = hasEnoughWater ? wateredSoilColor : unwateredSoilColor;
+
+        if (hasEnoughSun && hasEnoughWater) {
+            sparkles.Play();
+        }
+        else {
+            sparkles.Stop();
+        }
+    }
 }

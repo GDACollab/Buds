@@ -19,18 +19,16 @@ public class PlantInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float totalDistanceSoFar = 0;
-
         for (int i = 0; i < plants.Length; i++) {
             plants[i] = Instantiate(plantPrefab, transform);
             plants[i].transform.localPosition =
-                new Vector3(plants[i].transform.localPosition.x + totalDistanceSoFar,
+                new Vector3(i * displayDistance,
                     plants[i].transform.localPosition.y,
                     plants[i].transform.localPosition.z);
-            totalDistanceSoFar += displayDistance;
         }
+
         transform.position =
-            new Vector3(transform.position.x + (-1 * (totalDistanceSoFar - 1) / 2),
+            new Vector3(transform.position.x - (displayDistance * ((plants.Length - 1) / 2.0f)),
                 transform.position.y,
                 transform.position.z);
     }

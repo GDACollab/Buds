@@ -23,6 +23,7 @@ public class DragAndDrop : MonoBehaviour
     public float maxSnapDistance = 1.5f; //The maximum distance a flower can be from a pot before it will snap. Set to 0 if snap distance is infinite;
 
     Vector2 oldPosition;
+    FlowerPot oldFlowerPot;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,8 @@ public class DragAndDrop : MonoBehaviour
         {
             maxSnapDistance = Mathf.Infinity;
         }
+
+        SnapToPot();
     }
 
     // Update is called once per frame
@@ -99,9 +102,25 @@ public class DragAndDrop : MonoBehaviour
             
         }
 
+        if (gameObject.tag != "Flower") {
+            gameObject.transform.position = oldPosition;
+        }
+
         if (moveTo != null)
         {
-            gameObject.transform.position = moveTo.transform.position;
+            if (gameObject.tag == "Flower") {
+                gameObject.transform.position = moveTo.transform.position;
+            }
+
+            // Allows the plant or watering can to know when it has been dropped and where
+            if (gameObject.GetComponent<IDraggable>() != null) {
+                gameObject.GetComponent<IDraggable>().Drop(onto: moveTo);
+            }
+            if (oldFlowerPot != null) {
+                oldFlowerPot.currentFlower = null;
+            }
+            moveTo.GetComponent<FlowerPot>().currentFlower = gameObject.GetComponent<Plant>();
+            oldFlowerPot = moveTo.GetComponent<FlowerPot>();
         }
 
         //Check if overlapping another flower
@@ -110,15 +129,17 @@ public class DragAndDrop : MonoBehaviour
         flowers = GameObject.FindGameObjectsWithTag("Flower");
         foreach(GameObject flower in flowers)
         {
-            if(flower.transform.position == this.transform.position && flower != this.gameObject)
+            if(flower.transform.position == transform.position && flower != gameObject && gameObject.tag == "Flower")
             {
                 flower.transform.position = this.oldPosition;
                 DragAndDrop flowerScript = flower.GetComponent<DragAndDrop>();
                 flowerScript.oldPosition = flower.transform.position;
             }
         }
-        
-        oldPosition = this.transform.position;
+
+        if (gameObject.tag == "Flower") {
+            oldPosition = this.transform.position;
+        }
 
         return true;
     }
