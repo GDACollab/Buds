@@ -16,7 +16,15 @@ public class WateringCan : MonoBehaviour, IDraggable
     public void Drop(GameObject onto) {
         Plant plantToWater = onto.GetComponent<FlowerPot>().currentFlower;
         if (plantToWater != null) {
-            plantToWater.Water();
+            plantToWater.StartWatering();
+        }
+
+    }
+
+    public void Lift(GameObject from) {
+        Plant plantToWater = from.GetComponent<FlowerPot>().currentFlower;
+        if (plantToWater != null) {
+            plantToWater.StopWatering();
         }
     }
 }

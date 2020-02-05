@@ -46,11 +46,15 @@ public class Plant: MonoBehaviour, IDraggable
         Seed, Seedling, Young, Mature, Flowering
     }
 
+    private IEnumerator beingWatered;
+
     private SpriteRenderer soil;
     private ParticleSystem sparkles;
 
-    private Color wateredSoilColor = new Color(0.54f, 0.36f, 0.16f);
-    private Color unwateredSoilColor = new Color(0.78f, 0.62f, 0.44f);
+    private Color[] soilColors = {
+        new Color(0.78f, 0.62f, 0.44f),
+        new Color(0.50f, 0.35f, 0.14f),
+    };
 
     void Awake()
     {
@@ -58,6 +62,8 @@ public class Plant: MonoBehaviour, IDraggable
 
         soil = transform.GetChild(0).GetComponent<SpriteRenderer>();
         sparkles = GetComponentInChildren<ParticleSystem>();
+
+        beingWatered = WateringCoroutine();
     }
 
     /// <summary>
@@ -68,6 +74,28 @@ public class Plant: MonoBehaviour, IDraggable
         hasEnoughWater = true;
 
         UpdateAppearance();
+    }
+
+    public void StartWatering() {
+        StartCoroutine(beingWatered);
+    }
+
+    public IEnumerator WateringCoroutine() {
+        while (daysToNextWatering <= daysOfWaterNeeded) {
+            yield return null;
+            daysToNextWatering += 0.005f;
+
+            if (daysToNextWatering > daysOfWaterNeeded) {
+                daysToNextWatering = daysOfWaterNeeded;
+                hasEnoughWater = true;
+            }
+
+            UpdateAppearance();
+        }
+    }
+
+    public void StopWatering() {
+        StopCoroutine(beingWatered);
     }
 
     /// <summary>
@@ -91,6 +119,9 @@ public class Plant: MonoBehaviour, IDraggable
         UpdateAppearance();
     }
 
+    public void Lift(GameObject from) {
+        // Not applicable
+    }
 
     // Private methods
 
@@ -125,7 +156,7 @@ public class Plant: MonoBehaviour, IDraggable
     // Updates soil color and sparkles based on whether the plant has enough
     // water and sunlight
     private void UpdateAppearance() {
-        soil.color = hasEnoughWater ? wateredSoilColor : unwateredSoilColor;
+        soil.color = Color.Lerp(soilColors[0], soilColors[1], daysToNextWatering / daysOfWaterNeeded);
 
         if (hasEnoughSun && hasEnoughWater) {
             sparkles.Play();

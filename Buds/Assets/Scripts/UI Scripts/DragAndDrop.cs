@@ -14,6 +14,8 @@ using UnityEngine;
 public class DragAndDrop : MonoBehaviour
 {
     public bool toggle = true; //Switch between toggle and hold modes
+    public bool dropAndHold;
+    bool finished;
     bool dragging;
     Rect screenRect = new Rect(0, 0, Screen.width, Screen.height); //This is used to prevent the block from moving while the mouse is offscreen
 
@@ -24,6 +26,12 @@ public class DragAndDrop : MonoBehaviour
 
     Vector2 oldPosition;
     FlowerPot oldFlowerPot;
+
+    SpriteRenderer sr;
+    int initialSortingOrder;
+
+    IDraggable itemBeingDragged;
+    GameObject lastMoveTo;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +46,11 @@ public class DragAndDrop : MonoBehaviour
         }
 
         SnapToPot();
+
+        sr = GetComponent<SpriteRenderer>();
+        initialSortingOrder = sr.sortingOrder;
+
+        itemBeingDragged = gameObject.GetComponent<IDraggable>();
     }
 
     // Update is called once per frame
@@ -62,18 +75,34 @@ public class DragAndDrop : MonoBehaviour
         }
         else if (dragging && toggle)
         {
-            dragging = false;
             snapped = SnapToPot();
+            dragging = false;
+            
         }
+
+        if (dropAndHold) {
+            dragging = !finished;
+            finished = !dragging ? dragging : finished;
+        }
+
+        sr.sortingOrder = dragging ? 4 : initialSortingOrder;
     }
 
     private void OnMouseUp()
     {
         if(!toggle)
         {
-            dragging = false;
             snapped = SnapToPot();
-        } 
+            dragging = false;
+        }
+
+        if (dragging && dropAndHold) {
+            if (lastMoveTo != null && itemBeingDragged != null) {
+                itemBeingDragged.Lift(from: lastMoveTo);
+            }
+        }
+
+        sr.sortingOrder = dragging ? 5 : initialSortingOrder;
     }
 
     //Snaps the object to the nearest flowerpot
@@ -94,16 +123,18 @@ public class DragAndDrop : MonoBehaviour
             float test = Vector2.Distance(flowerpot.transform.position, gameObject.transform.position);
 
             //Vector2 test = flowerpot.transform.position - gameObject.transform.position;
-            if(test < difference && test <= maxSnapDistance)
-            {
+            if (test < difference && test <= maxSnapDistance) {
                 moveTo = flowerpot;
                 difference = test;
             }
-            
         }
 
-        if (gameObject.tag != "Flower") {
+        if (gameObject.tag != "Flower" && (!dropAndHold || (dragging && Vector2.Distance(oldPosition, gameObject.transform.position) < 1.0f))) {
             gameObject.transform.position = oldPosition;
+            finished = true;
+        }
+        else {
+            finished = false;
         }
 
         if (moveTo != null)
@@ -113,15 +144,19 @@ public class DragAndDrop : MonoBehaviour
             }
 
             // Allows the plant or watering can to know when it has been dropped and where
-            if (gameObject.GetComponent<IDraggable>() != null) {
-                gameObject.GetComponent<IDraggable>().Drop(onto: moveTo);
+            if (itemBeingDragged != null) {
+                itemBeingDragged.Drop(onto: moveTo);
+                lastMoveTo = moveTo;
             }
-            if (oldFlowerPot != null) {
-                oldFlowerPot.currentFlower = null;
+            if (gameObject.tag == "Flower") {
+                if (oldFlowerPot != null) {
+                    oldFlowerPot.currentFlower = null;
+                }
+                moveTo.GetComponent<FlowerPot>().currentFlower = gameObject.GetComponent<Plant>();
+                oldFlowerPot = moveTo.GetComponent<FlowerPot>();
             }
-            moveTo.GetComponent<FlowerPot>().currentFlower = gameObject.GetComponent<Plant>();
-            oldFlowerPot = moveTo.GetComponent<FlowerPot>();
         }
+ 
 
         //Check if overlapping another flower
         //Swapping will only occur if both objects have the tag "flower"
