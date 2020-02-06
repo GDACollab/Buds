@@ -1185,6 +1185,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant Spot 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4862551083489715355, guid: 69025ead061c1444babccf2c1ebd91a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69025ead061c1444babccf2c1ebd91a2, type: 3}
 --- !u!1 &682017441
@@ -1400,6 +1405,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant Spot 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4862551083489715355, guid: 69025ead061c1444babccf2c1ebd91a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69025ead061c1444babccf2c1ebd91a2, type: 3}
 --- !u!1 &767119312
@@ -1507,6 +1517,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plant Spot 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862551083489715355, guid: 69025ead061c1444babccf2c1ebd91a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5215492385799538487, guid: 69025ead061c1444babccf2c1ebd91a2,
         type: 3}
@@ -3061,6 +3076,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plant Spot 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862551083489715355, guid: 69025ead061c1444babccf2c1ebd91a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5215492385799538487, guid: 69025ead061c1444babccf2c1ebd91a2,
         type: 3}
