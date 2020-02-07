@@ -83,7 +83,7 @@ public class DragAndDrop : MonoBehaviour
         }
 
         for (int i = 0; i < spriteRenderers.Length; i++)
-            spriteRenderers[i].sortingOrder = !finished ? 5 : initialSortingOrders[i];
+            spriteRenderers[i].sortingOrder = !finished ? initialSortingOrders[i]+2 : initialSortingOrders[i];
 
         if (dropAndHold) {
             dragging = !finished;
@@ -107,7 +107,7 @@ public class DragAndDrop : MonoBehaviour
 
 
         for (int i = 0; i < spriteRenderers.Length; i++)
-            spriteRenderers[i].sortingOrder = dragging ? 5 : initialSortingOrders[i];
+            spriteRenderers[i].sortingOrder = dragging ? initialSortingOrders[i]+2 : initialSortingOrders[i];
     }
 
     //Snaps the object to the nearest flowerpot

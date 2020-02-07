@@ -48,14 +48,14 @@ public class Plant: MonoBehaviour, IDraggable
         Seed, Seedling, Young, Mature, Flowering
     }
 
-    private Coroutine waterGraduallyCR;
+    private IEnumerator waterGraduallyIE;
 
     private SpriteRenderer soil;
     private ParticleSystem sparkles;
 
     private Color[] soilColors = {
-        new Color(0.78f, 0.62f, 0.44f),
-        new Color(0.50f, 0.35f, 0.14f),
+        new Color(1.0f, 1.0f, 1.0f, 0.0f),
+        new Color(1.0f, 1.0f, 1.0f, 1.0f),
     };
 
     void Awake()
@@ -64,6 +64,8 @@ public class Plant: MonoBehaviour, IDraggable
 
         soil = transform.GetChild(0).GetComponent<SpriteRenderer>();
         sparkles = GetComponentInChildren<ParticleSystem>();
+
+        waterGraduallyIE = WaterGradually();
     }
 
     /// <summary>
@@ -80,7 +82,7 @@ public class Plant: MonoBehaviour, IDraggable
     /// Gradually refills the plant's hydration level.
     /// </summary>
     public void StartWatering() {
-        waterGraduallyCR = StartCoroutine(WaterGradually());
+        StartCoroutine(waterGraduallyIE);
     }
 
 
@@ -88,7 +90,7 @@ public class Plant: MonoBehaviour, IDraggable
     /// Stops gradual watering process.
     /// </summary>
     public void StopWatering() {
-        StopCoroutine(waterGraduallyCR);
+        StopCoroutine(waterGraduallyIE);
     }
 
     /// <summary>
