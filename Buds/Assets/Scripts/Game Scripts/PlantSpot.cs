@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlowerPot : MonoBehaviour
+public class PlantSpot : MonoBehaviour
 {
     // Start is called before the first frame update
     public Plant currentFlower;

@@ -25,7 +25,7 @@ public class DragAndDrop : MonoBehaviour
     public float maxSnapDistance = 1.5f; //The maximum distance a flower can be from a pot before it will snap. Set to 0 if snap distance is infinite;
 
     Vector2 oldPosition;
-    FlowerPot oldFlowerPot;
+    PlantSpot oldFlowerPot;
 
     SpriteRenderer[] spriteRenderers;
     int[] initialSortingOrders;
@@ -157,8 +157,8 @@ public class DragAndDrop : MonoBehaviour
                 if (oldFlowerPot != null) {
                     oldFlowerPot.currentFlower = null;
                 }
-                moveTo.GetComponent<FlowerPot>().currentFlower = gameObject.GetComponent<Plant>();
-                oldFlowerPot = moveTo.GetComponent<FlowerPot>();
+                moveTo.GetComponent<PlantSpot>().currentFlower = gameObject.GetComponent<Plant>();
+                oldFlowerPot = moveTo.GetComponent<PlantSpot>();
             }
         }
  

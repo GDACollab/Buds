@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plants: []
-  plantPrefab: {fileID: 293839240955845341, guid: 9418174f91389493d9d116860defe50a,
+  plantPrefab: {fileID: 5976644353274293561, guid: 8bf820368603745e3a1fde16aa2c1c29,
     type: 3}
+  displayDistance: 0

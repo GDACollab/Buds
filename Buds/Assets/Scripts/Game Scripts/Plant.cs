@@ -7,8 +7,10 @@ using UnityEngine;
  * and updates that data when time passes or the plant is watered.
  * </summary>
  *
+ * <remarks>
  * This includes species-sepcific data, that doesn't change during gameplay,
  * and the plant's current status moment-to-moment.
+ * </remarks>
  */
 
 public class Plant: MonoBehaviour, IDraggable
@@ -46,7 +48,7 @@ public class Plant: MonoBehaviour, IDraggable
         Seed, Seedling, Young, Mature, Flowering
     }
 
-    private IEnumerator beingWatered;
+    private Coroutine waterGraduallyCR;
 
     private SpriteRenderer soil;
     private ParticleSystem sparkles;
@@ -62,40 +64,31 @@ public class Plant: MonoBehaviour, IDraggable
 
         soil = transform.GetChild(0).GetComponent<SpriteRenderer>();
         sparkles = GetComponentInChildren<ParticleSystem>();
-
-        beingWatered = WateringCoroutine();
     }
 
     /// <summary>
     /// Fully refills the plant's hydration level.
     /// </summary>
-    public void Water() {
+    public void WaterCompletely() {
         daysToNextWatering = daysOfWaterNeeded;
         hasEnoughWater = true;
 
         UpdateAppearance();
     }
 
+    /// <summary>
+    /// Gradually refills the plant's hydration level.
+    /// </summary>
     public void StartWatering() {
-        StartCoroutine(beingWatered);
+        waterGraduallyCR = StartCoroutine(WaterGradually());
     }
 
-    public IEnumerator WateringCoroutine() {
-        while (daysToNextWatering <= daysOfWaterNeeded) {
-            yield return null;
-            daysToNextWatering += 0.005f;
 
-            if (daysToNextWatering > daysOfWaterNeeded) {
-                daysToNextWatering = daysOfWaterNeeded;
-                hasEnoughWater = true;
-            }
-
-            UpdateAppearance();
-        }
-    }
-
+    /// <summary>
+    /// Stops gradual watering process.
+    /// </summary>
     public void StopWatering() {
-        StopCoroutine(beingWatered);
+        StopCoroutine(waterGraduallyCR);
     }
 
     /// <summary>
@@ -114,7 +107,7 @@ public class Plant: MonoBehaviour, IDraggable
     /// Updates the sun level when the plant is relocated.
     /// </summary>
     public void Drop(GameObject onto) {
-        hasEnoughSun = onto.GetComponent<FlowerPot>().sunlightLevel >= sunlightNeeded;
+        hasEnoughSun = onto.GetComponent<PlantSpot>().sunlightLevel >= sunlightNeeded;
 
         UpdateAppearance();
     }
@@ -150,6 +143,21 @@ public class Plant: MonoBehaviour, IDraggable
         }
         else {
             hasEnoughWater = true;
+        }
+    }
+
+    // Waters plant gradually in real-time
+    private IEnumerator WaterGradually() {
+        while (daysToNextWatering < daysOfWaterNeeded) {
+            yield return null;
+            daysToNextWatering += Time.deltaTime;
+
+            if (daysToNextWatering >= daysOfWaterNeeded) {
+                daysToNextWatering = daysOfWaterNeeded;
+                hasEnoughWater = true;
+            }
+
+            UpdateAppearance();
         }
     }
 

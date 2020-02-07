@@ -461,7 +461,7 @@ PrefabInstance:
     - target: {fileID: 3605183124041909926, guid: dbc23ee29bb554b9e9bd0afa227c44ac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 3605183124041909926, guid: dbc23ee29bb554b9e9bd0afa227c44ac,
         type: 3}
@@ -518,12 +518,6 @@ PrefabInstance:
       propertyPath: displayDistance
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 3605183124041909927, guid: dbc23ee29bb554b9e9bd0afa227c44ac,
-        type: 3}
-      propertyPath: plantPrefab
-      value: 
-      objectReference: {fileID: 5976644353274293561, guid: 8bf820368603745e3a1fde16aa2c1c29,
-        type: 3}
     - target: {fileID: 3605183124041909976, guid: dbc23ee29bb554b9e9bd0afa227c44ac,
         type: 3}
       propertyPath: m_Name
