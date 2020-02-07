@@ -27,8 +27,8 @@ public class DragAndDrop : MonoBehaviour
     Vector2 oldPosition;
     FlowerPot oldFlowerPot;
 
-    SpriteRenderer sr;
-    int initialSortingOrder;
+    SpriteRenderer[] spriteRenderers;
+    int[] initialSortingOrders;
 
     IDraggable itemBeingDragged;
     GameObject lastMoveTo;
@@ -47,8 +47,10 @@ public class DragAndDrop : MonoBehaviour
 
         SnapToPot();
 
-        sr = GetComponent<SpriteRenderer>();
-        initialSortingOrder = sr.sortingOrder;
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        initialSortingOrders = new int[spriteRenderers.Length];
+        for (int i = 0; i < spriteRenderers.Length; i++)
+            initialSortingOrders[i] = spriteRenderers[i].sortingOrder;
 
         itemBeingDragged = gameObject.GetComponent<IDraggable>();
     }
@@ -80,12 +82,13 @@ public class DragAndDrop : MonoBehaviour
             
         }
 
+        for (int i = 0; i < spriteRenderers.Length; i++)
+            spriteRenderers[i].sortingOrder = !finished ? 5 : initialSortingOrders[i];
+
         if (dropAndHold) {
             dragging = !finished;
             finished = !dragging ? dragging : finished;
         }
-
-        sr.sortingOrder = dragging ? 4 : initialSortingOrder;
     }
 
     private void OnMouseUp()
@@ -102,7 +105,9 @@ public class DragAndDrop : MonoBehaviour
             }
         }
 
-        sr.sortingOrder = dragging ? 5 : initialSortingOrder;
+
+        for (int i = 0; i < spriteRenderers.Length; i++)
+            spriteRenderers[i].sortingOrder = dragging ? 5 : initialSortingOrders[i];
     }
 
     //Snaps the object to the nearest flowerpot
