@@ -2135,6 +2135,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant Spot 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4862551083489715355, guid: 69025ead061c1444babccf2c1ebd91a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5215492385799538487, guid: 69025ead061c1444babccf2c1ebd91a2,
         type: 3}
       propertyPath: m_LocalScale.x
