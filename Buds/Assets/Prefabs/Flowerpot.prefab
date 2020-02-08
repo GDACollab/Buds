@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1065117872187579051}
-  - component: {fileID: 9058468237480360318}
+  - component: {fileID: 2798297444789206268}
+  - component: {fileID: 350603201500824110}
   m_Layer: 0
   m_Name: Flowerpot
   m_TagString: Flowerpot
@@ -31,7 +32,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &9058468237480360318
+--- !u!114 &2798297444789206268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3494323219669478755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6013f92d4499c1647bd8c2543c9647c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentFlower: {fileID: 0}
+  sunlightLevel: 0
+--- !u!212 &350603201500824110
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
