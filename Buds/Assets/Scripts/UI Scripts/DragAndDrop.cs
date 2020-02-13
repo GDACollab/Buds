@@ -25,7 +25,6 @@ public class DragAndDrop : MonoBehaviour
     public float maxSnapDistance = 1.5f; //The maximum distance a flower can be from a pot before it will snap. Set to 0 if snap distance is infinite;
 
     Vector2 oldPosition;
-    PlantSpot oldFlowerPot;
 
     SpriteRenderer[] spriteRenderers;
     int[] initialSortingOrders;
@@ -70,20 +69,21 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!dragging)
-        {
+        if (!dragging) {
             dragging = true;
             snapped = false;
+            if (itemBeingDragged != null) {
+                itemBeingDragged.Lift(from: lastMoveTo);
+            }
         }
-        else if (dragging && toggle)
-        {
+        else if (dragging && toggle) {
             snapped = SnapToPot();
             dragging = false;
-            
+
         }
 
         for (int i = 0; i < spriteRenderers.Length; i++)
-            spriteRenderers[i].sortingOrder = !finished ? initialSortingOrders[i]+2 : initialSortingOrders[i];
+            spriteRenderers[i].sortingOrder = !finished ? initialSortingOrders[i] + 2 : initialSortingOrders[i];
 
         if (dropAndHold) {
             dragging = !finished;
@@ -93,8 +93,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if(!toggle)
-        {
+        if (!toggle) {
             snapped = SnapToPot();
             dragging = false;
         }
@@ -105,14 +104,17 @@ public class DragAndDrop : MonoBehaviour
             }
         }
 
-
         for (int i = 0; i < spriteRenderers.Length; i++)
-            spriteRenderers[i].sortingOrder = dragging ? initialSortingOrders[i]+2 : initialSortingOrders[i];
+            spriteRenderers[i].sortingOrder = dragging ? initialSortingOrders[i] + 2 : initialSortingOrders[i];
     }
 
     //Snaps the object to the nearest flowerpot
     private bool SnapToPot()
     {
+        if (itemBeingDragged == null) {
+            itemBeingDragged = gameObject.GetComponent<IDraggable>();
+        }
+
         flowerpots = GameObject.FindGameObjectsWithTag("Flowerpot");
         GameObject moveTo = null;
 
@@ -153,13 +155,6 @@ public class DragAndDrop : MonoBehaviour
                 itemBeingDragged.Drop(onto: moveTo);
                 lastMoveTo = moveTo;
             }
-            if (gameObject.tag == "Flower") {
-                if (oldFlowerPot != null) {
-                    oldFlowerPot.currentFlower = null;
-                }
-                moveTo.GetComponent<PlantSpot>().currentFlower = gameObject.GetComponent<Plant>();
-                oldFlowerPot = moveTo.GetComponent<PlantSpot>();
-            }
         }
  
 
@@ -173,7 +168,12 @@ public class DragAndDrop : MonoBehaviour
             {
                 flower.transform.position = this.oldPosition;
                 DragAndDrop flowerScript = flower.GetComponent<DragAndDrop>();
+                IDraggable flowerDraggable = flower.GetComponent<IDraggable>();
                 flowerScript.oldPosition = flower.transform.position;
+                if (flowerDraggable != null) {
+                    flowerDraggable.Lift(from: flowerScript.lastMoveTo);
+                }
+                flowerScript.SnapToPot();
             }
         }
 
