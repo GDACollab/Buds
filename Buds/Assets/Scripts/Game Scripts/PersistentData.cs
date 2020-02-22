@@ -8,7 +8,7 @@ using UnityEngine;
 /// Access the various methods by referencing the PersistentData.instance singleton, e.g. PersistentData.instance.StoreData("key", yourVarHere);
 /// Available methods:
 ///		void StoreData(string key, object value)		-stores "value" at the specified index
-///		object ReadData(string key)						-returns the data at the specified index
+///		object ReadData(string key)						-returns the data at the specified index (or null if there is no such entry)
 ///		void RemoveData(string key)						-removes the entry at the specified index
 ///		bool ContainsKey(string key)					-returns whether there's an entry for the given key
 /// See PersistTest.cs and the TestPersistent1 and TestPersistent2 scenes for an example of how to use the system
@@ -39,7 +39,8 @@ public class PersistentData : MonoBehaviour
     	}
     }
 
-    //If you need an entry to appear on startup, declare it here
+    //If you need an entry to appear on startup, declare it here.
+    //NOTE: to avoid merge conflicts, only ONE person should edit Initialize()
     private void Initialize()
     {
     	dataStorage["testInt"] = 0;
@@ -62,7 +63,7 @@ public class PersistentData : MonoBehaviour
     	}
     	else
     	{
-    		Debug.Log("Error: no persistent data entry for key: " + key);
+    		Debug.LogError("Error: no persistent data entry for key: " + key);
     		return null;
     	}
     }
@@ -76,7 +77,7 @@ public class PersistentData : MonoBehaviour
     	}
     	else
     	{
-    		// Debug.Log("Error: no persistent data entry for key: " + key);
+    		Debug.Log("Cannot delete persistent entry for \"" + key + "\" as there is no such entry");
     	}
     }
 

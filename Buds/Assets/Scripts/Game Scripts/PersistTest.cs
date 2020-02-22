@@ -31,6 +31,13 @@ public class PersistTest : MonoBehaviour
     	SetText("Read exampleVar: " + PersistentData.instance.ReadData("testInt")); //general format for reading from the singleton
     }
 
+    //tests deleting from persistent data
+    public void deleteVal()
+    {
+    	PersistentData.instance.RemoveData("testInt"); //general format for deleting from the singleton
+    	SetText("Deleted exampleVar"); //update button text to show successful deletion
+    }
+
     //changes between scenes to confirm persistence
     public void swapScene(string sceneName)
     {
