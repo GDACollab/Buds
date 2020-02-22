@@ -16,7 +16,19 @@ public class DragAndDrop : MonoBehaviour
     public bool toggle = true; //Switch between toggle and hold modes
     public bool dropAndHold;
     bool finished;
-    bool dragging;
+    bool Dragging {
+        get { return thisDragging; }
+        set {
+            if (locked == thisDragging) {
+                locked = value;
+                thisDragging = value;
+            }
+                
+        }
+    }
+    bool thisDragging;
+    static bool locked;
+
     Rect screenRect = new Rect(0, 0, Screen.width, Screen.height); //This is used to prevent the block from moving while the mouse is offscreen
 
     GameObject[] flowerpots;
@@ -35,7 +47,7 @@ public class DragAndDrop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dragging = false;
+        Dragging = false;
         snapped = true;
         oldPosition = this.transform.position; //Stores the last location of this object before it was moved by the mouse.
 
@@ -60,7 +72,7 @@ public class DragAndDrop : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 offset = new Vector2(-0.5f, 0.5f);
 
-        if (dragging && screenRect.Contains(Input.mousePosition))
+        if (Dragging && screenRect.Contains(Input.mousePosition))
         {
             //Mouse position on the screen uses different coordinates, needs to be corrected
             gameObject.transform.position = mousePos + offset;
@@ -69,16 +81,16 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!dragging) {
-            dragging = true;
+        if (!Dragging) {
+            Dragging = true;
             snapped = false;
             if (itemBeingDragged != null) {
                 itemBeingDragged.Lift(from: lastMoveTo);
             }
         }
-        else if (dragging && toggle) {
+        else if (Dragging && toggle) {
             snapped = SnapToPot();
-            dragging = false;
+            Dragging = false;
 
         }
 
@@ -86,8 +98,8 @@ public class DragAndDrop : MonoBehaviour
             spriteRenderers[i].sortingOrder = !finished ? initialSortingOrders[i] + 2 : initialSortingOrders[i];
 
         if (dropAndHold) {
-            dragging = !finished;
-            finished = !dragging ? dragging : finished;
+            Dragging = !finished;
+            finished = !Dragging ? Dragging : finished;
         }
     }
 
@@ -95,17 +107,17 @@ public class DragAndDrop : MonoBehaviour
     {
         if (!toggle) {
             snapped = SnapToPot();
-            dragging = false;
+            Dragging = false;
         }
 
-        if (dragging && dropAndHold) {
+        if (Dragging && dropAndHold) {
             if (lastMoveTo != null && itemBeingDragged != null) {
                 itemBeingDragged.Lift(from: lastMoveTo);
             }
         }
 
         for (int i = 0; i < spriteRenderers.Length; i++)
-            spriteRenderers[i].sortingOrder = dragging ? initialSortingOrders[i] + 2 : initialSortingOrders[i];
+            spriteRenderers[i].sortingOrder = Dragging ? initialSortingOrders[i] + 2 : initialSortingOrders[i];
     }
 
     //Snaps the object to the nearest flowerpot
@@ -136,7 +148,7 @@ public class DragAndDrop : MonoBehaviour
             }
         }
 
-        if (gameObject.tag != "Flower" && (!dropAndHold || (dragging && Vector2.Distance(oldPosition, gameObject.transform.position) < 1.0f))) {
+        if (gameObject.tag != "Flower" && (!dropAndHold || (Dragging && Vector2.Distance(oldPosition, gameObject.transform.position) < 1.0f))) {
             gameObject.transform.position = oldPosition;
             finished = true;
         }
@@ -144,19 +156,10 @@ public class DragAndDrop : MonoBehaviour
             finished = false;
         }
 
-        if (moveTo != null)
-        {
-            if (gameObject.tag == "Flower") {
-                gameObject.transform.position = moveTo.transform.position;
-            }
-
-            // Allows the plant or watering can to know when it has been dropped and where
-            if (itemBeingDragged != null) {
-                itemBeingDragged.Drop(onto: moveTo);
-                lastMoveTo = moveTo;
-            }
+        if (moveTo != null && gameObject.tag == "Flower") {
+            gameObject.transform.position = moveTo.transform.position;
         }
- 
+
 
         //Check if overlapping another flower
         //Swapping will only occur if both objects have the tag "flower"
@@ -173,8 +176,16 @@ public class DragAndDrop : MonoBehaviour
                 if (flowerDraggable != null) {
                     flowerDraggable.Lift(from: flowerScript.lastMoveTo);
                 }
-                flowerScript.SnapToPot();
+                if (flowerScript.itemBeingDragged != null) {
+                    flowerScript.itemBeingDragged.Drop(onto: lastMoveTo);
+                }
             }
+        }
+
+        // Allows the plant or watering can to know when it has been dropped and where
+        if (itemBeingDragged != null) {
+            itemBeingDragged.Drop(onto: moveTo);
+            lastMoveTo = moveTo;
         }
 
         if (gameObject.tag == "Flower") {

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 168213354012445436}
   - component: {fileID: 3046718803133181099}
+  - component: {fileID: 3268619500118680819}
+  - component: {fileID: 1208168607827839476}
   m_Layer: 0
   m_Name: Plant Spot
   m_TagString: Flowerpot
@@ -46,6 +48,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFlower: {fileID: 0}
   sunlightLevel: 0
+--- !u!58 &3268619500118680819
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4387568563062766900}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!50 &1208168607827839476
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4387568563062766900}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4862551083489715355
 GameObject:
   m_ObjectHideFlags: 0
