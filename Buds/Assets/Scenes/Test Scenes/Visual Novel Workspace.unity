@@ -500,6 +500,7 @@ MonoBehaviour:
   button: {fileID: 0}
   buttonText: {fileID: 0}
   goToNextLine: 0
+  DialogContainer: {fileID: 598121272}
 --- !u!1 &322595436
 GameObject:
   m_ObjectHideFlags: 0
