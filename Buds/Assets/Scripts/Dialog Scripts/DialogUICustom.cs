@@ -14,17 +14,12 @@ namespace Yarn.Unity
         public Text buttonText;
         public bool goToNextLine;
         public GameObject DialogContainer;
-        //public DialgoueRunner dialogueRunner;
-        public GameObject DialogueRunner;
 
-        Script dr;  //what's the thing that allows me to pull script components?
+        int lineTextIndex;
 
-        //called when the object is loaded
-        //This will be used to add universal custom commands, which are defined after all the public handler methods.
         void Start()
         {
-            dr = DialogueRunner.GetComponent<DialogueRunner>();
-            dr.AddCommandHandler("create_text_button", CreateTextButton);
+
         }
 
         public override Dialogue.HandlerExecutionType RunLine(Line line, IDictionary<string, string> strings, Action onLineComplete)
@@ -39,12 +34,30 @@ namespace Yarn.Unity
         private IEnumerator DoRunLine(Line line, IDictionary<string, string> strings, Action onLineComplete)
         {
             var lineText = strings[line.ID];
-            Debug.Log(strings[line.ID]);
+            //Debug.Log(strings[line.ID]);
             //add command functionality
-            text.text = lineText;
-            //yield return new WaitUntil(() => goToNextLine);
-            yield return new WaitForSeconds(3);
+            //text.text = lineText
+            for(int i; i < lineText.length; ++i)
+            {
+                if(lineText[i] == '{')
+                {
+                    i = CreateTextButton(lineText, i);
+                }
+                else
+                {
+                    text.text += lineText[i];
+                }
+            }
+            goToNextLine = false;
+            yield return new WaitUntil(() => goToNextLine);
+            //yield return new WaitForSeconds(3);
             onLineComplete();
+        }
+
+        public void NextLine()
+        {
+            Debug.Log("Dialogue advancement!");
+            goToNextLine = true;
         }
 
         /// Run a command.
@@ -67,10 +80,49 @@ namespace Yarn.Unity
         }
 
         //Creates buttons in-line with the text that can be clicked on. We can make them look like regular text later
-        private void CreateTextButton(string[] parameters)
+        //An in-line button is created with the following syntax
+        //{text that is highlighted| } or {text that is highlighted|YarnFileName.NextNodeName}
+        //Using | } will go to the immediate next line of dialog, while using |YarnFileName.NextNodeName} will jump to the NextNodeName node in the yarn file.
+        private int CreateTextButton(string LineText, int index)
         {
             throw new NotImplementedException("IN TEXT OPTIONS NOT FINISHED");
+            string buttonText;
+            string nextNode;
+            Button newButton;
+            Text newText;
+            bool breaker = false;
+            ++index;
+            //reads the text to be highlighted 
+            while (!breaker)
+            {
+                if(LineText[index] == '|')
+                {
+                    breaker = true;
+                }
+                else
+                {
+                    buttonText += LineText[index];
+                }
+                ++index;
+            }
+            //reads the node to travel to when the button is clicked
+            while(LineText[index] != '}')
+            {
+                //please make sure to put in this second brace I haven't written an exception yet and it WILL explode if it isn't found
+                nextNode += LineText[index];
+                ++index;
+            }
+            //creates the actual new button
+            newButton = Instantiate(button, DialogContainer.transform);
+            newButton.text = buttonText;
+            //the thing that does the node jumping function
+            //onClick.AddListener(methodname) will let me change what the button does on click.
+            //Now I need to know how yarnspinner handles node jumping
+
+            //creates a new text object for the rest of the line to go on.
+            newText = Instantiate(text, DialogContainer.transform);
+            text = newText;
+            return index;
         }
-    
     }
 }
