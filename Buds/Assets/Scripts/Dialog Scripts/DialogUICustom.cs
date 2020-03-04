@@ -37,9 +37,9 @@ namespace Yarn.Unity
             //Debug.Log(strings[line.ID]);
             //add command functionality
             //text.text = lineText
-            for(int i; i < lineText.length; ++i)
+            for(int i = 0; i < lineText.Length; ++i)
             {
-                if(lineText[i] == '{')
+                if(lineText[i] == '{' && lineText[i+1] == '{')
                 {
                     i = CreateTextButton(lineText, i);
                 }
@@ -81,8 +81,8 @@ namespace Yarn.Unity
 
         //Creates buttons in-line with the text that can be clicked on. We can make them look like regular text later
         //An in-line button is created with the following syntax
-        //{text that is highlighted| } or {text that is highlighted|YarnFileName.NextNodeName}
-        //Using | } will go to the immediate next line of dialog, while using |YarnFileName.NextNodeName} will jump to the NextNodeName node in the yarn file.
+        //{{text that is highlighted| }} or {{text that is highlighted|YarnFileName.NextNodeName}}
+        //Using | }} will go to the immediate next line of dialog, while using |YarnFileName.NextNodeName}} will jump to the NextNodeName node in the yarn file.
         private int CreateTextButton(string LineText, int index)
         {
             throw new NotImplementedException("IN TEXT OPTIONS NOT FINISHED");
@@ -106,18 +106,30 @@ namespace Yarn.Unity
                 ++index;
             }
             //reads the node to travel to when the button is clicked
-            while(LineText[index] != '}')
+            while(LineText[index] != '}' && LineText[index + 1] != '}')
             {
                 //please make sure to put in this second brace I haven't written an exception yet and it WILL explode if it isn't found
                 nextNode += LineText[index];
                 ++index;
             }
-            //creates the actual new button
+            //creates the actual new button and sets it text
             newButton = Instantiate(button, DialogContainer.transform);
-            newButton.text = buttonText;
-            //the thing that does the node jumping function
-            //onClick.AddListener(methodname) will let me change what the button does on click.
-            //Now I need to know how yarnspinner handles node jumping
+            newButton.transform.GetChild(0).gameObject.GetComponent<Text>().text = buttonText;
+            //gives the button proper functionality
+            if (nextNode == " ")
+            {
+                //button advances dialogue if there's no node destination
+                newButton.onClick.AddListener(this.NextLine);
+            }
+            else
+            {
+                //DialogueRunner.NodeExists(node) returns true/false if the node is, in fact, a node.
+                //newButton.onClick.AddListener();//method that causes node jumps
+                //the yarn way is really complicated and I don't understand it
+                //need better examples
+                //the secret lies in DialogueUI.SetOption, which I can't find in the DialogueUI script.
+                //But the script it looks for is DialogueRunner...?
+            }
 
             //creates a new text object for the rest of the line to go on.
             newText = Instantiate(text, DialogContainer.transform);
