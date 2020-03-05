@@ -51,6 +51,7 @@ namespace Yarn.Unity
                     text.text += lineText[i];
                 }
             }
+
             //If the line has no buttons, continue in 3 seconds
             //If it does, wait until one is clicked
             goToNextLine = false;
