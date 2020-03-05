@@ -7,7 +7,8 @@ I'm unsure what's going on
 But that's ok, right?
 Maybe, as long as this exports can then can by used correctly.
 Maybe a <button> goes here?
-[[Buttons go like this, right?|TestDialog.button]]
+No, a button does {{this| }}!
+Anyways, test done!
 ===
 
 title: TestDialog.Button
