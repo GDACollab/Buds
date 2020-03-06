@@ -204,34 +204,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1354980449
+--- !u!1001 &1152986057
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2736988884874185964, guid: de94e96c89622ef4fb7254e3f90ae04d,
-        type: 3}
-      propertyPath: m_FontData.m_VerticalOverflow
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2736988884874185964, guid: de94e96c89622ef4fb7254e3f90ae04d,
-        type: 3}
-      propertyPath: m_FontData.m_HorizontalOverflow
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4068380849537614946, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
       propertyPath: m_Name
       value: Dialogue Custom
       objectReference: {fileID: 0}
-    - target: {fileID: 4470107695405331885, guid: de94e96c89622ef4fb7254e3f90ae04d,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b73bb145504b3d940a8e444a72265ee4,
-        type: 3}
     - target: {fileID: 5935829474855343396, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
       propertyPath: m_SizeDelta.x

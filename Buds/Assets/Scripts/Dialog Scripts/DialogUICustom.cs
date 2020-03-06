@@ -213,19 +213,27 @@ namespace Yarn.Unity
         private void TextUIReset()
         {
             Text newText;
+            //GameObject[] oldUI;
+
+            //holy god for the love of all that is good in the world please make this function
+            // and/or script acutally not be awful
+            // simply because it functions does not mean it deserves to exist
 
             //deactivate all of the children of DialogContainer (i.e. all of the text UI elements)
             //in a perfect world we'd destroy them, but then we don't have text/buttons to instantiate from
+            //  it can actually be done with text, because there will always be text. However, there will not always be buttons... I think?
             //if this causes legit performance issues I'll come back and fix it later
             for (int i = 0; i < DialogContainer.transform.childCount; ++i)
             {
                 //sets child i of DialogContainer to be inactive
                 DialogContainer.transform.GetChild(i).gameObject.SetActive(false);
+                //DialogContainer.transform.GetChild(i).gameObject.name = "OldUI " + i;
             }
 
             //creates an new text to write things on
             newText = Instantiate(text, DialogContainer.transform);
             text = newText;
+            //text.name = "BlankText";
 
             //set it to be active
             //text objects don't inherit the SetActive method from game objects...?
@@ -236,11 +244,13 @@ namespace Yarn.Unity
 
         /*
          * UI Yarn Commands
-         */
+           jk we can't have yarn commands on this script because Dialogue Runner isn't one word guh hYUCK
+           either way I can't get it to work right now so yeah.
 
         [YarnCommand("changeSpeaker")]
-        public void ChangeSpeaker(string newSpeaker)
+        public void changeSpeaker(string newSpeaker)
         {
+            Debug.Log("The command is actually executing");
             switch (newSpeaker)
             {
                 case "MC":
@@ -266,6 +276,6 @@ namespace Yarn.Unity
 
 
 
-        }
+        }*/
     }
 }
