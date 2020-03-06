@@ -204,7 +204,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1568908162
+--- !u!1001 &1354980449
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -213,23 +213,40 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2736988884874185964, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736988884874185964, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4068380849537614946, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
       propertyPath: m_Name
       value: Dialogue Custom
       objectReference: {fileID: 0}
+    - target: {fileID: 4470107695405331885, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b73bb145504b3d940a8e444a72265ee4,
+        type: 3}
     - target: {fileID: 5935829474855343396, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5935829474855343398, guid: de94e96c89622ef4fb7254e3f90ae04d,
+    - target: {fileID: 5935829475398715329, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: yarnScripts.Array.data[0]
+      value: 
+      objectReference: {fileID: 2480198943629176163, guid: f2ec192c6118fc14bbbca12937f1a855,
+        type: 3}
+    - target: {fileID: 5935829475398715329, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: startNode
+      value: RFfirstMeeting
       objectReference: {fileID: 0}
     - target: {fileID: 6044217764974973353, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
@@ -251,6 +268,33 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6557618055608245396, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557618055608245396, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7149874665899881874, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: expressions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7149874665899881874, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: expressions.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: b73bb145504b3d940a8e444a72265ee4,
+        type: 3}
+    - target: {fileID: 7149874665899881874, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: expressions.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ece0bd8dfb263e4c9857b7d99ee117e,
+        type: 3}
     - target: {fileID: 8245181055515182852, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
       propertyPath: m_LocalPosition.x

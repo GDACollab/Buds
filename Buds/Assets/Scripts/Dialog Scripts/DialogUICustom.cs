@@ -18,10 +18,51 @@ namespace Yarn.Unity
         public int lineTextIndex;
         int activeButtons;
 
+        /// How quickly to show the text, in seconds per character
+        [Tooltip("How quickly to show the text, in seconds per character")]
+        public float textSpeed = 0.025f;
+
+        /// The buttons that let the user choose an option
+        public List<Button> optionButtons;
+
+        //A whole lot of weird YarnSpinner things. I don't know what they do, so 
+        //I use them as I need them
+        /*// When true, the user has indicated that they want to proceed to
+        // the next line.
+        //private bool userRequestedNextLine = false;
+
+        // The method that we should call when the user has chosen an
+        // option. Externally provided by the DialogueRunner.
+        private System.Action<int> currentOptionSelectionHandler;
+
+        // When true, the DialogueRunner is waiting for the user to press
+        // one of the option buttons.
+        private bool waitingForOptionSelection = false;
+        */
+
+        //Yarn things I am using
+        public UnityEngine.Events.UnityEvent onDialogueStart;
+
+        public UnityEngine.Events.UnityEvent onDialogueEnd;
+
+        public UnityEngine.Events.UnityEvent onLineStart;
+        public UnityEngine.Events.UnityEvent onLineFinishDisplaying;
+        public DialogueRunner.StringUnityEvent onLineUpdate;
+        public UnityEngine.Events.UnityEvent onLineEnd;
+
+        public UnityEngine.Events.UnityEvent onOptionsStart;
+        public UnityEngine.Events.UnityEvent onOptionsEnd;
+
+        public DialogueRunner.StringUnityEvent onCommand;
+
         void Start()
         {
 
         }
+
+        /*
+         * Defaukt YarnSpinner Methods (with some modification)
+         */
 
         public override Dialogue.HandlerExecutionType RunLine(Line line, IDictionary<string, string> strings, Action onLineComplete)
         {
@@ -76,13 +117,13 @@ namespace Yarn.Unity
         /// Run a command.
         public override Dialogue.HandlerExecutionType RunCommand(Yarn.Command command, System.Action onComplete)
         {
-            throw new NotImplementedException("NO COMMAND SUPPORT");
+            //throw new NotImplementedException("NO COMMAND SUPPORT");
 
             // Dispatch this command via the 'On Command' handler.
-            //onCommand?.Invoke(command.Text);
+            onCommand?.Invoke(command.Text);
 
             // Signal to the DialogueRunner that it should continue executing.
-            //return Dialogue.HandlerExecutionType.ContinueExecution;
+            return Dialogue.HandlerExecutionType.ContinueExecution;
         }
 
         //RunOptions makes lists of buttons to choose options from. This game won't have that, so it's not a big deal.
@@ -91,6 +132,11 @@ namespace Yarn.Unity
             throw new NotImplementedException("NO OPTION SUPPORT");
             //StartCoroutine(DoRunOptions(optionsCollection, strings, selectOption));
         }
+
+        /*
+         * Private Add-On Functions
+         */
+
 
         //Creates buttons in-line with the text that can be clicked on. We can make them look like regular text later
         //An in-line button is created with the following syntax
@@ -185,6 +231,41 @@ namespace Yarn.Unity
             //text objects don't inherit the SetActive method from game objects...?
             text.gameObject.SetActive(true);
             text.text = "";
+            activeButtons = 0;
+        }
+
+        /*
+         * UI Yarn Commands
+         */
+
+        [YarnCommand("changeSpeaker")]
+        public void ChangeSpeaker(string newSpeaker)
+        {
+            switch (newSpeaker)
+            {
+                case "MC":
+                    text.color = Color.white;
+                    break;
+
+                case "SF":
+                    throw new NotImplementedException("SILVER FOX TEXT COLOR NOT SET");
+                    break;
+
+                case "RF":
+                    text.color = Color.yellow;
+                    break;
+
+                case "GB":
+                    throw new NotImplementedException("GAMER BRAT TEXT COLOR NOT SET");
+
+                default:
+                    Debug.Log("Error: " + newSpeaker + " not a recognized speaker. Defaulting to MC as speaker");
+                    text.color = Color.white;
+                    break;
+            }
+
+
+
         }
     }
 }
