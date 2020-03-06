@@ -15,8 +15,20 @@ public class DragAndDrop : MonoBehaviour
 {
     public bool toggle = true; //Switch between toggle and hold modes
     public bool dropAndHold;
+    public bool offsetOn = true;
+    public bool yMovementOnly;
+    public float maxY;
+    public float minY;
+    public float animationTime;
+
     bool finished;
     bool dragging;
+
+    bool animating;
+    Vector2 targetPosition;
+    Vector2 sourcePosition;
+    float animationTimer;
+
     Rect screenRect = new Rect(0, 0, Screen.width, Screen.height); //This is used to prevent the block from moving while the mouse is offscreen
 
     GameObject[] flowerpots;
@@ -40,9 +52,14 @@ public class DragAndDrop : MonoBehaviour
         snapped = true;
         oldPosition = this.transform.position; //Stores the last location of this object before it was moved by the mouse.
 
-        if(maxSnapDistance == 0)
-        {
+        if (maxSnapDistance == 0) {
             maxSnapDistance = Mathf.Infinity;
+        }
+        if (maxY == 0) {
+            maxY = Mathf.Infinity;
+        }
+        if (minY == 0) {
+            minY = Mathf.NegativeInfinity;
         }
 
         SnapToPot();
@@ -53,73 +70,111 @@ public class DragAndDrop : MonoBehaviour
             initialSortingOrders[i] = spriteRenderers[i].sortingOrder;
 
         itemBeingDragged = gameObject.GetComponent<IDraggable>();
+
+        sourcePosition = transform.position;
+        targetPosition = transform.position;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 offset = new Vector2(-0.5f, 0.5f);
+        Vector2 offset = offsetOn ? new Vector2(-0.5f, 0.5f) : Vector2.zero;
 
         if (dragging && screenRect.Contains(Input.mousePosition))
         {
             //Mouse position on the screen uses different coordinates, needs to be corrected
-            gameObject.transform.position = mousePos + offset;
+            if (mousePos.y >= minY && mousePos.y <= maxY) {
+                transform.position = !yMovementOnly
+                ? mousePos + offset
+                : new Vector2(transform.position.x, mousePos.y);
+            }
+            else if (mousePos.y <= minY) {
+                transform.position = new Vector2(transform.position.x, minY);
+            }
+            else {
+                transform.position = new Vector2(transform.position.x, maxY);
+            }
+
+            
+        }
+
+        if (dragging) {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -1.0f);
+        }
+        else if (Mathf.Abs(transform.position.z) > Mathf.Epsilon) {
+            transform.position = new Vector3(transform.position.x, transform.position.y, 0.0f);
+        }
+
+        if (Vector2.SqrMagnitude(sourcePosition - targetPosition) > Mathf.Epsilon && animationTime != 0.0f && animationTimer <= 1.0f) {
+            transform.position = Vector2.Lerp(sourcePosition, targetPosition, animationTimer);
+            animationTimer += Time.fixedDeltaTime / animationTime;
+            animating = true;
+        }
+        else {
+            animating = false;
+            sourcePosition = targetPosition;
+            animationTimer = 0.0f;
         }
     }
 
     private void OnMouseDown()
     {
-        if (!dragging)
-        {
-            dragging = true;
-            snapped = false;
-        }
-        else if (dragging && toggle)
-        {
-            snapped = SnapToPot();
-            dragging = false;
-            
-        }
+        if (!animating) {
+            if (!dragging) {
+                dragging = true;
+                snapped = false;
+            }
+            else if (dragging && toggle) {
+                
+                snapped = SnapToPot();
+                dragging = false;
 
-        for (int i = 0; i < spriteRenderers.Length; i++)
-            spriteRenderers[i].sortingOrder = !finished ? initialSortingOrders[i]+2 : initialSortingOrders[i];
+            }
 
-        if (dropAndHold) {
-            dragging = !finished;
-            finished = !dragging ? dragging : finished;
+            for (int i = 0; i < spriteRenderers.Length; i++)
+                spriteRenderers[i].sortingOrder = !finished ? initialSortingOrders[i] + 2 : initialSortingOrders[i];
+
+            if (dropAndHold) {
+                dragging = !finished;
+                finished = !dragging ? dragging : finished;
+            }
         }
     }
 
     private void OnMouseUp()
     {
-        if(!toggle)
-        {
-            snapped = SnapToPot();
-            dragging = false;
-        }
-
-        if (dragging && dropAndHold) {
-            if (lastMoveTo != null && itemBeingDragged != null) {
-                itemBeingDragged.Lift(from: lastMoveTo);
+        if (!animating) {
+            if (!toggle) {
+                snapped = SnapToPot();
+                dragging = false;
             }
+
+            if (dragging && dropAndHold) {
+                if (lastMoveTo != null && itemBeingDragged != null) {
+                    itemBeingDragged.Lift(from: lastMoveTo);
+                }
+            }
+
+
+            for (int i = 0; i < spriteRenderers.Length; i++)
+                spriteRenderers[i].sortingOrder = dragging ? initialSortingOrders[i] + 2 : initialSortingOrders[i];
         }
-
-
-        for (int i = 0; i < spriteRenderers.Length; i++)
-            spriteRenderers[i].sortingOrder = dragging ? initialSortingOrders[i]+2 : initialSortingOrders[i];
     }
 
     //Snaps the object to the nearest flowerpot
     private bool SnapToPot()
     {
+        sourcePosition = transform.position;
+
         flowerpots = GameObject.FindGameObjectsWithTag("Flowerpot");
         GameObject moveTo = null;
 
         float difference = Mathf.Infinity;
 
-        if(flowerpots.Length <= 0)
+        if (flowerpots.Length <= 0)
         {
+            targetPosition = transform.position;
             return false;
         }
 
@@ -169,17 +224,28 @@ public class DragAndDrop : MonoBehaviour
         flowers = GameObject.FindGameObjectsWithTag("Flower");
         foreach(GameObject flower in flowers)
         {
-            if(flower.transform.position == transform.position && flower != gameObject && gameObject.tag == "Flower")
+            if(Vector3.SqrMagnitude(flower.transform.position - transform.position) < 0.01f && flower != gameObject && gameObject.tag == "Flower")
             {
-                flower.transform.position = this.oldPosition;
                 DragAndDrop flowerScript = flower.GetComponent<DragAndDrop>();
-                flowerScript.oldPosition = flower.transform.position;
+                flowerScript.sourcePosition = flowerScript.transform.position;
+                
+                flower.transform.position = animationTime == 0
+                    ? this.oldPosition
+                    : flowerScript.sourcePosition;
+                flowerScript.targetPosition = this.oldPosition;
+
+                flowerScript.oldPosition = flowerScript.targetPosition;
             }
         }
 
         if (gameObject.tag == "Flower") {
             oldPosition = this.transform.position;
         }
+
+        targetPosition = transform.position;
+        transform.position = animationTime == 0
+            ? new Vector2(transform.position.x, transform.position.y)
+            : sourcePosition;
 
         return true;
     }
