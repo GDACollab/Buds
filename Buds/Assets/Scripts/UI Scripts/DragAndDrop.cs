@@ -37,7 +37,6 @@ public class DragAndDrop : MonoBehaviour
     public float maxSnapDistance = 1.5f; //The maximum distance a flower can be from a pot before it will snap. Set to 0 if snap distance is infinite;
 
     Vector2 oldPosition;
-    PlantSpot oldFlowerPot;
 
     SpriteRenderer[] spriteRenderers;
     int[] initialSortingOrders;
@@ -197,26 +196,10 @@ public class DragAndDrop : MonoBehaviour
             finished = false;
         }
 
-        if (moveTo != null)
-        {
-            if (gameObject.tag == "Flower") {
-                gameObject.transform.position = moveTo.transform.position;
-            }
-
-            // Allows the plant or watering can to know when it has been dropped and where
-            if (itemBeingDragged != null) {
-                itemBeingDragged.Drop(onto: moveTo);
-                lastMoveTo = moveTo;
-            }
-            if (gameObject.tag == "Flower") {
-                if (oldFlowerPot != null) {
-                    oldFlowerPot.currentFlower = null;
-                }
-                moveTo.GetComponent<PlantSpot>().currentFlower = gameObject.GetComponent<Plant>();
-                oldFlowerPot = moveTo.GetComponent<PlantSpot>();
-            }
+        if (moveTo != null && gameObject.tag == "Flower") {
+            gameObject.transform.position = moveTo.transform.position;
         }
- 
+
 
         //Check if overlapping another flower
         //Swapping will only occur if both objects have the tag "flower"
@@ -236,6 +219,12 @@ public class DragAndDrop : MonoBehaviour
 
                 flowerScript.oldPosition = flowerScript.targetPosition;
             }
+        }
+
+        // Allows the plant or watering can to know when it has been dropped and where
+        if (itemBeingDragged != null) {
+            itemBeingDragged.Drop(onto: moveTo);
+            lastMoveTo = moveTo;
         }
 
         if (gameObject.tag == "Flower") {
