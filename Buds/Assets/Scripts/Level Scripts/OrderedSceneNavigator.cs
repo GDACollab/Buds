@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OrderedSceneNavigator : MonoBehaviour
 {
@@ -9,42 +11,52 @@ public class OrderedSceneNavigator : MonoBehaviour
 
     public Animator phoneAnim;
 
-    private int[] sceneOrder;
-    bool disabled;
+    public Button confirmButton;
 
-    float top = 1.874481f;
-    float middle = -0.64019f;
-    float bottom = -3.1174f;
+    private SortedList<float, int> sceneOrder;
+
+    bool menuEnabled;
 
     private void Start() {
-        sceneOrder = new int[] {0, 1, 2};
+        Comparer<float> descendingComparer = Comparer<float>.Create((x, y) => y.CompareTo(x));
+
+        sceneOrder = new SortedList<float, int>(3, descendingComparer);
     }
 
     void FixedUpdate()
     {
-        
-        for (int i = 0; i < sceneOrder.Length; i++) {
-            buildIndexes[i] = -1;
-            if (Mathf.Abs(scheduleItems[i].transform.position.y - top) < 0.01f) {
-                sceneOrder[0] = buildIndexes[i];
-            }
-            else if (Mathf.Abs(scheduleItems[i].transform.position.y - middle) < 0.01f) {
-                sceneOrder[1] = buildIndexes[i];
-            }
-            else if (Mathf.Abs(scheduleItems[i].transform.position.y - bottom) < 0.01f) {
-                sceneOrder[2] = buildIndexes[i];
-            }
+        sceneOrder.Clear();
+        for (int i = 0; i < 3; i++) {
+            sceneOrder.Add(scheduleItems[i].transform.position.y, buildIndexes[i]);
         }
+    }
 
-        disabled = buildIndexes[0] == -1 || buildIndexes[1] == -1 || buildIndexes[2] == -1;
+    public void ShowOrHideMenu() {
+        phoneAnim.gameObject.SetActive(true);
+        if (!menuEnabled) {
+            ShowMenu();
+        }
+        else {
+            HideMenu();
+        }
     }
 
     public void ShowMenu() {
         phoneAnim.SetBool("finished", false);
-        phoneAnim.gameObject.SetActive(true);
+
+        menuEnabled = true;
     }
 
     public void HideMenu() {
         phoneAnim.SetBool("finished", true);
+
+        menuEnabled = false;
     }
+
+    public void LoadScene() {
+        int sceneIndex = sceneOrder.Values[0];
+        sceneOrder.RemoveAt(sceneOrder.IndexOfValue(sceneIndex));
+        SceneManager.LoadSceneAsync(sceneIndex);
+    }
+
 }
