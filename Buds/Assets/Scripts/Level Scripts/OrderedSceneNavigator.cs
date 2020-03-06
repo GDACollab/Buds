@@ -27,7 +27,9 @@ public class OrderedSceneNavigator : MonoBehaviour
     {
         sceneOrder.Clear();
         for (int i = 0; i < 3; i++) {
-            sceneOrder.Add(scheduleItems[i].transform.position.y, buildIndexes[i]);
+            if (!sceneOrder.ContainsKey(scheduleItems[i].transform.position.y)) {
+                sceneOrder.Add(scheduleItems[i].transform.position.y, buildIndexes[i]);
+            }
         }
     }
 
