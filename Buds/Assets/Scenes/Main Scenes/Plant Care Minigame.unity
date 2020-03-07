@@ -2108,6 +2108,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2640063303743586383, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640063303743586383, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5959862844235851112, guid: dd8268237509340628639d7903bfaee3,
         type: 3}
       propertyPath: m_Name
@@ -2248,6 +2258,41 @@ PrefabInstance:
       propertyPath: confirmButton
       value: 
       objectReference: {fileID: 1364407117}
+    - target: {fileID: 5959862844596643390, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: buildIndexes.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959862844596643390, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: buildIndexes.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959862845529720916, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959862845529720916, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959862845529720917, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.8915094
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959862845529720917, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.91459256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959862845529720917, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0.7529412
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd8268237509340628639d7903bfaee3, type: 3}
 --- !u!114 &2129769149 stripped

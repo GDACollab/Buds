@@ -275,6 +275,21 @@ PrefabInstance:
       propertyPath: scheduleItems.Array.data[2]
       value: 
       objectReference: {fileID: 1919028740}
+    - target: {fileID: 5959862845529720922, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.8915094
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959862845529720922, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.91459256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959862845529720922, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.7529412
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd8268237509340628639d7903bfaee3, type: 3}
 --- !u!114 &704488073 stripped
