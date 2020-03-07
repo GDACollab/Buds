@@ -340,6 +340,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Phone Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 5733088731597938700, guid: 422ab1171af6141329c4d1995db7c11b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5733088731597938701, guid: 422ab1171af6141329c4d1995db7c11b,
         type: 3}
       propertyPath: m_LocalPosition.x
