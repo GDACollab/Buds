@@ -1835,7 +1835,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -34.73}
+  m_AnchoredPosition: {x: -52.1, y: -34.73}
   m_SizeDelta: {x: 79.35, y: 55.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1501722021
@@ -2113,11 +2113,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PhoneButton
       objectReference: {fileID: 0}
-    - target: {fileID: 5959862844235851112, guid: dd8268237509340628639d7903bfaee3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5959862844235851116, guid: dd8268237509340628639d7903bfaee3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2230,14 +2225,14 @@ PrefabInstance:
       objectReference: {fileID: 488749924}
     - target: {fileID: 5959862844596643390, guid: dd8268237509340628639d7903bfaee3,
         type: 3}
-      propertyPath: scheduleItems.Array.data[2]
-      value: 
-      objectReference: {fileID: 488749922}
-    - target: {fileID: 5959862844596643390, guid: dd8268237509340628639d7903bfaee3,
-        type: 3}
       propertyPath: scheduleItems.Array.data[1]
       value: 
       objectReference: {fileID: 488749923}
+    - target: {fileID: 5959862844596643390, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: scheduleItems.Array.data[2]
+      value: 
+      objectReference: {fileID: 488749922}
     - target: {fileID: 5959862844596643390, guid: dd8268237509340628639d7903bfaee3,
         type: 3}
       propertyPath: phoneAnim
@@ -2376,7 +2371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87231326372245705}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.65, y: -2.34, z: 0}
+  m_LocalPosition: {x: 3.83, y: -2.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 261241275}
@@ -2487,7 +2482,7 @@ PrefabInstance:
     - target: {fileID: 3712986409564825154, guid: bd80be7107f83494981fbd1de2351882,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.65
+      value: 3.83
       objectReference: {fileID: 0}
     - target: {fileID: 3712986409564825154, guid: bd80be7107f83494981fbd1de2351882,
         type: 3}
