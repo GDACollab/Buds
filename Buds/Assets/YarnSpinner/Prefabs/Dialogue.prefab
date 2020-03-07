@@ -1264,11 +1264,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yarnScripts: []
+  textLanguage: 
   variableStorage: {fileID: 5935829475398715335}
   dialogueUI: {fileID: 5935829475398715334}
   startNode: 
   startAutomatically: 0
   automaticCommands: 1
+  onNodeComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5935829475398715334
 MonoBehaviour:
   m_ObjectHideFlags: 0
