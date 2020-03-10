@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb7f94c26b714b8eb24093282a00d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildIndexes: 000000000100000002000000
+  buildIndexes: 010000000000000002000000
   scheduleItems:
   - {fileID: 0}
   - {fileID: 0}
@@ -264,7 +264,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 141.01, y: 68.5}
-  m_SizeDelta: {x: 240, y: 90}
+  m_SizeDelta: {x: 200, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5959862845529720923
 CanvasRenderer:

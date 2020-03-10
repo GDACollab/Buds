@@ -61,8 +61,6 @@ public class DragAndDrop : MonoBehaviour
             minY = Mathf.NegativeInfinity;
         }
 
-        SnapToPot();
-
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         initialSortingOrders = new int[spriteRenderers.Length];
         for (int i = 0; i < spriteRenderers.Length; i++)
@@ -72,6 +70,10 @@ public class DragAndDrop : MonoBehaviour
 
         sourcePosition = transform.position;
         targetPosition = transform.position;
+
+        if (gameObject.GetComponent<RectTransform>() == null) {
+            SnapToPot();
+        }
     }
 
     // Update is called once per frame

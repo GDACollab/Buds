@@ -21,6 +21,7 @@ public class WateringCan : MonoBehaviour
     private GameObject currentPlant;
     private GameObject startShadow;
     private bool onStartShadow;
+    private bool justPickedUp;
 
     private ParticleSystem water;
 
@@ -110,17 +111,22 @@ public class WateringCan : MonoBehaviour
             Drop(onto: currentPlant);
         }
 
-        if (!onStartShadow) {
+        justPickedUp &= onStartShadow;
+
+        if (!onStartShadow && !justPickedUp) {
             watering = true;
             water.Play();
             StopCoroutine("RotateGradually");
             StartCoroutine("RotateGradually");
         }
-        
+        else if (onStartShadow) {
+            justPickedUp = true;
+            Cursor.visible = !Cursor.visible;
+        } 
     }
 
     private void OnMouseUp() {
-        if (!onStartShadow || transform.rotation != initialRotation) {
+        if (!onStartShadow && !justPickedUp || transform.rotation != initialRotation) {
             watering = false;
             water.Stop();
             StopCoroutine("RotateGradually");
