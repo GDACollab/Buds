@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8299669b5ef04b14cb8ac2b15efb1ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggle: 0
+  toggle: 1
   dropAndHold: 0
   offsetOn: 0
   yMovementOnly: 1
