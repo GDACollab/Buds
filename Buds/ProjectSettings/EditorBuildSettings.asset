@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Scenes/Plant Care Minigame.unity
-    guid: 9ce033f1a2405457784a7c8cbd972fae
+    path: Assets/Scenes/Main Scenes/Flower Minigame.unity
+    guid: 2dfcc18cae07c412fbafa9521dc79531
   - enabled: 1
     path: Assets/Scenes/Main Scenes/Playtest2_Retail Friend.unity
     guid: 536cd7e2021d3fe4a810ddcde60326fe
