@@ -7,11 +7,11 @@ position: 222, 222
 <<changeFace Character RF_Smile>>
 Hello, are we looking for anything in {{particular| }} today?
 <<changeSpeaker BlankText MC>>
-Oh, uh, yeah I was just wondering what books you have that are similar to {{Magic of the Earth| }}?
+MC: Oh, uh, yeah I was just wondering what books you have that are similar to {{Magic of the Earth| }}?
 <<changeSpeaker BlankText RF>>
 Oh, you like {{urban fantasy| }}?
 <<changeSpeaker BlankText MC>>
-What’s {{that| }}?
+MC: What’s {{that| }}?
 <<changeSpeaker BlankText RF>>
 That’s the genre {{Samuel and the Mythical Columbianus| }} and {{Daughter of the Sword| }} are in.
 <<changeSpeaker BlankText MC>>
@@ -28,24 +28,24 @@ position: 222, 227
 <<changeSpeaker BlankText RF>>
 Well, the {{most popular new releases| }} for urban fantasy are right over here.
 <<changeSpeaker BlankText MC>>
-Oh *walks over and begins looking at books*
+MC: Oh *walks over and begins looking at books*
 <<changeSpeaker BlankText RF>>
 Let me {{kn-| }} 
 <<changeSpeaker BlankText MC>>
-Which ones {{do you like| }}?
+MC: Which ones {{do you like| }}?
 <<changeSpeaker BlankText RF>>
 <<changeFace Character RF_Confused>>
 I’m {{sorry| }}?
 <<changeSpeaker BlankText MC>>
-Which urban fantasy books {{do you like| }}?
+MC: Which urban fantasy books {{do you like| }}?
 <<changeSpeaker BlankText RF>>
 Oh. Um. Well I’m not a huge fan of the new releases, I like books like {{The Dawn of the Crooked| }} but those aren’t particularly well received.
 <<changeSpeaker BlankText MC>>
-Where is that?
+MC: Where is that?
 <<changeSpeaker BlankText RF>>
 Oh.. um I believe you can find it over {{here| }}.
-<<changeSpeaker BlankText MF>>
-{{This one| }}?
+<<changeSpeaker BlankText MC>>
+MC: {{This one| }}?
 <<changeSpeaker BlankText RF>>
 <<changeFace Character RF_Smile>>
 {{Yup| }}, that’s the one!
@@ -70,12 +70,12 @@ It’s...
 <<changeFace Character RF_Confused>>
 Ah{{...| }} 
 <<changeSpeaker BlankText MC>>
-Well that sounds… {{interesting| }} (holding the book)
+MC: Well that sounds… {{interesting| }} (holding the book)
 <<changeSpeaker BlankText RF>>
 Haha...(awkward laugh) It’s a good book, but The Maiden of the Silver Sea is far more popular right now, it’s a thrilling tale about a young woman who finds herself through travelling the sea and meeting a charming, handsome prince.
 <<changeFace Character RF_Smile>>
 <<changeSpeaker BlankText MC>>
-Oh... uh, I think I’ll take {{this one| }} (holding the book RF originally recommended)
+MC: Oh... uh, I think I’ll take {{this one| }} (holding the book RF originally recommended)
 <<changeSpeaker BlankText RF>>
 Oh... ok, I can {{ring you up| }} right over here.
 <<changeFace Character RF_Confused>>
@@ -83,7 +83,7 @@ Oh... ok, I can {{ring you up| }} right over here.
 <<changeFace Character RF_Smile>>
 Thank you for your {{purchase| }}, please come again.
 <<changeSpeaker BlankText MC>>
-Yeah, this book seems interesting. I’ll tell you {{what I think| }} about it.
+MC: Yeah, this book seems interesting. I’ll tell you {{what I think| }} about it.
 <<changeSpeaker BlankText RF>>
 <<changeFace Character RF_Confused>>
 (while MC is heading out the door) oh.. Uh…

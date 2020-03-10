@@ -61,4 +61,8 @@ public class OrderedSceneNavigator : MonoBehaviour
         SceneManager.LoadSceneAsync(sceneIndex);
     }
 
+    public void Reset() {
+        SceneManager.LoadScene(0);
+    }
+
 }
