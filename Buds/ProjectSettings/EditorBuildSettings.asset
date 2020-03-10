@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Scenes/Playtest2_Retail Friend.unity
     guid: 536cd7e2021d3fe4a810ddcde60326fe
+  - enabled: 0
+    path: Assets/Scenes/Test Scenes/TestPersistent1.unity
+    guid: fe5a34f0b583dd74c8874cb892bad944
+  - enabled: 0
+    path: Assets/Scenes/Test Scenes/TestPersistent2.unity
+    guid: 6b0691598f5edb44ebe4b829b232f450
+  - enabled: 0
+    path: Assets/Scenes/Test Scenes/Flower Prefab Test 2.unity
+    guid: 56e9ff94978114bbfb074334c42f948f
   m_configObjects: {}
