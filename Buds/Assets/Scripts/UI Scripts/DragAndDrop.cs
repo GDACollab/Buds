@@ -121,46 +121,52 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!animating) {
-            if (!dragging) {
-                dragging = true;
-                snapped = false;
-            }
-            else if (dragging && toggle) {
-                
-                snapped = SnapToPot();
-                dragging = false;
+        if (enabled) {
+            if (!animating) {
+                if (!dragging) {
+                    dragging = true;
+                    snapped = false;
+                }
+                else if (dragging && toggle) {
 
-            }
+                    snapped = SnapToPot();
+                    dragging = false;
 
-            for (int i = 0; i < spriteRenderers.Length; i++)
-                spriteRenderers[i].sortingOrder = !finished ? initialSortingOrders[i] + 2 : initialSortingOrders[i];
+                }
 
-            if (dropAndHold) {
-                dragging = !finished;
-                finished = !dragging ? dragging : finished;
+                for (int i = 0; i < spriteRenderers.Length; i++)
+                    spriteRenderers[i].sortingOrder = !finished ? initialSortingOrders[i] + 2 : initialSortingOrders[i];
+
+                if (dropAndHold) {
+                    dragging = !finished;
+                    finished = !dragging ? dragging : finished;
+                }
             }
         }
+        
     }
 
     private void OnMouseUp()
     {
-        if (!animating) {
-            if (!toggle) {
-                snapped = SnapToPot();
-                dragging = false;
-            }
-
-            if (dragging && dropAndHold) {
-                if (lastMoveTo != null && itemBeingDragged != null) {
-                    itemBeingDragged.Lift(from: lastMoveTo);
+        if (enabled) {
+            if (!animating) {
+                if (!toggle) {
+                    snapped = SnapToPot();
+                    dragging = false;
                 }
+
+                if (dragging && dropAndHold) {
+                    if (lastMoveTo != null && itemBeingDragged != null) {
+                        itemBeingDragged.Lift(from: lastMoveTo);
+                    }
+                }
+
+
+                for (int i = 0; i < spriteRenderers.Length; i++)
+                    spriteRenderers[i].sortingOrder = dragging ? initialSortingOrders[i] + 2 : initialSortingOrders[i];
             }
-
-
-            for (int i = 0; i < spriteRenderers.Length; i++)
-                spriteRenderers[i].sortingOrder = dragging ? initialSortingOrders[i] + 2 : initialSortingOrders[i];
         }
+        
     }
 
     //Snaps the object to the nearest flowerpot
@@ -241,13 +247,3 @@ public class DragAndDrop : MonoBehaviour
         return true;
     }
 }
-
-//Simple explanation of single variables
-/*
- * if(main == NULL)
- * {
- *      this == Main
- * }
- * else
- *      this.destroy
- */
