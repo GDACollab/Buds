@@ -14,9 +14,11 @@ namespace Yarn.Unity
         public Text buttonText;
         public bool goToNextLine;
         public GameObject DialogContainer;
+        ///public DialogueRunner DialogueRunner;
 
         public int lineTextIndex;
         int activeButtons;
+        DialogueRunner DialogueRunner;
 
         /// How quickly to show the text, in seconds per character
         [Tooltip("How quickly to show the text, in seconds per character")]
@@ -57,7 +59,11 @@ namespace Yarn.Unity
 
         void Start()
         {
-
+            DialogueRunner = this.gameObject.GetComponent<DialogueRunner>();
+            if(DialogueRunner == null)
+            {
+                Debug.Log("Dialogue Runner not found");
+            }
         }
 
         /*
@@ -168,7 +174,7 @@ namespace Yarn.Unity
                 ++index;
             }
             //reads the node to travel to when the button is clicked
-            while (LineText[index] != '}' && LineText[index + 1] != '}')
+            while (LineText[index] != '}' || LineText[index + 1] != '}')
             {
                 //please make sure to put in this second brace I haven't written an exception yet and it WILL explode if it isn't found
                 nextNode += LineText[index];
@@ -188,13 +194,19 @@ namespace Yarn.Unity
             }
             else
             {
-                throw new NotImplementedException("NODE JUMPING NOT SUPPORTED");
-                //DialogueRunner.NodeExists(node) returns true/false if the node is, in fact, a node.
-                //newButton.onClick.AddListener();//method that causes node jumps
-                //the yarn way is really complicated and I don't understand it
-                //need better examples
-                //the secret lies in DialogueUI.SetOption, which I can't find in the DialogueUI script.
-                //But the script it looks for is DialogueRunner...?
+                //checks if the listed node destination actually exists
+                if (!DialogueRunner.NodeExists(nextNode))
+                {
+                    //lol this is an exception but I don't know how to write
+                    Debug.Log("Get ready for a null reference exception!");
+                }
+                else
+                {
+                    //changes the node to the destination and continues dialogue
+                    //ha! a lambda! am I a c# programmer now?
+                    newButton.onClick.AddListener(() => { JumpNode(nextNode); });
+
+                }
             }
 
             //creates a new, blank, text object for the rest of the line to go on.
@@ -277,5 +289,13 @@ namespace Yarn.Unity
 
 
         }*/
+
+        //Changes the dialogue to a different Yarn Node
+        private void JumpNode(string node)
+        {
+            DialogueRunner.dialogue.Stop();
+            DialogueRunner.dialogue.SetNode(node);
+            DialogueRunner.dialogue.Continue();
+        }
     }
 }

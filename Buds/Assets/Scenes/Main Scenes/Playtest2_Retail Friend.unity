@@ -467,6 +467,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Custom
       objectReference: {fileID: 0}
+    - target: {fileID: 4848793850182898019, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848793850182898019, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848793850182898019, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848793850182898019, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: 7aedaf451afd9594b8f441144c0de90d,
+        type: 3}
     - target: {fileID: 5693654786126013478, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
       propertyPath: m_HorizontalFit
@@ -496,12 +517,12 @@ PrefabInstance:
         type: 3}
       propertyPath: yarnScripts.Array.data[0]
       value: 
-      objectReference: {fileID: 2480198943629176163, guid: 7c02b13f7aca6524f9840b4cbbf20fbe,
+      objectReference: {fileID: 2480198943629176163, guid: 47a2c335c3f452749a4d235bbe926f34,
         type: 3}
     - target: {fileID: 5935829475398715329, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
       propertyPath: startNode
-      value: RFfirstMeeting
+      value: TestDialog
       objectReference: {fileID: 0}
     - target: {fileID: 5935829475857655952, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
