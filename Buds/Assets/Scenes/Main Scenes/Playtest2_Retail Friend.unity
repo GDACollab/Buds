@@ -864,46 +864,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Phone Menu
       objectReference: {fileID: 0}
-    - target: {fileID: 5733088731597938700, guid: 422ab1171af6141329c4d1995db7c11b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5733088731597938701, guid: 422ab1171af6141329c4d1995db7c11b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.3846758
-      objectReference: {fileID: 0}
-    - target: {fileID: 5733088731597938701, guid: 422ab1171af6141329c4d1995db7c11b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.9539993
-      objectReference: {fileID: 0}
-    - target: {fileID: 5733088731597938701, guid: 422ab1171af6141329c4d1995db7c11b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2515.438
-      objectReference: {fileID: 0}
-    - target: {fileID: 5733088731597938701, guid: 422ab1171af6141329c4d1995db7c11b,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5733088731597938701, guid: 422ab1171af6141329c4d1995db7c11b,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5733088731597938701, guid: 422ab1171af6141329c4d1995db7c11b,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5733088731597938701, guid: 422ab1171af6141329c4d1995db7c11b,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5733088731597938701, guid: 422ab1171af6141329c4d1995db7c11b,
         type: 3}
       propertyPath: m_RootOrder

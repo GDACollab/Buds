@@ -82,6 +82,7 @@ public class OrderedSceneNavigator : MonoBehaviour
     public void RetrieveSchedule() {
         if (!PersistentData.instance.ContainsKey("numCompleted")) {
             PersistentData.instance.StoreData("numCompleted", 0);
+            PersistentData.instance.StoreData("todaysSchedule", sceneOrder.Values);
         }
         numCompleted = (int)PersistentData.instance.ReadData("numCompleted");
 
@@ -103,6 +104,7 @@ public class OrderedSceneNavigator : MonoBehaviour
                 {
                     case 0:
                         confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Confirm Schedule";
+                        confirmButton.transform.parent.GetChild(1).GetComponent<Text>().text = System.DateTime.Today.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP"));
                         confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "8:00";
 
                         break;
@@ -117,6 +119,7 @@ public class OrderedSceneNavigator : MonoBehaviour
                             dnd.maxY = (dnd.maxY + dnd.minY) / 2;
                         }
 
+                        confirmButton.transform.parent.GetChild(1).GetComponent<Text>().text = System.DateTime.Today.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP"));
                         confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "10:00";
 
                         break;
@@ -128,6 +131,7 @@ public class OrderedSceneNavigator : MonoBehaviour
                         }
 
                         confirmButton.transform.GetChild(0).GetComponent<Text>().text = "OK";
+                        confirmButton.transform.parent.GetChild(1).GetComponent<Text>().text = System.DateTime.Today.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP"));
                         confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "14:00";
 
                         break;
@@ -135,6 +139,8 @@ public class OrderedSceneNavigator : MonoBehaviour
                         dnd.enabled = false;
                         scheduleItems[newOrder].transform.GetChild(1).GetChild(1).gameObject.SetActive(true);
 
+                        confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Enter the Void";
+                        confirmButton.transform.parent.GetChild(1).GetComponent<Text>().text = System.DateTime.Today.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP"));
                         confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "18:00";
 
                         break;

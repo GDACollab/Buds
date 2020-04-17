@@ -81,7 +81,6 @@ public class DragAndDrop : MonoBehaviour
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 offset = offsetOn ? new Vector2(-0.5f, 0.5f) : Vector2.zero;
-
         if (dragging && screenRect.Contains(Input.mousePosition))
         {
             //Mouse position on the screen uses different coordinates, needs to be corrected
@@ -167,6 +166,12 @@ public class DragAndDrop : MonoBehaviour
             }
         }
         
+    }
+
+    public void SetTarget() {
+        oldPosition = this.transform.position;
+        sourcePosition = transform.position;
+        targetPosition = transform.position;
     }
 
     //Snaps the object to the nearest flowerpot
