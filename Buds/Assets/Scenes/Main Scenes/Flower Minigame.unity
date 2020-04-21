@@ -608,6 +608,16 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.5743589
       objectReference: {fileID: 0}
+    - target: {fileID: 5274595591093496474, guid: 8bf820368603745e3a1fde16aa2c1c29,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531561674670203201, guid: 8bf820368603745e3a1fde16aa2c1c29,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5976644353274293561, guid: 8bf820368603745e3a1fde16aa2c1c29,
         type: 3}
       propertyPath: m_Name
@@ -1132,7 +1142,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447120639}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 52852274a13df4c169e95c3c6714690a, type: 3}
@@ -2044,6 +2054,16 @@ PrefabInstance:
         type: 3}
       propertyPath: daysOfWaterNeeded
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5274595591093496474, guid: 8bf820368603745e3a1fde16aa2c1c29,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531561674670203201, guid: 8bf820368603745e3a1fde16aa2c1c29,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5976644353274293561, guid: 8bf820368603745e3a1fde16aa2c1c29,
         type: 3}

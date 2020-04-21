@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /** <summary>
  * Keeps track of the data about a plant as it grows,
@@ -15,6 +16,9 @@ using UnityEngine;
 
 public class Plant: MonoBehaviour, IDraggable
 {
+    [Header("General")]
+    public bool showIndicators;
+
     [Header("Species-Specific Data")]
 
     [Tooltip("The amount of sunlight the plant needs")]
@@ -45,11 +49,16 @@ public class Plant: MonoBehaviour, IDraggable
     public float daysToNextStage;
 
     public enum LifeStage {
-        Seed, Seedling, Young, Mature, Flowering
+        Seed, Sprout, FullPlant, Blossom
     }
+
+    private string[] lifeStageStrings = { "Seed", "Sprout", "<size=16>Full</size>\nPlant", "Blossom\n<size=16>(Final)</size>" };
 
     private SpriteRenderer soil;
     private ParticleSystem sparkles;
+    private Text growthStageText;
+    private Slider waterLevelBar;
+    private Image sunlightIcon;
 
     void Awake()
     {
@@ -57,6 +66,9 @@ public class Plant: MonoBehaviour, IDraggable
 
         soil = transform.GetChild(0).GetComponent<SpriteRenderer>();
         sparkles = GetComponentInChildren<ParticleSystem>();
+        growthStageText = transform.GetChild(2).GetChild(2).GetComponent<Text>();
+        waterLevelBar = transform.GetChild(2).GetChild(3).GetComponent<Slider>();
+        sunlightIcon = transform.GetChild(2).GetChild(4).GetComponent<Image>();
     }
 
     /// <summary>
@@ -118,7 +130,7 @@ public class Plant: MonoBehaviour, IDraggable
     // Causes plant to grow one day if it is in good condition
     private void Grow() {
         if (hasEnoughSun && hasEnoughWater &&
-                growthStage != LifeStage.Flowering) {
+                growthStage != LifeStage.Blossom) {
 
             daysToNextStage--;
 
@@ -161,8 +173,26 @@ public class Plant: MonoBehaviour, IDraggable
     // Updates soil color and sparkles based on whether the plant has enough
     // water and sunlight
     private void UpdateAppearance() {
+        if (showIndicators) {
+            transform.GetChild(2).gameObject.SetActive(true);
+        }
+        else {
+            transform.GetChild(2).gameObject.SetActive(false);
+        }
+        
+
         float soilDarkness = daysToNextWatering / daysOfWaterNeeded;
         soil.color = new Color(soil.color.r, soil.color.g, soil.color.b, soilDarkness);
+        growthStageText.text = lifeStageStrings[(int)growthStage];
+        waterLevelBar.value = soilDarkness;
+
+        if (hasEnoughSun) {
+            sunlightIcon.color = new Color(1f, 1f, 0f);
+        }
+        else {
+            sunlightIcon.color = new Color(0.5f, 0.5f, 0f);
+        }
+        
 
         if (hasEnoughSun && hasEnoughWater) {
             sparkles.Play();
@@ -178,7 +208,7 @@ public class Plant: MonoBehaviour, IDraggable
     }
 
     private void OnEnable() {
-        if (PersistentData.instance.ContainsKey(gameObject.name)) {
+        if (PersistentData.instance != null && PersistentData.instance.ContainsKey(gameObject.name)) {
             Plant previousValues = (Plant)PersistentData.instance.ReadData(gameObject.name);
             hasEnoughSun = previousValues.hasEnoughSun;
             hasEnoughWater = previousValues.hasEnoughWater;

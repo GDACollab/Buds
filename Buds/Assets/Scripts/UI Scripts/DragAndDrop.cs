@@ -21,6 +21,9 @@ public class DragAndDrop : MonoBehaviour
     public float minY;
     public float animationTime;
 
+    [HideInInspector]
+    public bool background;
+
     bool finished;
     bool dragging;
 
@@ -115,6 +118,10 @@ public class DragAndDrop : MonoBehaviour
             animating = false;
             sourcePosition = targetPosition;
             animationTimer = 0.0f;
+            if (!dragging && background && !dropAndHold) {
+                SnapToPot();
+                background = false;
+            }
         }
     }
 
@@ -224,12 +231,13 @@ public class DragAndDrop : MonoBehaviour
             {
                 DragAndDrop flowerScript = flower.GetComponent<DragAndDrop>();
                 flowerScript.sourcePosition = flowerScript.transform.position;
-                
+
                 flower.transform.position = animationTime == 0
                     ? this.oldPosition
                     : flowerScript.sourcePosition;
                 flowerScript.targetPosition = this.oldPosition;
 
+                flowerScript.background = true;
                 flowerScript.oldPosition = flowerScript.targetPosition;
             }
         }

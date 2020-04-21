@@ -44,11 +44,9 @@ public class WateringCan : MonoBehaviour
     /// Stops watering the plant the watering can is lifted from if there is one.
     /// </summary>
     public void Lift(GameObject from) {
-        if (watering) {
-            Plant plantToWater = from.GetComponent<PlantSpot>().currentFlower;
-            if (plantToWater != null) {
-                plantToWater.StopWatering();
-            }
+        Plant plantToWater = from.GetComponent<PlantSpot>().currentFlower;
+        if (plantToWater != null) {
+            plantToWater.StopWatering();
         }
     }
 
