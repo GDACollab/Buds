@@ -53,6 +53,22 @@ public class WateringCan : MonoBehaviour
     }
 
     /// <summary>
+    /// Sets the watering can back on its shadow
+    /// </summary>
+    public void Release() {
+        if (!onStartShadow) {
+            transform.position = startShadow.transform.position;
+            onStartShadow = true;
+            StopAllCoroutines();
+            transform.rotation = initialRotation;
+            transform.GetChild(0).rotation = initialRotation;
+            transform.GetChild(1).rotation = initialRotation;
+            water.Clear();
+            SendMessage("OnMouseDown");
+        }
+    }
+
+    /// <summary>
     /// Tilts the transform from initialRotation to wateringRotation in tiltTime seconds.
     /// </summary>
     /// <returns></returns>

@@ -87,7 +87,7 @@ public class Plant: MonoBehaviour, IDraggable
     /// <summary>
     /// Simulates plant's growth and water use for specified number of days.
     /// </summary>
-    public void PassTime(int days) {
+    public void PassTime(int days = 1) {
         for (int i = 0; i < days; i++) {
             Grow();
             UseWater();
@@ -169,6 +169,24 @@ public class Plant: MonoBehaviour, IDraggable
         }
         else {
             sparkles.Stop();
+        }
+    }
+
+    private void OnDisable() {
+        PersistentData.instance.StoreData(gameObject.name, this);
+        PersistentData.instance.StoreData($"{gameObject.name} position", transform.position);
+    }
+
+    private void OnEnable() {
+        if (PersistentData.instance.ContainsKey(gameObject.name)) {
+            Plant previousValues = (Plant)PersistentData.instance.ReadData(gameObject.name);
+            hasEnoughSun = previousValues.hasEnoughSun;
+            hasEnoughWater = previousValues.hasEnoughWater;
+            daysToNextWatering = previousValues.daysToNextWatering;
+            growthStage = previousValues.growthStage;
+            daysToNextStage = previousValues.daysToNextStage;
+            transform.position = (Vector3)PersistentData.instance.ReadData($"{gameObject.name} position");
+            PassTime();
         }
     }
 }
