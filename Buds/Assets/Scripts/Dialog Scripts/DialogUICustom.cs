@@ -3,15 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using Yarn;
 
 namespace Yarn.Unity
 {
     public class DialogUICustom : Yarn.Unity.DialogueUIBehaviour
     {
-        public Text text;
+        public TextMeshProUGUI text;
         public Button button;
-        public Text buttonText;
+        public TextMeshProUGUI buttonText;
         public bool goToNextLine;
         public GameObject DialogContainer;
 
@@ -146,7 +147,6 @@ namespace Yarn.Unity
         {
             //local variables
             Button newButton;
-            Text newText;
             string buttonText = "";
             string nextNode = "";
             bool breaker = false;
@@ -177,7 +177,7 @@ namespace Yarn.Unity
 
             //creates the actual new button and sets it text
             newButton = Instantiate(button, DialogContainer.transform);
-            newButton.transform.GetChild(0).gameObject.GetComponent<Text>().text = buttonText;
+            newButton.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = buttonText;
 
             //gives the button proper functionality
             Debug.Log("NextNode is >" + nextNode + "<");
@@ -198,7 +198,7 @@ namespace Yarn.Unity
             }
 
             //creates a new, blank, text object for the rest of the line to go on.
-            newText = Instantiate(text, DialogContainer.transform);
+            var newText = Instantiate(text, DialogContainer.transform);
             text = newText;
             text.text = "";
 
@@ -212,7 +212,6 @@ namespace Yarn.Unity
         //Resets the objects in the UI so that new ones can be used for new lines
         private void TextUIReset()
         {
-            Text newText;
             //GameObject[] oldUI;
 
             //holy god for the love of all that is good in the world please make this function
@@ -231,7 +230,7 @@ namespace Yarn.Unity
             }
 
             //creates an new text to write things on
-            newText = Instantiate(text, DialogContainer.transform);
+            var newText = Instantiate(text, DialogContainer.transform);
             text = newText;
             //text.name = "BlankText";
 
