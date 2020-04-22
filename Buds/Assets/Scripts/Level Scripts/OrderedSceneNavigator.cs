@@ -99,12 +99,14 @@ public class OrderedSceneNavigator : MonoBehaviour
                 scheduleItems[newOrder].transform.position = new Vector3(oldX, newY, 0f);
 
                 DragAndDrop dnd = scheduleItems[newOrder].GetComponent<DragAndDrop>();
-                
+
+                confirmButton.transform.parent.GetChild(1).GetComponent<Text>().text = System.DateTime.Today.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP"));
+
                 switch (numCompleted)
                 {
                     case 0:
                         confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Confirm Schedule";
-                        confirmButton.transform.parent.GetChild(1).GetComponent<Text>().text = System.DateTime.Today.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP"));
+                        
                         confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "8:00";
 
                         break;
@@ -119,7 +121,6 @@ public class OrderedSceneNavigator : MonoBehaviour
                             dnd.maxY = (dnd.maxY + dnd.minY) / 2;
                         }
 
-                        confirmButton.transform.parent.GetChild(1).GetComponent<Text>().text = System.DateTime.Today.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP"));
                         confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "10:00";
 
                         break;
@@ -131,7 +132,6 @@ public class OrderedSceneNavigator : MonoBehaviour
                         }
 
                         confirmButton.transform.GetChild(0).GetComponent<Text>().text = "OK";
-                        confirmButton.transform.parent.GetChild(1).GetComponent<Text>().text = System.DateTime.Today.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP"));
                         confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "14:00";
 
                         break;
@@ -140,7 +140,6 @@ public class OrderedSceneNavigator : MonoBehaviour
                         scheduleItems[newOrder].transform.GetChild(1).GetChild(1).gameObject.SetActive(true);
 
                         confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Enter the Void";
-                        confirmButton.transform.parent.GetChild(1).GetComponent<Text>().text = System.DateTime.Today.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP"));
                         confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "18:00";
 
                         break;
