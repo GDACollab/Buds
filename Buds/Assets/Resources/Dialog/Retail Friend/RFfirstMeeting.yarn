@@ -3,7 +3,7 @@ tags:
 colorID: 0
 position: 222, 222
 ---
-<<changeSpeaker BlankText RF>>
+<<changeSpeaker RF>>
 <<changeFace Character RF_Smile>>
 Hello, are we looking for anything in {{particular| }} today?
 <<changeSpeaker BlankText MC>>
