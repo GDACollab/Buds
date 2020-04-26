@@ -18,6 +18,7 @@ namespace Yarn.Unity
 
         DialogueRunner DialogueRunner;
         int activeButtons;
+        Color textColor = Color.yellow;
         //int charactersOnLine;  
         
         //Text buttonText;
@@ -106,7 +107,7 @@ namespace Yarn.Unity
                     TextNewLine();
                     charsOnLine = 0;
                 }
-                else if (lineText[i] == '{' && lineText[i + 1] == '{')
+                else if (lineText[i] == '{' && i + 1 < lineText.Length -1 && lineText[i + 1] == '{')
                 {
                     i = CreateTextButton(lineText, i);
                 }
@@ -257,6 +258,7 @@ namespace Yarn.Unity
             buttonText = button.transform.GetChild(0).gameObject.GetComponent<Text>();
 
             text.text = "";
+            text.color = textColor;
             activeButtons = 0;
         }
 
@@ -265,6 +267,7 @@ namespace Yarn.Unity
         {
             DialogContainer = Instantiate(DialogContainerPrefab, DialogSuperContainer.transform);
             text = Instantiate(DialogTextPrefab, DialogContainer.transform);
+            text.color = textColor;
             button = Instantiate(DialogButtonPrefab, DialogContainer.transform);
             buttonText = button.transform.GetChild(0).gameObject.GetComponent<Text>();
         }
@@ -285,7 +288,7 @@ namespace Yarn.Unity
             switch (newSpeaker)
             {
                 case "MC":
-                    text.color = Color.white;
+                    textColor = Color.white;
                     System.Diagnostics.Debug.Assert(text.color == Color.white);
                     break;
 
@@ -299,7 +302,7 @@ namespace Yarn.Unity
                     {
                         Debug.Log("Text not here here");
                     }
-                    text.color = Color.yellow;
+                    textColor = Color.yellow;
                     System.Diagnostics.Debug.Assert(text.color == Color.yellow);
                     break;
 
@@ -310,7 +313,7 @@ namespace Yarn.Unity
 
                 default:
                     UnityEngine.Debug.Log("Error: " + newSpeaker + " not a recognized speaker. Defaulting to MC as speaker");
-                    text.color = Color.white;
+                    textColor = Color.white;
                     break;
             }
 
