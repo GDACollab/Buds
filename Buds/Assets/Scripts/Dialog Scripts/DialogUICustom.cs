@@ -11,21 +11,21 @@ namespace Yarn.Unity
     {
         public Text DialogTextPrefab;
         public Button DialogButtonPrefab;
-        //public Text buttonText;
+        public GameObject DialogContainerPrefab;
+        public GameObject DialogSuperContainer;
         public bool goToNextLine;
-        public GameObject DialogContainer;
-        
-
         public int lineTextIndex;
-        int activeButtons;
-        int charactersOnline;
+
         DialogueRunner DialogueRunner;
-        GameObject DialogSuperContainer;
+        int activeButtons;
+        //int charactersOnLine;  
+        
         //Text buttonText;
 
         Text text;
         Button button;
         Text buttonText;
+        GameObject DialogContainer;
 
         /// How quickly to show the text, in seconds per character
         [Tooltip("How quickly to show the text, in seconds per character")]
@@ -72,22 +72,6 @@ namespace Yarn.Unity
                 Debug.Log("Dialogue Runner not found");
             }
 
-            DialogSuperContainer = DialogContainer.transform.parent.gameObject;
-            if(DialogSuperContainer == null)
-            {
-                Debug.Log("Dialogue Super Container not found");
-            }
-
-            /*buttonText = button.transform.GetChild(0);
-            if(buttonText == null)
-            {
-                Debug.Log("DialogueButton's Text Child not found");
-            }*/
-
-            /* Text text = textPrime;
-            Button button = buttonPrime;
-            Text buttonText = buttonTextPrime;*/
-
             DialogueRunner.AddCommandHandler("changeSpeaker", changeSpeaker);
 
             TextUIReset();
@@ -109,6 +93,7 @@ namespace Yarn.Unity
         private IEnumerator DoRunLine(Line line, IDictionary<string, string> strings, Action onLineComplete)
         {
             var lineText = strings[line.ID];
+            int charsOnLine = 0;
             TextUIReset();
             //text.text = "";
             //Debug.Log(strings[line.ID]);
@@ -116,7 +101,12 @@ namespace Yarn.Unity
             //text.text = lineText
             for (int i = 0; i < lineText.Length; ++i)
             {
-                if (lineText[i] == '{' && lineText[i + 1] == '{')
+                if (charsOnLine > 60 && lineText[i] == ' ')
+                {
+                    TextNewLine();
+                    charsOnLine = 0;
+                }
+                else if (lineText[i] == '{' && lineText[i + 1] == '{')
                 {
                     i = CreateTextButton(lineText, i);
                 }
@@ -124,10 +114,12 @@ namespace Yarn.Unity
                 {
                     text.text += lineText[i];
                 }
+                ++charsOnLine;
+                //Debug.Log(i);
             }
 
             //If the line has no buttons, continue in 3 seconds
-            //If it does, wait until one is clicked
+            //If it does, wait until one is clicked 
             goToNextLine = false;
             if (activeButtons == 0)
             {
@@ -178,8 +170,6 @@ namespace Yarn.Unity
         private int CreateTextButton(string LineText, int index)
         {
             //local variables
-            Button newButton;
-            Text newText;
             string buttonText = "";
             string nextNode = "";
             bool breaker = false;
@@ -209,15 +199,15 @@ namespace Yarn.Unity
             }
 
             //creates the actual new button and sets it text
-            newButton = Instantiate(DialogButtonPrefab, DialogContainer.transform);
-            newButton.transform.GetChild(0).gameObject.GetComponent<Text>().text = buttonText;
+            button = Instantiate(DialogButtonPrefab, DialogContainer.transform);
+            button.transform.GetChild(0).gameObject.GetComponent<Text>().text = buttonText;
 
             //gives the button proper functionality
             Debug.Log("NextNode is >" + nextNode + "<");
             if (nextNode == " " || nextNode == "")
             {
                 //button advances dialogue if there's no node destination
-                newButton.onClick.AddListener(this.NextLine);
+                button.onClick.AddListener(this.NextLine);
             }
             else
             {
@@ -231,19 +221,18 @@ namespace Yarn.Unity
                 {
                     //changes the node to the destination and continues dialogue
                     //ha! a lambda! am I a c# programmer now?
-                    newButton.onClick.AddListener(() => { JumpNode(nextNode); });
+                    button.onClick.AddListener(() => { JumpNode(nextNode); });
 
                 }
             }
 
             //creates a new, blank, text object for the rest of the line to go on.
-            newText = Instantiate(DialogTextPrefab, DialogContainer.transform);
-            text = newText;
+            text = Instantiate(DialogTextPrefab, DialogContainer.transform);
             text.text = "";
 
             ++activeButtons;
             text.gameObject.SetActive(true);
-            newButton.gameObject.SetActive(true);
+            button.gameObject.SetActive(true);
             //we return index + 2 so the trailing braces aren't printed
             return index + 2;
         }
@@ -257,11 +246,12 @@ namespace Yarn.Unity
 
             //It was fixed by Thomas Applewhite, who had matured.
 
-            foreach (Transform child in DialogContainer.transform)
+            foreach (Transform child in DialogSuperContainer.transform)
             {
                 GameObject.Destroy(child.gameObject);
             }
 
+            DialogContainer = Instantiate(DialogContainerPrefab, DialogSuperContainer.transform);
             text = Instantiate(DialogTextPrefab, DialogContainer.transform);
             button = Instantiate(DialogButtonPrefab, DialogContainer.transform);
             buttonText = button.transform.GetChild(0).gameObject.GetComponent<Text>();
@@ -273,50 +263,11 @@ namespace Yarn.Unity
         //Creates a new line of text. May God have mercy on my immortal soul
         private void TextNewLine()
         {
-            /*//create a new dialogue container
-            DialogContainer = new GameObject("Dialogue Container", typeof(RectTransform), typeof(CanvasRenderer), typeof(HorizontalLayoutGroup));
-            DialogContainer.transform.parent = DialogSuperContainer.transform;
-            //create a new BlankText
-            text = new GameObject("BlankText", typeof(RectTransform), typeof(CanvasRenderer), typeof(Text));
-            text.transform.parent = DialogContainer.transform;
-            //create a new BlankButton*/
+            DialogContainer = Instantiate(DialogContainerPrefab, DialogSuperContainer.transform);
+            text = Instantiate(DialogTextPrefab, DialogContainer.transform);
+            button = Instantiate(DialogButtonPrefab, DialogContainer.transform);
+            buttonText = button.transform.GetChild(0).gameObject.GetComponent<Text>();
         }
-
-        /*
-         * UI Yarn Commands
-           jk we can't have yarn commands on this script because Dialogue Runner isn't one word guh hYUCK
-           either way I can't get it to work right now so yeah.
-
-        [YarnCommand("changeSpeaker")]
-        public void changeSpeaker(string newSpeaker)
-        {
-            Debug.Log("The command is actually executing");
-            switch (newSpeaker)
-            {
-                case "MC":
-                    text.color = Color.white;
-                    break;
-
-                case "SF":
-                    throw new NotImplementedException("SILVER FOX TEXT COLOR NOT SET");
-                    break;
-
-                case "RF":
-                    text.color = Color.yellow;
-                    break;
-
-                case "GB":
-                    throw new NotImplementedException("GAMER BRAT TEXT COLOR NOT SET");
-
-                default:
-                    Debug.Log("Error: " + newSpeaker + " not a recognized speaker. Defaulting to MC as speaker");
-                    text.color = Color.white;
-                    break;
-            }
-
-
-
-        }*/
 
         //Changes the dialogue to a different Yarn Node
         private void JumpNode(string node)
