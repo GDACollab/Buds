@@ -197,7 +197,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322595436}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -216,6 +216,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Custom
       objectReference: {fileID: 0}
+    - target: {fileID: 4068380849537614946, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5935829474855343396, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -231,6 +236,11 @@ PrefabInstance:
         type: 3}
       propertyPath: startNode
       value: RFfirstMeeting
+      objectReference: {fileID: 0}
+    - target: {fileID: 5935829475398715332, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6044217764974973353, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
