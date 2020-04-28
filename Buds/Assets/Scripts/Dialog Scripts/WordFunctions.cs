@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//DEPRECIATED LOL DELETE ME!
+
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +10,6 @@ using Yarn.Unity;
 
 //get rid of me later
 using System.Diagnostics;
-
 
 public class WordFunctions : MonoBehaviour
 {

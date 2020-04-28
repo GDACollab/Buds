@@ -9,14 +9,24 @@ namespace Yarn.Unity
 {
     public class DialogUICustom : Yarn.Unity.DialogueUIBehaviour
     {
-        public Text text;
-        public Button button;
-        public Text buttonText;
+        public Text DialogTextPrefab;
+        public Button DialogButtonPrefab;
+        public GameObject DialogContainerPrefab;
+        public GameObject DialogSuperContainer;
         public bool goToNextLine;
-        public GameObject DialogContainer;
-
         public int lineTextIndex;
+
+        DialogueRunner DialogueRunner;
         int activeButtons;
+        Color textColor = Color.yellow;
+        //int charactersOnLine;  
+        
+        //Text buttonText;
+
+        Text text;
+        Button button;
+        Text buttonText;
+        GameObject DialogContainer;
 
         /// How quickly to show the text, in seconds per character
         [Tooltip("How quickly to show the text, in seconds per character")]
@@ -57,7 +67,15 @@ namespace Yarn.Unity
 
         void Start()
         {
+            DialogueRunner = this.gameObject.GetComponent<DialogueRunner>();
+            if(DialogueRunner == null)
+            {
+                Debug.Log("Dialogue Runner not found");
+            }
 
+            DialogueRunner.AddCommandHandler("changeSpeaker", changeSpeaker);
+
+            TextUIReset();
         }
 
         /*
@@ -76,6 +94,7 @@ namespace Yarn.Unity
         private IEnumerator DoRunLine(Line line, IDictionary<string, string> strings, Action onLineComplete)
         {
             var lineText = strings[line.ID];
+            int charsOnLine = 0;
             TextUIReset();
             //text.text = "";
             //Debug.Log(strings[line.ID]);
@@ -83,7 +102,12 @@ namespace Yarn.Unity
             //text.text = lineText
             for (int i = 0; i < lineText.Length; ++i)
             {
-                if (lineText[i] == '{' && lineText[i + 1] == '{')
+                if (charsOnLine > 60 && lineText[i] == ' ')
+                {
+                    TextNewLine();
+                    charsOnLine = 0;
+                }
+                else if (lineText[i] == '{' && i + 1 < lineText.Length -1 && lineText[i + 1] == '{')
                 {
                     i = CreateTextButton(lineText, i);
                 }
@@ -91,10 +115,12 @@ namespace Yarn.Unity
                 {
                     text.text += lineText[i];
                 }
+                ++charsOnLine;
+                //Debug.Log(i);
             }
 
             //If the line has no buttons, continue in 3 seconds
-            //If it does, wait until one is clicked
+            //If it does, wait until one is clicked 
             goToNextLine = false;
             if (activeButtons == 0)
             {
@@ -145,8 +171,6 @@ namespace Yarn.Unity
         private int CreateTextButton(string LineText, int index)
         {
             //local variables
-            Button newButton;
-            Text newText;
             string buttonText = "";
             string nextNode = "";
             bool breaker = false;
@@ -168,7 +192,7 @@ namespace Yarn.Unity
                 ++index;
             }
             //reads the node to travel to when the button is clicked
-            while (LineText[index] != '}' && LineText[index + 1] != '}')
+            while (LineText[index] != '}' || LineText[index + 1] != '}')
             {
                 //please make sure to put in this second brace I haven't written an exception yet and it WILL explode if it isn't found
                 nextNode += LineText[index];
@@ -176,35 +200,40 @@ namespace Yarn.Unity
             }
 
             //creates the actual new button and sets it text
-            newButton = Instantiate(button, DialogContainer.transform);
-            newButton.transform.GetChild(0).gameObject.GetComponent<Text>().text = buttonText;
+            button = Instantiate(DialogButtonPrefab, DialogContainer.transform);
+            button.transform.GetChild(0).gameObject.GetComponent<Text>().text = buttonText;
 
             //gives the button proper functionality
             Debug.Log("NextNode is >" + nextNode + "<");
             if (nextNode == " " || nextNode == "")
             {
                 //button advances dialogue if there's no node destination
-                newButton.onClick.AddListener(this.NextLine);
+                button.onClick.AddListener(this.NextLine);
             }
             else
             {
-                throw new NotImplementedException("NODE JUMPING NOT SUPPORTED");
-                //DialogueRunner.NodeExists(node) returns true/false if the node is, in fact, a node.
-                //newButton.onClick.AddListener();//method that causes node jumps
-                //the yarn way is really complicated and I don't understand it
-                //need better examples
-                //the secret lies in DialogueUI.SetOption, which I can't find in the DialogueUI script.
-                //But the script it looks for is DialogueRunner...?
+                //checks if the listed node destination actually exists
+                if (!DialogueRunner.NodeExists(nextNode))
+                {
+                    //lol this is an exception but I don't know how to write
+                    Debug.Log("Get ready for a null reference exception!");
+                }
+                else
+                {
+                    //changes the node to the destination and continues dialogue
+                    //ha! a lambda! am I a c# programmer now?
+                    button.onClick.AddListener(() => { JumpNode(nextNode); });
+
+                }
             }
 
             //creates a new, blank, text object for the rest of the line to go on.
-            newText = Instantiate(text, DialogContainer.transform);
-            text = newText;
+            text = Instantiate(DialogTextPrefab, DialogContainer.transform);
             text.text = "";
 
             ++activeButtons;
             text.gameObject.SetActive(true);
-            newButton.gameObject.SetActive(true);
+            button.gameObject.SetActive(true);
             //we return index + 2 so the trailing braces aren't printed
             return index + 2;
         }
@@ -212,70 +241,82 @@ namespace Yarn.Unity
         //Resets the objects in the UI so that new ones can be used for new lines
         private void TextUIReset()
         {
-            Text newText;
-            //GameObject[] oldUI;
+            //There were many issues that were fixed.
 
-            //holy god for the love of all that is good in the world please make this function
-            // and/or script acutally not be awful
-            // simply because it functions does not mean it deserves to exist
+            //This script was also fixed
 
-            //deactivate all of the children of DialogContainer (i.e. all of the text UI elements)
-            //in a perfect world we'd destroy them, but then we don't have text/buttons to instantiate from
-            //  it can actually be done with text, because there will always be text. However, there will not always be buttons... I think?
-            //if this causes legit performance issues I'll come back and fix it later
-            for (int i = 0; i < DialogContainer.transform.childCount; ++i)
+            //It was fixed by Thomas Applewhite, who had matured.
+
+            foreach (Transform child in DialogSuperContainer.transform)
             {
-                //sets child i of DialogContainer to be inactive
-                DialogContainer.transform.GetChild(i).gameObject.SetActive(false);
-                //DialogContainer.transform.GetChild(i).gameObject.name = "OldUI " + i;
+                GameObject.Destroy(child.gameObject);
             }
 
-            //creates an new text to write things on
-            newText = Instantiate(text, DialogContainer.transform);
-            text = newText;
-            //text.name = "BlankText";
+            DialogContainer = Instantiate(DialogContainerPrefab, DialogSuperContainer.transform);
+            text = Instantiate(DialogTextPrefab, DialogContainer.transform);
+            button = Instantiate(DialogButtonPrefab, DialogContainer.transform);
+            buttonText = button.transform.GetChild(0).gameObject.GetComponent<Text>();
 
-            //set it to be active
-            //text objects don't inherit the SetActive method from game objects...?
-            text.gameObject.SetActive(true);
             text.text = "";
+            text.color = textColor;
             activeButtons = 0;
         }
 
-        /*
-         * UI Yarn Commands
-           jk we can't have yarn commands on this script because Dialogue Runner isn't one word guh hYUCK
-           either way I can't get it to work right now so yeah.
-
-        [YarnCommand("changeSpeaker")]
-        public void changeSpeaker(string newSpeaker)
+        //Creates a new line of text. May God have mercy on my immortal soul
+        private void TextNewLine()
         {
-            Debug.Log("The command is actually executing");
+            DialogContainer = Instantiate(DialogContainerPrefab, DialogSuperContainer.transform);
+            text = Instantiate(DialogTextPrefab, DialogContainer.transform);
+            text.color = textColor;
+            button = Instantiate(DialogButtonPrefab, DialogContainer.transform);
+            buttonText = button.transform.GetChild(0).gameObject.GetComponent<Text>();
+        }
+
+        //Changes the dialogue to a different Yarn Node
+        private void JumpNode(string node)
+        {
+            DialogueRunner.dialogue.Stop();
+            DialogueRunner.dialogue.SetNode(node);
+            DialogueRunner.dialogue.Continue();
+        }
+
+        //changes the color of the text to denote who's talking
+        private void changeSpeaker(string[] parameters)
+        {
+            string newSpeaker = parameters[0];
+            UnityEngine.Debug.Log("The command is actually executing");
             switch (newSpeaker)
             {
                 case "MC":
-                    text.color = Color.white;
+                    textColor = Color.white;
+                    System.Diagnostics.Debug.Assert(text.color == Color.white);
                     break;
 
                 case "SF":
-                    throw new NotImplementedException("SILVER FOX TEXT COLOR NOT SET");
+                    //throw new NotImplementedException("SILVER FOX TEXT COLOR NOT SET");
+                    UnityEngine.Debug.Log("SILVER FOX TEXT COLOR NOT SET");
                     break;
 
                 case "RF":
-                    text.color = Color.yellow;
+                    if (text == null)
+                    {
+                        Debug.Log("Text not here here");
+                    }
+                    textColor = Color.yellow;
+                    System.Diagnostics.Debug.Assert(text.color == Color.yellow);
                     break;
 
                 case "GB":
-                    throw new NotImplementedException("GAMER BRAT TEXT COLOR NOT SET");
+                    //throw new NotImplementedException("GAMER BRAT TEXT COLOR NOT SET");
+                    UnityEngine.Debug.Log("GAMER BRAT TEXT COLOR NOT SET");
+                    break;
 
                 default:
-                    Debug.Log("Error: " + newSpeaker + " not a recognized speaker. Defaulting to MC as speaker");
-                    text.color = Color.white;
+                    UnityEngine.Debug.Log("Error: " + newSpeaker + " not a recognized speaker. Defaulting to MC as speaker");
+                    textColor = Color.white;
                     break;
             }
 
-
-
-        }*/
+        }
     }
 }
