@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2251281356964761720}
   - component: {fileID: 1696319819938935714}
-  - component: {fileID: 7576449425140485437}
+  - component: {fileID: -2670908259003295235}
   m_Layer: 5
-  m_Name: BlankText
+  m_Name: DialogueText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7567119823907661917}
   m_CullTransparentMesh: 0
---- !u!114 &7576449425140485437
+--- !u!114 &-2670908259003295235
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 0.06666667, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

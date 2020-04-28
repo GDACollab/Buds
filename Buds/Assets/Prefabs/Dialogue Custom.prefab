@@ -421,9 +421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aedaf451afd9594b8f441144c0de90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogTextPrefab: {fileID: 7576449425140485437, guid: 55ed0d7944e4a864da8e9f7917c870ee,
+  DialogTextPrefab: {fileID: 1795088662197128467, guid: ff00c0939ca0bc64fb9e1aef11a74d2c,
     type: 3}
-  DialogButtonPrefab: {fileID: 6051628691245164146, guid: 2673aef9b21a71c47960a451c4e40f16,
+  DialogButtonPrefab: {fileID: 3325901683711906578, guid: c5427bcc3bb0f2041be419098fd472c4,
     type: 3}
   DialogContainerPrefab: {fileID: 2643774813470861243, guid: 953d7812325586d4aa6547a608c7f6f5,
     type: 3}

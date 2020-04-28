@@ -10,7 +10,7 @@ namespace Yarn.Unity
 {
     public class DialogUICustom : Yarn.Unity.DialogueUIBehaviour
     {
-        public Text DialogTextPrefab;
+        public TextMeshProUGUI DialogTextPrefab;
         public Button DialogButtonPrefab;
         public GameObject DialogContainerPrefab;
         public GameObject DialogSuperContainer;
@@ -21,12 +21,12 @@ namespace Yarn.Unity
         int activeButtons;
         Color textColor = Color.yellow;
         //int charactersOnLine;  
-        
+
         //Text buttonText;
 
-        Text text;
+        TextMeshProUGUI text;
         Button button;
-        Text buttonText;
+        TextMeshProUGUI buttonText;
         GameObject DialogContainer;
 
         /// How quickly to show the text, in seconds per character
@@ -202,7 +202,7 @@ namespace Yarn.Unity
 
             //creates the actual new button and sets it text
             button = Instantiate(DialogButtonPrefab, DialogContainer.transform);
-            button.transform.GetChild(0).gameObject.GetComponent<Text>().text = buttonText;
+            button.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = buttonText;
 
             //gives the button proper functionality
             Debug.Log("NextNode is >" + nextNode + "<");
@@ -256,7 +256,7 @@ namespace Yarn.Unity
             DialogContainer = Instantiate(DialogContainerPrefab, DialogSuperContainer.transform);
             text = Instantiate(DialogTextPrefab, DialogContainer.transform);
             button = Instantiate(DialogButtonPrefab, DialogContainer.transform);
-            buttonText = button.transform.GetChild(0).gameObject.GetComponent<Text>();
+            buttonText = button.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
 
             text.text = "";
             text.color = textColor;
@@ -270,7 +270,7 @@ namespace Yarn.Unity
             text = Instantiate(DialogTextPrefab, DialogContainer.transform);
             text.color = textColor;
             button = Instantiate(DialogButtonPrefab, DialogContainer.transform);
-            buttonText = button.transform.GetChild(0).gameObject.GetComponent<Text>();
+            buttonText = button.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         }
 
         //Changes the dialogue to a different Yarn Node
