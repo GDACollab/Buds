@@ -20,9 +20,6 @@ namespace Yarn.Unity
         DialogueRunner DialogueRunner;
         int activeButtons;
         Color textColor = Color.yellow;
-        //int charactersOnLine;  
-
-        //Text buttonText;
 
         TextMeshProUGUI text;
         Button button;
@@ -97,10 +94,7 @@ namespace Yarn.Unity
             var lineText = strings[line.ID];
             int charsOnLine = 0;
             TextUIReset();
-            //text.text = "";
-            //Debug.Log(strings[line.ID]);
-            //add command functionality
-            //text.text = lineText
+
             for (int i = 0; i < lineText.Length; ++i)
             {
                 if (charsOnLine > 60 && lineText[i] == ' ')
@@ -110,7 +104,13 @@ namespace Yarn.Unity
                 }
                 else if (lineText[i] == '{' && i + 1 < lineText.Length -1 && lineText[i + 1] == '{')
                 {
+
                     i = CreateTextButton(lineText, i);
+                }
+                else if(lineText[i] == ' ')
+                {
+                    //TextMeshPro needs Non-Breaking Spaces to properly render lines, so I'm replacing all spaces with them
+                    text.text += '\u00A0';
                 }
                 else
                 {
@@ -189,6 +189,15 @@ namespace Yarn.Unity
                 else
                 {
                     buttonText += LineText[index];
+                    /*if (LineText[index] == ' ')
+                    {
+                        //TextMeshPro needs Non-Breaking Spaces to properly render lines, so I'm replacing all spaces with them
+                        text.text += '\u00A0';
+                    }
+                    else
+                    {
+                        buttonText += LineText[index];
+                    }*/
                 }
                 ++index;
             }
@@ -231,12 +240,13 @@ namespace Yarn.Unity
             //creates a new, blank, text object for the rest of the line to go on.
             text = Instantiate(DialogTextPrefab, DialogContainer.transform);
             text.text = "";
+            text.color = textColor;
 
             ++activeButtons;
             text.gameObject.SetActive(true);
             button.gameObject.SetActive(true);
             //we return index + 2 so the trailing braces aren't printed
-            return index + 2;
+            return index + 1;
         }
 
         //Resets the objects in the UI so that new ones can be used for new lines
@@ -285,12 +295,10 @@ namespace Yarn.Unity
         private void changeSpeaker(string[] parameters)
         {
             string newSpeaker = parameters[0];
-            UnityEngine.Debug.Log("The command is actually executing");
             switch (newSpeaker)
             {
                 case "MC":
                     textColor = Color.white;
-                    System.Diagnostics.Debug.Assert(text.color == Color.white);
                     break;
 
                 case "SF":
@@ -304,7 +312,6 @@ namespace Yarn.Unity
                         Debug.Log("Text not here here");
                     }
                     textColor = Color.yellow;
-                    System.Diagnostics.Debug.Assert(text.color == Color.yellow);
                     break;
 
                 case "GB":
