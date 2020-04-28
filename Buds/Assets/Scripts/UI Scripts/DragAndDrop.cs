@@ -21,6 +21,9 @@ public class DragAndDrop : MonoBehaviour
     public float minY;
     public float animationTime;
 
+    [HideInInspector]
+    public bool background;
+
     bool finished;
     bool dragging;
 
@@ -61,8 +64,6 @@ public class DragAndDrop : MonoBehaviour
             minY = Mathf.NegativeInfinity;
         }
 
-        SnapToPot();
-
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         initialSortingOrders = new int[spriteRenderers.Length];
         for (int i = 0; i < spriteRenderers.Length; i++)
@@ -72,6 +73,10 @@ public class DragAndDrop : MonoBehaviour
 
         sourcePosition = transform.position;
         targetPosition = transform.position;
+
+        if (gameObject.GetComponent<RectTransform>() == null) {
+            SnapToPot();
+        }
     }
 
     // Update is called once per frame
@@ -79,7 +84,6 @@ public class DragAndDrop : MonoBehaviour
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 offset = offsetOn ? new Vector2(-0.5f, 0.5f) : Vector2.zero;
-
         if (dragging && screenRect.Contains(Input.mousePosition))
         {
             //Mouse position on the screen uses different coordinates, needs to be corrected
@@ -114,51 +118,67 @@ public class DragAndDrop : MonoBehaviour
             animating = false;
             sourcePosition = targetPosition;
             animationTimer = 0.0f;
+            if (!dragging && background && !dropAndHold) {
+                SnapToPot();
+                background = false;
+            }
         }
     }
 
     private void OnMouseDown()
     {
-        if (!animating) {
-            if (!dragging) {
-                dragging = true;
-                snapped = false;
-            }
-            else if (dragging && toggle) {
-                
-                snapped = SnapToPot();
-                dragging = false;
+        if (enabled) {
+            if (!animating) {
+                if (!dragging) {
+                    dragging = true;
+                    snapped = false;
+                }
+                else if (dragging && toggle) {
 
-            }
+                    snapped = SnapToPot();
+                    dragging = false;
 
-            for (int i = 0; i < spriteRenderers.Length; i++)
-                spriteRenderers[i].sortingOrder = !finished ? initialSortingOrders[i] + 2 : initialSortingOrders[i];
+                }
 
-            if (dropAndHold) {
-                dragging = !finished;
-                finished = !dragging ? dragging : finished;
+                for (int i = 0; i < spriteRenderers.Length; i++)
+                    spriteRenderers[i].sortingOrder = !finished ? initialSortingOrders[i] + 2 : initialSortingOrders[i];
+
+                if (dropAndHold) {
+                    dragging = !finished;
+                    finished = !dragging ? dragging : finished;
+                }
             }
         }
+        
     }
 
     private void OnMouseUp()
     {
-        if (!animating) {
-            if (!toggle) {
-                snapped = SnapToPot();
-                dragging = false;
-            }
-
-            if (dragging && dropAndHold) {
-                if (lastMoveTo != null && itemBeingDragged != null) {
-                    itemBeingDragged.Lift(from: lastMoveTo);
+        if (enabled) {
+            if (!animating) {
+                if (!toggle) {
+                    snapped = SnapToPot();
+                    dragging = false;
                 }
+
+                if (dragging && dropAndHold) {
+                    if (lastMoveTo != null && itemBeingDragged != null) {
+                        itemBeingDragged.Lift(from: lastMoveTo);
+                    }
+                }
+
+
+                for (int i = 0; i < spriteRenderers.Length; i++)
+                    spriteRenderers[i].sortingOrder = dragging ? initialSortingOrders[i] + 2 : initialSortingOrders[i];
             }
-
-
-            for (int i = 0; i < spriteRenderers.Length; i++)
-                spriteRenderers[i].sortingOrder = dragging ? initialSortingOrders[i] + 2 : initialSortingOrders[i];
         }
+        
+    }
+
+    public void SetTarget() {
+        oldPosition = this.transform.position;
+        sourcePosition = transform.position;
+        targetPosition = transform.position;
     }
 
     //Snaps the object to the nearest flowerpot
@@ -211,12 +231,13 @@ public class DragAndDrop : MonoBehaviour
             {
                 DragAndDrop flowerScript = flower.GetComponent<DragAndDrop>();
                 flowerScript.sourcePosition = flowerScript.transform.position;
-                
+
                 flower.transform.position = animationTime == 0
                     ? this.oldPosition
                     : flowerScript.sourcePosition;
                 flowerScript.targetPosition = this.oldPosition;
 
+                flowerScript.background = true;
                 flowerScript.oldPosition = flowerScript.targetPosition;
             }
         }
@@ -239,13 +260,3 @@ public class DragAndDrop : MonoBehaviour
         return true;
     }
 }
-
-//Simple explanation of single variables
-/*
- * if(main == NULL)
- * {
- *      this == Main
- * }
- * else
- *      this.destroy
- */

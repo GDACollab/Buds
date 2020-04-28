@@ -44,10 +44,10 @@ PlayerSettings:
     duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
-  defaultScreenWidth: 3840
+  defaultScreenWidth: 2880
   defaultScreenHeight: 2160
-  defaultScreenWidthWeb: 960
-  defaultScreenHeightWeb: 600
+  defaultScreenWidthWeb: 1280
+  defaultScreenHeightWeb: 720
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 0
   m_MTRendering: 1
@@ -68,7 +68,7 @@ PlayerSettings:
   androidRenderOutsideSafeArea: 1
   androidUseSwappy: 0
   androidBlitType: 0
-  defaultIsNativeResolution: 0
+  defaultIsNativeResolution: 1
   macRetinaSupport: 1
   runInBackground: 1
   captureSingleScreen: 0
@@ -115,10 +115,10 @@ PlayerSettings:
   vulkanNumSwapchainBuffers: 3
   vulkanEnableSetSRGBWrite: 0
   m_SupportedAspectRatios:
-    4:3: 0
+    4:3: 1
     5:4: 0
     16:10: 0
-    16:9: 1
+    16:9: 0
     Others: 0
   bundleVersion: 0.2
   preloadedAssets: []
@@ -321,6 +321,9 @@ PlayerSettings:
   - m_BuildTarget: AndroidPlayer
     m_APIs: 150000000b000000
     m_Automatic: 0
+  - m_BuildTarget: WebGLSupport
+    m_APIs: 0b00000008000000
+    m_Automatic: 1
   m_BuildTargetVRSettings: []
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
@@ -547,7 +550,7 @@ PlayerSettings:
   blurSplashScreenBackground: 1
   spritePackerPolicy: 
   webGLMemorySize: 16
-  webGLExceptionSupport: 1
+  webGLExceptionSupport: 0
   webGLNameFilesAsHashes: 0
   webGLDataCaching: 1
   webGLDebugSymbols: 0

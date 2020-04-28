@@ -21,6 +21,7 @@ public class WateringCan : MonoBehaviour
     private GameObject currentPlant;
     private GameObject startShadow;
     private bool onStartShadow;
+    private bool justPickedUp;
 
     private ParticleSystem water;
 
@@ -43,11 +44,25 @@ public class WateringCan : MonoBehaviour
     /// Stops watering the plant the watering can is lifted from if there is one.
     /// </summary>
     public void Lift(GameObject from) {
-        if (watering) {
-            Plant plantToWater = from.GetComponent<PlantSpot>().currentFlower;
-            if (plantToWater != null) {
-                plantToWater.StopWatering();
-            }
+        Plant plantToWater = from.GetComponent<PlantSpot>().currentFlower;
+        if (plantToWater != null) {
+            plantToWater.StopWatering();
+        }
+    }
+
+    /// <summary>
+    /// Sets the watering can back on its shadow
+    /// </summary>
+    public void Release() {
+        if (!onStartShadow) {
+            transform.position = startShadow.transform.position;
+            onStartShadow = true;
+            StopAllCoroutines();
+            transform.rotation = initialRotation;
+            transform.GetChild(0).rotation = initialRotation;
+            transform.GetChild(1).rotation = initialRotation;
+            water.Clear();
+            SendMessage("OnMouseDown");
         }
     }
 
@@ -110,17 +125,22 @@ public class WateringCan : MonoBehaviour
             Drop(onto: currentPlant);
         }
 
-        if (!onStartShadow) {
+        justPickedUp &= onStartShadow;
+
+        if (!onStartShadow && !justPickedUp) {
             watering = true;
             water.Play();
             StopCoroutine("RotateGradually");
             StartCoroutine("RotateGradually");
         }
-        
+        else if (onStartShadow) {
+            justPickedUp = true;
+            Cursor.visible = !Cursor.visible;
+        } 
     }
 
     private void OnMouseUp() {
-        if (!onStartShadow || transform.rotation != initialRotation) {
+        if (!onStartShadow && !justPickedUp || transform.rotation != initialRotation) {
             watering = false;
             water.Stop();
             StopCoroutine("RotateGradually");
