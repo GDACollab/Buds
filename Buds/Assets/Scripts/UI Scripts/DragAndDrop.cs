@@ -199,12 +199,14 @@ public class DragAndDrop : MonoBehaviour
 
         foreach(GameObject flowerpot in flowerpots)
         {
-            float test = Vector2.Distance(flowerpot.transform.position, gameObject.transform.position);
+            if ( (GetComponent<Plant>() != null) == (flowerpot.GetComponent<PlantSpot>() != null) ) {
+                float test = Vector2.Distance(flowerpot.transform.position, gameObject.transform.position);
 
-            //Vector2 test = flowerpot.transform.position - gameObject.transform.position;
-            if (test < difference && test <= maxSnapDistance) {
-                moveTo = flowerpot;
-                difference = test;
+                //Vector2 test = flowerpot.transform.position - gameObject.transform.position;
+                if (test < difference && test <= maxSnapDistance) {
+                    moveTo = flowerpot;
+                    difference = test;
+                }
             }
         }
 
@@ -229,16 +231,18 @@ public class DragAndDrop : MonoBehaviour
         {
             if(Vector3.SqrMagnitude(flower.transform.position - transform.position) < 0.01f && flower != gameObject && gameObject.tag == "Flower")
             {
-                DragAndDrop flowerScript = flower.GetComponent<DragAndDrop>();
-                flowerScript.sourcePosition = flowerScript.transform.position;
+                if ( (GetComponent<Plant>() != null) == (flower.GetComponent<Plant>() != null) ) {
+                    DragAndDrop flowerScript = flower.GetComponent<DragAndDrop>();
+                    flowerScript.sourcePosition = flowerScript.transform.position;
 
-                flower.transform.position = animationTime == 0
-                    ? this.oldPosition
-                    : flowerScript.sourcePosition;
-                flowerScript.targetPosition = this.oldPosition;
+                    flower.transform.position = animationTime == 0
+                        ? this.oldPosition
+                        : flowerScript.sourcePosition;
+                    flowerScript.targetPosition = this.oldPosition;
 
-                flowerScript.background = true;
-                flowerScript.oldPosition = flowerScript.targetPosition;
+                    flowerScript.background = true;
+                    flowerScript.oldPosition = flowerScript.targetPosition;
+                }
             }
         }
 

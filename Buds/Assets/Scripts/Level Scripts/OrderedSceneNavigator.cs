@@ -19,7 +19,9 @@ public class OrderedSceneNavigator : MonoBehaviour
 
     private int numCompleted;
 
-    bool menuEnabled;
+    private bool menuEnabled;
+
+    private System.DateTime date;
 
     private void Awake() {
         Comparer<float> descendingComparer = Comparer<float>.Create((x, y) => y.CompareTo(x));
@@ -77,15 +79,28 @@ public class OrderedSceneNavigator : MonoBehaviour
 
     public void SetSchedule() {
         PersistentData.instance.StoreData("todaysSchedule", sceneOrder.Values);
-        PersistentData.instance.StoreData("numCompleted", (numCompleted + 1) % 4);
+        PersistentData.instance.StoreData("numCompleted", (numCompleted + 1) % 3);
+
+        if (numCompleted == 0) {
+            PersistentData.instance.StoreData("date", date.AddDays(1));
+        }
     }
 
     public void RetrieveSchedule() {
         if (!PersistentData.instance.ContainsKey("numCompleted")) {
-            PersistentData.instance.StoreData("numCompleted", 0);
+            PersistentData.instance.StoreData("numCompleted", 1);
+
+            Vector3 tempPos = scheduleItems[0].transform.position;
+            scheduleItems[0].transform.position = scheduleItems[1].transform.position;
+            scheduleItems[1].transform.position = tempPos;
+            FixedUpdate();
+
             PersistentData.instance.StoreData("todaysSchedule", sceneOrder.Values);
+            date = System.DateTime.Today;
+            PersistentData.instance.StoreData("date", date);
         }
         numCompleted = (int)PersistentData.instance.ReadData("numCompleted");
+        date = (System.DateTime)PersistentData.instance.ReadData("date");
 
         if (PersistentData.instance.ContainsKey("todaysSchedule")) {
 
@@ -101,14 +116,14 @@ public class OrderedSceneNavigator : MonoBehaviour
 
                 DragAndDrop dnd = scheduleItems[newOrder].GetComponent<DragAndDrop>();
 
-                confirmButton.transform.parent.GetChild(1).GetComponent<Text>().text = System.DateTime.Today.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP"));
+                confirmButton.transform.parent.GetChild(1).GetComponent<Text>().text = date.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP"));
 
                 switch (numCompleted)
                 {
                     case 0:
-                        confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Confirm Schedule";
+                        confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Start a New Day";
                         
-                        confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "8:00";
+                        confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "18:00";
 
                         break;
                     case 1:
@@ -136,14 +151,14 @@ public class OrderedSceneNavigator : MonoBehaviour
                         confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "14:00";
 
                         break;
-                    case 3:
-                        dnd.enabled = false;
-                        scheduleItems[newOrder].transform.GetChild(1).GetChild(1).gameObject.SetActive(true);
+                    //case 3:
+                    //    dnd.enabled = false;
+                    //    scheduleItems[newOrder].transform.GetChild(1).GetChild(1).gameObject.SetActive(true);
 
-                        confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Enter the Void";
-                        confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "18:00";
+                    //    confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Enter the Void";
+                    //    confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "18:00";
 
-                        break;
+                    //    break;
                 }
             }
         }
