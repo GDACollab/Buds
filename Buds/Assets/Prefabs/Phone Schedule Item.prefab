@@ -89,13 +89,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8299669b5ef04b14cb8ac2b15efb1ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggle: 1
+  toggle: 0
   dropAndHold: 0
   offsetOn: 0
   yMovementOnly: 1
   maxY: 2.074481
   minY: -2.917401
   animationTime: 0.1
+  background: 0
   maxSnapDistance: 0
 --- !u!61 &3523719634819268933
 BoxCollider2D:
