@@ -67,6 +67,7 @@ public class OrderedSceneNavigator : MonoBehaviour
     public void LoadScene() {
         SetSchedule();
         int sceneIndex = sceneOrder.Values[numCompleted];
+        Debug.Log("Loading scene at index " + sceneIndex);
         SceneManager.LoadSceneAsync(sceneIndex);
     }
 

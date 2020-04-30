@@ -307,16 +307,11 @@ namespace Yarn.Unity
                     break;
 
                 case "RF":
-                    if (text == null)
-                    {
-                        Debug.Log("Text not here here");
-                    }
                     textColor = Color.yellow;
                     break;
 
                 case "GB":
-                    //throw new NotImplementedException("GAMER BRAT TEXT COLOR NOT SET");
-                    UnityEngine.Debug.Log("GAMER BRAT TEXT COLOR NOT SET");
+                    textColor = Color.yellow;
                     break;
 
                 default:
@@ -326,5 +321,12 @@ namespace Yarn.Unity
             }
 
         }
+
+        //very hacky solution, it was build day
+        //switches the scene to play the next yarn file, rather than the original
+        /*public void switchStartNode
+        {
+
+        }*/
     }
 }

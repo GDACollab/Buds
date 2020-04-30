@@ -1,17 +1,21 @@
 title: RFfirstMeeting
-tags:
+tags: RetailFriend
 colorID: 0
 position: 222, 222
 ---
+<<if $visited_RF is true>>
+[[RFbondOverBooks]]
+<<endif>>
+<<set $visited_RF to true>>
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile>>
 Hello, are we looking for anything in {{particular| }} today?
 <<changeSpeaker MC>>
-MC: Oh, uh, yeah I was just wondering what books you have that are similar to {{Magic of the Earth| }}?
+Oh, uh, yeah I was just wondering what books you have that are similar to {{Magic of the Earth| }}?
 <<changeSpeaker RF>>
 Oh, you like {{urban fantasy| }}?
 <<changeSpeaker MC>>
-MC: What’s {{that| }}?
+What’s {{that| }}?
 <<changeSpeaker RF>>
 That’s the genre {{Samuel and the Mythical Columbianus| }} and {{Daughter of the Sword| }} are in.
 <<changeSpeaker MC>>
@@ -28,24 +32,24 @@ position: 222, 227
 <<changeSpeaker RF>>
 Well, the {{most popular new releases| }} for urban fantasy are right over here.
 <<changeSpeaker MC>>
-MC: Oh *walks over and begins looking at books*
+Oh *walks over and begins looking at books*
 <<changeSpeaker RF>>
 Let me {{kn-| }} 
 <<changeSpeaker MC>>
-MC: Which ones {{do you like| }}?
+Which ones {{do you like| }}?
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused>>
 I’m {{sorry| }}?
 <<changeSpeaker MC>>
-MC: Which urban fantasy books {{do you like| }}?
+Which urban fantasy books {{do you like| }}?
 <<changeSpeaker RF>>
 Oh. Um. Well I’m not a huge fan of the new releases, I like books like {{The Dawn of the Crooked| }} but those aren’t particularly well received.
 <<changeSpeaker MC>>
-MC: Where is that?
+Where is that?
 <<changeSpeaker RF>>
 Oh.. um I believe you can find it over {{here| }}.
 <<changeSpeaker MC>>
-MC: {{This one| }}?
+{{This one| }}?
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile>>
 {{Yup| }}, that’s the one!
@@ -70,12 +74,12 @@ It’s...
 <<changeFace Character RF_Confused>>
 Ah{{...| }} 
 <<changeSpeaker MC>>
-MC: Well that sounds… {{interesting| }} (holding the book)
+Well that sounds… {{interesting| }} (holding the book)
 <<changeSpeaker RF>>
 Haha...(awkward laugh) It’s a good book, but The Maiden of the Silver Sea is far more popular right now, it’s a thrilling tale about a young woman who finds herself through travelling the sea and meeting a charming, handsome prince.
 <<changeFace Character RF_Smile>>
 <<changeSpeaker MC>>
-MC: Oh... uh, I think I’ll take {{this one| }} (holding the book RF originally recommended)
+Oh... uh, I think I’ll take {{this one| }} (holding the book RF originally recommended)
 <<changeSpeaker RF>>
 Oh... ok, I can {{ring you up| }} right over here.
 <<changeFace Character RF_Confused>>
@@ -83,8 +87,106 @@ Oh... ok, I can {{ring you up| }} right over here.
 <<changeFace Character RF_Smile>>
 Thank you for your {{purchase| }}, please come again.
 <<changeSpeaker MC>>
-MC: Yeah, this book seems interesting. I’ll tell you {{what I think| }} about it.
+Yeah, this book seems interesting. I’ll tell you {{what I think| }} about it.
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused>>
 (while MC is heading out the door) oh.. Uh…
+===
+
+title: RFbondOverBooks
+tags: RetailFriend
+colorID: 0
+position: 556, 556
+---
+<<changeSpeaker RF>>
+<<changeFace RF_Smile>>
+{{...| }}
+<<changeSpeaker MC>>
+Hey {{Shiori!| }} It’s nice to see you again. 
+<<changeSpeaker RF>>
+<<changeFace RF_ConfusedSmile>>
+Oh! Hello…sorry, I didn’t notice you came in.
+<<changeSpeaker MC>>
+Ah, my bad, didn’t mean to scare you.
+<<changeSpeaker RF>>
+Oh no, I’m fine really. Uhm, {{what brings you here?| }} Did you need help finding anything?
+<<changeSpeaker MC>>
+Well, I was actually hoping to {{talk to you| }} for a bit. 
+<<changeSpeaker RF>>
+Oh uh…
+<<changeSpeaker MC>>
+I mean if you aren’t too busy of course. 
+<<changeSpeaker RF>>
+Do you mind if I ask what you {{want to talk about| }} exactly?
+<<changeSpeaker MC>>
+Well the book I bought, The Dawn of the Crooked, {{you| }} were the one who recommended it right?
+<<changeSpeaker RF>>
+<<changeFace RF_Smile>>
+Yup, it’s one of my favorites! Uhm…not a lot of people are really into that kinda thing though, I understand if {{you didn’t really like-| }}
+<<changeSpeaker MC>>
+I enjoyed it actually.
+<<changeSpeaker RF>>
+<<changeFace RF_ConfusedSmile>>
+...huh?
+<<changeSpeaker MC>>
+I thought it was written in a really unique way like you said. I liked the story a lot too. 
+<<changeSpeaker RF>>
+Oh, {{really| }}?
+<<changeSpeaker MC>>
+Yeah, I actually wanted to talk with you about the book for a bit if you have time. Like, {{your thoughts about it| }}, you know?
+<<changeSpeaker RF>>
+Oh uhm, sure. It’s not a busy day today, so..
+<<changeSpeaker MC>>
+Thanks. So, I guess to start I found the genre to be interesting. {{It’s really not like anything I’ve read lately.| }} I think it’s cool that it combines fantasy and modern elements to create a unique experience. I also liked the way in which the book itself explored the interactions between them in a darker way than I had expected.
+<<changeSpeaker RF>>
+<<changeFace RF_Smile>>
+I feel the same way about the book. {{I’m really glad you enjoyed it!| }} I think urban fantasy is also one of my favorite book genres for a lot of the same reasons.
+<<changeSpeaker MC>>
+Yeah, you know, I didn’t know the exact genre name before, but {{my sister| }} is really into this kinda book.
+<<changeSpeaker RF>>
+Does she {{live around here| }}?
+<<changeSpeaker MC>>
+...I guess you {{could say that.| }}
+<<changeSpeaker RF>>
+Oh, she should come here sometime! I’d be happy to talk about books with her, or maybe recommend some of my favorites. 
+<<changeSpeaker MC>>
+{{Yeah maybe…| }}so, I remember you like the writing style a lot?
+<<changeSpeaker RF>>
+Oh yeah! I really do. To be honest, {{I wish I could write like that...| }}
+<<changeSpeaker MC>>
+Oh, {{you’re a writer?| }}
+<<changeSpeaker RF>>
+<<changeFace RF_ConfusedSmile>>
+Ah, haha, not really. 
+<<changeSpeaker MC>>
+What do you mean?
+<<changeSpeaker RF>>
+Well, I just…{{I wouldn’t say I’m the best at it.| }} 
+<<changeSpeaker MC>>
+Aw, I’m sure it’s fine really. 
+<<changeSpeaker RF>>
+....
+<<changeSpeaker MC>>
+Do you have {{something of yours| }} I could take a look at?
+<<changeSpeaker RF>>
+Um...sorry no, I don’t {{at the moment| }}. 
+<<changeSpeaker MC>>
+Oh no that’s totally okay, don’t worry about it. I was wondering if maybe you had {{any other book recommendations| }} then?
+<<changeSpeaker RF>>
+<<changeSpeaker RF_Smile>>
+Oh, sure! Were you looking for more {{urban fantasy stuff| }} or...?
+<<changeSpeaker MC>>
+That’d be great.
+<<changeSpeaker RF>>
+Okay, hm...I think maybe {{you’d like this one.| }} It’s called The Cloaked Oracle. 
+<<changeSpeaker MC>>
+Yeah, looks good. 
+<<changeSpeaker RF>>
+I’ll ring you up then.
+<<changeSpeaker RF>>
+Thank you, {{please come again!| }}
+<<changeSpeaker MC>>
+For sure. {{Thanks again| }} for talking with me. 
+<<changeSpeaker RF>>
+Yeah...to you too. 
 ===

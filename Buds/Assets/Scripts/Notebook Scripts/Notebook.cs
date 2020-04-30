@@ -10,27 +10,38 @@ public class Notebook : MonoBehaviour
     public GameObject notebookPage;
     public Sprite coverImage;
 
-    public GameObject PersistentData;
+    //public GameObject PersistentData;
 
     LinkedList<Page> book;
     LinkedListNode<Page> activePage;
     Text pageText;
     Image pageSprite;
+    Image mainPageSprite;
+    Sprite blankPage;
     int index;
 
     void Start()
     {
         pageText = notebookPage.transform.GetChild(0).gameObject.GetComponent<Text>();
         pageSprite = notebookPage.transform.GetChild(1).gameObject.GetComponent<Image>();
+        mainPageSprite = notebookPage.GetComponent<Image>();
+        blankPage = mainPageSprite.sprite;
 
-        if (PersistentData == null)
+        //If the notebook has never been defined
+        if (PersistentData.instance == null || !PersistentData.instance.ContainsKey("BOOK"))
         {
             book = new LinkedList<Page>();
             book.AddFirst(new LinkedListNode<Page>(new Page(null, coverImage)));
+            PersistentData.instance.StoreData("BOOK", book);
+
+            //setting default pages of the notebook
+            AddPage(null, Resources.Load<Sprite>("notebookWaterPage_UI_Joann Long 1"));
+            AddPage(null, Resources.Load<Sprite>("notebookPlacementPage_UI_Joann Long 1"));
         }
+        //If the notebook has been defined
         else
         {
-            //book = book in persistent data
+            book = (LinkedList<Page>)PersistentData.instance.ReadData("BOOK");
         }
 
         activePage = book.First;
@@ -40,17 +51,47 @@ public class Notebook : MonoBehaviour
     
     void UpdatePage()
     {
-        pageText.text = activePage.Value.getText();
-        pageSprite.sprite = activePage.Value.getImage();
+        string pulledText = activePage.Value.getText();
+        Sprite pulledImage = activePage.Value.getImage();
 
-        if (!pageSprite.gameObject.activeSelf)
+        //change the background depending on what page we're on
+        if(index != 0)
+        {
+            mainPageSprite.sprite = blankPage;
+        }
+        else
+        {
+            mainPageSprite.sprite = coverImage;
+        }
+
+        //if the image is not active from the previous page
+        if (!pageSprite.gameObject.activeSelf && pulledImage != null)
         {
             pageSprite.gameObject.SetActive(true);
         }
 
-        if(pageSprite.sprite == null)
+        //if neither
+        if (pulledText == null && pulledImage == null)
+        {
+            //the thing to do if the page is blank
+        }
+        //if text and no image
+        else if (pulledImage == null)
+        {
+            //pageSprite.gameObject.SetActive(false);
+        }
+        //if image and no text
+        else if (pulledText == null)
         {
             pageSprite.gameObject.SetActive(false);
+            pageText.text = "";
+            mainPageSprite.sprite = pulledImage;
+        }
+        //if both
+        else
+        {
+            pageText.text = pulledText;
+            pageSprite.sprite = pulledImage;
         }
     }
 

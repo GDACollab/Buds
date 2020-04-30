@@ -5,22 +5,31 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Main Scenes/Flower Minigame.unity
-    guid: 2dfcc18cae07c412fbafa9521dc79531
-  - enabled: 1
-    path: Assets/Scenes/Main Scenes/Playtest2_Retail Friend.unity
-    guid: 536cd7e2021d3fe4a810ddcde60326fe
-  - enabled: 1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/Test Scenes/Phone Menu Test.unity
     guid: 3af2aacf1800f4b838a06669276e9b4a
-  - enabled: 1
-    path: Assets/Scenes/Test Scenes/End of Day.unity
-    guid: d339515ae619c4e8088c5e5705d3badb
   - enabled: 0
     path: Assets/Scenes/Test Scenes/TestPersistent1.unity
     guid: fe5a34f0b583dd74c8874cb892bad944
   - enabled: 0
     path: Assets/Scenes/Test Scenes/TestPersistent2.unity
     guid: 6b0691598f5edb44ebe4b829b232f450
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/Flower Minigame.unity
+    guid: 8c797af20d083784e98170d87ab4abe1
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/Retail Friend.unity
+    guid: 4422af6555a8100429dc4517bbe6a061
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/Gamer Brat.unity
+    guid: da8c3cccfc7b39641938510e08783ec5
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/End of Day.unity
+    guid: d339515ae619c4e8088c5e5705d3badb
   m_configObjects: {}
