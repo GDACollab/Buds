@@ -3,6 +3,10 @@ tags: GamerBrat
 colorID: 0
 position: 1337, 1337
 ---
+<<if $visited_GB is true>>
+[[GBreadingTheBook]]
+<<endif>>
+<<set $visited_GB to true>>
 <<changeSpeaker MC>>
 Hey {{Senko.| }}
 <<changeSpeaker GB>>

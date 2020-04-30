@@ -137,7 +137,7 @@ namespace Yarn.Unity
 
         public void NextLine()
         {
-            Debug.Log("Dialogue advancement!");
+            //Debug.Log("Dialogue advancement!");
             goToNextLine = true;
         }
 
