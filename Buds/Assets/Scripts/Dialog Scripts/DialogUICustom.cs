@@ -63,7 +63,7 @@ namespace Yarn.Unity
 
         public DialogueRunner.StringUnityEvent onCommand;
 
-        void Start()
+        void Awake()
         {
             DialogueRunner = this.gameObject.GetComponent<DialogueRunner>();
             if(DialogueRunner == null)
