@@ -78,7 +78,7 @@ I just {{felt bad| }} for you… since you died...
 <<changeSpeaker GB>>
 I {{don’t need you| }} to feel bad for me.
 <<changeSpeaker MC>>
-I guess not, {{nevermind} }} then.
+I guess not, {{nevermind| }} then.
 <<changeSpeaker GB>>
 You’re so {{weird.| }}
 <<changeSpeaker MC>>
@@ -105,9 +105,9 @@ Yes, but {{what game| }} is it
 <<changeSpeaker GB>>
 A {{fun| }} game
 <<changeSpeaker MC>>
-….why do I even {{bother| }} [i]sighs[/i]
-<<changeSpeaker GB>>(
-[i]Looks up[/i] What do you {{want?| }}
+….why do I even {{bother| }} <i>sighs</i>
+<<changeSpeaker GB>>
+<i>Looks up</i> What do you {{want?| }}
 <<changeSpeaker MC>>
 I wanted to know {{what game| }} you were playing.
 <<changeSpeaker GB>>
@@ -127,7 +127,7 @@ Ge whiz mister! How could you {{tell?| }}
 <<changeSpeaker MC>>
 Fine. If you don’t want to tell me then {{don’t.| }}
 I can just sit here and {{read| }} my book.
-[i]Takes our book and begins to read {{out loud| }}[/i]
+<i>Takes our book and begins to read {{out loud| }}</i>
 <<changeSpeaker MC>>
 The Princess Bride, by S.Morgenstern. {{Chapter One.| }}
 {{Buttercup| }} was raised on a small farm in the country of Florin.
@@ -144,12 +144,12 @@ Books are {{stupid. |}}
 <<changeSpeaker MC>>
 {{How| }} can you say that?
 Books are one of the {{most interesting| }} things out there.
-When you read a good book, you can {{escape| }} into its world and ignore our own.[d]
+When you read a good book, you can {{escape| }} into its world and ignore our own.
 Sorta like what you do with {{video games.| }}
 <<changeSpeaker GB>>
 So what reading is {{stupid| }} and so are books!
 <<changeSpeaker MC>>
-[i]{{Maybe| }} she has a hard time reading, or she could be dyslexic… [/i]
+<i>{{Maybe| }} she has a hard time reading, or she could be dyslexic… </i>
 <<changeSpeaker MC>>
 What about {{audio books.| }}
 If you don’t like reading why don’t you {{try listening| }} to an audiobook?
@@ -157,7 +157,7 @@ You could even do it {{while you play| }} your games.
 <<changeSpeaker GB>>
 {{Don’t have| }} any.
 <<changeSpeaker MC>>
-Alright how bout {{this.}}
+Alright how bout {{this.| }}
 I won't bother you for the rest of the day, {{but| }}
 you {{listen| }} to an audiobook of my choice while you play a game.
 <<changeSpeaker GB>>
@@ -171,9 +171,9 @@ In fact their kids are {{a lot like you| }} in some ways.
 <<changeSpeaker GB>>
 Whatever, just play the damn book.
 <<changeSpeaker MC>>
-[i]She started listening to the book.[/i]
-[i]Hours passed in a slightly comfortable silence.[/i]
-[i]Eventually her parents took her off my hands.[/i]
-[i]I quietly left her playing the game and listening to the book.[/i]
-[i]I hope she keeps on with reading or listening to other books after this.[/i]
+<i>She started listening to the book.</i>
+<i>Hours passed in a slightly comfortable silence.</i>
+<i>Eventually her parents took her off my hands.</i>
+<i>I quietly left her playing the game and listening to the book.</i>
+<i>I hope she keeps on with reading or listening to other books after this.</i>
 ===
