@@ -126,7 +126,10 @@ public class Plant: MonoBehaviour, IDraggable
         hasEnoughSun = onto.GetComponent<PlantSpot>().sunlightLevel >= sunlightNeeded;
         onto.GetComponent<PlantSpot>().currentFlower = this;
 
-        audioSource.Play();
+        if (Time.timeSinceLevelLoad > 1) {
+            audioSource.Play();
+        }
+            
         UpdateAppearance();
     }
 

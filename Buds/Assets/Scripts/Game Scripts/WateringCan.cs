@@ -141,7 +141,9 @@ public class WateringCan : MonoBehaviour
         else if (onStartShadow) {
             justPickedUp = true;
             Cursor.visible = !Cursor.visible;
-            GameObject.Find("Cyclamen").GetComponent<AudioSource>().Play();
+
+            // Play the same sound as plants make when they are picked up or put down
+            FindObjectOfType<Plant>().GetComponent<AudioSource>().Play();
         } 
     }
 
