@@ -27,6 +27,9 @@ public class Plant: MonoBehaviour, IDraggable
     [Tooltip("The maximum number of days until the plant needs to be watered")]
     public float daysOfWaterNeeded;
 
+    [Tooltip("Water used up per day by the plant")]
+    public float waterUsePerDay;
+
     [Tooltip("The number of days between each growth stage of the plant")]
     public float daysBetweenStages;
 
@@ -43,20 +46,23 @@ public class Plant: MonoBehaviour, IDraggable
     public float daysToNextWatering;
 
     [Tooltip("How much the plant has grown")]
-    public LifeStage growthStage = LifeStage.Seed;
+    public LifeStage growthStage = LifeStage.Seedling;
 
     [Tooltip("The number of days the plant needs to grow to the next stage")]
     public float daysToNextStage;
 
     public enum LifeStage {
-        Seed, Sprout, FullPlant, Blossom
+        Seedling, Young, Blossom
     }
 
-    private string[] lifeStageStrings = { "Seed", "Sprout", "<size=16>Full</size>\nPlant", "Blossom\n<size=16>(Final)</size>" };
+    public Sprite[] growthSprites = new Sprite[3];
+
+    private string[] lifeStageStrings = { "Seedling", "Young", "Blossom\n<size=16>(Final)</size>" };
 
     private SpriteRenderer soil;
+    private SpriteRenderer plant;
+    private SpriteMask mask;
     private ParticleSystem sparkles;
-    private Text growthStageText;
     private Slider waterLevelBar;
     private Image sunlightIcon;
 
@@ -65,8 +71,9 @@ public class Plant: MonoBehaviour, IDraggable
         daysToNextStage = daysBetweenStages;
 
         soil = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        plant = GetComponent<SpriteRenderer>();
+        mask = GetComponent<SpriteMask>();
         sparkles = GetComponentInChildren<ParticleSystem>();
-        growthStageText = transform.GetChild(2).GetChild(2).GetComponent<Text>();
         waterLevelBar = transform.GetChild(2).GetChild(3).GetComponent<Slider>();
         sunlightIcon = transform.GetChild(2).GetChild(4).GetComponent<Image>();
     }
@@ -144,7 +151,7 @@ public class Plant: MonoBehaviour, IDraggable
     // Uses up one day of the plant's hydration level and sets hasEnoughWater to
     // false if it runs out of water
     private void UseWater() {
-        daysToNextWatering--;
+        daysToNextWatering -= waterUsePerDay;
 
         if (daysToNextWatering <= 0) {
             hasEnoughWater = false;
@@ -182,9 +189,12 @@ public class Plant: MonoBehaviour, IDraggable
         
 
         float soilDarkness = daysToNextWatering / daysOfWaterNeeded;
-        soil.color = new Color(soil.color.r, soil.color.g, soil.color.b, soilDarkness);
-        growthStageText.text = lifeStageStrings[(int)growthStage];
+        float soilColor = 1 - soilDarkness * 0.4f;
+        soil.color = new Color(soilColor, soilColor, soilColor);
         waterLevelBar.value = soilDarkness;
+
+        plant.sprite = growthSprites[(int)growthStage];
+        mask.sprite = growthSprites[(int)growthStage];
 
         if (hasEnoughSun) {
             sunlightIcon.color = new Color(1f, 1f, 0f);
