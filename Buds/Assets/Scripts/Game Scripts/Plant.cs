@@ -66,6 +66,8 @@ public class Plant: MonoBehaviour, IDraggable
     private Slider waterLevelBar;
     private Image sunlightIcon;
 
+    private AudioSource audioSource;
+
     void Awake()
     {
         daysToNextStage = daysBetweenStages;
@@ -76,6 +78,8 @@ public class Plant: MonoBehaviour, IDraggable
         sparkles = GetComponentInChildren<ParticleSystem>();
         waterLevelBar = transform.GetChild(2).GetChild(3).GetComponent<Slider>();
         sunlightIcon = transform.GetChild(2).GetChild(4).GetComponent<Image>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -121,7 +125,8 @@ public class Plant: MonoBehaviour, IDraggable
     public void Drop(GameObject onto) {
         hasEnoughSun = onto.GetComponent<PlantSpot>().sunlightLevel >= sunlightNeeded;
         onto.GetComponent<PlantSpot>().currentFlower = this;
-         
+
+        audioSource.Play();
         UpdateAppearance();
     }
 
@@ -129,6 +134,7 @@ public class Plant: MonoBehaviour, IDraggable
         hasEnoughSun = false;
         from.GetComponent<PlantSpot>().currentFlower = null;
 
+        audioSource.Play();
         UpdateAppearance();
     }
 

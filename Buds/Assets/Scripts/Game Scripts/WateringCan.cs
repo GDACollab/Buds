@@ -25,9 +25,13 @@ public class WateringCan : MonoBehaviour
 
     private ParticleSystem water;
 
+    private AudioSource audioSource;
+
     private void Start() {
         initialRotation = transform.rotation;
         water = GetComponentInChildren<ParticleSystem>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -130,12 +134,14 @@ public class WateringCan : MonoBehaviour
         if (!onStartShadow && !justPickedUp) {
             watering = true;
             water.Play();
+            audioSource.Play();
             StopCoroutine("RotateGradually");
             StartCoroutine("RotateGradually");
         }
         else if (onStartShadow) {
             justPickedUp = true;
             Cursor.visible = !Cursor.visible;
+            GameObject.Find("Cyclamen").GetComponent<AudioSource>().Play();
         } 
     }
 
@@ -143,6 +149,7 @@ public class WateringCan : MonoBehaviour
         if (!onStartShadow && !justPickedUp || transform.rotation != initialRotation) {
             watering = false;
             water.Stop();
+            audioSource.Stop();
             StopCoroutine("RotateGradually");
             StartCoroutine("RotateGradually");
         }
