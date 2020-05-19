@@ -75,7 +75,7 @@ public class OrderedSceneNavigator : MonoBehaviour
 
     public void ToCredits()
     {
-        SceneManager.LoadScene();
+        SceneManager.LoadScene(5);
     }
 
     public void Reset() {
