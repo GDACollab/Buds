@@ -98,15 +98,15 @@ public class OrderedSceneNavigator : MonoBehaviour
 
     public void RetrieveSchedule() {
         if (!PersistentData.instance.ContainsKey("numCompleted")) {
-            PersistentData.instance.StoreData("numCompleted", 1);
+            PersistentData.instance.StoreData("numCompleted", 0);
 
-            Vector3 tempPos = scheduleItems[0].transform.position;
-            scheduleItems[0].transform.position = scheduleItems[1].transform.position;
-            scheduleItems[1].transform.position = tempPos;
+            //Vector3 tempPos = scheduleItems[0].transform.position;
+            //scheduleItems[0].transform.position = scheduleItems[1].transform.position;
+            //scheduleItems[1].transform.position = tempPos;
             FixedUpdate();
 
             PersistentData.instance.StoreData("todaysSchedule", sceneOrder.Values);
-            date = System.DateTime.Today;
+            date = System.DateTime.Today - System.TimeSpan.FromDays(1);
             PersistentData.instance.StoreData("date", date);
         }
         numCompleted = (int)PersistentData.instance.ReadData("numCompleted");
