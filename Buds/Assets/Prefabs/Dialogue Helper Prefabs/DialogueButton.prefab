@@ -91,12 +91,12 @@ GameObject:
   - component: {fileID: 6051628691245164146}
   - component: {fileID: 4669283751763901059}
   m_Layer: 5
-  m_Name: BlankButton
+  m_Name: DialogueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3740151050849605434
 RectTransform:
   m_ObjectHideFlags: 0
