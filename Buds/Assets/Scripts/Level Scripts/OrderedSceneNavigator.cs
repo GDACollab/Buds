@@ -83,6 +83,11 @@ public class OrderedSceneNavigator : MonoBehaviour
         FadeLoadScene();
     }
 
+    public void ToCredits()
+    {
+        SceneManager.LoadScene(5);
+    }
+
     public void Reset() {
         SceneManager.LoadScene(0);
     }
