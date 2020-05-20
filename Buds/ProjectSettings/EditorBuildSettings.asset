@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test Scenes/End of Day.unity
     guid: d339515ae619c4e8088c5e5705d3badb
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/Main Menu.unity
+    guid: 0d6190d73cd55794a95f1374b540b12e
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 8da0943fe200eee47a952795eb38cc77
   m_configObjects: {}
