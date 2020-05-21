@@ -586,7 +586,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 766ce438fa50742d68d806723b852ec0,
+      objectReference: {fileID: 21300000, guid: dee79b649d7496444a1b7d732f5c0264,
         type: 3}
     - target: {fileID: 4848793850182898019, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
@@ -653,12 +653,12 @@ PrefabInstance:
         type: 3}
       propertyPath: yarnScripts.Array.data[0]
       value: 
-      objectReference: {fileID: 2480198943629176163, guid: 7c02b13f7aca6524f9840b4cbbf20fbe,
+      objectReference: {fileID: 2480198943629176163, guid: e52800699e65fb944bff1178b53c1376,
         type: 3}
     - target: {fileID: 5935829475398715329, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
       propertyPath: startNode
-      value: RFfirstMeeting
+      value: Header
       objectReference: {fileID: 0}
     - target: {fileID: 5935829475398715329, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
@@ -746,6 +746,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -62
       objectReference: {fileID: 0}
+    - target: {fileID: 6557618055608245396, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557618055608245396, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 7149874665899881874, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
       propertyPath: expressions.Array.size
@@ -754,7 +764,7 @@ PrefabInstance:
     - target: {fileID: 7149874665899881874, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
       propertyPath: sprites.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7149874665899881874, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
@@ -772,13 +782,25 @@ PrefabInstance:
         type: 3}
       propertyPath: sprites.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 766ce438fa50742d68d806723b852ec0,
+      objectReference: {fileID: 21300000, guid: dee79b649d7496444a1b7d732f5c0264,
         type: 3}
     - target: {fileID: 7149874665899881874, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
       propertyPath: sprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: ea4b955285c880a42bbe97fe267ac2a1,
+      objectReference: {fileID: 21300000, guid: b61b0ee8741dc92479f53b53647170d4,
+        type: 3}
+    - target: {fileID: 7149874665899881874, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: c1072a16c995d314d9a245e9c8718a4b,
+        type: 3}
+    - target: {fileID: 7149874665899881874, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: sprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9f61283bf3e452c4e85cf30694fad518,
         type: 3}
     - target: {fileID: 8245181055515182852, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
@@ -839,7 +861,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 084d23600dd8040b28c235203af20a57,
+      objectReference: {fileID: 21300000, guid: 79b229d476d990d4082de7ccc05e1e51,
         type: 3}
     - target: {fileID: 8601443862421495317, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
@@ -995,12 +1017,12 @@ PrefabInstance:
         type: 3}
       propertyPath: intro
       value: 
-      objectReference: {fileID: 8300000, guid: 5cd833b1e9301e44db49111923504c47, type: 3}
+      objectReference: {fileID: 8300000, guid: 0789e032879985f459972e61856d8357, type: 3}
     - target: {fileID: 7893131780443032982, guid: 3e583cd304a73454494fe0c61012749a,
         type: 3}
       propertyPath: loop
       value: 
-      objectReference: {fileID: 8300000, guid: de74658811d3de94ab01f9f08921ec36, type: 3}
+      objectReference: {fileID: 8300000, guid: 45ad4e4d45f175d4a92ece488961adf7, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e583cd304a73454494fe0c61012749a, type: 3}
 --- !u!1001 &1439017271

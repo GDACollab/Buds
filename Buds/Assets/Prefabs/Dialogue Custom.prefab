@@ -488,11 +488,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultVariables:
   - name: visited_RF
-    value: false
-    type: 2
+    value: 0
+    type: 0
   - name: visited_GB
-    value: false
-    type: 2
+    value: 0
+    type: 0
 --- !u!1 &5935829475857655956
 GameObject:
   m_ObjectHideFlags: 0

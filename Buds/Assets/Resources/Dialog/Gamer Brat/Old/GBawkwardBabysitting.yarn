@@ -1,0 +1,179 @@
+﻿title: GBawkwardBabysitting
+tags: GamerBrat
+colorID: 0
+position: 1337, 1337
+---
+<<if $visited_GB is true>>
+[[GBreadingTheBook]]
+<<endif>>
+<<set $visited_GB to true>>
+<<changeSpeaker MC>>
+Hey {{Senko.| }}
+<<changeSpeaker GB>>
+{{Huh?| }}
+<<changeSpeaker MC>>
+Hi! Your parents told me to watch over you for a bit.
+<<changeSpeaker GB>>
+Wait, what? It’s {{you!?| }}
+<<changeSpeaker MC>>
+It’s me? What do {{you| }} mean it’s me?
+<<changeSpeaker GB>>
+{{Nothing.| }}
+<<changeSpeaker MC>>
+Oh…{{?| }}
+<<changeSpeaker GB>>
+No no... I’m not surprised by {{anything.| }}
+<<changeSpeaker MC>>
+Oh{{...| }}
+<<changeSpeaker MC>>
+Um, so what... What’cha got {{there?| }}
+<<changeSpeaker GB>>
+A {{game.| }}
+<<changeSpeaker MC>>
+{{What| }} game?
+<<changeSpeaker GB>>
+{{FUCK!!!| }}
+<<changeSpeaker MC>>
+{{????| }}
+<<changeSpeaker GB>>
+FUCKING PIECE OF {{SHIT| }} THINKS THEY CAN DO THAT TO ME? I’LL SHOW YOU!
+<<changeSpeaker MC>>
+Hey, I think you’re {{scaring| }} some of the other people in the restaurant.
+<<changeSpeaker GB>>
+{{SHUT UP!| }} Let me focus.
+<<changeSpeaker MC>>
+… {{okay| }}…
+<<changeSpeaker GB>>
+…
+<<changeSpeaker MC>>
+Ummm…
+<<changeSpeaker GB>>
+…
+<<changeSpeaker MC>>
+Hey, Senko?
+<<changeSpeaker GB>>
+…
+<<changeSpeaker MC>>
+{{Everything| }} okay?
+<<changeSpeaker GB>>
+Yeah… they {{got| }} me.
+<<changeSpeaker MC>>
+Oh…
+<<changeSpeaker GB>>
+I’m {{done| }} with this game.
+<<changeSpeaker MC>>
+Cool… I uhh, I mean I’m sorry that {{happened| }} to you.
+<<changeSpeaker GB>>
+What’chu {{sorry| }} for?
+<<changeSpeaker MC>>
+I mean, ya know, they {{killed| }} you, or something…
+<<changeSpeaker GB>>
+You didn’t {{cause| }} it.
+<<changeSpeaker MC>>
+I know, but…, you know what, {{never mind.| }} 
+<<changeSpeaker GB>>
+{{Say| }} it
+<<changeSpeaker MC>>
+I just {{felt bad| }} for you… since you died...
+<<changeSpeaker GB>>
+I {{don’t need you| }} to feel bad for me.
+<<changeSpeaker MC>>
+I guess not, {{nevermind| }} then.
+<<changeSpeaker GB>>
+You’re so {{weird.| }}
+<<changeSpeaker MC>>
+Yeah…
+<<changeSpeaker GB>>
+You know what, I’m {{done| }} with this game.
+<<changeSpeaker MC>>
+{{Oh?| }}
+<<changeSpeaker GB>>
+Yeah, {{need a break| }} or something.
+===
+
+title: GBreadingTheBook
+tags: GamerBrat
+colorID: 0
+position: 420, 420
+---
+<<changeSpeaker MC>>
+So, ummm… what are you {{playing?| }}
+<<changeSpeaker GB>>
+A {{game,| }} duh
+<<changeSpeaker MC>>
+Yes, but {{what game| }} is it
+<<changeSpeaker GB>>
+A {{fun| }} game
+<<changeSpeaker MC>>
+….why do I even {{bother| }} <i>sighs</i>
+<<changeSpeaker GB>>
+<i>Looks up</i> What do you {{want?| }}
+<<changeSpeaker MC>>
+I wanted to know {{what game| }} you were playing.
+<<changeSpeaker GB>>
+Ughh, fine, it’s called {{Super Fabio 64| }}
+<<changeSpeaker MC>>
+That’s uhh… interesting, what’s it {{about?| }}
+<<changeSpeaker GB>>
+It’s a platformer, you play as this {{buff dude| }} with suuuuuper long hair.
+He uses it to {{fight| }}, kinda like Gunaneta.
+He also {{keeps talking| }} about butter for some reason.
+<<changeSpeaker MC>>
+Ah I see, the {{sarcasm| }} is strong with this one
+<<changeSpeaker GB>>
+Nooo {{really?| }}
+You {{think| }} so?
+Ge whiz mister! How could you {{tell?| }}
+<<changeSpeaker MC>>
+Fine. If you don’t want to tell me then {{don’t.| }}
+I can just sit here and {{read| }} my book.
+<i>Takes our book and begins to read {{out loud| }}</i>
+<<changeSpeaker MC>>
+The Princess Bride, by S.Morgenstern. {{Chapter One.| }}
+{{Buttercup| }} was raised on a small farm in the country of Florin.
+Her favorite pastimes were riding her horse and {{tormenting| }} the farm boy that worked there. His name was Westley, but she {{never| }} called him that.
+Isn't that a {{wonderful beginning?| }}, Buttercup said.
+Nothing gave Buttercup as much pleasure as {{ordering Westley around…| }}
+<<changeSpeaker GB>>
+Ughhh, fine, please just {{shut up.| }}
+I’ll tell you about the {{game.| }}
+<<changeSpeaker MC>>
+That's more like it. So {{not a fan| }} of the classics?
+<<changeSpeaker GB>>
+Books are {{stupid. |}}
+<<changeSpeaker MC>>
+{{How| }} can you say that?
+Books are one of the {{most interesting| }} things out there.
+When you read a good book, you can {{escape| }} into its world and ignore our own.
+Sorta like what you do with {{video games.| }}
+<<changeSpeaker GB>>
+So what reading is {{stupid| }} and so are books!
+<<changeSpeaker MC>>
+<i>{{Maybe| }} she has a hard time reading, or she could be dyslexic… </i>
+<<changeSpeaker MC>>
+What about {{audio books.| }}
+If you don’t like reading why don’t you {{try listening| }} to an audiobook?
+You could even do it {{while you play| }} your games.
+<<changeSpeaker GB>>
+{{Don’t have| }} any.
+<<changeSpeaker MC>>
+Alright how bout {{this.| }}
+I won't bother you for the rest of the day, {{but| }}
+you {{listen| }} to an audiobook of my choice while you play a game.
+<<changeSpeaker GB>>
+Hmmmmmm…
+{{fine.| }}
+<<changeSpeaker MC>>
+Excellent! Here {{plug your headphones| }} into my phone.
+Good. Now listen to this, it’s about {{gods and mythical beings.| }}
+They’re {{fighting| }} each other and their demigod children.
+In fact their kids are {{a lot like you| }} in some ways.
+<<changeSpeaker GB>>
+Whatever, just play the damn book.
+<<changeSpeaker MC>>
+<i>She started listening to the book.</i>
+<i>Hours passed in a slightly comfortable silence.</i>
+<i>Eventually her parents took her off my hands.</i>
+<i>I quietly left her playing the game and listening to the book.</i>
+<i>I hope she keeps on with reading or listening to other books after this.</i>
+===
