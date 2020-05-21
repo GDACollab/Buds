@@ -588,6 +588,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: dee79b649d7496444a1b7d732f5c0264,
         type: 3}
+    - target: {fileID: 4470107695405331885, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4848793850182898019, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
