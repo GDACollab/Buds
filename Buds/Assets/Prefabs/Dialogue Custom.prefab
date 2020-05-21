@@ -493,6 +493,12 @@ MonoBehaviour:
   - name: visited_GB
     value: 0
     type: 0
+  - name: unfinished_RF
+    value: false
+    type: 2
+  - name: unfinished_GB
+    value: false
+    type: 2
 --- !u!1 &5935829475857655956
 GameObject:
   m_ObjectHideFlags: 0

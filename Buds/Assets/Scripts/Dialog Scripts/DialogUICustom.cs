@@ -112,7 +112,7 @@ namespace Yarn.Unity
 
             for (int i = 0; i < lineText.Length; ++i)
             {
-                if (charsOnLine > 60 && lineText[i] == ' ')
+                if (charsOnLine > 50 && lineText[i] == ' ')
                 {
                     TextNewLine();
                     charsOnLine = 0;

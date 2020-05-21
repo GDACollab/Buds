@@ -3,11 +3,15 @@ tags: GamerBrat
 colorID: 0
 position: 111, 111
 ---
+<<if $unfinished_GB>>
+[[GB_Dialogue.Unfinished]]
+<<endif>>
+
+<<set $unfinished_GB to true>>
 
 <<if $visited_GB >= 2>>
 
 <<if $narcissus_growth_stage >= 2>>
-<<set $visited_GB to ($visited_GB + 1)>>
 [[GB_Dialogue.NoPower]]
 <<else>>
 [[GB_Dialogue.Busy]]
@@ -16,7 +20,6 @@ position: 111, 111
 <<elseif $visited_GB == 1>>
 
 <<if $cyclamen_growth_stage >= 1>>
-<<set $visited_GB to ($visited_GB + 1)>>
 [[GB_Dialogue.ReadingTheBook]]
 <<else>>
 [[GB_Dialogue.Busy]]
@@ -24,7 +27,6 @@ position: 111, 111
 
 <<else>>
 
-<<set $visited_GB to ($visited_GB + 1)>>
 [[GB_Dialogue.AwkwardBabysitting]]
 
 <<endif>>
@@ -152,6 +154,8 @@ You’re so {{weird| }}.
 <<changeFace Character GB_Neutral_Open>>
 I {{need a break| }} or something.
 <<changeFace Character GB_Neutral_Closed>>
+<<set $visited_GB to 1>>
+<<set $unfinished_GB to false>>
 ===
 
 title: GB_Dialogue.ReadingTheBook
@@ -267,6 +271,8 @@ Whatever, just play the damn {{book.| }}
 <i>Eventually her parents took her off my hands.</i>
 <i>I quietly left her playing the game and listening to the book.</i>
 <i>I hope she keeps on with reading or listening to other books after this.</i>
+<<set $visited_GB to 2>>
+<<set $unfinished_GB to false>>
 ===
 
 title: GB_Dialogue.NoPower
@@ -423,6 +429,8 @@ At your age? Pretty much {{infinite.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
 {{...liar| }}
+<<set $visited_GB to 3>>
+<<set $unfinished_GB to false>>
 ===
 
 title: GB_Dialogue.Busy
@@ -430,11 +438,27 @@ tags: GamerBrat
 colorID: 0
 position: 222, 240
 ---
+<<set $unfinished_GB to false>>
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
 I'm too {{busy| }}! You should come back another time.
 <<changeSpeaker MC>>
 <<changeFace Character GB_Neutral_Closed>>
-<i>Maybe I should check my narcissus plant's water..</i>
+<i>Maybe I should check my daffodil plant's water..</i>
 <i>Or does it need more sunlight?</i>
+===
+
+title: GB_Dialogue.Unfinished
+tags: GamerBrat
+colorID: 0
+position: 111, 240
+---
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+Hey, you left before I was done! Let's talk again.
+<<changeSpeaker MC>>
+<<changeFace Character GB_Neutral_Closed>>
+...! <i>Did my daffodil plant not grow because I ignored Senko?</i>
+<<set $unfinished_GB to false>>
+[[Header]]
 ===

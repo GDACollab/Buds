@@ -145,8 +145,12 @@ public class Plant: MonoBehaviour, IDraggable
 
     // Causes plant to grow one day if it is in good condition
     private void Grow() {
+        string character = name == "Cyclamen" ? "$unfinished_RF" : "$unfinished_GB";
+
         if (hasEnoughSun && hasEnoughWater &&
-                growthStage != LifeStage.Blossom) {
+                growthStage != LifeStage.Blossom &&
+                !((Yarn.Value)PersistentData.instance.ReadData(character)).AsBool &&
+                !((Yarn.Value)PersistentData.instance.ReadData(character)).AsBool) {
 
             daysToNextStage--;
 
