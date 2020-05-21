@@ -8,8 +8,9 @@ public class OrderedSceneNavigator : MonoBehaviour
 {
     public int[] buildIndexes;
     public int endOfDayIndex;
+    public int mainMenuIndex = 0;
 
-    public GameObject[] scheduleItems;
+    public GameObject[] scheduleItems = null;
 
     public Animator phoneAnim;
 
@@ -40,7 +41,9 @@ public class OrderedSceneNavigator : MonoBehaviour
 
         FixedUpdate();
 
-        RetrieveSchedule();
+        if (scheduleItems.Length > 0) {
+            RetrieveSchedule();
+        }
 
         fadeOutUIImage.enabled = true;
         StartCoroutine(Fade(FadeDirection.Out));
@@ -49,12 +52,18 @@ public class OrderedSceneNavigator : MonoBehaviour
     void FixedUpdate()
     {
         sceneOrder.Clear();
-        for (int i = 0; i < 3; i++) {
-            if (!sceneOrder.ContainsKey(scheduleItems[i].transform.position.y)) {
-                sceneOrder.Add(scheduleItems[i].transform.position.y, buildIndexes[i]);
+        if (scheduleItems.Length > 0) {
+            
+            for (int i = 0; i < 3; i++) {
+                if (!sceneOrder.ContainsKey(scheduleItems[i].transform.position.y)) {
+                    sceneOrder.Add(scheduleItems[i].transform.position.y, buildIndexes[i]);
+                }
             }
+            sceneOrder.Add(float.NegativeInfinity, endOfDayIndex);
         }
-        sceneOrder.Add(float.NegativeInfinity, endOfDayIndex);
+        else {
+            sceneOrder.Add(0, 5);
+        }
     }
 
     public void ShowOrHideMenu() {
@@ -68,6 +77,22 @@ public class OrderedSceneNavigator : MonoBehaviour
     }
 
     public void ShowMenu() {
+        // set next destination to credits if completed all dialog and plants fully upgraded
+        if (PersistentData.instance.ContainsKey("$visited_RF") && PersistentData.instance.ContainsKey("$visited_GB")) {
+            Yarn.Value visitedRF = (Yarn.Value)PersistentData.instance.ReadData("$visited_RF");
+            Yarn.Value visitedGB = (Yarn.Value)PersistentData.instance.ReadData("$visited_GB");
+            if (visitedRF.AsNumber > 2f && visitedGB.AsNumber > 2f) {
+                confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Go to Credits";
+                mainMenuIndex = 5;
+                scheduleItems = new GameObject[0];
+
+                float volume = (float)PersistentData.instance.ReadData("Volume");
+                PersistentData.instance.Clear();
+                PersistentData.instance.StoreData("Volume", volume);
+
+            }
+        }
+
         phoneAnim.SetBool("finished", false);
 
         menuEnabled = true;
@@ -85,7 +110,12 @@ public class OrderedSceneNavigator : MonoBehaviour
 
     public void ToCredits()
     {
-        SceneManager.LoadScene(5);
+        mainMenuIndex = 5;
+        scheduleItems = new GameObject[0];
+        PersistentData.instance.RemoveData("numCompleted");
+        PersistentData.instance.RemoveData("todaysSchedule");
+
+        FadeLoadScene();
     }
 
     public void Reset() {
@@ -136,7 +166,9 @@ public class OrderedSceneNavigator : MonoBehaviour
                 switch (numCompleted)
                 {
                     case 0:
-                        confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Start a New Day";
+                        if (confirmButton.GetComponentInChildren<Text>().text != "Start") {
+                            confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Start a New Day";
+                        }   
                         
                         confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "18:00";
 
@@ -241,7 +273,7 @@ public class OrderedSceneNavigator : MonoBehaviour
                 fadeOutUIImage.enabled = true;
             else
                 sr.enabled = true;
-            while (fadeStartValue <= fadeEndValue) {
+            while (fadeStartValue <= fadeEndValue + 0.05f) {
                 if (sr == null)
                     SetTransparencyImage(FadeDirection.In);
                 else
@@ -252,8 +284,11 @@ public class OrderedSceneNavigator : MonoBehaviour
 
         // Load next scene once fade is complete if in a load transition
         if (sr == null && loading && !fadeCompleted) {
-            SetSchedule();
-            int sceneIndex = sceneOrder.Values[numCompleted];
+            if (scheduleItems.Length > 0) {
+                SetSchedule();
+            }
+
+            int sceneIndex = (scheduleItems.Length > 0) ? sceneOrder.Values[numCompleted] : mainMenuIndex;
             Debug.Log("Loading scene at index " + sceneIndex);
             StartCoroutine(FinishLoadScene(sceneIndex));
         }

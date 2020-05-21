@@ -181,8 +181,9 @@ namespace Yarn.Unity
             onDialogueEnd?.Invoke();
 
             // Hide the dialogue interface.
-            if (DialogContainer != null)
-                DialogContainer.SetActive(false);
+            foreach (Transform child in DialogSuperContainer.transform) {
+                GameObject.Destroy(child.gameObject);
+            }
 
             //fade the character being spoken to
             characterFunctions.startFade(1.0f);

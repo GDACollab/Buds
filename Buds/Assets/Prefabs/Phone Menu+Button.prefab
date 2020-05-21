@@ -199,6 +199,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4150932073893497027}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &6458106408766809617 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6918900348271374034, guid: 422ab1171af6141329c4d1995db7c11b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4150932073893497027}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8505918061110035219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5733088731825015760, guid: 422ab1171af6141329c4d1995db7c11b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4150932073893497027}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4556542819942341451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,6 +334,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5959862844596643390, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: scheduleItems.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959862844596643390, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: phoneAnim
+      value: 
+      objectReference: {fileID: 6458106408766809617}
+    - target: {fileID: 5959862844596643390, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: confirmButton
+      value: 
+      objectReference: {fileID: 8505918061110035219}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd8268237509340628639d7903bfaee3, type: 3}
 --- !u!224 &7893042284659162663 stripped

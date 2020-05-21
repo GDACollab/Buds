@@ -25,13 +25,15 @@ public class WateringCan : MonoBehaviour
 
     private ParticleSystem water;
 
-    private AudioSource audioSource;
+    private AudioSource wateringSound;
+    private AudioSource pickupSound;
 
     private void Start() {
         initialRotation = transform.rotation;
         water = GetComponentInChildren<ParticleSystem>();
 
-        audioSource = GetComponent<AudioSource>();
+        wateringSound = GetComponent<AudioSource>();
+        pickupSound = transform.GetChild(0).GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -134,7 +136,7 @@ public class WateringCan : MonoBehaviour
         if (!onStartShadow && !justPickedUp) {
             watering = true;
             water.Play();
-            audioSource.Play();
+            wateringSound.Play();
             StopCoroutine("RotateGradually");
             StartCoroutine("RotateGradually");
         }
@@ -143,7 +145,7 @@ public class WateringCan : MonoBehaviour
             Cursor.visible = !Cursor.visible;
 
             // Play the same sound as plants make when they are picked up or put down
-            FindObjectOfType<Plant>().GetComponent<AudioSource>().Play();
+            pickupSound.Play();
         } 
     }
 
@@ -151,7 +153,7 @@ public class WateringCan : MonoBehaviour
         if (!onStartShadow && !justPickedUp || transform.rotation != initialRotation) {
             watering = false;
             water.Stop();
-            audioSource.Stop();
+            wateringSound.Stop();
             StopCoroutine("RotateGradually");
             StartCoroutine("RotateGradually");
         }

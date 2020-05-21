@@ -3,13 +3,30 @@ tags: GamerBrat
 colorID: 0
 position: 111, 111
 ---
+
+<<if $visited_GB >= 2>>
+
+<<if $narcissus_growth_stage >= 2>>
 <<set $visited_GB to ($visited_GB + 1)>>
-<<if $visited_GB >= 3>>
 [[GB_Dialogue.NoPower]]
-<<elseif $visited_GB == 2>>
+<<else>>
+[[GB_Dialogue.Busy]]
+<<endif>>
+
+<<elseif $visited_GB == 1>>
+
+<<if $cyclamen_growth_stage >= 1>>
+<<set $visited_GB to ($visited_GB + 1)>>
 [[GB_Dialogue.ReadingTheBook]]
 <<else>>
+[[GB_Dialogue.Busy]]
+<<endif>>
+
+<<else>>
+
+<<set $visited_GB to ($visited_GB + 1)>>
 [[GB_Dialogue.AwkwardBabysitting]]
+
 <<endif>>
 ===
 
@@ -155,10 +172,10 @@ Yes, but {{what game| }} is it?
 A {{fun| }} game.
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
- [i]Why do I even {{bother...| }} *sighs*[/i]
+ <i>Why do I even {{bother...| }} *sighs*</i>
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-[i]*looks up*[/i] What do you {{want| }}?
+<i>*looks up*</i> What do you {{want| }}?
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
 I wanted to know {{what game| }} you were playing.
@@ -185,7 +202,7 @@ Gee whiz! How can you {{tell| }}?
 <<changeSpeaker MC>>
 Fine. If you don’t want to tell me, {{that’s alright.| }}
 I can just sit here and {{read| }} my book.
-[i]*takes out book and begins to read {{out loud| }}*[/i]
+<i>*takes out book and begins to read {{out loud| }}*</i>
 <<changeSpeaker MC>>
 <<changeFace Character GB_Neutral_Closed>>
 The Princess Bride, by S. Morgenstern. {{Chapter One.| }}
@@ -214,7 +231,7 @@ Just like what you do with {{video games| }}.
 So what? I don’t care. Reading is {{boring| }} and so are books!
 <<changeFace Character GB_Jeer_Closed>>
 <<changeSpeaker MC>>
-[i]{{Maybe| }} she has a hard time reading, or she could be dyslexic… [/i]
+<i>{{Maybe| }} she has a hard time reading, or she could be dyslexic… </i>
 <<changeSpeaker MC>>
 <<changeFace Character GB_Neutral_Closed>>
 What about {{audio books| }}?
@@ -245,11 +262,11 @@ Whatever, just play the damn {{book.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
 <<changeFace Character GB_Neutral_Closed>>
-[i]She started listening to the book.[/i]
-[i]Hours passed in a slightly comfortable silence.[/i]
-[i]Eventually her parents took her off my hands.[/i]
-[i]I quietly left her playing the game and listening to the book.[/i]
-[i]I hope she keeps on with reading or listening to other books after this.[/i]
+<i>She started listening to the book.</i>
+<i>Hours passed in a slightly comfortable silence.</i>
+<i>Eventually her parents took her off my hands.</i>
+<i>I quietly left her playing the game and listening to the book.</i>
+<i>I hope she keeps on with reading or listening to other books after this.</i>
 ===
 
 title: GB_Dialogue.NoPower
@@ -259,7 +276,7 @@ position: 111, 117
 ---
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-AHHHHH{{!!!!!| }
+AHHHHH{{!!!!!| }}
 <<changeSpeaker MC>>
 <<changeFace Character GB_Angry_Closed>>
 You wouldn’t have this {{problem| }} if you liked books
@@ -283,7 +300,7 @@ AHHHHH!!! You’re {{no help.| }}
 …
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-Would you {{stop| }] reading?
+Would you {{stop| }} reading?
 <<changeSpeaker MC>>
 <<changeFace Character GB_Angry_Closed>>
 What? {{Why?| }}
@@ -336,7 +353,7 @@ Um, {{sure?| }}
 There’s this guy that I {{used to| }} play with all the time.
 <<changeSpeaker MC>>
 <<changeFace Character GB_Neutral_Closed>>
-He’s your {{friend?| }]
+He’s your {{friend?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
 NO. {{Not anymore.| }}
@@ -367,7 +384,7 @@ Well people make {{mistakes| }}.
 <<changeFace Character GB_Angry_Open>>
 They shouldn’t. It’s {{annoying.| }}
 <<changeSpeaker MC>>
-<<changeFace Character GB>_Angry_Closed>
+<<changeFace Character GB_Angry_Closed>
 That’s {{just the way| }} people are. I’m sure you’ve made plenty of mistakes.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -406,4 +423,18 @@ At your age? Pretty much {{infinite.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
 {{...liar| }}
+===
+
+title: GB_Dialogue.Busy
+tags: GamerBrat
+colorID: 0
+position: 222, 240
+---
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+I'm too {{busy| }}! You should come back another time.
+<<changeSpeaker MC>>
+<<changeFace Character GB_Neutral_Closed>>
+<i>Maybe I should check my narcissus plant's water..</i>
+<i>Or does it need more sunlight?</i>
 ===

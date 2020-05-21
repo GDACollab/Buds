@@ -32,7 +32,26 @@ public class PersistentDataVariableStorage : Yarn.Unity.VariableStorageBehaviour
     // Return a value, given a variable name
     public override Yarn.Value GetValue(string variableName)
     {
-        return (Yarn.Value)PersistentData.instance.ReadData(variableName);
+        Yarn.Value newValue = null;
+
+        switch (variableName)
+        {
+            case "$narcissus_growth_stage":
+                Plant narcissus = (Plant)PersistentData.instance.ReadData("Narcissus");
+                newValue = new Yarn.Value((float)narcissus.growthStage);
+                break;
+
+            case "$cyclamen_growth_stage":
+                Plant cyclamen = (Plant)PersistentData.instance.ReadData("Cyclamen");
+                newValue = new Yarn.Value((float)cyclamen.growthStage);
+                break;
+
+            default:
+                newValue = (Yarn.Value)PersistentData.instance.ReadData(variableName);
+                break;
+        }
+
+        return newValue; 
     }
 
     // Return to the original state
