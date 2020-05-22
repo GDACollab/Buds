@@ -61,7 +61,7 @@ Oh, then yes.
 Well, the {{most popular new releases| }} for urban fantasy are right over here.
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-.... <i>*walks over and begins looking at books*</i>
+{{....| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 Let me {{kn—| }} 
@@ -92,7 +92,6 @@ I believe you can find it over {{here| }}.
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 What do you like about it?
-<<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 Well—um... it’s... interesting because it does something that the newer releases seem kind of scared to do—
 —and the fact that they put this character in, Adelaide, might seem a bit cliche, but then you look at the release dates and this is actually—
@@ -104,18 +103,17 @@ It’s—
 Ah{{…| }} 
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
-That sounds… {{interesting| }}. <i>*holding the book*</i>
+That sounds… {{interesting| }}.
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-Haha... <i>*awkward laugh*</i> It’s a good book, but The Maiden of the Silver Sea is far more popular right now. It’s a thrilling tale about a young woman who finds herself through travelling the sea and meeting a charming, handsome prince.
+Haha... It’s a good book, but The Maiden of the Silver Sea is far more popular right now. It’s a thrilling tale about a young woman who finds herself through travelling the sea and meeting a charming, handsome prince.
+<<changeFace Character RF_Confused_Closed>>
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-Hmm... I think I’ll take {{this one| }}. <i>*holding the book Shiori originally recommended*</i>
-<<changeSpeaker RF>>
+Hmm... I think I’ll take {{the one you recommended instead| }}. 
 <<changeFace Character RF_Smile_Open>>
 Oh...! Okay, I can {{ring you up| }} right over here.
 <<changeFace Character RF_Smile_Closed>>
-<<changeFace Character RF_Confused_Closed>>
 <<wait 3>>
 <<changeFace Character RF_Smile_Open>>
 Thank you for your {{purchase| }}, please come again.
@@ -123,8 +121,10 @@ Thank you for your {{purchase| }}, please come again.
 <<changeSpeaker MC>>
 Yeah... this book does seem more interesting to me. I’ll tell you {{what I think| }} about it.
 <<changeSpeaker RF>>
-<<changeFace Character RF_Confused_Closed>>
+<<changeFace Character RF_Confused_Open>>
 ...!
+<<changeFace Character RF_Confused_Closed>>
+
 <<set $visited_RF to 1>>
 <<set $unfinished_RF to false>>
 ===
@@ -257,6 +257,7 @@ For sure. {{Thank you again| }} for talking with me.
 <<changeFace Character RF_Smile_Open>>
 ... likewise to you too. 
 <<changeFace Character RF_Smile_Closed>>
+
 <<set $visited_RF to 2>>
 <<set $unfinished_RF to false>>
 ===
@@ -266,27 +267,32 @@ tags: RetailFriend
 colorID: 0
 position: 222, 231
 ---
+<i> Over the last couple of weeks, I continued to visit the bookstore. </i>
+<i> At first, it was really only to buy new books to distract myself with, </i>
+<i> but lately I’ve found myself looking forward to talking with Shiori as well. </i>
+<i> I stopped by again today to get another book…</i>
+
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 {{Welcome!| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-Hey, {{Shiori!| }}
+Hello, {{Shiori!| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 Oh hey, {{it’s you!| }} How’s it been? 
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-You know...it’s been good. 
+You know...it’s been pretty alright. 
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 Great to hear! Did you like {{the book| }} I picked out the last time? 
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-Yeah! I loved the {{final battle scene| }} where the wizard defeats the dark dragon.
+I did! I loved the {{final battle scene| }} where the wizard defeats the dark dragon.
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Oh yes! I thought that was really exciting too! It’s one of my favorite scenes in the book. {{My favorite| }} would definitely have to be when the wizard and the princess get married in the end though. 
+Oh yes! I thought that was really exciting too! It’s one of my favorite scenes in the book. {{Another scene I liked| }} would definitely have to be when the wizard and the princess get married in the end though. 
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 Have you read the {{second book| }} in the series? I hear the dark dragon rises again and seeks revenge against a friend of the wizard. 
@@ -298,13 +304,13 @@ Have you read the {{second book| }} in the series? I hear the dark dragon rises 
  {{...Shiori?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-Shiori: Hm? Oh, sorry I was spacing out a bit! ...I’ve just been tired today. It was busy earlier and I’ve been a little stressed...doesn’t really help any that I forgot to bring {{my lunch with me…| }}
+Hm? Oh, sorry I was spacing out a bit! ...I’ve just been tired today. It was busy earlier and I’ve been a little stressed... doesn’t really help any that I forgot to bring {{my lunch with me... | }}
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
 Did you want {{mine?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-Shiori: I…{{I’m sorry?| }}
+I…{{I’m sorry?| }}
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
 I packed a lunch since I was planning to be out for a while today. It’s nothing special, but {{it’ll help.| }}
@@ -313,22 +319,22 @@ I packed a lunch since I was planning to be out for a while today. It’s nothin
 But, won’t {{you| }} get hungry later, then? I really think you should keep this! 
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
-Oh no, {{it’s okay.| }} Seriously, I live right on top of a restaurant. I can just grab a bite once I get home. 
+Oh no, {{it’s okay.| }} Don’t worry, I live right above a restaurant. I can just grab a bite once I get home. 
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-Um...well okay, if you’re really sure about it. {{Thank you so much—!| }}
+Well... okay, if you’re really sure about it. {{Thank you so much—!| }}
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
-No problem! Hey, I also wanted to ask, do you know if {{this book| }} is any good?
+No problem! By the way... I also wanted to ask—do you know if {{this book| }} is any good?
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Oh! Yes, I rather like it myself...but, just asking to be sure, you know this {{isn’t an urban fantasy book| }}, right?
+Oh! Yes, I rather like it myself... but, just asking to be sure: you know this {{isn’t an urban fantasy book| }}, right?
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-Oh yeah I know, thought I would get something {{different for a change.| }} 
+I know, thought I would get something {{different for a change.| }} 
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-I see. Well, that’s neat, it’s always fun to {{try new things—!| }} In that case, are you ready for me to ring you up?
+I see. That’s neat, it’s always fun to {{try new things!| }} In that case, are you ready for me to ring you up?
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 {{Sure!| }}
@@ -337,37 +343,50 @@ I see. Well, that’s neat, it’s always fun to {{try new things—!| }} In tha
 Alright, here you are. 
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-Thanks, I’ll be seein-
+Thanks, I’ll be seein—
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-Uhm, {{actually…!| }}
+Um, {{actually…!| }}
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
 What’s up?
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-W...well, if you don’t mind, I have something I want to {{give you.| }}
+W... well—if you don’t mind, I have something I want to {{give you.| }}
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
-Hm? {{What is it?| }}
+Me...? {{What is it?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-A while ago, you asked to see something I’ve written, right? {{I brought a few things| }} if you’re still interested…
+A while ago, you asked to see something I’ve written, right? {{I brought a few things| }}, if you’re still interested that is...
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
-Oh, {{what are they?| }}
+Really? Of course I’m interested! {{What are they?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-It’s not much if I’m being honest, just some things I had laying around. A few short stories...some poems...hopefully they aren’t too long or anything. I do tend to {{ramble on| }} a bit…
+It’s not much if I’m being honest, just some things I had laying around. A few short stories... some poems... hopefully they aren’t too long or anything. I do tend to {{ramble on| }} a bit... 
+<<changeFace Character RF_Confused_Closed>>
+<<changeSpeaker MC>>
+There’s nothing wrong with {{rambling| }}, Shiori.
+Short and sweet language may get to the point, but it does have a different charm from {{texts that can reveal something perhaps deeper about the writer.| }}
+Even “flowery descriptions” can have meaning, which I... personally find {{valuable.| }}
+So don’t worry, I don’t mind at all. Thank you for letting me take a look at these! I’ll {{let you know what I think| }}.
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+{{...!| }}
+{{....| }}
+<<changeFace Character RF_Smile_Open>>
+... Oh...! Yes, {{of course.| }}
+{{I’ll look forward to it, then!| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-Oh no, I don’t mind at all. Thank you for letting me take a look at these! I’ll {{let you know what I think| }} next time.
+{{Until next time| }}, then!
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Oh yeah sure—! {{I look forward to it.| }}
-<<changeFace Character RF_Smile_Closed>>
-<<changeSpeaker MC>>
-Take care.
+{{Take care!| }}
+<<changeFace Character RF_Confused_Open>>
+And... {{thank you.| }}
+
 <<set $visited_RF to 3>>
 <<set $unfinished_RF to false>>
 ===
@@ -378,6 +397,7 @@ colorID: 0
 position: 222, 240
 ---
 <<set $unfinished_RF to false>>
+
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 Sorry, I'm too {{busy| }} to talk now. Could you come back tomorrow?
@@ -392,12 +412,14 @@ tags: RetailFriend
 colorID: 0
 position: 111, 240
 ---
+
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
 Oh, I think you left before I was done last time... I'm going to start over.
 <<changeSpeaker MC>>
 <<changeFace Character RF_Smile_Closed>>
 ...! <i>Did my cyclamen plant not grow because I ingnored Shiori?</i>
+
 <<set $unfinished_RF to false>>
 [[Header]]
 ===
