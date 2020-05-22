@@ -186,7 +186,7 @@ Transform:
   m_GameObject: {fileID: 3712986409564825156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children:
   - {fileID: 6064663947870695777}
   - {fileID: 377570497347227576}
@@ -276,7 +276,7 @@ MonoBehaviour:
   minY: 0
   animationTime: 0
   background: 0
-  maxSnapDistance: 1.5
+  maxSnapDistance: 3
 --- !u!331 &5645377935811873845
 SpriteMask:
   m_ObjectHideFlags: 0

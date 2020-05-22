@@ -92,7 +92,7 @@ namespace Yarn.Unity
         }
 
         /*
-         * Defaukt YarnSpinner Methods (with some modification)
+         * Default YarnSpinner Methods (with some modification)
          */
 
         public override Dialogue.HandlerExecutionType RunLine(Line line, IDictionary<string, string> strings, Action onLineComplete)
@@ -119,8 +119,10 @@ namespace Yarn.Unity
                 }
                 else if (lineText[i] == '{' && i + 1 < lineText.Length -1 && lineText[i + 1] == '{')
                 {
-
+                    int oldI = i;
                     i = CreateTextButton(lineText, i);
+                    charsOnLine += i - oldI;
+
                 }
                 else if(lineText[i] == ' ')
                 {
