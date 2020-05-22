@@ -267,15 +267,15 @@ tags: RetailFriend
 colorID: 0
 position: 222, 231
 ---
-<i> Over the last couple of weeks, I continued to visit the bookstore. </i>
-<i> At first, it was really only to buy new books to distract myself with, </i>
-<i> but lately I’ve found myself looking forward to talking with Shiori as well. </i>
-<i> I stopped by again today to get another book…</i>
+<i>Over the last couple of weeks, I continued to visit the bookstore. </i>
+<i>At first, it was really only to buy new books to distract myself with, </i>
+<i>but lately I’ve found myself looking forward to talking with Shiori as well. </i>
+<i>I stopped by again today to get another book…</i>
 
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 {{Welcome!| }}
-<<changeFace Character RF_Smile_Closed>>
+<<changeFace Character RF_Smile_Closed>>a
 <<changeSpeaker MC>>
 Hello, {{Shiori!| }}
 <<changeSpeaker RF>>
@@ -418,7 +418,7 @@ position: 111, 240
 Oh, I think you left before I was done last time... I'm going to start over.
 <<changeSpeaker MC>>
 <<changeFace Character RF_Smile_Closed>>
-...! <i>Did my cyclamen plant not grow because I ingnored Shiori?</i>
+...! <i>Did my cyclamen plant not grow because I ignored Shiori?</i>
 
 <<set $unfinished_RF to false>>
 [[Header]]

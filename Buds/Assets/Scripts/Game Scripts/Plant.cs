@@ -149,7 +149,6 @@ public class Plant: MonoBehaviour, IDraggable
 
         if (hasEnoughSun && hasEnoughWater &&
                 growthStage != LifeStage.Blossom &&
-                !((Yarn.Value)PersistentData.instance.ReadData(character)).AsBool &&
                 !((Yarn.Value)PersistentData.instance.ReadData(character)).AsBool) {
 
             daysToNextStage--;
