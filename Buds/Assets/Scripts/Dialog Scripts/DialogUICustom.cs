@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -74,11 +75,11 @@ namespace Yarn.Unity
                 Debug.LogWarning("Dialogue Runner not found");
             }
 
-            phoneFunctions = GameObject.Find("PhoneButton").transform.GetChild(1).gameObject.GetComponent<OrderedSceneNavigator>();
+            /*phoneFunctions = GameObject.Find("PhoneButton").transform.GetChild(1).gameObject.GetComponent<OrderedSceneNavigator>();
             if(phoneFunctions == null)
             {
                 Debug.LogWarning("Phone (or its Ordered Scene Navigator) not found");
-            }
+            }*/
 
             characterFunctions = DialogSuperContainer.transform.parent.GetChild(1).gameObject.GetComponent<SpriteFunctions>();
             if(characterFunctions == null)
@@ -114,7 +115,16 @@ namespace Yarn.Unity
             {
                 if (charsOnLine > 50 && lineText[i] == ' ')
                 {
-                    TextNewLine();
+                    //checking whether or not there is a started italics in the original line
+                    if(Regex.Match(text.text, @"<i>").Success)
+                    {
+                        text.text += "</i>";
+                        TextNewLine(true);
+                    }
+                    else
+                    {
+                        TextNewLine(false);
+                    }
                     charsOnLine = 0;
                 }
                 else if (lineText[i] == '{' && i + 1 < lineText.Length -1 && lineText[i + 1] == '{')
@@ -308,13 +318,20 @@ namespace Yarn.Unity
         }
 
         //Creates a new line of text. May God have mercy on my immortal soul
-        private void TextNewLine()
+        private void TextNewLine(bool italics)
         {
+
             DialogContainer = Instantiate(DialogContainerPrefab, DialogSuperContainer.transform);
             text = Instantiate(DialogTextPrefab, DialogContainer.transform);
             text.color = textColor;
             button = Instantiate(DialogButtonPrefab, DialogContainer.transform);
             buttonText = button.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
+
+            //adds italics if needed due to a newline operation
+            if (italics)
+            {
+                text.text += "<i>";
+            }
         }
 
         //Changes the dialogue to a different Yarn Node
