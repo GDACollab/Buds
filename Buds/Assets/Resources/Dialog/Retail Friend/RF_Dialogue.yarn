@@ -275,7 +275,7 @@ position: 222, 231
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 {{Welcome!| }}
-<<changeFace Character RF_Smile_Closed>>a
+<<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 Hello, {{Shiori!| }}
 <<changeSpeaker RF>>
@@ -368,7 +368,7 @@ It’s not much if I’m being honest, just some things I had laying around. A f
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
 There’s nothing wrong with {{rambling| }}, Shiori.
-Short and sweet language may get to the point, but it does have a different charm from {{texts that can reveal something perhaps deeper about the writer.| }}
+Short and sweet language may get to the point, but it does have a different charm from texts that can {{reveal| }} something perhaps deeper about the writer.
 Even “flowery descriptions” can have meaning, which I... personally find {{valuable.| }}
 So don’t worry, I don’t mind at all. Thank you for letting me take a look at these! I’ll {{let you know what I think| }}.
 <<changeSpeaker RF>>
