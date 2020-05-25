@@ -75,10 +75,15 @@ namespace Yarn.Unity
                 Debug.LogWarning("Dialogue Runner not found");
             }
 
-            phoneFunctions = GameObject.Find("PhoneButton").transform.GetChild(1).gameObject.GetComponent<OrderedSceneNavigator>();
-            if(phoneFunctions == null)
+            //phoneFunctions = 
+            if(GameObject.Find("PhoneButton") == null)
             {
                 Debug.LogWarning("Phone (or its Ordered Scene Navigator) not found");
+                phoneFunctions = null;
+            }
+            else
+            {
+                phoneFunctions = GameObject.Find("PhoneButton").transform.GetChild(1).gameObject.GetComponent<OrderedSceneNavigator>();
             }
 
             characterFunctions = DialogSuperContainer.transform.parent.GetChild(1).gameObject.GetComponent<SpriteFunctions>();

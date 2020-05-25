@@ -118,6 +118,16 @@ public class OrderedSceneNavigator : MonoBehaviour
         FadeLoadScene();
     }
 
+    public void ToMainMenu()
+    {
+        mainMenuIndex = 0;
+        scheduleItems = new GameObject[0];
+        PersistentData.instance.RemoveData("numCompleted");
+        PersistentData.instance.RemoveData("todaysSchedule");
+
+        FadeLoadScene();
+    }
+
     public void Reset() {
         SceneManager.LoadScene(0);
     }
