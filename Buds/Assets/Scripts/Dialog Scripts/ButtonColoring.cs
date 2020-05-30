@@ -5,14 +5,19 @@ using TMPro;
 
 public class ButtonColoring : MonoBehaviour
 {
-    public Color standard;
+    public Color mcButtons;
+    public Color characterButtons;
     public Color highlighted;
+    public string speaker = "MC";
+    Color standard;
     TextMeshProUGUI text;
 
     // Start is called before the first frame update
     void Start()
     {
         text = this.gameObject.GetComponent<TextMeshProUGUI>();
+        //everytime I write a ternarry I live another 100 years
+        standard = speaker.Equals("MC") ? mcButtons : characterButtons;
         text.color = standard;
     }
 

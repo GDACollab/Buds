@@ -20,6 +20,7 @@ namespace Yarn.Unity
 
         DialogueRunner DialogueRunner;
         int activeButtons;
+        public string currentSpeaker;
         Color textColor = Color.yellow;
 
         TextMeshProUGUI text;
@@ -39,18 +40,6 @@ namespace Yarn.Unity
 
         //A whole lot of weird YarnSpinner things. I don't know what they do, so 
         //I use them as I need them
-        /*// When true, the user has indicated that they want to proceed to
-        // the next line.
-        //private bool userRequestedNextLine = false;
-
-        // The method that we should call when the user has chosen an
-        // option. Externally provided by the DialogueRunner.
-        private System.Action<int> currentOptionSelectionHandler;
-
-        // When true, the DialogueRunner is waiting for the user to press
-        // one of the option buttons.
-        private bool waitingForOptionSelection = false;
-        */
 
         //Yarn things I am using
         public UnityEngine.Events.UnityEvent onDialogueStart;
@@ -224,6 +213,7 @@ namespace Yarn.Unity
             string buttonText = "";
             string nextNode = "";
             bool breaker = false;
+
             //This keeps both braces from being printed
             ++index;
             ++index;
@@ -260,7 +250,10 @@ namespace Yarn.Unity
 
             //creates the actual new button and sets it text
             button = Instantiate(DialogButtonPrefab, DialogContainer.transform);
-            button.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = buttonText;
+            var newButtonText = button.transform.GetChild(0).gameObject;
+            //I'm certain there's a better way to move this information, but uhhh....
+            newButtonText.GetComponent<ButtonColoring>().speaker = currentSpeaker;
+            newButtonText.GetComponent<TextMeshProUGUI>().text = buttonText;
 
             //gives the button proper functionality
             Debug.Log("NextNode is >" + nextNode + "<");
@@ -351,6 +344,7 @@ namespace Yarn.Unity
         private void changeSpeaker(string[] parameters)
         {
             string newSpeaker = parameters[0];
+            currentSpeaker = newSpeaker;
             switch (newSpeaker)
             {
                 case "MC":
