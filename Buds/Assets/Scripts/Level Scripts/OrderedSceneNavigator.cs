@@ -17,6 +17,8 @@ public class OrderedSceneNavigator : MonoBehaviour
     public Button confirmButton;
 
     public Image fadeOutUIImage;
+    public Text newDayText;
+
     public enum FadeDirection { In, Out }
 
 
@@ -46,7 +48,23 @@ public class OrderedSceneNavigator : MonoBehaviour
         }
 
         fadeOutUIImage.enabled = true;
-        StartCoroutine(Fade(FadeDirection.Out));
+        fadeOutUIImage.color = new Color(
+            fadeOutUIImage.color.r,
+            fadeOutUIImage.color.g,
+            fadeOutUIImage.color.b,
+            1
+            );
+
+        if (numCompleted == 1) {
+            // Shows large date at beginning of the day
+            newDayText.gameObject.SetActive(true);
+            newDayText.text = date.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP")) + "\n<size=40>" + date.ToString("dddd, MMMM d") + "</size>";
+
+            StartCoroutine(WaitAndFade());
+        }
+        else {
+            StartCoroutine(Fade(FadeDirection.Out));
+        }
     }
 
     void FixedUpdate()
@@ -127,7 +145,7 @@ public class OrderedSceneNavigator : MonoBehaviour
         PersistentData.instance.StoreData("numCompleted", (numCompleted + 1) % 3);
 
         if (numCompleted == 0) {
-            PersistentData.instance.StoreData("date", date.AddDays(1));
+            PersistentData.instance.StoreData("date", date.AddDays(7));
         }
     }
 
@@ -135,13 +153,10 @@ public class OrderedSceneNavigator : MonoBehaviour
         if (!PersistentData.instance.ContainsKey("numCompleted")) {
             PersistentData.instance.StoreData("numCompleted", 0);
 
-            //Vector3 tempPos = scheduleItems[0].transform.position;
-            //scheduleItems[0].transform.position = scheduleItems[1].transform.position;
-            //scheduleItems[1].transform.position = tempPos;
             FixedUpdate();
 
             PersistentData.instance.StoreData("todaysSchedule", sceneOrder.Values);
-            date = System.DateTime.Today - System.TimeSpan.FromDays(1);
+            date = new System.DateTime(2020, 3, 14);
             PersistentData.instance.StoreData("date", date);
         }
         numCompleted = (int)PersistentData.instance.ReadData("numCompleted");
@@ -212,8 +227,13 @@ public class OrderedSceneNavigator : MonoBehaviour
         }
     }
 
+    // Shows large date at beginning of the day for 2 seconds
+    private IEnumerator WaitAndFade() {
+        yield return new WaitForSeconds(3);
 
-
+        newDayText.gameObject.SetActive(false);
+        StartCoroutine(Fade(FadeDirection.Out));
+    }
 
     // Fade in a screen transition image, then load next scene
     public void FadeLoadScene() {
