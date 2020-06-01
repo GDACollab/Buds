@@ -87,4 +87,9 @@ public class PersistentData : MonoBehaviour
     {
     	return dataStorage.ContainsKey(key);
     }
+
+    //Clear removes all entries from the master hastable
+    public void Clear() {
+        dataStorage.Clear();
+    }
 }

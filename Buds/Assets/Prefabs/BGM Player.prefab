@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intro: {fileID: 8300000, guid: a3bb0f2f26aa347fda14a975f29768f4, type: 3}
   loop: {fileID: 8300000, guid: a9e3c8d4e639e417cb56b67114668e88, type: 3}
+  volumeMultiplier: 0.5
 --- !u!82 &7893131780443032980
 AudioSource:
   m_ObjectHideFlags: 0
@@ -58,7 +59,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

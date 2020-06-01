@@ -26,6 +26,9 @@ namespace Yarn.Unity
         TextMeshProUGUI buttonText;
         GameObject DialogContainer;
 
+        OrderedSceneNavigator phoneFunctions;
+        SpriteFunctions characterFunctions;
+
         /// How quickly to show the text, in seconds per character
         [Tooltip("How quickly to show the text, in seconds per character")]
         public float textSpeed = 0.025f;
@@ -68,7 +71,19 @@ namespace Yarn.Unity
             DialogueRunner = this.gameObject.GetComponent<DialogueRunner>();
             if(DialogueRunner == null)
             {
-                Debug.Log("Dialogue Runner not found");
+                Debug.LogWarning("Dialogue Runner not found");
+            }
+
+            phoneFunctions = GameObject.Find("PhoneButton").transform.GetChild(1).gameObject.GetComponent<OrderedSceneNavigator>();
+            if(phoneFunctions == null)
+            {
+                Debug.LogWarning("Phone (or its Ordered Scene Navigator) not found");
+            }
+
+            characterFunctions = DialogSuperContainer.transform.parent.GetChild(1).gameObject.GetComponent<SpriteFunctions>();
+            if(characterFunctions == null)
+            {
+                Debug.LogWarning("Character (or its Sprite Functions) not found");
             }
 
             DialogueRunner.AddCommandHandler("changeSpeaker", changeSpeaker);
@@ -77,7 +92,7 @@ namespace Yarn.Unity
         }
 
         /*
-         * Defaukt YarnSpinner Methods (with some modification)
+         * Default YarnSpinner Methods (with some modification)
          */
 
         public override Dialogue.HandlerExecutionType RunLine(Line line, IDictionary<string, string> strings, Action onLineComplete)
@@ -97,15 +112,17 @@ namespace Yarn.Unity
 
             for (int i = 0; i < lineText.Length; ++i)
             {
-                if (charsOnLine > 60 && lineText[i] == ' ')
+                if (charsOnLine > 50 && lineText[i] == ' ')
                 {
                     TextNewLine();
                     charsOnLine = 0;
                 }
                 else if (lineText[i] == '{' && i + 1 < lineText.Length -1 && lineText[i + 1] == '{')
                 {
-
+                    int oldI = i;
                     i = CreateTextButton(lineText, i);
+                    charsOnLine += i - oldI;
+
                 }
                 else if(lineText[i] == ' ')
                 {
@@ -158,6 +175,23 @@ namespace Yarn.Unity
         {
             throw new NotImplementedException("NO OPTION SUPPORT");
             //StartCoroutine(DoRunOptions(optionsCollection, strings, selectOption));
+        }
+
+        // Called when the dialogue system has finished running.
+        public override void DialogueComplete()
+        {
+            onDialogueEnd?.Invoke();
+
+            // Hide the dialogue interface.
+            foreach (Transform child in DialogSuperContainer.transform) {
+                GameObject.Destroy(child.gameObject);
+            }
+
+            //fade the character being spoken to
+            characterFunctions.startFade(1.0f);
+
+            //open the phone
+            phoneFunctions.ShowMenu();
         }
 
         /*
@@ -321,12 +355,5 @@ namespace Yarn.Unity
             }
 
         }
-
-        //very hacky solution, it was build day
-        //switches the scene to play the next yarn file, rather than the original
-        /*public void switchStartNode
-        {
-
-        }*/
     }
 }

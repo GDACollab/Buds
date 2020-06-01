@@ -132,6 +132,10 @@ public class DragAndDrop : MonoBehaviour
                 if (!dragging) {
                     dragging = true;
                     snapped = false;
+
+                    if (lastMoveTo != null && itemBeingDragged != null) {
+                        itemBeingDragged.Lift(from: lastMoveTo);
+                    }
                 }
                 else if (dragging && toggle) {
 
