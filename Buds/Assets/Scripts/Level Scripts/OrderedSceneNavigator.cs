@@ -130,8 +130,15 @@ public class OrderedSceneNavigator : MonoBehaviour
     {
         mainMenuIndex = 5;
         scheduleItems = new GameObject[0];
-        PersistentData.instance.RemoveData("numCompleted");
-        PersistentData.instance.RemoveData("todaysSchedule");
+        Destroy(PersistentData.instance);
+
+        FadeLoadScene();
+    }
+
+    public void ToMainMenu() {
+        mainMenuIndex = 0;
+        scheduleItems = new GameObject[0];
+        Destroy(PersistentData.instance);
 
         FadeLoadScene();
     }

@@ -159,9 +159,20 @@ public class Notebook : MonoBehaviour
         }
     }
 
+    public void HideNotebook() {
+        if (notebookPage.activeSelf) {
+            ToggleNotebook();
+            FindObjectOfType<AdjustBlur>().hold = true;
+        }
+    }
+
     public void ExportBook()
     {
         //saves the Notebook to persistent data
+    }
+
+    public void ToggleEnabled() {
+        transform.GetChild(3).GetComponent<Button>().enabled = !transform.GetChild(3).GetComponent<Button>().enabled;
     }
 }
 
