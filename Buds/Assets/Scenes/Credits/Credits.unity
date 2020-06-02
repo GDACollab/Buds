@@ -523,6 +523,7 @@ MonoBehaviour:
 
 
 
+
     Sound
     Engineers
 
@@ -843,7 +844,7 @@ MonoBehaviour:
 
     Holly Cheng
 
-    Jeven Zarate-McCoy
+    Thomas Applewhite
 
     Justin
     Hammer
@@ -856,8 +857,8 @@ MonoBehaviour:
 
     Gigi Bachtel
 
-    Thomas
-    Applewhite
+    Jeven
+    Zarate-McCoy
 
     Valentino Abate
 
@@ -1000,7 +1001,7 @@ PrefabInstance:
     - target: {fileID: 5959862845529720916, guid: dd8268237509340628639d7903bfaee3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 62.600098
+      value: 62.5
       objectReference: {fileID: 0}
     - target: {fileID: 5959862845529720919, guid: dd8268237509340628639d7903bfaee3,
         type: 3}
@@ -1415,7 +1416,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: "\u273F\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u273F\n\n\n\u273F\n\n\u273F\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u273F\n\n\n\n\n\n\u273F\n\n\u273F\n\n\u273F\n\n\n\n\u273F\n\n\n\n\n\u273F"
+  m_Text: "\u273F\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u273F\n\n\n\u273F\n\n\u273F\n\n\n\n\n\n\n\n\n\n\n\n\n\u273F\n\n\n\n\n\n\n\n\n\u273F\n\n\n\u273F\n\n\u273F\n\n\n\n\u273F\n\n\n\u273F\n\n\u273F"
 --- !u!222 &1537369816
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1853,7 +1854,7 @@ MonoBehaviour:
     Eric Long
 
 
-    Edward Lee
+    Ben Roisen
 
     Ray Nelson
 
@@ -1864,11 +1865,13 @@ MonoBehaviour:
 
     Thomas Applewhite
 
+    Valentino Abate
 
-    Autumn Moulios
 
-    Enrico
-    Widodo
+    Autumn
+    Moulios
+
+    Enrico Widodo
 
     Randy Kim
 
@@ -1877,10 +1880,10 @@ MonoBehaviour:
     Dallas Truong
 
 
-    Ryoma Marta-Sugawara
+    Ryoma
+    Marta-Sugawara
 
-    Andrew
-    Dunne
+    Andrew Dunne
 
     Dallas Truong
 
