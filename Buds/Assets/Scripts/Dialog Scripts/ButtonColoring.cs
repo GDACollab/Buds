@@ -5,35 +5,31 @@ using TMPro;
 
 public class ButtonColoring : MonoBehaviour
 {
-    public Color standard;
+    public Color mcButtons;
+    public Color characterButtons;
     public Color highlighted;
-    Color textColor;
-    
-
-    /*
-     *  Hi. Thomas again. onMouseEnter doesn't actually work with TMP assets
-     *      because they don't have colliders, but they can't use the standard
-     *      OnPointerEnter event that most UI uses because they don't extend
-     *      Selectable. So, I'm leaving the easier stuff here, probably for
-     *      myself, to solve later.
-     */
+    public string speaker = "MC";
+    Color standard;
+    TextMeshProUGUI text;
 
     // Start is called before the first frame update
     void Start()
     {
-        textColor = this.gameObject.GetComponent<TextMeshProUGUI>().color;
-        textColor = standard;
+        text = this.gameObject.GetComponent<TextMeshProUGUI>();
+        //everytime I write a ternarry I live another 100 years
+        standard = speaker.Equals("MC") ? mcButtons : characterButtons;
+        text.color = standard;
     }
 
-    void onMouseEnter()
+    public void onPointerEnter()
     {
         Debug.Log("Mouse in");
-        textColor = highlighted;
+        text.color = highlighted;
     }
 
-    void onMouseExit()
+    public void onPointerExit()
     {
         Debug.Log("Mouse out");
-        textColor = standard;
+        text.color = standard;
     }
 }
