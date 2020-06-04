@@ -72,9 +72,8 @@ public class SpriteFunctions : MonoBehaviour
 
         if (needsFade)
         {
-            StartCoroutine(Fade(FadeDirection.Out));
-            gameObject.GetComponent<Image>().sprite = match;
             StartCoroutine(Fade(FadeDirection.In));
+            StartCoroutine(SecondHalfOfFadeInOut(FadeDirection.Out, match));
         }
         else
         {
@@ -105,6 +104,13 @@ public class SpriteFunctions : MonoBehaviour
     }
 
 
+    private IEnumerator SecondHalfOfFadeInOut(FadeDirection direction, Sprite match) {
+        yield return new WaitForSeconds(fadeSpeed + 0.1f);
+
+        gameObject.GetComponent<Image>().sprite = match;
+        StartCoroutine(Fade(direction));
+
+    }
 
     // Coroutine to fade an Image or SpriteRenderer
     //because you can't fade one sprite into another so I'm just fading in and out some white

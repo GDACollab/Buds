@@ -13,6 +13,8 @@ public class AdjustBlur : MonoBehaviour
 
     public float blurTime = 1f;
 
+    public DragAndDrop[] backgroundObjects;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +26,9 @@ public class AdjustBlur : MonoBehaviour
     {
         if (!on && !hold) {
             blurObj.weight = blur;
-        }
-            
+
+            SetBGInteractivity(blur <= 0.5f);
+        }   
     }
 
     public void ToggleOn() {
@@ -34,6 +37,8 @@ public class AdjustBlur : MonoBehaviour
         Start();
 
         blurObj.weight = blur = on ? 1f : 0f;
+
+        SetBGInteractivity(blur <= 0.5f);
     }
 
     public void Off() {
@@ -42,5 +47,12 @@ public class AdjustBlur : MonoBehaviour
 
     public void StopHold() {
         hold = false;
+    }
+
+    // turn on or off drag and drop functionality for background elements
+    public void SetBGInteractivity(bool state) {
+        foreach (DragAndDrop element in backgroundObjects) {
+            element.enabled = state;
+        }
     }
 }

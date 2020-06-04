@@ -28,12 +28,16 @@ public class WateringCan : MonoBehaviour
     private AudioSource wateringSound;
     private AudioSource pickupSound;
 
+    private DragAndDrop dnd;
+
     private void Start() {
         initialRotation = transform.rotation;
         water = GetComponentInChildren<ParticleSystem>();
 
         wateringSound = GetComponent<AudioSource>();
         pickupSound = transform.GetChild(0).GetComponent<AudioSource>();
+
+        dnd = GetComponent<DragAndDrop>();
     }
 
     /// <summary>
@@ -125,41 +129,43 @@ public class WateringCan : MonoBehaviour
     }
 
     private void OnMouseDown() {
-        
+        if (dnd.enabled) {
+            if (currentPlant != null) {
+                Drop(onto: currentPlant);
+            }
 
-        if (currentPlant != null) {
-            Drop(onto: currentPlant);
+            justPickedUp &= onStartShadow;
+
+            if (!onStartShadow && !justPickedUp) {
+                watering = true;
+                water.Play();
+                wateringSound.Play();
+                StopCoroutine("RotateGradually");
+                StartCoroutine("RotateGradually");
+            }
+            else if (onStartShadow) {
+                justPickedUp = true;
+                Cursor.visible = !Cursor.visible;
+
+                // Play the same sound as plants make when they are picked up or put down
+                pickupSound.Play();
+            }
         }
-
-        justPickedUp &= onStartShadow;
-
-        if (!onStartShadow && !justPickedUp) {
-            watering = true;
-            water.Play();
-            wateringSound.Play();
-            StopCoroutine("RotateGradually");
-            StartCoroutine("RotateGradually");
-        }
-        else if (onStartShadow) {
-            justPickedUp = true;
-            Cursor.visible = !Cursor.visible;
-
-            // Play the same sound as plants make when they are picked up or put down
-            pickupSound.Play();
-        } 
     }
 
     private void OnMouseUp() {
-        if (!onStartShadow && !justPickedUp || transform.rotation != initialRotation) {
-            watering = false;
-            water.Stop();
-            wateringSound.Stop();
-            StopCoroutine("RotateGradually");
-            StartCoroutine("RotateGradually");
-        }
+        if (dnd.enabled) {
+            if (!onStartShadow && !justPickedUp || transform.rotation != initialRotation) {
+                watering = false;
+                water.Stop();
+                wateringSound.Stop();
+                StopCoroutine("RotateGradually");
+                StartCoroutine("RotateGradually");
+            }
 
-        if (currentPlant != null) {
-            Lift(from: currentPlant);
+            if (currentPlant != null) {
+                Lift(from: currentPlant);
+            }
         }
     }
 }

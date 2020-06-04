@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class OrderedSceneNavigator : MonoBehaviour
 {
     public int[] buildIndexes;
-    public int endOfDayIndex;
+    private int endOfDayIndex; // unused for now
     public int mainMenuIndex = 0;
 
     public GameObject[] scheduleItems = null;

@@ -29,7 +29,9 @@ public class Tutorial : MonoBehaviour
 
     IEnumerator TutorialRunner()
     {
-        for(int i = 0; i < tutorialObjects.Length; ++i)
+        SetBGandUIInteractivity(false);
+
+        for (int i = 0; i < tutorialObjects.Length; ++i)
         {
             tutorialObjects[i].SetActive(true);
             yield return new WaitUntil( () => nextSection);
@@ -37,7 +39,15 @@ public class Tutorial : MonoBehaviour
             nextSection = false;
         }
 
+        SetBGandUIInteractivity(true);
+
         Debug.Log("Tutorial done!");
+    }
+
+    private void SetBGandUIInteractivity(bool state) {
+        FindObjectOfType<AdjustBlur>().SetBGInteractivity(false);
+        GameObject.Find("Phone Button").GetComponent<UnityEngine.UI.Button>().interactable = state;
+        GameObject.Find("NotebookToggle").GetComponent<UnityEngine.UI.Button>().interactable = state;
     }
 
     //smol helper to grab all of the tutorial's objects
