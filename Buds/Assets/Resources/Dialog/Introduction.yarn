@@ -3,7 +3,7 @@ tags:
 colorID: 0
 position: 0, 0
 ---
-<<changeFace Background BlackScreen_OpeningScene fade>>
+<<changeFace Background BlackScreen_OpeningScene>>
 ... Alright. Let’s call it a {{day| }}.
 <i>If I’m not mistaken, it’s been about a year since she passed away.</i>
 <i>My sister.</i>
