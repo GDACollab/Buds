@@ -179,6 +179,10 @@ public class DragAndDrop : MonoBehaviour
         
     }
 
+    public void ToggleEnabled() {
+        enabled = !enabled;
+    }
+
     public void SetTarget() {
         oldPosition = this.transform.position;
         sourcePosition = transform.position;
