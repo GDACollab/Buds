@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites: []
+  fadeOutUIImage: {fileID: 0}
 --- !u!114 &5693654786126013478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites: []
+  fadeOutUIImage: {fileID: 0}
 --- !u!1 &5935829474793368797
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +447,7 @@ MonoBehaviour:
   DialogSuperContainer: {fileID: 6637374862997714633}
   goToNextLine: 0
   lineTextIndex: 0
+  currentSpeaker: 
   textSpeed: 0.025
   optionButtons: []
   onDialogueStart:
@@ -511,7 +514,7 @@ GameObject:
   - component: {fileID: 5935829475857655952}
   - component: {fileID: 5935829475857655953}
   - component: {fileID: 5935829475857655958}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Dialogue Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
