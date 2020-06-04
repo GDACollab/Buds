@@ -45,7 +45,7 @@ public class Tutorial : MonoBehaviour
     }
 
     private void SetBGandUIInteractivity(bool state) {
-        FindObjectOfType<AdjustBlur>().SetBGInteractivity(false);
+        FindObjectOfType<AdjustBlur>().SetBGInteractivity(state);
         GameObject.Find("Phone Button").GetComponent<UnityEngine.UI.Button>().interactable = state;
         GameObject.Find("NotebookToggle").GetComponent<UnityEngine.UI.Button>().interactable = state;
     }

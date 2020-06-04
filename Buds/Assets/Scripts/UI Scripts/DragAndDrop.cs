@@ -48,7 +48,7 @@ public class DragAndDrop : MonoBehaviour
     GameObject lastMoveTo;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         dragging = false;
         snapped = true;

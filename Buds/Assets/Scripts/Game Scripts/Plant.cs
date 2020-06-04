@@ -131,7 +131,7 @@ public class Plant: MonoBehaviour, IDraggable
         if (Time.timeSinceLevelLoad > 1) {
             audioSource.Play();
         }
-            
+        
         UpdateAppearance();
     }
 
