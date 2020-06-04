@@ -44,6 +44,7 @@ public class PersistentData : MonoBehaviour
     private void Initialize()
     {
     	dataStorage["testInt"] = 0;
+        dataStorage["TutorialDone"] = false;
     }
 
     //StoreData will write data to the master hashtable, which can then be accesed by a key.
