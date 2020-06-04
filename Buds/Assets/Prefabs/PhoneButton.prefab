@@ -304,9 +304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb7f94c26b714b8eb24093282a00d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildIndexes: 020000000100000003000000
-  endOfDayIndex: 3
-  mainMenuIndex: 0
+  buildIndexes: 030000000200000004000000
+  endOfDayIndex: 4
+  mainMenuIndex: 1
   scheduleItems:
   - {fileID: 0}
   - {fileID: 0}

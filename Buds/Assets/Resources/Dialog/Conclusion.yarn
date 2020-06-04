@@ -1,0 +1,111 @@
+title: Ending
+tags:
+colorID: 0
+position: 999, 999
+---
+<<changeFace Character none>>
+<<changeFace Background BlackScreen_OpeningScene>>
+<i> Over the course of the last several months, I would find myself {{talking more and more| }} with the people in Hitachinaka. </i>
+<i> Whenever I wake up, I would feel less inclined to {{stay in bed…| }} </i>
+<i> ...and instead {{feel motivated| }} for the coming day. </i>
+<i> What will I be {{doing?| }} </i>
+<i> Where will I be {{going?| }} </i>
+<i> Who will I be {{talking to?| }} </i>
+<i> It wasn’t immediate, but I started to notice that the weight on my chest would gradually {{disappear.| }} </i>
+
+<<changeFace Background RamenShop_OpeningScene fade>>
+<i> It was no surprise that a big contributor to that was the {{Mizushima family.| }} </i>
+<i> They were always kind to me in not only extending a {{warm welcome| }} when I moved in, </i>
+<i> but also whenever {{I came to visit| }} for a meal. </i>
+<i> Sometimes when I would drop by for ramen and the restaurant wasn’t as busy, they would {{ sit and eat with me.| }} </i>
+<i> They would ask me {{how my day was,| }} and how I’ve been doing. </i>
+<i> It was a small gesture that eventually {{grew in meaning,| }} especially since my sister and I would usually eat in silence. </i>
+<i> I was initially unsure of {{how to respond,| }} but their friendliness brought me to consider them almost like family. </i>
+
+<<changeFace Character GB_Angry_Closed>>
+<i> Not to mention, I became widely known as the one who {{Senko would talk about,| }} even if sarcastically. </i>
+<i> It surprised me that {{someone wondered about me,| }} much less a young girl who could care less about the world. </i>
+<i> Senko was withdrawn from everything, and would much rather pay attention to the {{one thing engaging her.| }} </i>
+<i> Perhaps I was a little {{too uppity| }} when I pronounced books to be the best source of entertainment, </i>
+<i> and it was in every right of Senko to {{reject that idea,| }} </i>
+<i> but she did teach me that we have different ways of {{keeping on| }} with our daily lives. </i>
+
+<<changeFace Character GB_Neutral_Closed>>
+<i> For Senko, she would finally come to accept that she was perhaps much more {{lonely than she expected,| }} and admitted to that in a surprisingly vulnerable way. </i>
+<i> Seeing that the parallels were quite obvious, it wasn’t a shock that she {{warmed up to me| }} over time. </i>
+<i> She’s been listening to more and more {{audiobooks| }} now, while I decided to give her games a shot. </i>
+<i> I don’t think I mind hearing her rant about how bad I am with Super Fabio 64 if that means I get to have {{someone to talk| }} about the mythical gods audiobook series with. </i>
+<i> It makes me happy and honored to be {{Senko’s friend,| }} even if that includes having the same banter that makes it…Senko. </i>
+<i> Lately, she’s been begging me to get her the final volume of the series, going as far as willing to {{read it in book form…!| }} </i>
+<i> For that, we will have to see. It’s fun to see her {{grow through the series,| }} much like I have. </i>
+
+<<changeFace Character none>>
+<<changeFace Background Bookstore_OpeningScene fade>>
+<i> Speaking of books, Senko wasn’t the only one who I became {{good friends| }} with. </i>
+<i> On my freer days, I would make it a point to visit the {{local bookstore.| }} </i>
+<i> To be honest… I really wasn’t {{much of a reader.| }} I just enjoyed the feeling of walking in a store filled with books. </i>
+<i> Maybe it was because of the influence of my sister, who was an {{avid reader| }} herself. </i>
+<i> My habit of {{constantly buying books| }} without finishing them later revealed itself as a way to cover up the pain than to fully enjoy its contents. </i>
+<i> As soon as I realized that, I {{stopped buying them| }} every time I visited... </i>
+<i> ...and would put my focus {{on other things,| }} such as checking out the poetry or stationary section. </i>
+<i> I’d also try to spend more time {{finishing the books| }} I already have, </i>
+<i> and found them to be much more enjoyable when I {{read them for myself.| }} </i>
+
+<<changeFace Character RF_Confused_Closed>>
+<i> And when I properly finished them, it was also nice to have {{in depth conversations| }} about the book with someone. </i>
+<i> Shiori was always a pleasant person to talk to, and would give some {{interesting insight| }} every so often. </i>
+<i> It was no wonder that they were also a {{very good writer.| }} </i>
+<i> They were quite sheepish about it at first, but I’m glad they were able to {{realize their talent| }} later on. </i>
+<i> Shiori doesn’t give themselves as much credit as they deserve… and I think {{I understand| }} why. </i>
+<i> We would eventually come to a quiet {{mutual understanding| }} that it’s okay to be truthful with ourselves. </i>
+<i> {{That it’s okay to not be okay sometimes.| }} </i>
+<i> {{My sister| }} should have known that better than anyone. </i>
+
+<<changeFace Character RF_Smile_Closed>>
+<i> In bonding with Shiori, we learned how to better {{open up to others.| }} </i>
+<i> I was especially {{proud of them| }} when they decided to push forward with their writing. </i>
+<i> They {{shared more| }} of them with me, and I would give my honest feedback. </i>
+<i> In time, I was able to {{encourage them| }} to try public reading, or even contacting a publisher. </i>
+<i> Shiori was {{afraid of criticism| }} at first, which was a sentiment that I am certainly very familiar with. </i>
+<i> We worked through their hesitation, and with {{enough courage,| }} Shiori was able to garner several fans of their own work. </i>
+<i> It warmed my heart to see them interact so {{positively| }} with others about their writing. </i>
+<i> Shiori would {{get more busy| }} after that, and I would see them less and less in the bookstore. </i>
+<i> Of course, that did not stop me from {{keeping in contact| }} with them. </i>
+<i> Who knows? Maybe the next time I visit, their stories will be {{in the shelves.| }} </i>
+
+<<changeFace Character none>>
+<<changeFace Background BlackScreen_OpeningScene fade>>
+<i> It really did surprise me how much my life has {{changed after moving| }} here. </i>
+<i> Time was an essential factor in allowing me to heal, but that was {{not the only one.| }} </i>
+
+<<changeFace Background Graveyard_OpeningScene fade>>
+<i> In the end, {{it was me| }} who needed to make that first step. </i>
+<i> Even if it wasn’t for myself, I’d later discover that happiness {{finding a way back| }} to me. </i>
+<i> Whether that was being {{someone’s friend,| }} </i>
+<i> bringing the needed {{encouragement| }} in another, </i>
+<i> or… as simple as telling someone {{the truth.| }} </i>
+<i> {{…| }} </i>
+<i> I think I finally have the {{confidence to admit| }} that she was not as great of a friend to me as I told myself she was. </i>
+<i> My sister, too, has done some things that were {{rather hurtful.| }} </i>
+
+<<changeFace Background Graveyard_OpeningScene fade>>
+<i> But that doesn’t mean the {{end of the world.| }} </i>
+<i> Maybe telling her the truth about our {{strained relationship| }} was not something she wanted to hear,</i>
+<i> but it was something she {{needed to be told.| }} </i>
+<i> It took me so long to {{build up the strength| }} to tell her that— </i>
+<i> —that she was too controlling, and I was {{too attached| }} because of it. </i>
+<i> She took it as I expected: with initial rage, followed by grief… and then, {{resignation.| }} </i>
+<i> It was not an easy thing to say, especially when I was so {{dependent on her.| }} </i>
+<i> However, a part of me who {{truly loved| }} both her and myself knew it had to be done. </i>
+<i> We would not talk much after that, though I continued to {{stay by her side| }} even if not physically until her death. </i>
+<i> I still appreciated the {{experiences| }} we had together, of course; that will not change. </i>
+<i> We {{helped each other grow| }} despite our shortcomings, and I will never regret her being my sister. </i>
+<i> The damage done has pushed me to {{move on| }} with my own life though, since I feel it is for the best. </i>
+<i> … and I’m sure my sister would have {{agreed.| }} </i>
+
+<<changeFace Background BlackScreen_OpeningScene fade>>
+<i> I do still miss her, though now I’m able to {{cherish her at a distance| }} through my own path in life. </i>
+<i> I understand now that that’s… {{okay.| }} </i>
+<i> In allowing myself to feel and not push people away, I realize that I can {{form relationships| }} outside my little bubble. </i>
+<i> Time lets wounds heal, but ultimately, everything begins with you in how you will let your {{relationships bud.| }} </i>
+===

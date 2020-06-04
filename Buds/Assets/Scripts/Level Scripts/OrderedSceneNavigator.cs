@@ -95,13 +95,13 @@ public class OrderedSceneNavigator : MonoBehaviour
     }
 
     public void ShowMenu() {
-        // set next destination to credits if completed all dialog and plants fully upgraded
+        // set next destination to conclusion scene if completed all dialog and plants fully upgraded
         if (PersistentData.instance.ContainsKey("$visited_RF") && PersistentData.instance.ContainsKey("$visited_GB")) {
             Yarn.Value visitedRF = (Yarn.Value)PersistentData.instance.ReadData("$visited_RF");
             Yarn.Value visitedGB = (Yarn.Value)PersistentData.instance.ReadData("$visited_GB");
             if (visitedRF.AsNumber > 2f && visitedGB.AsNumber > 2f) {
-                confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Go to Credits";
-                mainMenuIndex = 5;
+                confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Reflect";
+                mainMenuIndex = 6;      //index of the conclusion scene
                 scheduleItems = new GameObject[0];
 
                 float volume = (float)PersistentData.instance.ReadData("Volume");
@@ -128,7 +128,7 @@ public class OrderedSceneNavigator : MonoBehaviour
 
     public void ToCredits()
     {
-        mainMenuIndex = 5;
+        mainMenuIndex = 7;  //the index the credits are at
         scheduleItems = new GameObject[0];
         Destroy(PersistentData.instance);
 
@@ -136,7 +136,7 @@ public class OrderedSceneNavigator : MonoBehaviour
     }
 
     public void ToMainMenu() {
-        mainMenuIndex = 0;
+        mainMenuIndex = 1;  //the index of the main menu
         scheduleItems = new GameObject[0];
         Destroy(PersistentData.instance);
 

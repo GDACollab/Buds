@@ -124,7 +124,16 @@ namespace Yarn.Unity
                 else if (lineText[i] == '{' && i + 1 < lineText.Length -1 && lineText[i + 1] == '{')
                 {
                     int oldI = i;
-                    i = CreateTextButton(lineText, i);
+                    //checking whether or not there is a started italics in the original line
+                    if (Regex.Match(text.text, @"<i>").Success)
+                    {
+                        text.text += "</i>";
+                        i = CreateTextButton(lineText, i, true);
+                    }
+                    else
+                    {
+                        i = CreateTextButton(lineText, i, false);
+                    }
                     charsOnLine += i - oldI;
 
                 }
@@ -207,7 +216,7 @@ namespace Yarn.Unity
         //An in-line button is created with the following syntax
         //{{text that is highlighted| }} or {{text that is highlighted|YarnFileName.NextNodeName}}
         //Using | }} will go to the immediate next line of dialog, while using |YarnFileName.NextNodeName}} will jump to the NextNodeName node in the yarn file.
-        private int CreateTextButton(string LineText, int index)
+        private int CreateTextButton(string LineText, int index, bool italics)
         {
             //local variables
             string buttonText = "";
@@ -217,6 +226,12 @@ namespace Yarn.Unity
             //This keeps both braces from being printed
             ++index;
             ++index;
+
+            //adds italics if needed
+            if (italics)
+            {
+                buttonText += "<i>";
+            }
 
             //reads the text to be highlighted 
             while (!breaker)
@@ -282,6 +297,11 @@ namespace Yarn.Unity
             //creates a new, blank, text object for the rest of the line to go on.
             text = Instantiate(DialogTextPrefab, DialogContainer.transform);
             text.text = "";
+            //adds italics if needed
+            if (italics)
+            {
+                text.text += "<i>";
+            }
             text.color = textColor;
 
             ++activeButtons;
@@ -325,8 +345,8 @@ namespace Yarn.Unity
             button = Instantiate(DialogButtonPrefab, DialogContainer.transform);
             buttonText = button.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
 
-            //adds italics if needed due to a newline operation
-            if (italics)
+            //adds italics if the buttons needed a beginning tag but didn't have an ending one
+            if (italics && !Regex.Match(text.text, @"</i>").Success)
             {
                 text.text += "<i>";
             }

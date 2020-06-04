@@ -1,0 +1,107 @@
+fileFormatVersion: 2
+guid: 7ba1f9c5c43fc1c4eb62bd69c4c3ee79
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - Conclusion-Beginning-0
+  - Conclusion-Beginning-1
+  - Conclusion-Beginning-2
+  - Conclusion-Beginning-3
+  - Conclusion-Beginning-4
+  - Conclusion-Beginning-5
+  - Conclusion-Beginning-6
+  - Conclusion-Beginning-7
+  - Conclusion-Beginning-8
+  - Conclusion-Beginning-9
+  - Conclusion-Beginning-10
+  - Conclusion-Beginning-11
+  - Conclusion-Beginning-12
+  - Conclusion-Beginning-13
+  - Conclusion-Beginning-14
+  - Conclusion-Beginning-15
+  - Conclusion-Beginning-16
+  - Conclusion-Beginning-17
+  - Conclusion-Beginning-18
+  - Conclusion-Beginning-19
+  - Conclusion-Beginning-20
+  - Conclusion-Beginning-21
+  - Conclusion-Beginning-22
+  - Conclusion-Beginning-23
+  - Conclusion-Beginning-24
+  - Conclusion-Beginning-25
+  - Conclusion-Beginning-26
+  - Conclusion-Beginning-27
+  - Conclusion-Beginning-28
+  - Conclusion-Beginning-29
+  - Conclusion-Beginning-30
+  - Conclusion-Beginning-31
+  - Conclusion-Beginning-32
+  - Conclusion-Beginning-33
+  - Conclusion-Beginning-34
+  - Conclusion-Beginning-35
+  - Conclusion-Beginning-36
+  - Conclusion-Beginning-37
+  - Conclusion-Beginning-38
+  - Conclusion-Beginning-39
+  - Conclusion-Beginning-40
+  - Conclusion-Beginning-41
+  - Conclusion-Beginning-42
+  - Conclusion-Beginning-43
+  - Conclusion-Beginning-44
+  - Conclusion-Beginning-45
+  - Conclusion-Beginning-46
+  - Conclusion-Beginning-47
+  - Conclusion-Beginning-48
+  - Conclusion-Beginning-49
+  - Conclusion-Beginning-50
+  - Conclusion-Beginning-51
+  - Conclusion-Beginning-52
+  - Conclusion-Beginning-53
+  - Conclusion-Beginning-54
+  - Conclusion-Beginning-55
+  - Conclusion-Beginning-56
+  - Conclusion-Beginning-57
+  - Conclusion-Beginning-58
+  - Conclusion-Beginning-59
+  - Conclusion-Beginning-60
+  - Conclusion-Beginning-61
+  - Conclusion-Beginning-62
+  - Conclusion-Beginning-63
+  - Conclusion-Beginning-64
+  - Conclusion-Beginning-65
+  - Conclusion-Beginning-66
+  - Conclusion-Beginning-67
+  - Conclusion-Beginning-68
+  - Conclusion-Beginning-69
+  - Conclusion-Beginning-70
+  - Conclusion-Beginning-71
+  - Conclusion-Beginning-72
+  - Conclusion-Beginning-73
+  - Conclusion-Beginning-74
+  - Conclusion-Beginning-75
+  - Conclusion-Beginning-76
+  - Conclusion-Beginning-77
+  - Conclusion-Beginning-78
+  - Conclusion-Beginning-79
+  - Conclusion-Beginning-80
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 'Error on line 99 at position 1:
+
+    extraneous input
+    ''<EOF>'' expecting {''==='', TEXT_STRING, SHORTCUT_ENTER, COMMAND_IF, COMMAND_SET,
+    COMMAND_FUNC, ''[['', TEXT, ACTION}
+
+
+
+'
+  baseLanguage: {fileID: 7128917941130120860, guid: 7ba1f9c5c43fc1c4eb62bd69c4c3ee79,
+    type: 3}
+  localizations: []
