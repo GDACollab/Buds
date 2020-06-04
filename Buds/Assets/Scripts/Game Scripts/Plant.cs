@@ -57,6 +57,8 @@ public class Plant: MonoBehaviour, IDraggable
 
     public Sprite[] growthSprites = new Sprite[3];
 
+    public Sprite[] sunlightIcons = new Sprite[2];
+
     private string[] lifeStageStrings = { "Seedling", "Young", "Blossom\n<size=16>(Final)</size>" };
 
     private SpriteRenderer soil;
@@ -209,10 +211,10 @@ public class Plant: MonoBehaviour, IDraggable
         mask.sprite = growthSprites[(int)growthStage];
 
         if (hasEnoughSun) {
-            sunlightIcon.color = new Color(1f, 1f, 0f);
+            sunlightIcon.sprite = sunlightIcons[1];
         }
         else {
-            sunlightIcon.color = new Color(0.5f, 0.5f, 0f);
+            sunlightIcon.sprite = sunlightIcons[0];
         }
         
 
