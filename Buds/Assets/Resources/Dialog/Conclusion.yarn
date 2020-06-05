@@ -22,7 +22,7 @@ position: 999, 999
 <i> It was a small gesture that eventually {{grew in meaning,| }} especially since my sister and I would usually eat in silence. </i>
 <i> I was initially unsure of {{how to respond,| }} but their friendliness brought me to consider them almost like family. </i>
 
-<<changeFace Character GB_Angry_Closed>>
+<<changeFace Character GB_Angry_Closed invisFade>>
 <i> Not to mention, I became widely known as the one who {{Senko would talk about,| }} even if sarcastically. </i>
 <i> It surprised me that {{someone wondered about me,| }} much less a young girl who could care less about the world. </i>
 <i> Senko was withdrawn from everything, and would much rather pay attention to the {{one thing engaging her.| }} </i>
@@ -30,7 +30,7 @@ position: 999, 999
 <i> and it was in every right of Senko to {{reject that idea,| }} </i>
 <i> but she did teach me that we have different ways of {{keeping on| }} with our daily lives. </i>
 
-<<changeFace Character GB_Neutral_Closed>>
+<<changeFace Character GB_Neutral_Closed >>
 <i> For Senko, she would finally come to accept that she was perhaps much more {{lonely than she expected,| }} and admitted to that in a surprisingly vulnerable way. </i>
 <i> Seeing that the parallels were quite obvious, it wasn’t a shock that she {{warmed up to me| }} over time. </i>
 <i> She’s been listening to more and more {{audiobooks| }} now, while I decided to give her games a shot. </i>
@@ -39,8 +39,8 @@ position: 999, 999
 <i> Lately, she’s been begging me to get her the final volume of the series, going as far as willing to {{read it in book form…!| }} </i>
 <i> For that, we will have to see. It’s fun to see her {{grow through the series,| }} much like I have. </i>
 
-<<changeFace Character none>>
 <<changeFace Background Bookstore_OpeningScene fade>>
+<<changeFace Character none>>
 <i> Speaking of books, Senko wasn’t the only one who I became {{good friends| }} with. </i>
 <i> On my freer days, I would make it a point to visit the {{local bookstore.| }} </i>
 <i> To be honest… I really wasn’t {{much of a reader.| }} I just enjoyed the feeling of walking in a store filled with books. </i>
@@ -51,7 +51,7 @@ position: 999, 999
 <i> I’d also try to spend more time {{finishing the books| }} I already have, </i>
 <i> and found them to be much more enjoyable when I {{read them for myself.| }} </i>
 
-<<changeFace Character RF_Confused_Closed>>
+<<changeFace Character RF_Confused_Closed invisFade>>
 <i> And when I properly finished them, it was also nice to have {{in depth conversations| }} about the book with someone. </i>
 <i> Shiori was always a pleasant person to talk to, and would give some {{interesting insight| }} every so often. </i>
 <i> It was no wonder that they were also a {{very good writer.| }} </i>
@@ -73,8 +73,8 @@ position: 999, 999
 <i> Of course, that did not stop me from {{keeping in contact| }} with them. </i>
 <i> Who knows? Maybe the next time I visit, their stories will be {{in the shelves.| }} </i>
 
-<<changeFace Character none>>
 <<changeFace Background BlackScreen_OpeningScene fade>>
+<<changeFace Character none>>
 <i> It really did surprise me how much my life has {{changed after moving| }} here. </i>
 <i> Time was an essential factor in allowing me to heal, but that was {{not the only one.| }} </i>
 

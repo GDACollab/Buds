@@ -46,9 +46,14 @@ public class SpriteFunctions : MonoBehaviour
     {
         string nextSprite = args[0];
         bool needsFade = false;
+        bool needsInvisFade = false;
         if(args.Length > 1 && args[1].Equals("fade"))
         {
             needsFade = true;
+        }
+        else if(args.Length > 1 && args[1].Equals("invisFade"))
+        {
+            needsInvisFade = true;
         }
 
         //some script stuff that will change the sprite of the current character.
@@ -75,6 +80,13 @@ public class SpriteFunctions : MonoBehaviour
             StartCoroutine(Fade(FadeDirection.In));
             StartCoroutine(SecondHalfOfFadeInOut(FadeDirection.Out, match));
         }
+        else if (needsInvisFade)
+        {
+            gameObject.GetComponent<Image>().CrossFadeAlpha(0, 0, true);
+            gameObject.GetComponent<Image>().sprite = match;
+            startFade(1.0f, 1f);
+
+        }
         else
         {
             //do the non-fade ver
@@ -84,25 +96,11 @@ public class SpriteFunctions : MonoBehaviour
 
     }
 
-    public void startFade(float duration)
+    public void startFade(float duration, float finalAlpha)
     {
-        StartCoroutine(fadeSprite(duration));
+        //StartCoroutine(fadeSprite(duration, false));
+        this.gameObject.GetComponent<Image>().CrossFadeAlpha(finalAlpha, duration, false);
     }
-
-    IEnumerator fadeSprite(float duration)
-    {
-        Debug.Log("Starting Fade");
-        Image sprite = this.gameObject.GetComponent<Image>();
-        for(float fade = 1; fade > 0.0; fade -= Time.deltaTime / duration)
-        {
-            Debug.Log("Current fade level: " + fade);
-            sprite.color = new Color(sprite.color.r, sprite.color.b, sprite.color.g, fade);
-            Debug.Log("Character Faded to " + sprite.color.a);
-            yield return null;
-        }
-        Debug.Log("CharacterFade Done");
-    }
-
 
     private IEnumerator SecondHalfOfFadeInOut(FadeDirection direction, Sprite match) {
         yield return new WaitForSeconds(fadeSpeed + 0.1f);
