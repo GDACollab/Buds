@@ -201,7 +201,7 @@ namespace Yarn.Unity
             }
 
             //fade the character being spoken to
-            characterFunctions.startFade(1.0f, 0);
+            characterFunctions.startFade(1.0f);
 
             //open the phone
             phoneFunctions.ShowMenu();
