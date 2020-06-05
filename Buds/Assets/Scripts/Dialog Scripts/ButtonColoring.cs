@@ -23,13 +23,11 @@ public class ButtonColoring : MonoBehaviour
 
     public void onPointerEnter()
     {
-        Debug.Log("Mouse in");
         text.color = highlighted;
     }
 
     public void onPointerExit()
     {
-        Debug.Log("Mouse out");
         text.color = standard;
     }
 }
