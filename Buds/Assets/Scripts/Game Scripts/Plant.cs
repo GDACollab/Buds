@@ -209,6 +209,9 @@ public class Plant: MonoBehaviour, IDraggable
 
         float soilDarkness = daysToNextWatering / daysOfWaterNeeded;
         float soilColor = 1 - soilDarkness * 0.4f;
+
+        if (soil == null) Awake();
+
         soil.color = new Color(soilColor, soilColor, soilColor);
         waterLevelBar.value = soilDarkness;
 

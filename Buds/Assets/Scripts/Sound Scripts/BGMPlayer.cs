@@ -38,18 +38,18 @@ public class BGMPlayer : MonoBehaviour
 
         GameObject volumeMenu = GameObject.Find("Options Submenu");
 
-        if (volumeMenu != null) {
-            UnityEngine.UI.Slider slider = volumeMenu.GetComponentInChildren<UnityEngine.UI.Slider>();
-            volumeMenu.SetActive(false);
+        //if (volumeMenu != null) {
+        //    UnityEngine.UI.Slider slider = volumeMenu.GetComponentInChildren<UnityEngine.UI.Slider>();
+              volumeMenu.SetActive(false);
 
-            slider.onValueChanged.AddListener((value) => {
-                volumeMultiplier = value;
-                audioSource.volume = originalVolume * volumeMultiplier;
-            });
-            slider.value = volumeMultiplier;
-        }
+        //    slider.onValueChanged.AddListener((value) => {
+        //        volumeMultiplier = value;
+        //        audioSource.volume = originalVolume * volumeMultiplier;
+        //    });
+        //    slider.value = volumeMultiplier;
+        //}
 
-        audioSource.volume = originalVolume * volumeMultiplier;
+        //audioSource.volume = originalVolume * volumeMultiplier;
     }
 
     void FixedUpdate()
