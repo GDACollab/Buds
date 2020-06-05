@@ -19,7 +19,7 @@ position: 111, 111
 
 <<elseif $visited_GB == 1>>
 
-<<if $cyclamen_growth_stage >= 1>>
+<<if $narcissus_growth_stage >= 1>>
 [[GB_Dialogue.ReadingTheBook]]
 <<else>>
 [[GB_Dialogue.Busy]]
@@ -286,6 +286,7 @@ tags: GamerBrat
 colorID: 0
 position: 111, 117
 ---
+<<changeFace Background RamenShop_PowerOut>>
 <i>The Mizushima family has been asking me to look over Senko every so often when the restaurant would get busy.</i>
 <i>They don’t know that I’ve noticed, but they seem really happy that I’ve been leaving my apartment more often...</i>
 <i>...and their daughter having someone to talk with.</i>

@@ -70,6 +70,8 @@ public class Plant: MonoBehaviour, IDraggable
 
     private AudioSource audioSource;
 
+    private bool initialized;
+
     void Awake()
     {
         daysToNextStage = daysBetweenStages;
@@ -128,8 +130,11 @@ public class Plant: MonoBehaviour, IDraggable
         hasEnoughSun = onto.GetComponent<PlantSpot>().sunlightLevel >= sunlightNeeded;
         onto.GetComponent<PlantSpot>().currentFlower = this;
 
-        if (Time.timeSinceLevelLoad > 1) {
+        if (initialized) {
             audioSource.Play();
+        }
+        else {
+            initialized = true;
         }
         
         UpdateAppearance();

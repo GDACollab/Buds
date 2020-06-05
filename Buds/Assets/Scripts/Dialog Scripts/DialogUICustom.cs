@@ -75,7 +75,7 @@ namespace Yarn.Unity
                 phoneFunctions = GameObject.Find("PhoneButton").transform.GetChild(1).gameObject.GetComponent<OrderedSceneNavigator>();
             }
 
-            characterFunctions = DialogSuperContainer.transform.parent.GetChild(1).gameObject.GetComponent<SpriteFunctions>();
+            characterFunctions = DialogSuperContainer.transform.parent.GetChild(2).gameObject.GetComponent<SpriteFunctions>();
             if(characterFunctions == null)
             {
                 Debug.LogWarning("Character (or its Sprite Functions) not found");

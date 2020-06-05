@@ -75,11 +75,20 @@ public class SpriteFunctions : MonoBehaviour
             StartCoroutine(Fade(FadeDirection.In));
             StartCoroutine(SecondHalfOfFadeInOut(FadeDirection.Out, match));
         }
+        else if (args.Length > 1 && args[1].Equals("fadein")) {
+            gameObject.GetComponent<Image>().sprite = match;
+            fadeOutUIImage = GetComponent<Image>();
+            StartCoroutine(Fade(FadeDirection.In));
+        }
+        else if (args.Length > 1 && args[1].Equals("fadeout")) {
+            gameObject.GetComponent<Image>().sprite = match;
+            fadeOutUIImage = GetComponent<Image>();
+            StartCoroutine(Fade(FadeDirection.Out));
+        }
         else
         {
             //do the non-fade ver
             gameObject.GetComponent<Image>().sprite = match;
-
         }
 
     }

@@ -12,7 +12,6 @@ position: 222, 222
 <<if $visited_RF >= 2>>
 
 <<if $cyclamen_growth_stage >= 2>>
-
 [[RF_Dialogue.OpeningUp]]
 <<else>>
 [[RF_Dialogue.Busy]]
@@ -240,6 +239,7 @@ Sure—! Were you looking for more {{urban fantasy| }} or...?
 <<changeSpeaker MC>>
 That’d be great.
 <<changeFace Character RF_Smile_Open>>
+<<changeSpeaker RF>>
 Okay, hmm... I think maybe {{you’d like this one| }}. It’s called The Cloaked Oracle. 
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
@@ -404,7 +404,7 @@ Sorry, I'm too {{busy| }} to talk now. Could you come back tomorrow?
 <<changeSpeaker MC>>
 <<changeFace Character RF_Smile_Closed>>
 <i>Huh, maybe I should water my cyclamen plant...</i>
-<i>It wasn't sparkling earlier, was it?</i>
+<i>It wasn't sparkling yesterday, was it?</i>
 ===
 
 title: RF_Dialogue.Unfinished
