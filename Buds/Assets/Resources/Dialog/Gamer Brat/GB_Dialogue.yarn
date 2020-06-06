@@ -44,7 +44,7 @@ Hello, {{Senko.| }}
 {{Huh?| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
-Hi! Your parents told me to watch over you for a bit.
+Hi! Your parents told me to {{watch over you| }} for a bit.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
 Wait, what? It’s {{you?!| }}
@@ -56,21 +56,20 @@ It’s me...? What do you mean it’s {{me| }}?
 {{Nothing.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
-Oh…{{?| }}
+{{Oh…?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
 No, no... I’m not surprised by {{anything.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
-Uh{{...| }}
-<<changeSpeaker MC>>
+{{Uh...| }}
 So... what do you have {{there?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
 A {{game.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
-What kind of {{game| }}?
+What kind of {{game?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
 {{DAMN IT!!!| }}
@@ -79,7 +78,7 @@ What kind of {{game| }}?
 {{????| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-PIECE OF {{CRAP| }} THINKS THEY CAN DO THAT TO ME? I’LL SHOW YOU!
+PIECE OF CRAP THINKS THEY CAN DO THAT TO ME? {{I’LL SHOW YOU!| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
 Hey... I think you’re {{scaring| }} some of the other people in the restaurant.
@@ -88,31 +87,26 @@ Hey... I think you’re {{scaring| }} some of the other people in the restaurant
 {{SHUT UP!| }} Let me focus.
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
-… {{Okay| }}…
+… {{Okay...| }}
 <<changeSpeaker GB>>
-<<changeFace Character GB_Neutral_Open>>
-….
-<<changeFace Character GB_Neutral_Closed>>
+{{…| }}
 <<changeSpeaker MC>>
-Um…
+{{Um…| }}
 <<changeSpeaker GB>>
-<<changeFace Character GB_Neutral_Open>>
-….
 <<changeFace Character GB_Neutral_Closed>>
+{{…| }}
 <<changeSpeaker MC>>
-Hey, Senko?
+Hey, {{Senko?| }}
 <<changeSpeaker GB>>
-<<changeFace Character GB_Neutral_Open>>
-….
-<<changeFace Character GB_Neutral_Closed>>
+{{…| }}
 <<changeSpeaker MC>>
-Everything {{okay| }}?
+Everything {{okay?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
 They... {{got me.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
-Oh—
+{{Oh—| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
 I’m {{done| }} with this game.
@@ -133,22 +127,22 @@ You didn’t {{cause| }} it.
 I know, but… ah—{{never mind.| }} 
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
-Never mind {{what| }}?
+Never mind {{what?| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
-I just {{felt bad| }} for you… since... you died...
+I just {{felt bad| }} for you… since...
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
 I {{don’t need you| }} to feel bad for me.
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
-... {{never mind| }}, then.
+... {{never mind,| }} then.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-You’re so {{weird| }}.
+You’re so {{weird.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
-….
+{{…| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
 ... yeah. I’m {{done| }} with this game.
@@ -159,6 +153,10 @@ You’re so {{weird| }}.
 <<changeFace Character GB_Neutral_Open>>
 I {{need a break| }} or something.
 <<changeFace Character GB_Neutral_Closed>>
+
+<i> That was my first strange encounter with the Mizushimas’ {{daughter, Senko.| }} </i>
+<i> I’m not exactly sure what to {{make of her…| }} </i>
+<i> She’s still young, so I shouldn’t expect much. {{That’s what my sister would have said, anyway.| }} </i>
 
 <<set $visited_GB to 1>>
 <<set $unfinished_GB to false>>
@@ -173,7 +171,7 @@ position: 111, 115
 So… what are you {{playing| }} today?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
-A {{game| }}, obviously.
+A {{game,| }} obviously.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
 Yes, but {{what game| }} is it?
@@ -182,37 +180,37 @@ Yes, but {{what game| }} is it?
 A {{fun| }} game.
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
- <i>Why do I even {{bother...| }} *sighs*</i>
+ Why do I even {{bother...| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-<i>*looks up*</i> What do you {{want| }}?
+What do you {{want?| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
-I wanted to know {{what game| }} you were playing.
+I was curious about {{what game| }} you were playing.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
-Ugh, fine. It’s called {{Super Fabio 64| }}.
+Ugh, fine. It’s called {{Super Fabio 64.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
-Oh. That’s… interesting, what is it {{about| }}?
+Oh. What’s... it {{about?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
 It’s a platformer. You play as this {{buff dude| }} with suuuuuper long hair.
-He uses it to {{fight| }}, kinda like Gunaneta.
+He uses it to {{fight,| }} kinda like Gunaneta.
 He also {{keeps talking| }} about butter for some reason.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
-Ah. I see, the {{sarcasm| }} is strong with this one.
+Ah. Are you… trying to be {{sarcastic?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Jeer_Open>>
-Noo, {{really| }}?
-You {{think| }} so?
-Gee whiz! How can you {{tell| }}?
+Noo, {{am I?| }}
+Do you {{think| }} so?
+Gee whiz! How can you {{tell?| }}
 <<changeSpeaker MC>>
 <<changeFace Character GB_Jeer_Closed>>
 Fine. If you don’t want to tell me, {{that’s alright.| }}
-I can just sit here and {{read| }} my book.
-<i>*takes out book and begins to read {{out loud| }}*</i>
+I can just sit here and {{read| }} my book…
+{{… out loud.| }}
 <<changeSpeaker MC>>
 <<changeFace Character GB_Neutral_Closed>>
 The Princess Bride, by S. Morgenstern. {{Chapter One.| }}
@@ -226,25 +224,24 @@ Okay! Okay, please just {{shut up.| }}
 I’ll tell you about the {{game.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
-That's more like it. {{Not a fan| }} of the classics?
+There we go. {{Not a fan| }} of the classics?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
-Books are {{boring. |}}
+Books are {{boring.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
-{{How| }} can you say that?
+How can you {{say that?| }}
 Books are one of the {{most captivating| }} things out there.
 When you read a good book, you can {{escape| }} into its world and ignore our own.
-Just like what you do with {{video games| }}.
+Just like what you do with {{video games.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Jeer_Open>>
 So what? I don’t care. Reading is {{boring| }} and so are books!
 <<changeFace Character GB_Jeer_Closed>>
 <<changeSpeaker MC>>
-<i>{{Maybe| }} she has a hard time reading, or she could be dyslexic… </i>
-<<changeSpeaker MC>>
+{{Hmm…| }}
 <<changeFace Character GB_Neutral_Closed>>
-What about {{audio books| }}?
+What about {{audiobooks?| }}
 If you don’t like reading with a physical book, why don’t you try {{listening| }} to an audiobook?
 You could even do it {{while you play| }} your games.
 <<changeSpeaker GB>>
@@ -252,14 +249,14 @@ You could even do it {{while you play| }} your games.
 {{Don’t have| }} any.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
-Alright, how about {{this| }}.
-I won't bother you for the rest of the day, {{but| }}—
+Alright, how about {{this.| }}
+I won't bother you for the rest of the day, {{but—| }}
 —you {{listen| }} to one audiobook of my choice while you play a game.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
 {{Hmm…| }}
 {{Hmmmmmmmm…| }}
-{{Fine| }}, sounds fair.
+{{Fine,| }} sounds fair.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
 Great! Here, {{plug your headphones| }} into your phone.
@@ -271,11 +268,12 @@ In fact, their kids are {{a lot like you| }} in some ways.
 Whatever, just play the damn {{book.| }}
 <<changeSpeaker MC>>
 <<changeFace Character GB_Neutral_Closed>>
-<i>She started listening to the book.</i>
-<i>Hours passed in a slightly comfortable silence.</i>
-<i>Eventually her parents took her off my hands.</i>
-<i>I quietly left her playing the game and listening to the book.</i>
-<i>I hope she keeps on with reading or listening to other books after this.</i>
+
+<i>She started {{listening| }} to the book.</i>
+<i>Hours passed in a slightly {{comfortable silence.| }}</i>
+<i>Eventually {{her parents| }} took her off my hands.</i>
+<i>I quietly {{left her| }} playing the game and listening to the book.</i>
+<i>I hope she keeps on with {{reading or listening to other books| }} after this.</i>
 
 <<set $visited_GB to 2>>
 <<set $unfinished_GB to false>>
@@ -286,43 +284,42 @@ tags: GamerBrat
 colorID: 0
 position: 111, 117
 ---
-<<changeFace Background RamenShop_PowerOut>>
-<i>The Mizushima family has been asking me to look over Senko every so often when the restaurant would get busy.</i>
-<i>They don’t know that I’ve noticed, but they seem really happy that I’ve been leaving my apartment more often...</i>
-<i>...and their daughter having someone to talk with.</i>
+<i>The Mizushima family has been asking me to {{look over Senko| }} every so often when the restaurant would get busy.</i>
+<i>They don’t know that I’ve noticed, but they {{seem really happy| }} that I’ve been leaving my apartment more often...</i>
+<i>...along with their daughter {{having someone to talk with.| }}</i>
 
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-AHHHHH{{!!!!!| }}
+{{AHHHHH!!!!!| }}
 <<changeSpeaker MC>>
 <<changeFace Character GB_Angry_Closed>>
 Ha, you wouldn’t have this {{problem| }} if you charged your console…<i>or</i> tried a book.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Jeer_Open>>
-Your books are so boring. {{How| }} would someone read something like that?
+Your books are so boring. I {{don’t get| }} why people would read something like that.
 <<changeSpeaker MC>>
 <<changeFace Character GB_Jeer_Closed>>
 At least I can entertain myself when the {{power’s out.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-AHHHHH!!! SHUT UP!! You’re {{no help.| }}
+AHHHHH SHUT UP!!! You’re {{no help!| }}
 <<changeSpeaker MC>>
 <<changeFace Character GB_Angry_Closed>>
-…
+{{...| }}
 <<changeSpeaker GB>>
-…
+{{.....| }}
 <<changeSpeaker MC>>
-…
+{{........| }}
 <<changeSpeaker GB>>
-…
+{{...........| }}
 <<changeFace Character GB_Angry_Open>>
-Would you {{stop reading| }}?
+Would you {{stop reading?| }}
 <<changeSpeaker MC>>
 <<changeFace Character GB_Angry_Closed>>
 What...? {{Why?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-Talk to me! Or {{do something| }}!
+Talk to me! Or {{do something!| }}
 <<changeSpeaker MC>>
 <<changeFace Character GB_Angry_Closed>>
 Oh? What’s this {{change| }} of attitude?
@@ -334,13 +331,13 @@ I’m {{booored!!!!!| }}
 Alright, alright, {{fine.| }} What do you want to talk about?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
-….
+{{…| }}
 {{Uh...| }}
 <<changeSpeaker MC>>
-You {{don’t know| }}, do you.
+You {{don’t know,| }} do you.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-No...!! Geez, just make up something. {{Tell me| }} about your life or whatever!
+No...!! Geez, just make something up. {{Tell me| }} about your life or whatever!
 <<changeSpeaker MC>>
 <<changeFace Character GB_Angry_Closed>>
 What? What do you want to {{know| }} about my life?
@@ -349,18 +346,18 @@ What? What do you want to {{know| }} about my life?
 Aren’t you {{old?| }} Don’t you have, like, folk stories to tell or something??
 <<changeSpeaker MC>>
 <<changeFace Character GB_Neutral_Closed>>
-What?! I’m {{not old| }}.
+What?! I’m {{not old.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Jeer_Open>>
 Really? You {{look| }} old.
 <<changeSpeaker MC>>
 <<changeFace Character GB_Jeer_Closed>>
-I’M {{NOT OLD| }}.
+I’M {{NOT OLD.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Jeer_Open>>
 Okay... {{oldie.| }}
 <<changeSpeaker MC>>
-HEY!
+{{HEY!| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
 Listen, you wanted to talk. Wanna {{hear| }} something?
@@ -379,7 +376,7 @@ He’s your {{friend?| }}
 NO. {{Not anymore.| }}
 <<changeSpeaker MC>>
 <<changeFace Character GB_Angry_Closed>>
-Wait, what? {{Why not?| }}
+Wait, {{why not?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
 He got a damn girlfriend, and now the idiot doesn’t have time to play anymore. It’s {{annoying.| }}
@@ -391,7 +388,9 @@ So you’re just {{gonna stop being friends| }} with him?
 {{Yeah??| }} If he doesn’t have time for me, I don’t have time for him.
 <<changeSpeaker MC>>
 <<changeFace Character GB_Angry_Closed>>
-I’m sure he’ll want to play again in the future. Relationships can really... occupy a person's mind at your age so... it’s natural. Trust me, things will go {{back to normal| }} eventually.
+I’m sure he’ll want to {{play again| }} in the future.
+Relationships can really... {{occupy a person's mind| }} especially at your age so... it’s natural.
+Trust me, things will go {{back to normal| }} eventually.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
 And what, am I just {{supposed| }} to wait?
@@ -399,10 +398,10 @@ And what, am I just {{supposed| }} to wait?
 He keeps making plans and flaking. Like... {{seriously??| }}
 <<changeSpeaker MC>>
 <<changeFace Character GB_Angry_Closed>>
-Well, people make {{mistakes| }}.
+Well, people make {{mistakes.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-They {{shouldn’t| }}.
+They {{shouldn’t.| }}
 <<changeSpeaker MC>>
 <<changeFace GB>_Angry_Closed>
 That’s {{just the way| }} people are. I’m sure you’ve made plenty of mistakes.
@@ -414,26 +413,28 @@ Ha. I {{don’t| }} make mistakes.
 {{Really| }} now?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
-Nobody wants to be friends with people that make mistakes, and that’s {{not me| }}!
+Nobody wants to be friends with people that make mistakes, and that’s {{not me!| }}
 <<changeFace Character GB_Angry_Open>>
 {{Never| }} gonna be me.
 <<changeSpeaker MC>>
 <<changeFace Character GB_Angry_Closed>>
-I don’t think everyone can be {{perfect| }}.
+I don’t think everyone can be {{perfect.| }}
 People are {{allowed| }} to make mistakes, you know. That’s what makes us human.
-To have the ability to feel, amend, forgive... is something I’m {{grateful for| }}.
-You may not understand it now, but I do believe that if you’re able let yourself acknowledge that, it’ll... ease the frustration of {{losing someone| }} even by just a little.
+<<changeFace Character GB_Neutral_Closed>>
+To have the ability to feel, amend, forgive... is something I’m {{grateful for.| }}
+You may not understand it now, but I do believe that if you’re able let yourself {{acknowledge that…| }}
+…it’ll ease the frustration of {{losing someone| }} even by just a little.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
-... you really are old for having a speech as long as that.
+... you really are old for having a speech as {{long as that.| }}
 <<changeSpeaker MC>>
 <<changeFace Character GB_Neutral_Closed>>
-Excuse me? I’m just being {{honest| }}.
+Excuse me? I’m just being {{honest.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
 {{Whatever.| }}
 <<changeFace Character GB_Neutral_Closed>>
-{{....| }}
+{{...| }}
 <<changeFace Character GB_Neutral_Open>>
 I guess I’ll try to {{message him again| }} if he’s up for a game later.
 <<changeSpeaker MC>>
@@ -441,11 +442,11 @@ I guess I’ll try to {{message him again| }} if he’s up for a game later.
 That’s the {{spirit!| }} Let’s hope the power comes back on soon.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
-{{Yeah, me too.| }}
+Yeah, {{me too.| }}
 <<changeFace Character GB_Neutral_Closed>>
-….
-….
-….
+{{…| }}
+{{……| }}
+{{…………| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
 {{Hey.| }}
@@ -460,11 +461,11 @@ Do you... have any {{audiobooks| }} I can listen to right now?
 Aww. Finally {{warming up| }} to them?
 <<changeSpeaker MC>>
 <<changeFace Character GB_Angry_Open>>
-No!! I’m just {{bored| }}!
+No!! I’m just {{bored!| }}
 <<changeFace Character GB_Angry_Closed>>
-….
+{{…| }}
 <<changeFace Character GB_Neutral_Closed>>
-... 
+{{…| }}
 <<changeFace Character GB_Neutral_Open>>
 Do you have the one with the {{mythical gods| }} like before?
 <<changeSpeaker MC>>
@@ -473,7 +474,7 @@ Do you have the one with the {{mythical gods| }} like before?
 Just plug in your headphones here. What {{chapter| }} are you on?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-None of your {{business| }}!!
+None of your {{business!!| }}
 <<changeSpeaker MC>>
 <<changeFace Character GB_Angry_Closed>>
 Haha, alright hothead. {{Here.| }}

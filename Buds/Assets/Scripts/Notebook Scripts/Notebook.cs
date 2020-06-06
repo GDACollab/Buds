@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Notebook : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class Notebook : MonoBehaviour
     Sprite blankPage;
     int index;
 
+    //post scene pages
+    public string[] RF_addedPages;
+    public string[] GB_addedPages;
+
     void Start()
     {
         pageText = notebookPage.transform.GetChild(0).gameObject.GetComponent<Text>();
@@ -37,6 +42,9 @@ public class Notebook : MonoBehaviour
             //setting default pages of the notebook
             AddPage(null, Resources.Load<Sprite>("notebookWaterPage_UI_Joann Long 1"));
             AddPage(null, Resources.Load<Sprite>("notebookPlacementPage_UI_Joann Long 1"));
+            AddPage(null, Resources.Load<Sprite>("notebook_sunlight"));
+            AddPage(null, Resources.Load<Sprite>("notebook_cyclamen"));
+            AddPage(null, Resources.Load<Sprite>("notebook_daffodil"));
         }
         //If the notebook has been defined
         else
@@ -52,6 +60,8 @@ public class Notebook : MonoBehaviour
     void UpdatePage()
     {
         string pulledText = activePage.Value.getText();
+        Debug.Log(index);
+        Debug.Log(pulledText);
         Sprite pulledImage = activePage.Value.getImage();
 
         //change the background depending on what page we're on
@@ -97,7 +107,41 @@ public class Notebook : MonoBehaviour
 
     public void AddPage(string text, Sprite image)
     {
+        Debug.Log(text);
         book.AddLast(new LinkedListNode<Page>(new Page(text, image)));
+    }
+
+    public void AddPageFromCharacters(string character)
+    {
+
+        bool isItRF;
+        bool sceneUnfinished = false;
+        int arrayIndex;
+
+        if (character.Equals("RF"))
+        {
+            isItRF = true;
+            sceneUnfinished = ((Yarn.Value)PersistentData.instance.ReadData("$unfinished_RF")).AsBool;
+            arrayIndex = (int)((Yarn.Value)PersistentData.instance.ReadData("$visited_RF")).AsNumber;
+        }
+        else
+        {
+            isItRF = false;
+            sceneUnfinished = ((Yarn.Value)PersistentData.instance.ReadData("$unfinished_GB")).AsBool;
+            arrayIndex = (int)((Yarn.Value)PersistentData.instance.ReadData("$visited_GB")).AsNumber;
+        }
+
+        Debug.Log(arrayIndex);
+        if (isItRF && !sceneUnfinished)
+        {
+            Debug.Log(RF_addedPages[arrayIndex - 1]);
+            AddPage(RF_addedPages[arrayIndex - 1], null);
+        }
+
+        if (!isItRF && !sceneUnfinished)
+        {
+            AddPage(GB_addedPages[arrayIndex - 1], null);
+        }
     }
 
     public void PreviousPage()

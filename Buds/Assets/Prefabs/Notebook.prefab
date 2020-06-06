@@ -426,7 +426,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 32.5, y: 0}
-  m_SizeDelta: {x: -315, y: -80}
+  m_SizeDelta: {x: -1145, y: -403}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1621950926229124129
 CanvasRenderer:
@@ -471,7 +471,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621950926229124190}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
   m_Name: 
@@ -481,7 +481,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -624,6 +624,40 @@ MonoBehaviour:
   prevButton: {fileID: 1621950926001661188}
   notebookPage: {fileID: 1621950926229124190}
   coverImage: {fileID: 21300000, guid: f9709f77b73f94e43b9a8666c561709c, type: 3}
+  RF_addedPages:
+  - "I finally went into the bookstore I keep passing by. They had a really nice
+    bookkeeper that recommended a book called \u201CThe Dawn of the Crooked\u201D
+    to me, so naturally I bought it. I took a quick look at it on the train back
+    from work, and it was\u2026 something my sister would have liked. I should go
+    back and tell her about it. Perhaps I\u2019ll like it too."
+  - "I found out the bookkeeper\u2019s name was Shiori\u2014strangely fitting. They\u2019ve
+    been very nice to me ever since I started visiting, actually. I also discovered
+    that they\u2019re a writer, so I asked them for some of their works, but it seems
+    that they\u2019re not really comfortable with that right now. Maybe one day?"
+  - "Ahh, that was delicious. Senko\u2019s parents were looking at me incredulously
+    after I downed three whole bowls of noodles. Despite that, I don\u2019t mind
+    having given Shiori my lunch. They even let me see their manuscript! It\u2019s
+    already very good from what I\u2019ve seen. I wonder if my sister would have
+    liked it\u2026 Shiori does tend to ramble, but I don\u2019t think there\u2019s
+    anything wrong with that. In contrast to my sister, I find works that elaborate
+    on its meaning to be really enjoyable."
+  GB_addedPages:
+  - "I looked after the Mizushima family\u2019s daughter today. Her name was Senko,
+    and she was playing a video game the entire time. I tried asking about it, but
+    she just started yelling and telling me to shut up\u2026 I don\u2019t exactly
+    understand what happened, but I don\u2019t think she likes me too much. I\u2019ll
+    try again next week and see what happens."
+  - "Yes! I finally got on Senko\u2019s good side. Well\u2026 more like I managed
+    to convince her to try an audiobook. At the very least, she\u2019s not screaming
+    in the restaurant like last week. Her parents even complimented me! Apparently,
+    she also managed to finish the first book. Who thinks books are boring now?"
+  - "Taking care of Senko was a bit of a mess today, but it got better. She forgot
+    to charge her game right when the power went out, so in her boredom she demanded
+    I tell her \u201Cfolk stories\u201D like I\u2019m some old grandpa. ( I don\u2019t
+    look that old, do I? ) She also decided to tell me about one of her friends,
+    which oddly led to a serious talk about being human. I assured her that it was
+    okay to make mistakes, and she seemed pleased enough with that. Hah\u2026 maybe
+    I really am getting old for giving life advice to a kid."
 --- !u!82 &3951124161080422991
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1064,8 +1098,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 89.5, y: -81.75}
-  m_SizeDelta: {x: 170, y: 160}
+  m_AnchoredPosition: {x: 354.1, y: -332.8}
+  m_SizeDelta: {x: 668.8, y: 513}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1621950927058995862
 CanvasRenderer:
@@ -1094,18 +1128,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 673cbaf829ba5b343b63eccaa7bce424, type: 3}
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 200
     m_Alignment: 0
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1.3
   m_Text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -1146,7 +1180,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 89.5, y: -202.75}
+  m_AnchoredPosition: {x: 87, y: -784.2}
   m_SizeDelta: {x: 174, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1621950927721809182
