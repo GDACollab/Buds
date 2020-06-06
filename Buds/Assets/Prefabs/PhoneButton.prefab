@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildIndexes: 030000000200000004000000
-  mainMenuIndex: 1
+  mainMenuIndex: 0
   scheduleItems:
   - {fileID: 0}
   - {fileID: 0}

@@ -143,6 +143,15 @@ public class OrderedSceneNavigator : MonoBehaviour
         FadeLoadScene();
     }
 
+    public void ToIndexedSceen(int index)
+    {
+        mainMenuIndex = index;  //the index of the main menu
+        scheduleItems = new GameObject[0];
+        Destroy(PersistentData.instance);
+
+        FadeLoadScene();
+    }
+
     public void Reset() {
         SceneManager.LoadScene(0);
     }
