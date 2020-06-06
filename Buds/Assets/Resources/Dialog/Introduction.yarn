@@ -3,6 +3,7 @@ tags:
 colorID: 0
 position: 0, 0
 ---
+<<changeSpeaker MC>>
 <<changeFace Background BlackScreen_OpeningScene>>
 ... Alright. Let’s call it a {{day.| }}
 <i> If I’m not mistaken, it’s been about a year since she {{passed away.| }} </i> 
@@ -11,7 +12,7 @@ position: 0, 0
 
 <<changeFace Background Graveyard_OpeningScene fade>>
 <i> I was {{really close| }} with her while she was still around. </i>
-<i> She was like a best friend to me, and the person I was really {{only closest to| }} the most. </i> 
+<i> She was like a best friend to me—the only person I was really {{close to| }}. </i> 
 <i> I didn’t realize how much I’ve missed her until I started {{visiting her grave| }} again. </i> 
 <i> Now that I think about it... I don’t even remember how I got here. {{It all feels like a dream.| }} </i> 
 

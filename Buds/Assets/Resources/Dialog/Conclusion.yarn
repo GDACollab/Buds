@@ -3,6 +3,7 @@ tags:
 colorID: 0
 position: 999, 999
 ---
+<<changeSpeaker MC>>
 <<changeFace Character none>>
 <<changeFace Background BlackScreen_OpeningScene>>
 <i> Over the course of the last several months, I would find myself {{talking more and more| }} with the people in Hitachinaka. </i>
