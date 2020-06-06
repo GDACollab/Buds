@@ -3199,12 +3199,12 @@ PrefabInstance:
         type: 3}
       propertyPath: loop
       value: 
-      objectReference: {fileID: 8300000, guid: 52852274a13df4c169e95c3c6714690a, type: 3}
+      objectReference: {fileID: 8300000, guid: 710501e6248e34277ba2eba8ff33ee3f, type: 3}
     - target: {fileID: 7893131780443032982, guid: 3e583cd304a73454494fe0c61012749a,
         type: 3}
       propertyPath: intro
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: def25e7cdcc56439aa0826d6534bd510, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e583cd304a73454494fe0c61012749a, type: 3}
 --- !u!1 &1800452109 stripped
