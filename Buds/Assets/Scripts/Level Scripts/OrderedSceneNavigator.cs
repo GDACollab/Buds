@@ -136,7 +136,7 @@ public class OrderedSceneNavigator : MonoBehaviour
     }
 
     public void ToMainMenu() {
-        mainMenuIndex = 1;  //the index of the main menu
+        mainMenuIndex = 0;  //the index of the main menu
         scheduleItems = new GameObject[0];
         Destroy(PersistentData.instance);
 
