@@ -124,7 +124,7 @@ Yeah... this book does seem more interesting to me. I’ll tell you {{what I thi
 <<changeFace Character RF_Confused_Open>>
 {{...!| }}
 <<changeFace Character RF_Confused_Closed>>
-
+<<changeSpeaker MC>>
 <i> Leaving the bookstore, I felt a small bit of {{excitement| }} for trying out the book. </i>
 <i> My sister always looked really thrilled to {{bury herself| }} in fictional worlds. </i>
 <i> Will I be able to do {{the same?| }} </i>
@@ -270,7 +270,7 @@ For sure. {{Thank you again| }} for talking with me.
 <<changeFace Character RF_Smile_Open>>
 ... likewise to {{you too.| }} 
 <<changeFace Character RF_Smile_Closed>>
-
+<<changeSpeaker MC>>
 <i> I left the bookstore with another book in hand, and {{something new| }} I learned about Shiori. </i>
 <i> I’m very curious to know what their {{writing is like,| }} but I won’t pressure them about it either. </i>
 <i> They tend to have {{something interesting| }} to say, on top of being easy to talk to.
@@ -285,6 +285,7 @@ tags: RetailFriend
 colorID: 0
 position: 222, 231
 ---
+<<changeSpeaker MC>>
 <i> Over the last couple of weeks, I continued to visit the {{bookstore.| }} </i>
 <i> At first, it was really only to {{buy new books| }} to distract myself with, </i>
 <i> but lately I’ve found myself looking forward to {{talking with Shiori| }} as well. </i>
