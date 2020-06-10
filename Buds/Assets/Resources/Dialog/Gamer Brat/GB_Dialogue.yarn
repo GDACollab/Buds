@@ -3,6 +3,10 @@ tags: GamerBrat
 colorID: 0
 position: 111, 111
 ---
+<<if $visted_GB >= 2>>
+<<changeFace Background RamenShop_PowerOut>>
+<<endif>>
+
 <<if $unfinished_GB>>
 [[GB_Dialogue.Unfinished]]
 <<endif>>

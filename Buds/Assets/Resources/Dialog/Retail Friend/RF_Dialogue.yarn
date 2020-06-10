@@ -415,6 +415,22 @@ And... {{thank you.| }}
 <<set $unfinished_RF to false>>
 ===
 
+title: RF_Dialogue.Busy
+tags: RetailFriend
+colorID: 0
+position: 222, 240
+---
+<<set $unfinished_RF to false>>
+
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+Sorry, I'm too {{busy| }} to talk now. Could you come back tomorrow?
+<<changeSpeaker MC>>
+<<changeFace Character RF_Smile_Closed>>
+<i>Huh, maybe I should water my cyclamen plant...</i>
+<i>It wasn't sparkling yesterday, was it?</i>
+===
+
 title: RF_Dialogue.Unfinished
 tags: RetailFriend
 colorID: 0
