@@ -22,8 +22,8 @@ public class Notebook : MonoBehaviour
     int index;
 
     //post scene pages
-    public string[] RF_addedPages;
-    public string[] GB_addedPages;
+    public Sprite[] RF_addedPages;
+    public Sprite[] GB_addedPages;
 
     void Start()
     {
@@ -60,8 +60,6 @@ public class Notebook : MonoBehaviour
     void UpdatePage()
     {
         string pulledText = activePage.Value.getText();
-        Debug.Log(index);
-        Debug.Log(pulledText);
         Sprite pulledImage = activePage.Value.getImage();
 
         //change the background depending on what page we're on
@@ -107,7 +105,10 @@ public class Notebook : MonoBehaviour
 
     public void AddPage(string text, Sprite image)
     {
-        Debug.Log(text);
+        if(book == null)
+        {
+            Debug.Log("big problem");
+        }
         book.AddLast(new LinkedListNode<Page>(new Page(text, image)));
     }
 
@@ -135,12 +136,12 @@ public class Notebook : MonoBehaviour
         if (isItRF && !sceneUnfinished)
         {
             Debug.Log(RF_addedPages[arrayIndex - 1]);
-            AddPage(RF_addedPages[arrayIndex - 1], null);
+            AddPage(null, RF_addedPages[arrayIndex - 1]);
         }
 
         if (!isItRF && !sceneUnfinished)
         {
-            AddPage(GB_addedPages[arrayIndex - 1], null);
+            AddPage(null, GB_addedPages[arrayIndex - 1]);
         }
     }
 

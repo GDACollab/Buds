@@ -156,7 +156,8 @@ I {{need a break| }} or something.
 <<changeSpeaker MC>>
 <i> That was my first strange encounter with the Mizushimas’ {{daughter, Senko.| }} </i>
 <i> I’m not exactly sure what to {{make of her…| }} </i>
-<i> She’s still young, so I shouldn’t expect much. {{That’s what my sister would have said, anyway.| }} </i>
+<i> She’s still young, so I {{shouldn’t expect much| }}. </i>
+<i>That’s what {{my sister| }} would have said, anyway. </i>
 
 <<set $visited_GB to 1>>
 <<set $unfinished_GB to false>>
