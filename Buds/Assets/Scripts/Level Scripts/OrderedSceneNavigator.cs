@@ -146,8 +146,6 @@ public class OrderedSceneNavigator : MonoBehaviour
     public void ToIndexedSceen(int index)
     {
         mainMenuIndex = index;  //the index of the main menu
-        scheduleItems = new GameObject[0];
-        Destroy(PersistentData.instance);
 
         FadeLoadScene();
     }
@@ -157,15 +155,20 @@ public class OrderedSceneNavigator : MonoBehaviour
     }
 
     public void SetSchedule() {
-        PersistentData.instance.StoreData("todaysSchedule", sceneOrder.Values);
-        PersistentData.instance.StoreData("numCompleted", (numCompleted + 1) % 3);
+        if (SceneManager.GetActiveScene().buildIndex != 1) {
+            PersistentData.instance.StoreData("todaysSchedule", sceneOrder.Values);
+            PersistentData.instance.StoreData("numCompleted", (numCompleted + 1) % 3);
 
-        if (numCompleted == 0) {
-            PersistentData.instance.StoreData("date", date.AddDays(7));
+            if (numCompleted == 0) {
+                PersistentData.instance.StoreData("date", date.AddDays(7));
+            }
         }
     }
 
     public void RetrieveSchedule() {
+        if (SceneManager.GetActiveScene().buildIndex != 1) {
+
+        
         if (!PersistentData.instance.ContainsKey("numCompleted")) {
             PersistentData.instance.StoreData("numCompleted", 0);
 
@@ -239,6 +242,8 @@ public class OrderedSceneNavigator : MonoBehaviour
 
                     //    break;
                 }
+            }
+
             }
         }
     }
@@ -324,7 +329,7 @@ public class OrderedSceneNavigator : MonoBehaviour
                 SetSchedule();
             }
 
-            int sceneIndex = (scheduleItems.Length > 0) ? sceneOrder.Values[numCompleted] : mainMenuIndex;
+            int sceneIndex = (scheduleItems.Length > 0 && SceneManager.GetActiveScene().buildIndex != 0) ? sceneOrder.Values[numCompleted] : mainMenuIndex;
             Debug.Log("Loading scene at index " + sceneIndex);
             StartCoroutine(FinishLoadScene(sceneIndex));
         }
