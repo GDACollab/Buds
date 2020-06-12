@@ -385,6 +385,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 621160416960989377, guid: de94e96c89622ef4fb7254e3f90ae04d,
+        type: 3}
+      propertyPath: defaultVariables.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4068380849537614946, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
       propertyPath: m_Name
@@ -927,6 +932,11 @@ PrefabInstance:
       propertyPath: scheduleItems.Array.data[2]
       value: 
       objectReference: {fileID: 60091281}
+    - target: {fileID: 5959862845529720916, guid: dd8268237509340628639d7903bfaee3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 62.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5959862845529720917, guid: dd8268237509340628639d7903bfaee3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1226,6 +1236,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621950927058995860, guid: 822325eabfbe16046a4362b7e3a0a001,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 354
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621950927058995860, guid: 822325eabfbe16046a4362b7e3a0a001,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -332.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621950927721809180, guid: 822325eabfbe16046a4362b7e3a0a001,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -784.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 822325eabfbe16046a4362b7e3a0a001, type: 3}

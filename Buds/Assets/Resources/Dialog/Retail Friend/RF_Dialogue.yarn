@@ -91,6 +91,7 @@ I believe you can find it over {{here.| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 What do you {{like about it?| }}
+<<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 Well—um... it’s... interesting because it does something that the newer releases seem kind of scared to do—
 —and the fact that they put this character in, Adelaide, might seem a bit cliche, but then you look at the release dates and this is actually—
@@ -111,11 +112,9 @@ It’s a thrilling tale about a young woman who finds herself through {{travelli
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 Hmm... I think I’ll take the one you {{recommended instead.| }}
+<<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 Oh...! Okay, I can {{ring you up| }} right over here.
-<<changeFace Character RF_Smile_Closed>>
-<<wait 3>>
-<<changeFace Character RF_Smile_Open>>
 Thank you for your {{purchase| }}, please come again.
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
@@ -139,9 +138,8 @@ colorID: 0
 position: 222, 228
 ---
 <<changeSpeaker RF>>
-<<changeFace Character RF_Smile_Open>>
-{{...| }}
 <<changeFace Character RF_Smile_Closed>>
+{{...| }}
 <<changeSpeaker MC>>
 Hello! {{Kawakuma was it?| }} It’s nice to see you again. 
 <<changeSpeaker RF>>
@@ -200,17 +198,20 @@ I feel the exact same way about the book…! {{I’m really glad you enjoyed it!
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 Yeah! I didn’t know the exact genre name before, but {{my sister| }} was really into those types of fiction.
+<<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 Does she {{live around here?| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 ... I guess you {{could say that.| }}
+<<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 She should {{come here| }} sometime, then! I’d be happy to talk about books with her, or maybe recommend some of my favorites. 
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 Yes, {{maybe…| }}
 Oh—I remember you like the {{writing style| }} a lot?
+<<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 Yes! I really do. To be honest, {{I wish I could write like that...| }}
 <<changeFace Character RF_Smile_Closed>>
@@ -252,6 +253,7 @@ No worries! Were you looking for more {{urban fantasy| }} or...?
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 That would be {{great.| }}
+<<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 Okay, hmm... I think maybe {{you’d like this one.| }} It’s called The Cloaked Oracle. 
 <<changeFace Character RF_Smile_Closed>>
@@ -266,9 +268,10 @@ Ah—okay. I’ll {{ring you up| }} then.
 Thank you, {{please come again!| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-For sure. {{Thank you again| }} for talking with me. 
+For sure. {{Thank you again| }} for talking with me.
+<<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-... likewise to {{you too.| }} 
+... likewise to {{you too!| }} 
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 <i> I left the bookstore with another book in hand, and {{something new| }} I learned about Shiori. </i>
@@ -317,9 +320,8 @@ Oh yes! I thought that was {{really exciting| }} too! It’s one of my favorite 
 <<changeSpeaker MC>>
 Have you read the {{second book| }} in the series? I hear the dark dragon rises again and seeks revenge against a friend of the wizard. 
 <<changeSpeaker RF>>
-<<changeFace Character RF_Smile_Open>>
- {{…| }}
 <<changeFace Character RF_Smile_Closed>>
+ {{…| }}
 <<changeSpeaker MC>>
  {{...Shiori?| }}
 <<changeSpeaker RF>>

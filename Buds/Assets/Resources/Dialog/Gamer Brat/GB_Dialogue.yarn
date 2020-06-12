@@ -3,10 +3,6 @@ tags: GamerBrat
 colorID: 0
 position: 111, 111
 ---
-<<if $visted_GB >= 2>>
-<<changeFace Background RamenShop_PowerOut>>
-<<endif>>
-
 <<if $unfinished_GB>>
 [[GB_Dialogue.Unfinished]]
 <<endif>>
@@ -226,7 +222,6 @@ Nothing gave Buttercup as much pleasure as {{ordering Westley around...| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
 Okay! Okay, please just {{shut up.| }}
-I’ll tell you about the {{game.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
 There we go. {{Not a fan| }} of the classics?
@@ -288,6 +283,7 @@ tags: GamerBrat
 colorID: 0
 position: 111, 117
 ---
+<<changeFace Background RamenShop_PowerOut>>
 <<changeSpeaker MC>>
 <i>The Mizushima family has been asking me to {{look over Senko| }} every so often when the restaurant would get busy.</i>
 <i>They don’t know that I’ve noticed, but they {{seem really happy| }} that I’ve been leaving my apartment more often...</i>
@@ -449,9 +445,9 @@ That’s the {{spirit!| }} Let’s hope the power comes back on soon.
 <<changeFace Character GB_Neutral_Open>>
 Yeah, {{me too.| }}
 <<changeFace Character GB_Neutral_Closed>>
-{{…| }}
-{{……| }}
-{{…………| }}
+{{...| }}
+{{.....| }}
+{{...........| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
 {{Hey.| }}
@@ -464,7 +460,7 @@ Do you... have any {{audiobooks| }} I can listen to right now?
 <<changeSpeaker MC>>
 <<changeFace Character GB_Neutral_Closed>>
 Aww. Finally {{warming up| }} to them?
-<<changeSpeaker MC>>
+<<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
 No!! I’m just {{bored!| }}
 <<changeFace Character GB_Angry_Closed>>
