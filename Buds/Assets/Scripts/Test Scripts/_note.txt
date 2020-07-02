@@ -1,0 +1,7 @@
+This is a folder description explaining the contents of the folder it is in.
+
+Scripts
+|______ Test Scripts
+
+Code that runs temporary tests not intended to be used as part of final game
+functionality.

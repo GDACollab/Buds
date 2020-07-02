@@ -1,2 +1,7 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
+
+Scripts
+|______ Audio Scripts
+
+Code for starting, stopping, and configuring background music (BGM), sound
+effects (SFX), and other audio in the game.

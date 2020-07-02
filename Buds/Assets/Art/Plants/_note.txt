@@ -1,0 +1,6 @@
+This is a folder description explaining the contents of the folder it is in.
+
+Art
+|__ Plants
+
+Plant art, including the plants themselves and the pot, dirt, and watering can.

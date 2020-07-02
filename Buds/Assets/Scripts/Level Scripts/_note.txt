@@ -1,2 +1,6 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
+
+Scripts
+|______ Level Scripts
+
+Code associated with loading, closing, or moving between levels.

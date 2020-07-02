@@ -1,6 +1,5 @@
 This is a folder description explaining the contents of the folder it is in.
 
 Sound
-|____ Voice Acting
 
-Likely never to happen in this game, but one can dream, right?
+All background music (BGM), sound effects (SFX), and other audio in the game.

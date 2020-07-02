@@ -1,0 +1,7 @@
+This is a folder description explaining the contents of the folder it is in.
+
+Art
+|__ UI
+
+Art used for the user interface (UI), such as icons, backgrounds, button shapes,
+etc.

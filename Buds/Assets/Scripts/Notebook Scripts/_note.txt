@@ -1,7 +1,6 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
 
-Scenes
-|_____ Main Scenes
+Scripts
+|______ Notebook Scripts
 
-All scenes that are part of the build.
+Code for displaying and updating the notebook.

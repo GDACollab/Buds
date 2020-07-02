@@ -1,2 +1,8 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
+
+Scenes
+
+All scenes in the game are stored here for easy access.
+
+Sample Scene is excluded in the gitignore file, so it can be used for testing
+that will not be synced to the git repository.

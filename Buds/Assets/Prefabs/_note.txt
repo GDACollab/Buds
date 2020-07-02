@@ -1,2 +1,5 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
+
+Prefabs
+
+All prefabs in the game are stored here for easy access.

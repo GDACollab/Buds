@@ -1,2 +1,5 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
+
+Scripts
+
+All C# code in the game is stored here for easy access.

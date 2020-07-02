@@ -1,2 +1,12 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
+
+Scripts
+|______ UI Scripts
+
+Code involving the display of and input to the user interface (UI). May include
+some menus, draggable elements, etc.
+
+UI for the visual novel should go in the Dialog Scripts folder instead.
+
+Many parts of the UI are already available in Unity's UI system (Unity.UI), and
+are configured in the inspector.

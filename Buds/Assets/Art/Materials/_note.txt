@@ -1,2 +1,6 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
+
+Art
+|__ Materials
+
+Material files (*.mat).

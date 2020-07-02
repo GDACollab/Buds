@@ -1,2 +1,8 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
+
+Art
+|__ Environments
+
+Background art.
+
+Includes cemetery (flowers, menus), bookstore (RF), and ramen shop (GB).

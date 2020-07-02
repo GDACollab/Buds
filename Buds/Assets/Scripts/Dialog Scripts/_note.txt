@@ -1,2 +1,11 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
+
+Scripts
+|______ Dialog Scripts
+
+Any code pertaining to the visual novel's display, formatting, input, storage,
+etc. This includes subtitle dialog, dialog history, character display, and
+background display during the VN portion of Buds.
+
+This project uses YarnSpinner for dialog formatting and playback, so most
+of the classes in this folder derive from YarnSpinner (Yarn.Unity) classes.

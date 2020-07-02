@@ -1,2 +1,11 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
+
+Scripts
+|______ Effect Scripts
+
+Code for visual effects, either on individual elements (particles, lighting,
+etc.) or full-screen effects (blur, VHS filter, etc.). Additionally, shaders
+hand-written in code.
+
+Many effects are already available in Unity, and are configured using the
+inspector (Unity's ParticleSystem, PostProcessing, etc).

@@ -1,2 +1,7 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
+
+Art
+
+All visual art in the game. This includes static images like sprites and
+textures, as well as dynamic (non-code) elements like animations,
+visual-scripting shaders, and materials.

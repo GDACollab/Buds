@@ -1,2 +1,7 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
+
+Scripts
+|______ Game Scripts
+
+Code that applies to the entire game, such as the data storage singleton. Also
+general gameplay code that is not tied to a particular system.

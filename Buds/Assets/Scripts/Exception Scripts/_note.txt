@@ -1,2 +1,7 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
+
+Scripts
+|______ Exception Scripts
+
+Exceptions... for enforcing proper interfaces between various pieces of code
+and so on.

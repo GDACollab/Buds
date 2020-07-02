@@ -1,2 +1,6 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
+
+Sound
+|____ Sound Effects
+
+Sounds that play as a short "effect" during gameplay.

@@ -1,7 +1,6 @@
 This is a folder description explaining the contents of the folder it is in.
-update me
 
-Scenes
-|_____ Main Scenes
+Art
+|__ Logos
 
-All scenes that are part of the build.
+Includes the game icon, logo, the GDA logo, etc.
