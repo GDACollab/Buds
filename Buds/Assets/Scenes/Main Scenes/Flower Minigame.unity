@@ -1359,7 +1359,7 @@ PrefabInstance:
     - target: {fileID: -5869354531142706318, guid: 8bf820368603745e3a1fde16aa2c1c29,
         type: 3}
       propertyPath: daysBetweenStages
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 272292068081407336, guid: 8bf820368603745e3a1fde16aa2c1c29,
         type: 3}
@@ -5535,7 +5535,7 @@ PrefabInstance:
     - target: {fileID: -5869354531142706318, guid: 8bf820368603745e3a1fde16aa2c1c29,
         type: 3}
       propertyPath: daysBetweenStages
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 272292068081407336, guid: 8bf820368603745e3a1fde16aa2c1c29,
         type: 3}
