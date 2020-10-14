@@ -169,19 +169,28 @@ public class OrderedSceneNavigator : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex != 1) {
 
         
-        if (!PersistentData.instance.ContainsKey("numCompleted")) {
-            PersistentData.instance.StoreData("numCompleted", 0);
+            if (!PersistentData.instance.ContainsKey("numCompleted")) {
+                PersistentData.instance.StoreData("numCompleted", 0);
 
-            FixedUpdate();
+                FixedUpdate();
 
-            PersistentData.instance.StoreData("todaysSchedule", sceneOrder.Values);
-            date = new System.DateTime(2020, 3, 14);
-            PersistentData.instance.StoreData("date", date);
-        }
-        numCompleted = (int)PersistentData.instance.ReadData("numCompleted");
-        date = (System.DateTime)PersistentData.instance.ReadData("date");
+                PersistentData.instance.StoreData("todaysSchedule", sceneOrder.Values);
+                date = new System.DateTime(2020, 3, 14);
+                PersistentData.instance.StoreData("date", date);
+            }
 
-        if (PersistentData.instance.ContainsKey("todaysSchedule")) {
+            numCompleted = (int)PersistentData.instance.ReadData("numCompleted");
+            date = (System.DateTime)PersistentData.instance.ReadData("date");
+            
+            Plant narcissus = (Plant)PersistentData.instance.ReadData("Narcissus");
+            Plant cyclamen = (Plant)PersistentData.instance.ReadData("Cyclamen");
+
+            if (narcissus != null) {int narcissusStage = (int)narcissus.growthStage; }
+            if (cyclamen != null) {int cyclamenStage = (int)cyclamen.growthStage; }
+            
+            
+
+            if (PersistentData.instance.ContainsKey("todaysSchedule")) {
 
             IList<int> newScheduleOrder = (IList<int>)PersistentData.instance.ReadData("todaysSchedule");
 
@@ -196,6 +205,8 @@ public class OrderedSceneNavigator : MonoBehaviour
                 DragAndDrop dnd = scheduleItems[newOrder].GetComponent<DragAndDrop>();
 
                 confirmButton.transform.parent.GetChild(1).GetComponent<Text>().text = date.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP"));
+
+                Debug.Log("numCompleted: " +  numCompleted);
 
                 switch (numCompleted)
                 {
