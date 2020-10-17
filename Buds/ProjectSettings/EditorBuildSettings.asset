@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Scenes/Credits.unity
     guid: 3f22fb73e620ab9408e43a63b062c3ce
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/Dream Sequence.unity
+    guid: 15377b0598ebb3a4687b7a7d02ba5ce3
   m_configObjects: {}
