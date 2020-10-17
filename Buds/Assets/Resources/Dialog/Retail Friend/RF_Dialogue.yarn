@@ -39,6 +39,7 @@ position: 222, 225
 ---
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
+<<PlayAudio Voice test_eric_1>>
 Hello, are we looking for anything in {{particular| }} today?
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
