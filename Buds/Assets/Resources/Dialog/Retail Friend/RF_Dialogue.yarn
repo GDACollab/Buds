@@ -39,55 +39,63 @@ position: 222, 225
 ---
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-<<PlayAudio Voice test_eric_1>>
+<<PlayAudio VoiceActing Shiori_Scene1_Line1>>
 Hello, are we looking for anything in {{particular| }} today?
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 Um...yes. I was just wondering what books you have that are similar to {{Magic of the Earth?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene1_Line2>>
 Do you like {{urban fantasy?| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 {{What’s that?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene1_Line3>>
 That’s the genre {{Samuel and the Mythical Columbianus| }} and {{Daughter of the Sword| }} are in.
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 Oh, then {{yes.| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene1_Line4>>
 Well, the {{most popular new releases| }} for urban fantasy are right over here.
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 {{....| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene1_Line5>>
 Let me {{kn—| }} 
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 Which ones {{do you like?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene1_Line6>>
 I’m {{sorry?| }}
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
 Which urban fantasy books {{do you like?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene1_Line7>>
 Oh. Well... I will admit, I’m not a huge fan of the new releases. I like books like {{The Dawn of the Crooked| }}, but those aren’t particularly well received.
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
 {{Where| }} would that be at?
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene1_Line8>>
 I believe you can find it over {{here.| }}
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
 {{This one?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene1_Line9>>
 {{Yes,| }} that’s the one!
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
