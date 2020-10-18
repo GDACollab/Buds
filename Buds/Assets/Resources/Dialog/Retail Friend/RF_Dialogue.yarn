@@ -39,94 +39,101 @@ position: 222, 225
 ---
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Hello, are we looking for anything in {{particular| }} today?
+<<PlayAudio VoiceActing Shiori_Scene1_Line1>>
+Welcome! Are we looking for anything in particular {{today?| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-Um...yes. I was just wondering what books you have that are similar to {{Magic of the Earth?| }}
+Um… yes. I was just wondering what books you have that are {{similar| }} to Magic of the Earth
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene1_Line2>>
 Do you like {{urban fantasy?| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-{{What’s that?| }}
+What’s {{that?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-That’s the genre {{Samuel and the Mythical Columbianus| }} and {{Daughter of the Sword| }} are in.
+<<PlayAudio VoiceActing Shiori_Scene1_Line3>>
+That’s the {{genre| }} Samuel and the Mythical Columbianus and Daughter of the Sword are in.
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 Oh, then {{yes.| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Well, the {{most popular new releases| }} for urban fantasy are right over here.
+<<PlayAudio VoiceActing Shiori_Scene1_Line4>>
+Well, the most popular new releases for urban fantasy are right over {{here.| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-{{....| }}
+Hm… alright, {{thank you.| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Let me {{kn—| }} 
+<<PlayAudio VoiceActing Shiori_Scene1_Line5>>
+Let me {{kn—| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-Which ones {{do you like?| }}
+Do you have ones you {{like?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene1_Line6>>
 I’m {{sorry?| }}
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
-Which urban fantasy books {{do you like?| }}
+Which urban fantasy books do you {{like?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-Oh. Well... I will admit, I’m not a huge fan of the new releases. I like books like {{The Dawn of the Crooked| }}, but those aren’t particularly well received.
+<<PlayAudio VoiceActing Shiori_Scene1_Line7>>
+Oh Well… I will admit, I’m not a huge fan of the new releases. I prefer books like The Dawn of the Crooked, but those aren’t particularly {{well-received| }} either.
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
-{{Where| }} would that be at?
+Where would that be {{at?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-I believe you can find it over {{here.| }}
+<<PlayAudio VoiceActing Shiori_Scene1_Line8>>
+I believe you can {{find| }} it over here.
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
-{{This one?| }}
+This {{one?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-{{Yes,| }} that’s the one!
+<<PlayAudio VoiceActing Shiori_Scene1_Line9>>
+Yeah, that’s the {{one!| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-What do you {{like about it?| }}
+What do you {{like| }} about it?
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Well—um... it’s... interesting because it does something that the newer releases seem kind of scared to do—
-—and the fact that they put this character in, Adelaide, might seem a bit cliche, but then you look at the release dates and this is actually—
-—the first time someone did something like that in an urban fantasy book. The writing is great. They don’t bore you with flowery words and—
-—long descriptions of meaningless things, they just get right to the point. I really hate how newer books do that, and—
-—you can never really go back after you’ve read something like this… 
-It’s— 
+<<PlayAudio VoiceActing Shiori_Scene1_Line10>>
+Well—um… It’s interesting because it does something that the newer releases seem kind of {{scared| }} to do—
+—and the fact that they put this character in, Adelaide, might seem a bit cliche, but then you look at the release {{dates| }} and this is actually—
+—the first time someone did something like that in an urban fantasy book. The writing is great. They don’t bore you with {{flowery| }} words and—
+—long descriptions of meaningless things, they just get right to the point. I really hate how {{newer| }} books do that, and—
+—you can never really go back after you’ve {{read| }} something like this… 
+<<changeFace Character RF_Smile_Closed>>
 <<changeFace Character RF_Confused_Open>>
-{{Ah…| }} 
+{{It’s—| }}
+{{Ah…| }}
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
-That sounds… {{interesting.| }}
+That does sound {{interesting.| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-Haha... It’s a good book, but {{The Maiden of the Silver Sea| }} is far more popular right now.
-It’s a thrilling tale about a young woman who finds herself through {{travelling the sea| }} and meeting a charming, handsome prince.
+<<PlayAudio VoiceActing Shiori_Scene1_Line11>>
+Hahum…- It’s a good book, but The Maiden of the Silver Sea is far more {{popular| }} right now.
 <<changeFace Character RF_Confused_Closed>>
+<<changeFace Character RF_Smile_Open>>
+It’s a thrilling tale about a young woman who finds herself travelling through the sea and meeting a charming, handsome {{prince.| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-Hmm... I think I’ll take the one you {{recommended instead.| }}
+Hmm… I think I’ll take the one you {{recommended| }} instead.
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Oh...! Okay, I can {{ring you up| }} right over here.
-Thank you for your {{purchase| }}, please come again.
+{{Oh…!| }}
+Okay, I can ring you up right over {{here.| }}
+Thank you for your purchase, please come {{again!| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-Yeah... this book does seem more interesting to me. I’ll tell you {{what I think| }} about it.
-<<changeSpeaker RF>>
-<<changeFace Character RF_Confused_Open>>
-{{...!| }}
-<<changeFace Character RF_Confused_Closed>>
-<<changeSpeaker MC>>
-<i> Leaving the bookstore, I felt a small bit of {{excitement| }} for trying out the book. </i>
-<i> My sister always looked really thrilled to {{bury herself| }} in fictional worlds. </i>
-<i> Will I be able to do {{the same?| }} </i>
+Yeah… this book definitely seems more {{interesting| }} to me. 
+I’ll tell you what I think about it {{next| }} time.
 
 <<set $visited_RF to 1>>
 <<set $unfinished_RF to false>>
