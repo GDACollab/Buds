@@ -435,7 +435,7 @@ PrefabInstance:
         type: 3}
       propertyPath: yarnScripts.Array.data[0]
       value: 
-      objectReference: {fileID: 2480198943629176163, guid: 019423a3ef1a2b34292b73a3b30a0d96,
+      objectReference: {fileID: 2480198943629176163, guid: 1be4e760269ba9448af2004af23f397a,
         type: 3}
     - target: {fileID: 5935829475398715329, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
@@ -589,7 +589,7 @@ PrefabInstance:
         type: 3}
       propertyPath: sprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 85df59dc273e94401a74b328e6c27ebd,
+      objectReference: {fileID: 21300000, guid: 1f42aa6ecef69da45bf2a79e65dd0f49,
         type: 3}
     - target: {fileID: 8245181055515182852, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
