@@ -1,4 +1,4 @@
-title: Header
+﻿title: Header
 tags: GamerBrat
 colorID: 0
 position: 111, 111
@@ -9,7 +9,31 @@ position: 111, 111
 
 <<set $unfinished_GB to true>>
 
-<<if $visited_GB >= 2>>
+<<if $visited_GB >= 5>>
+
+<<if $narcissus_growth_stage >= 5>>
+[[GB_Dialogue.Friendship]]
+<<else>>
+[[GB_Dialogue.Busy]]
+<<endif>>
+
+<<else if $visited_GB >= 4>>
+
+<<if $narcissus_growth_stage >= 3>>
+[[GB_Dialogue.KappaKrossing]]
+<<else>>
+[[GB_Dialogue.Busy]]
+<<endif>>
+
+<<else if $visited_GB >= 3>>
+
+<<if $narcissus_growth_stage >= 3>>
+[[GB_Dialogue.KappaKrossing]]
+<<else>>
+[[GB_Dialogue.Busy]]
+<<endif>>
+
+<<else if $visited_GB >= 2>>
 
 <<if $narcissus_growth_stage >= 2>>
 [[GB_Dialogue.NoPower]]
@@ -41,24 +65,28 @@ position: 111, 113
 Hello, {{Senko.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line1>>
 {{Huh?| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
 Hi! Your parents told me to {{watch over you| }} for a bit.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line2>>
 Wait, what? It’s {{you?!| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
 It’s me...? What do you mean it’s {{me| }}?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line3>>
 {{Nothing.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
 {{Oh…?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line4>>
 No, no... I’m not surprised by {{anything.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
@@ -66,24 +94,28 @@ No, no... I’m not surprised by {{anything.| }}
 So... what do you have {{there?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line5>>
 A {{game.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
 What kind of {{game?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line6>>
 {{DAMN IT!!!| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
 {{????| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line7>>
 PIECE OF CRAP THINKS THEY CAN DO THAT TO ME? {{I’LL SHOW YOU!| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
 Hey... I think you’re {{scaring| }} some of the other people in the restaurant.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line8>>
 {{SHUT UP!| }} Let me focus.
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
@@ -103,30 +135,35 @@ Hey, {{Senko?| }}
 Everything {{okay?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
-They... {{got me.| }}
+<<PlayAudio VoiceActing Senko_Scene1_Line9>>
+Ugh... {{I got killed.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
 {{Oh—| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line10>>
 I’m {{done| }} with this game.
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
 That’s good—er, I mean... I’m sorry that {{happened| }} to you.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line11>>
 What are you {{sorry| }} for??
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
 They {{killed| }} you, right? Or—something…
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line12>>
 You didn’t {{cause| }} it.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
 I know, but… ah—{{never mind.| }} 
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line13>>
 Never mind {{what?| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
@@ -139,18 +176,21 @@ I {{don’t need you| }} to feel bad for me.
 ... {{never mind,| }} then.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line15>>
 You’re so {{weird.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
 {{…| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line16>>
 ... yeah. I’m {{done| }} with this game.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
 {{Oh?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line17>>
 I {{need a break| }} or something.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
@@ -172,40 +212,50 @@ position: 111, 115
 So… what are you {{playing| }} today?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene2_Line1>>
 A {{game,| }} obviously.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
 Yes, but {{what game| }} is it?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene2_Line2>>
 A {{fun| }} game.
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
  Why do I even {{bother...| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene2_Line3>>
 What do you {{want?| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
 I was curious about {{what game| }} you were playing.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene2_Line4>>
 Ugh, fine. It’s called {{Super Fabio 64.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
 Oh. What’s... it {{about?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene2_Line5>>
 It’s a platformer. You play as this {{buff dude| }} with suuuuuper long hair.
+<<PlayAudio VoiceActing Senko_Scene2_Line6>>
 He uses it to {{fight,| }} kinda like Gunaneta.
+<<PlayAudio VoiceActing Senko_Scene2_Line7>>
 He also {{keeps talking| }} about butter for some reason.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
 Ah. Are you… trying to be {{sarcastic?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Jeer_Open>>
+<<PlayAudio VoiceActing Senko_Scene2_Line8>>
 Noo, {{am I?| }}
+<<PlayAudio VoiceActing Senko_Scene2_Line9>>
 Do you {{think| }} so?
+<<PlayAudio VoiceActing Senko_Scene2_Line10>>
 Gee whiz! How can you {{tell?| }}
 <<changeSpeaker MC>>
 <<changeFace Character GB_Jeer_Closed>>
@@ -221,12 +271,14 @@ Her favorite pastimes were riding her horse and {{tormenting| }} the farm boy th
 Nothing gave Buttercup as much pleasure as {{ordering Westley around...| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-Okay! Okay, please just {{shut up.| }}
+<<PlayAudio VoiceActing Senko_Scene2_Line11>>
+Okay! Okay, just please {{shut up.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
 There we go. {{Not a fan| }} of the classics?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene2_Line12>>
 Books are {{boring.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
@@ -236,6 +288,7 @@ When you read a good book, you can {{escape| }} into its world and ignore our ow
 Just like what you do with {{video games.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Jeer_Open>>
+<<PlayAudio VoiceActing Senko_Scene2_Line13>>
 So what? I don’t care. Reading is {{boring| }} and so are books!
 <<changeFace Character GB_Jeer_Closed>>
 <<changeSpeaker MC>>
@@ -246,7 +299,10 @@ If you don’t like reading with a physical book, why don’t you try {{listenin
 You could even do it {{while you play| }} your games.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
-{{Don’t have| }} any.
+<<PlayAudio VoiceActing Senko_Scene2_Line14>>
+Audio {{what| }}?
+<<PlayAudio VoiceActing Senko_Scene2_Line15>>
+{{I don’t have| }} any of those.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
 Alright, how about {{this.| }}
@@ -254,9 +310,12 @@ I won't bother you for the rest of the day, {{but—| }}
 —you {{listen| }} to one audiobook of my choice while you play a game.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene2_Line16>>
 {{Hmm…| }}
+<<PlayAudio VoiceActing Senko_Scene2_Line17>>
 {{Hmmmmmmmm…| }}
-{{Fine,| }} sounds fair.
+<<PlayAudio VoiceActing Senko_Scene2_Line18>>
+{{Fine,| }} I guess.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
 Great! Here, {{plug your headphones| }} into your phone.
@@ -265,6 +324,7 @@ In the book, the gods are {{fighting| }} each other and their demigod children.
 In fact, their kids are {{a lot like you| }} in some ways.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene2_Line19>>
 Whatever, just play the damn {{book.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
@@ -278,12 +338,11 @@ Whatever, just play the damn {{book.| }}
 <<set $unfinished_GB to false>>
 ===
 
-title: GB_Dialogue.NoPower
+title: GB_Dialogue.KappaKrossing
 tags: GamerBrat
 colorID: 0
 position: 111, 117
 ---
-<<changeFace Background RamenShop_PowerOut>>
 <<changeSpeaker MC>>
 <i>The Mizushima family has been asking me to {{look over Senko| }} every so often when the restaurant would get busy.</i>
 <i>They don’t know that I’ve noticed, but they {{seem really happy| }} that I’ve been leaving my apartment more often...</i>
@@ -291,196 +350,539 @@ position: 111, 117
 
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-{{AHHHHH!!!!!| }}
-<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Senko_Scene3_Line1>>
+{{AHHHHH!!! Stupid Racoon!| }}
 <<changeFace Character GB_Angry_Closed>>
-Ha, you wouldn’t have this {{problem| }} if you charged your console…<i>or</i> tried a book.
+<<changeSpeaker MC>>
+You have to {{stop| }} doing that.
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line2>>
+{{Doing what?| }}
+<<changeFace Character GB_Angry_Closed>>
+<<changeSpeaker MC>>
+Yelling in the {{restaurant.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line3>>
+It’s not my fault. Ms. Kappa keeps making me get these {{loans!| }}
+<<changeFace Character GB_Angry_Closed>>
+<<changeSpeaker MC>>
+{{Loans?| }} Aren’t you too young for those?
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line4>>
+No, it’s in the game, {{stupid.| }}
+<<changeFace Character GB_Angry_Closed>>
+<<changeSpeaker MC>>
+Ha, I figured. That was {{sarcasm, Senko.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line5>>
+I have to keep getting these in order to advance the {{game.| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+I feel like there’s an {{allegory| }} for life in there somewhere.
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line6>>
+A what? {{An allergy?| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+Don’t {{worry| }} about it.
+Just go catch some butterflies and {{sell| }} them.
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line7>>
+I would, but the stock prices for the butterflies are so bad right now! I can’t even get any {{buttons| }} for them.
+<<changeFace Character GB_Angry_Closed>>
+<<wait 0.5>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line8>>
+Wait… are you talking about real life or a {{game?| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+The {{game| }} of course. 
+The only place you’ll find a butterfly around here is at the {{cemetery.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line9>>
+Wait— you know this {{game?| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line10>>
+...YOU {{PLAY| }} GAMES!?!?!?!?
+<<changeFace Character GB_Angry_Closed>>
+<<changeSpeaker MC>>
+Huh? I suppose I used to play games when I was around your {{age.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line11>>
+How did you know I was playing {{Kappa Crossing?| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+I used to play {{Kappa Crossing!| }}
+I would stay up until {{midnight| }} getting cash to pay off my loan.
+When I heard Ms. Kappa and loans, I figured you were playing {{Kappa Crossing.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line12>>
+{{H O L Y  S H I T!!!| }}
+<<changeFace Character GB_Angry_Closed>>
+<<changeSpeaker MC>>
+{{What?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Jeer_Open>>
-Your books are so boring. I {{don’t get| }} why people would read something like that.
-<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Senko_Scene3_Line13>>
+YOU’RE A {{GAMER!| }}
 <<changeFace Character GB_Jeer_Closed>>
-At least I can entertain myself when the {{power’s out.| }}
+<<changeSpeaker MC>>
+{{...what?| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line14>>
+YEAH! Well, {{you used to be| }} at least. 
+Now you’re just a {{wrinkly boring old person that likes books.| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+Just {{because…| }}
+{{I…| }}
+Now hold on there for a {{sec…| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Jeer_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line15>>
+You’re a {{gamer!| }}
+<<PlayAudio VoiceActing Senko_Scene3_Line16>>
+You can’t deny it. You {{like| }} this stuff too.
+<<PlayAudio VoiceActing Senko_Scene3_Line17>>
+Can’t yell at me for {{gaming| }} anymore.
+<<changeFace Character GB_Jeer_Closed>>
+<<changeSpeaker MC>>
+I still very much {{can.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line18>>
+Why’d you {{stop?| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+Stop {{what?| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line19>>
+Being {{cool.| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+You mean {{playing games?| }}
+Same reason why you {{should.| }}
+It doesn’t really help you {{later on.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line20>>
+That’s {{dumb.| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+You’re not going to get a job {{playing video games.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene3_Line21>>
+{{So?| }}
+<<PlayAudio VoiceActing Senko_Scene3_Line22>>
+It’s just {{fun.| }}
+<<PlayAudio VoiceActing Senko_Scene3_Line23>>
+Why do you {{read books?| }}
+<<PlayAudio VoiceActing Senko_Scene3_Line24>>
+You can’t make money off of {{reading.| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+Look, I’m not trying to make you upset, I’m just {{looking out| }} for you.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-AHHHHH SHUT UP!!! You’re {{no help!| }}
-<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Senko_Scene3_Line25>>
+I’m not upset! You’re {{just stupid!| }}
+<<PlayAudio VoiceActing Senko_Scene3_Line26>>
+OH, let me just stop playing video games and {{get a job!| }}
+<<PlayAudio VoiceActing Senko_Scene3_Line27>>
+Maybe I’ll go work forever, staring at the computer screen and doing {{taxes all day!| }}
+<<PlayAudio VoiceActing Senko_Scene3_Line28>>
+And then when I’m done with work, I’ll just go home and {{read about the economy| }} or something.
 <<changeFace Character GB_Angry_Closed>>
-{{...| }}
-<<changeSpeaker GB>>
-{{.....| }}
 <<changeSpeaker MC>>
-{{........| }}
+{{Senko…| }}
 <<changeSpeaker GB>>
-{{...........| }}
 <<changeFace Character GB_Angry_Open>>
-Would you {{stop reading?| }}
+<<PlayAudio VoiceActing Senko_Scene3_Line29>>
+You {{boomers| }} never get it!
+<<PlayAudio VoiceActing Senko_Scene3_Line30>>
+I’m done with {{you!| }}
+<<changeFace Character blank>>
 <<changeSpeaker MC>>
+<i> {{She ran off,| }} upstairs. </i>
+<i> Her parents told me that she was {{just throwing one of her tantrums.| }} </i>
+<i> {{I hope that's the case.| }} </i>
+
+<<set $visited_GB to 3>>
+<<set $unfinished_GB to false>>
+===
+
+title: GB_Dialogue.NoPower
+tags: GamerBrat
+colorID: 0
+position: 111, 175
+---
+<<changeFace Background RamenShop_PowerOut>>
+<<changeSpeaker MC>>
+<i>Senko was {{still pretty mad| }} at me when she saw me.</i>
+<i>But their parents really needed me to {{watch over her| }} while they went to get emergency supplies.</i>
+<i>It just so happens that {{the power is out| }} as well.</i>
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Closed>>
+…
+<<changeSpeaker MC>>
+……
+<<changeSpeaker GB>>
+………
+<<changeSpeaker MC>>
+…………
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene4_Line1>>
+Would you {{stop| }} reading?
 <<changeFace Character GB_Angry_Closed>>
+<<changeSpeaker MC>>
 What...? {{Why?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-Talk to me! Or {{do something!| }}
-<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Senko_Scene4_Line2>>
+{{Say something.| }}
 <<changeFace Character GB_Angry_Closed>>
-Oh? What’s this {{change| }} of attitude?
+<<changeSpeaker MC>>
+I thought you didn’t want to {{talk| }} to me.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
-I’m {{booored!!!!!| }}
-<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Senko_Scene4_Line3>>
+Yeah, but there’s {{nothing to do| }} here.
 <<changeFace Character GB_Angry_Closed>>
-Alright, alright, {{fine.| }} What do you want to talk about?
+<<changeSpeaker MC>>
+{{Well…| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
-{{…| }}
-{{Uh...| }}
-<<changeSpeaker MC>>
-You {{don’t know,| }} do you.
-<<changeSpeaker GB>>
-<<changeFace Character GB_Angry_Open>>
-No...!! Geez, just make something up. {{Tell me| }} about your life or whatever!
-<<changeSpeaker MC>>
-<<changeFace Character GB_Angry_Closed>>
-What? What do you want to {{know| }} about my life?
-<<changeSpeaker GB>>
-<<changeFace Character GB_Neutral_Open>>
-Aren’t you {{old?| }} Don’t you have, like, folk stories to tell or something??
-<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Senko_Scene4_Line4>>
+No. Don’t {{say it.| }}
 <<changeFace Character GB_Neutral_Closed>>
-What?! I’m {{not old.| }}
+<<changeSpeaker MC>>
+You could {{read| }} a book.
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene4_Line5>>
+{{Ughhhh…| }}
+<<PlayAudio VoiceActing Senko_Scene4_Line6>>
+Reading is so boring. I don’t get why people would spend so long {{staring at words.| }}
+<<changeFace Character GB_Angry_Closed>>
+<<changeSpeaker MC>>
+Well, there’s still {{audiobooks.| }} 
+And we have to wait for your parents to come back, so do you have anything {{to do?| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene4_Line7>>
+{{No…| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+Don’t you have that {{game| }} thingy or something?
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene4_Line8>>
+I forgot to {{charge| }} it.
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+Oh, that’s pretty {{unfortunate.| }}
+Well I guess if Senko-chan wants to talk, then we will {{talk.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene4_Line9>>
+Ewww. Don’t {{call| }} me that.
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+{{...| }}
+<<changeSpeaker GB>>
+{{...| }}
+<<changeSpeaker MC>>
+Well, what do you want to {{talk| }} about?
+<<changeSpeaker GB>>
+{{...| }}
+<<changeSpeaker MC>>
+You don’t know, {{do you?| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene4_Line10>>
+No! Geez, just make something up. {{Tell me about your life| }} or whatever.
+<<changeFace Character GB_Angry_Closed>>
+<<changeSpeaker MC>>
+What? What do you want to know {{about my life?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Jeer_Open>>
-Really? You {{look| }} old.
-<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Senko_Scene4_Line11>>
+Aren’t you old? Don’t you have, like, {{folk stories| }} to tell or something??
 <<changeFace Character GB_Jeer_Closed>>
-I’M {{NOT OLD.| }}
+<<changeSpeaker MC>>
+What? I’m not {{that| }} old.
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene4_Line12>>
+Really? You {{look old.| }}
+<<PlayAudio VoiceActing Senko_Scene4_Line13>>
+Probably why you don’t like {{video games.| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+No… It’s something {{different.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene4_Line14>>
+Then {{why?| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+I was just told they were no {{good.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene4_Line15>>
+{{Why?| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+I… {{don’t know.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Jeer_Open>>
-Okay... {{oldie.| }}
+<<PlayAudio VoiceActing Senko_Scene4_Line16>>
+You don’t even {{know?| }}
+<<PlayAudio VoiceActing Senko_Scene4_Line17>>
+That’s so dumb. I bet you just {{do whatever people tell you to do.| }}
+<<changeFace Character GB_Jeer_Closed>>
 <<changeSpeaker MC>>
-{{HEY!| }}
-<<changeSpeaker GB>>
-<<changeFace Character GB_Neutral_Open>>
-Listen, you wanted to talk. Wanna {{hear| }} something?
-<<changeSpeaker MC>>
-<<changeFace Character GB_Neutral_Closed>>
-<i>You’re the one who wanted to talk...</i>
-{{Sure...?| }}
-<<changeSpeaker GB>>
-<<changeFace Character GB_Neutral_Open>>
-There’s this person I {{used to play with| }} all the time.
-<<changeSpeaker MC>>
-<<changeFace Character GB_Neutral_Closed>>
-He’s your {{friend?| }}
-<<changeSpeaker GB>>
-<<changeFace Character GB_Angry_Open>>
-NO. {{Not anymore.| }}
-<<changeSpeaker MC>>
-<<changeFace Character GB_Angry_Closed>>
-Wait, {{why not?| }}
-<<changeSpeaker GB>>
-<<changeFace Character GB_Angry_Open>>
-He got a damn girlfriend, and now the idiot doesn’t have time to play anymore. It’s {{annoying.| }}
-<<changeSpeaker MC>>
-<<changeFace Character GB_Angry_Closed>>
-So you’re just {{gonna stop being friends| }} with him?
-<<changeSpeaker GB>>
-<<changeFace Character GB_Angry_Open>>
-{{Yeah??| }} If he doesn’t have time for me, I don’t have time for him.
-<<changeSpeaker MC>>
-<<changeFace Character GB_Angry_Closed>>
-I’m sure he’ll want to {{play again| }} in the future.
-Relationships can really... {{occupy a person's mind| }} especially at your age so... it’s natural.
-Trust me, things will go {{back to normal| }} eventually.
-<<changeSpeaker GB>>
-<<changeFace Character GB_Neutral_Open>>
-And what, am I just {{supposed| }} to wait?
-<<changeFace Character GB_Angry_Open>>
-He keeps making plans and flaking. Like... {{seriously??| }}
-<<changeSpeaker MC>>
-<<changeFace Character GB_Angry_Closed>>
-Well, people make {{mistakes.| }}
-<<changeSpeaker GB>>
-<<changeFace Character GB_Angry_Open>>
-They {{shouldn’t.| }}
-<<changeSpeaker MC>>
-<<changeFace GB>_Angry_Closed>
-That’s {{just the way| }} people are. I’m sure you’ve made plenty of mistakes.
-<<changeSpeaker GB>>
-<<changeFace Character GB_Neutral_Open>>
-Ha. I {{don’t| }} make mistakes.
-<<changeSpeaker MC>>
-<<changeFace Character GB_Neutral_Closed>>
-{{Really| }} now?
-<<changeSpeaker GB>>
-<<changeFace Character GB_Neutral_Open>>
-Nobody wants to be friends with people that make mistakes, and that’s {{not me!| }}
-<<changeFace Character GB_Angry_Open>>
-{{Never| }} gonna be me.
-<<changeSpeaker MC>>
-<<changeFace Character GB_Angry_Closed>>
-I don’t think everyone can be {{perfect.| }}
-People are {{allowed| }} to make mistakes, you know. That’s what makes us human.
-<<changeFace Character GB_Neutral_Closed>>
-To have the ability to feel, amend, forgive... is something I’m {{grateful for.| }}
-You may not understand it now, but I do believe that if you’re able let yourself {{acknowledge that…| }}
-…it’ll ease the frustration of {{losing someone| }} even by just a little.
-<<changeSpeaker GB>>
-<<changeFace Character GB_Neutral_Open>>
-... you really are old for having a speech as {{long as that.| }}
-<<changeSpeaker MC>>
-<<changeFace Character GB_Neutral_Closed>>
-Excuse me? I’m just being {{honest.| }}
-<<changeSpeaker GB>>
-<<changeFace Character GB_Neutral_Open>>
-{{Whatever.| }}
-<<changeFace Character GB_Neutral_Closed>>
+{{I…| }} 
+{{Maybe…| }} 
 {{...| }}
-<<changeFace Character GB_Neutral_Open>>
-I guess I’ll try to {{message him again| }} if he’s up for a game later.
+Sometimes others just {{know better.| }} 
+I figured it’d be easier to listen to them, than trying to figure out everything for {{myself.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Jeer_Open>>
+<<PlayAudio VoiceActing Senko_Scene4_Line18>>
+{{Seriously?| }} 
+<<PlayAudio VoiceActing Senko_Scene4_Line19>>
+My mom told me never to never follow people {{blindly.| }}
+<<changeFace Character GB_Jeer_Closed>>
 <<changeSpeaker MC>>
-<<changeFace Character GB_Neutral_Closed>>
-That’s the {{spirit!| }} Let’s hope the power comes back on soon.
+That’s good advice, but you seem to listen to your mom {{blindly.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
-Yeah, {{me too.| }}
+<<PlayAudio VoiceActing Senko_Scene4_Line20>>
+Because she’s my {{mom.| }}
 <<changeFace Character GB_Neutral_Closed>>
-{{...| }}
-{{.....| }}
-{{...........| }}
+<<changeSpeaker MC>>
+Well, my sister is kinda like a {{mom.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
-{{Hey.| }}
-<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Senko_Scene4_Line21>>
+{{Eww…| }}
 <<changeFace Character GB_Neutral_Closed>>
-{{What’s up?| }}
+<<changeSpeaker MC>>
+Not like {{that.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
-Do you... have any {{audiobooks| }} I can listen to right now?
+<<PlayAudio VoiceActing Senko_Scene4_Line22>>
+But the things my mom says {{makes sense.| }}
+<<PlayAudio VoiceActing Senko_Scene4_Line23>>
+Your thing {{doesn’t.| }}
+<<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
-<<changeFace Character GB_Neutral_Closed>>
-Aww. Finally {{warming up| }} to them?
+How would you {{know?| }}
+Do you know {{everything?| }}
 <<changeSpeaker GB>>
-<<changeFace Character GB_Angry_Open>>
-No!! I’m just {{bored!| }}
-<<changeFace Character GB_Angry_Closed>>
-{{…| }}
-<<changeFace Character GB_Neutral_Closed>>
-{{…| }}
+<<changeFace Character GB_Jeer_Open>>
+<<PlayAudio VoiceActing Senko_Scene4_Line24>>
+Yep. I’m never {{wrong.| }}
+<<changeFace Character GB_Jeer_Closed>>
+<<changeSpeaker MC>>
+I severely {{doubt| }} that.
+<<changeSpeaker GB>>
+<<changeFace Character GB_Jeer_Open>>
+<<PlayAudio VoiceActing Senko_Scene4_Line25>>
+Oh, and you’re so right, {{aren’t you?| }}
+<<PlayAudio VoiceActing Senko_Scene4_Line26>>
+Just because you’re {{older| }} than me?
+<<PlayAudio VoiceActing Senko_Scene4_Line27>>
+Times change, {{boomer.| }} 
+<<changeFace Character GB_Jeer_Closed>>
+<<changeSpeaker MC>>
+I’m not a {{boomer.| }}
+And I guess that’s {{true.| }}
+There’s no {{perfect| }} way to do anything.
+If there was, then there would just be a book about how to get through {{life.| }}
+<<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
-Do you have the one with the {{mythical gods| }} like before?
-<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Senko_Scene4_Line28>>
+Why does it have to be a {{book?| }}
 <<changeFace Character GB_Neutral_Closed>>
-{{Sure do!| }}
-Just plug in your headphones here. What {{chapter| }} are you on?
-<<changeSpeaker GB>>
-<<changeFace Character GB_Angry_Open>>
-None of your {{business!!| }}
 <<changeSpeaker MC>>
-<<changeFace Character GB_Angry_Closed>>
-Haha, alright hothead. {{Here.| }}
+Or a website or whatever you {{zoomers| }} use these days
+Like in this {{situation.| }}
+ We’re stuck here with no power, you can’t play your games, so now we’re talking about our {{lives.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene4_Line29>>
+Humph. {{Whatever.| }}
+<<PlayAudio VoiceActing Senko_Scene4_Line30>>
+Hey, give me your {{phone.| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+What? Why? It doesn’t have any {{games.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene4_Line31>>
+I didn’t want the {{games.| }}
+<<PlayAudio VoiceActing Senko_Scene4_Line32>>
+It has that audio-book {{thingy| }} on it.
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+Wait, you actually want to {{listen| }} to the book?
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene4_Line33>>
+Shut up, there’s nothing to do and I’m {{bored.| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
 
-<<set $visited_GB to 3>>
+<<set $visited_GB to 4>>
+<<set $unfinished_GB to false>>
+===
+
+title: GB_Dialogue.Friendship
+tags: GamerBrat
+colorID: 0
+position: 111, 185
+---
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line1>>
+{{Ughhhhhhhhhh…| }}
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+What’s wrong {{now?| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line2>>
+This butthole who promised he’d get online today bailed on me {{again.| }}
+<<changeFace Character GB_Angry_Closed>>
+<<changeSpeaker MC>>
+Your {{friend?| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line3>>
+NO. Not {{anymore.| }}
+<<changeFace Character GB_Angry_Closed>>
+<<changeSpeaker MC>>
+Wait, why {{not?| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line4>>
+He got a damn girlfriend. Now the idiot doesn’t have time to play anymore. It’s {{annoying.| }}
+<<changeFace Character GB_Angry_Closed>>
+<<changeSpeaker MC>>
+So you’re just going to stop being {{friends| }} with him?
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line5>>
+Yeah. If he doesn’t have time for me, I don’t have {{time| }} for him.
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+I’m sure he’ll want to play again in the {{future.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line6>>
+And what, am I supposed to just {{wait?| }}
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line7>>
+We keep making plans and he keeps flaking. Like… {{seriously??| }}
+<<changeFace Character GB_Angry_Closed>>
+<<changeSpeaker MC>>
+Well, how important are your {{plans?| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line8>>
+Very important. More important than that {{girlfriend| }} of his.
+<<changeFace Character GB_Angry_Closed>>
+<<changeSpeaker MC>>
+Have you {{told| }} him that?
+I bet he actually {{cares.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line9>>
+Doubt it. Not if he keeps brushing me {{aside| }} like that.
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+Relationships can really… occupy a person’s mind, especially at your age so… it’s {{natural.| }}
+I don’t think he stopped caring or forgot, stuff just {{comes up.| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line10>>
+As if. He should just tell me he doesn’t have {{time| }}, then.
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+Isn’t it better that he keeps {{trying?| }}
+I think it’s because he still wants to {{hang| }} out with you.
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line11>>
+Or he’s just a coward that’s too scared to say he doesn’t {{care| }} about me anymore.
+<<PlayAudio VoiceActing Senko_Scene5_Line12>>
+Besides, why are you {{defending| }} him?
+<<changeFace Character GB_Angry_Closed>>
+<<changeSpeaker MC>>
+It’s because I sort of understand him. I used to be really {{busy| }} all the time.
+Sometimes you just forget, or something {{important| }} comes up.
+It’s not like we don’t want to, {{life| }} just makes it hard.
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line13>>
+Why can’t he {{tell| }} me that?
+<<PlayAudio VoiceActing Senko_Scene5_Line14>>
+Instead I get you, this old person who doesn’t even know the first thing about {{games.| }}
+<<changeFace Character GB_Jeer_Closed>>
+<<changeSpeaker MC>>
+You did call me a {{gamer| }} once.
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line15>>
+{{OH…| }}
+<<PlayAudio VoiceActing Senko_Scene5_Line16>>
+You’re not a {{gamer.| }}
+<<PlayAudio VoiceActing Senko_Scene5_Line17>>
+But since you’re here… and you {{know| }} the game… 
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+Wait, {{what?| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line18>>
+Help me {{fish| }} for the great bass.
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+You {{serious?| }}
+<<changeSpeaker GB>>
+<<changeFace Character GB_Neutral_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line19>>
+What? You seem to care so much about my friend. So, do his {{job.| }}
+<<PlayAudio VoiceActing Senko_Scene5_Line20>>
+I’ll stay {{friends| }} with him if you actually get it.
+<<PlayAudio VoiceActing Senko_Scene5_Line21>>
+Plus, I listened to your whole audiobook thingy. I think you {{owe| }} me.
+<<changeFace Character GB_Neutral_Closed>>
+<<changeSpeaker MC>>
+Oh, already? How did you {{like| }} it?
+<<changeSpeaker GB>>
+<<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene5_Line22>>
+Just {{fish.| }}
+<<changeFace Character GB_Angry_Closed>>
+
+<<set $visited_GB to 5>>
 <<set $unfinished_GB to false>>
 ===
 

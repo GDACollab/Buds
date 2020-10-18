@@ -1,0 +1,40 @@
+title: Header
+tags: HanadaSister
+colorID: 0
+position: 511, 501
+---
+[[HS_Dialogue.Dream1]]
+
+<<if $visited_RF >= 5>>
+<<if $visited_GB >= 5>>
+[[RF_Dialogue.Unfinished]]
+<<endif>>
+<<endif>>
+
+
+===
+title: HS_Dialogue.Dream1
+tags: HanadaSister
+colorID: 0
+position: 511, 510
+---
+<<changeSpeaker MC>>
+<i> I have to say I’m really {{lucky.| }} <i>
+<i> My family was fairly {{well off.| }} <i>
+<i> I {{never| }} had to worry about anything. <i>
+<i> My parents were {{extremely| }} selfless people. <i>
+<i> They’re NGO workers, funded by charity and billionaires. Always running around to {{save the world.| }} <i>
+<i> They were regularly busy, but they always {{tried| }} really hard to make it to our birthdays and other big parts of our lives. <I>
+<i> {{Never made it| }} though. <i>
+<i> My sister is one of {{the strongest| }} people you’ll ever meet. <i>
+<i> She pretty much {{took care of me| }}, and I didn’t have to worry about college planning like the other kids. <i>
+<i> It was a really {{huge burden| }} off my shoulders. <i>
+<i> All I had to do was walk a steady path that was {{already paved| }} for me. <i>
+<i> And whenever I got off the path, my sister would make sure I stayed on it. <i>
+<i> She also {{helped me| }} out in high school and picked a college. <i>
+<i> If it wasn’t for her, I think I’d {{probably be broke| }} trying to sell to sell my art online <I>
+<i> She’s always {{watching over me.| }} <i>
+<i> I’m {{thankful| }} for that… <i>
+<i> Spending time with her was {{always fun.|}} <i>
+<i> Yep. Everything went {{by the books.| }} <i>
+===

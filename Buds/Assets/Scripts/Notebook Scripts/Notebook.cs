@@ -133,13 +133,13 @@ public class Notebook : MonoBehaviour
         }
 
         Debug.Log(arrayIndex);
-        if (isItRF && !sceneUnfinished)
+        if (isItRF && !sceneUnfinished && arrayIndex <= 3)
         {
             Debug.Log(RF_addedPages[arrayIndex - 1]);
             AddPage(null, RF_addedPages[arrayIndex - 1]);
         }
 
-        if (!isItRF && !sceneUnfinished)
+        if (!isItRF && !sceneUnfinished && arrayIndex <= 3)
         {
             AddPage(null, GB_addedPages[arrayIndex - 1]);
         }

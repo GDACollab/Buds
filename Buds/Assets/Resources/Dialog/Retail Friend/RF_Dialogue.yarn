@@ -37,6 +37,10 @@ tags: RetailFriend
 colorID: 0
 position: 222, 225
 ---
+<<changeFace Character blank>>
+<<changeSpeaker MC>>
+<i> I {{always see this bookstore| }} on my way to work. </i>
+<i> I figured I'd come here to {{check it out| }} on my day off. </i>
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 <<PlayAudio VoiceActing Shiori_Scene1_Line1>>
