@@ -6,11 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class OrderedSceneNavigator : MonoBehaviour
 {
-    public int[] buildIndexes;
-    private int endOfDayIndex; // unused for now
-    public int mainMenuIndex = 0;
-
-    public GameObject[] scheduleItems = null;
+    // The physical UI elements in the phone menu for each of the three locations;
+    // the y-positions of the elements are used to determine the player's desired order
+    public GameObject[] scheduleItems = null; 
 
     public Animator phoneAnim;
 
@@ -21,9 +19,22 @@ public class OrderedSceneNavigator : MonoBehaviour
 
     public enum FadeDirection { In, Out }
 
+    // Build index variables. Current and next scene
+    private int manualNextSceneIndex = 0;
+    private int activeSceneIndex;
+    private bool useManualNextScene;
+
+    // Build index constants. Used to select next scene
+    private const int mainMenuIndex = 0;
+    private const int introductionIndex = 1;
+    private readonly int[] buildIndexes = { 3, 2, 4 }; // indexes for the main three scenes: RF, flower, GB
+    private const int endOfDayIndex = 5; // unused for now
+    private const int conclusionIndex = 6;
+    private const int creditsIndex = 7;
+    private const int dreamSequenceIndex = 8;
 
     private SortedList<float, int> sceneOrder;
-    private int numCompleted;
+    private int numCompleted; // essentially time of day. 0 = evening, 1 = morning, 2 = afternoon
     private bool menuEnabled;
     private System.DateTime date;
     private readonly float fadeSpeed = 0.8f;
@@ -34,19 +45,23 @@ public class OrderedSceneNavigator : MonoBehaviour
     private bool fadeCompleted;
     private bool loading;
     private bool fadeStarted;
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer fadeOutSpriteRenderer;
 
     private void Awake() {
-        Comparer<float> descendingComparer = Comparer<float>.Create((x, y) => y.CompareTo(x));
+        activeSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        Comparer<float> descendingComparer =
+            Comparer<float>.Create((x, y) => y.CompareTo(x));
 
         sceneOrder = new SortedList<float, int>(3, descendingComparer);
 
         FixedUpdate();
 
-        if (scheduleItems.Length > 0) {
+        if (!useManualNextScene && scheduleItems.Length > 0) {
             RetrieveSchedule();
         }
 
+        // Sets screen fade image to fully opaque
         fadeOutUIImage.enabled = true;
         fadeOutUIImage.color = new Color(
             fadeOutUIImage.color.r,
@@ -55,13 +70,18 @@ public class OrderedSceneNavigator : MonoBehaviour
             1
             );
 
-        if (numCompleted == 1) {
-            // Shows large date at beginning of the day
+        // Shows large date at beginning of the day
+        if (numCompleted == 1 && activeSceneIndex != dreamSequenceIndex) {
+            
             newDayText.gameObject.SetActive(true);
-            newDayText.text = date.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP")) + "\n<size=40>" + date.ToString("dddd, MMMM d") + "</size>";
+            newDayText.text =
+                date.ToString("M月d日(ddd)",
+                              new System.Globalization.CultureInfo("ja-JP")) +
+                              "\n<size=40>" + date.ToString("dddd, MMMM d") + "</size>";
 
-            StartCoroutine(WaitAndFade());
+            StartCoroutine(DisplayNewDayText());
         }
+        // Fades in immediately
         else {
             StartCoroutine(Fade(FadeDirection.Out));
         }
@@ -69,6 +89,7 @@ public class OrderedSceneNavigator : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Checks whether phone draggable elements have changed order
         sceneOrder.Clear();
         if (scheduleItems.Length > 0) {
             
@@ -77,13 +98,13 @@ public class OrderedSceneNavigator : MonoBehaviour
                     sceneOrder.Add(scheduleItems[i].transform.position.y, buildIndexes[i]);
                 }
             }
-            sceneOrder.Add(float.NegativeInfinity, endOfDayIndex);
         }
         else {
             sceneOrder.Add(0, 5);
         }
     }
 
+    // Toggle to open/close phone
     public void ShowOrHideMenu() {
         phoneAnim.gameObject.SetActive(true);
         if (!menuEnabled) {
@@ -94,173 +115,197 @@ public class OrderedSceneNavigator : MonoBehaviour
         }
     }
 
+    // Opens phone
     public void ShowMenu() {
-        // set next destination to conclusion scene if completed all dialog and plants fully upgraded
-        if (PersistentData.instance.ContainsKey("$visited_RF") && PersistentData.instance.ContainsKey("$visited_GB")) {
-            Yarn.Value visitedRF = (Yarn.Value)PersistentData.instance.ReadData("$visited_RF");
-            Yarn.Value visitedGB = (Yarn.Value)PersistentData.instance.ReadData("$visited_GB");
-            if (visitedRF.AsNumber > 2f && visitedGB.AsNumber > 2f) {
-                confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Reflect";
-                mainMenuIndex = 6;      //index of the conclusion scene
-                scheduleItems = new GameObject[0];
-
-                float volume = (float)PersistentData.instance.ReadData("Volume");
-                PersistentData.instance.Clear();
-                PersistentData.instance.StoreData("Volume", volume);
-
-            }
-        }
-
         phoneAnim.SetBool("finished", false);
 
         menuEnabled = true;
     }
 
+    // Closes phone
     public void HideMenu() {
         phoneAnim.SetBool("finished", true);
 
         menuEnabled = false;
     }
 
+    // Loads the next scene as determined by the internal schedule
     public void LoadScene() {
         FadeLoadScene();
     }
 
     public void ToCredits()
     {
-        mainMenuIndex = 7;  //the index the credits are at
-        scheduleItems = new GameObject[0];
+        manualNextSceneIndex = creditsIndex;
+        useManualNextScene = true;
         Destroy(PersistentData.instance);
 
         FadeLoadScene();
     }
 
     public void ToMainMenu() {
-        mainMenuIndex = 0;  //the index of the main menu
-        scheduleItems = new GameObject[0];
+        manualNextSceneIndex = mainMenuIndex;
+        useManualNextScene = true;
         Destroy(PersistentData.instance);
 
         FadeLoadScene();
     }
 
+    // Loads a specific scene. May cause issues with progress tracking, use with caution
     public void ToIndexedSceen(int index)
     {
-        mainMenuIndex = index;  //the index of the main menu
+        manualNextSceneIndex = index;
+        useManualNextScene = true;
+
+        // Initializes numCompleted when loading into first plant care scene
+        if (activeSceneIndex == introductionIndex) {
+            PersistentData.instance.StoreData("numCompleted", 1);
+        }
 
         FadeLoadScene();
     }
 
-    public void Reset() {
-        SceneManager.LoadScene(0);
-    }
-
-    public void SetSchedule() {
-        if (SceneManager.GetActiveScene().buildIndex != 1) {
+    // Updates persistent data schedule to carry over scene ordering choice
+    // Also advances day count every third scene
+    private void SetSchedule() {
+        // introduction and dream sequence do not advance numCompleted
+        if (activeSceneIndex != introductionIndex && activeSceneIndex != dreamSequenceIndex) {
             PersistentData.instance.StoreData("todaysSchedule", sceneOrder.Values);
             PersistentData.instance.StoreData("numCompleted", (numCompleted + 1) % 3);
 
             if (numCompleted == 0) {
                 PersistentData.instance.StoreData("date", date.AddDays(7));
             }
+
+            
+        }
+        if (activeSceneIndex == dreamSequenceIndex) {
+            numCompleted = 0;
         }
     }
 
+    // Syncs up phone schedule with the one from persistent data
     public void RetrieveSchedule() {
-        if (SceneManager.GetActiveScene().buildIndex != 1) {
+        // Phone text areas that may need to be updated
+        Text confirmButtonText = confirmButton.GetComponentInChildren<Text>();
+        Text dateText = confirmButton.transform.parent.GetChild(1).GetComponent<Text>();
+        Text timeText = confirmButton.transform.parent.GetChild(2).GetComponent<Text>();
 
-        
-            if (!PersistentData.instance.ContainsKey("numCompleted")) {
-                PersistentData.instance.StoreData("numCompleted", 0);
+        // Don't need to change the starting phone schedule if on intro
+        if (activeSceneIndex == introductionIndex) return;
 
-                FixedUpdate();
+        // Initializes persistent data for numCompleted on first load
+        if (!PersistentData.instance.ContainsKey("numCompleted")) {
+            PersistentData.instance.StoreData("numCompleted", 0);
 
-                PersistentData.instance.StoreData("todaysSchedule", sceneOrder.Values);
-                date = new System.DateTime(2020, 3, 14);
-                PersistentData.instance.StoreData("date", date);
+            FixedUpdate();
+
+            // Starts the date cylce on March 14, 2020. Why? No particular reason;
+            // it's in the spring, at least
+            PersistentData.instance.StoreData("todaysSchedule", sceneOrder.Values);
+            date = new System.DateTime(2020, 3, 14);
+            PersistentData.instance.StoreData("date", date);
+        }
+
+        numCompleted = (int)PersistentData.instance.ReadData("numCompleted");
+        date = (System.DateTime)PersistentData.instance.ReadData("date");
+
+        // Don't need to update schedule if on first plant care scene
+        if (!PersistentData.instance.ContainsKey("todaysSchedule")) return;
+
+        IList<int> newScheduleOrder =
+            (IList<int>)PersistentData.instance.ReadData("todaysSchedule");
+
+        // Updates phone state and appearance to match persistent data
+        for (int i = 0; i < 3; i++) {
+            int newOrder =
+                System.Array.IndexOf(buildIndexes, newScheduleOrder[i]);
+            float oldX = scheduleItems[newOrder].transform.position.x;
+            float newY = sceneOrder.Keys[i];
+            GameObject checkmarkIcon =
+                scheduleItems[newOrder].transform.GetChild(1).GetChild(1).gameObject;
+            DragAndDrop dragAndDrop =
+                scheduleItems[newOrder].GetComponent<DragAndDrop>();
+
+            scheduleItems[newOrder].transform.position = new Vector3(oldX, newY, 0f);
+
+            dateText.text =
+                date.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP"));
+
+            switch (numCompleted)
+            {
+                // Evening. Can configure all schedule items
+                case 0:
+                    if (confirmButtonText.text != "Start") {
+                        confirmButtonText.text = "Dream";
+                    }
+
+                    timeText.text = "18:00";
+                    break;
+                // Morning, cannot set morning item but can switch the other two
+                case 1:
+                    if (i == 0)
+                    {
+                        // Prevents drag-and-drop on first item
+                        dragAndDrop.enabled = false;
+                        // Turns on checkmark icon for first item
+                        checkmarkIcon.SetActive(true);
+                    }
+                    else
+                    {
+                        // Limits drag-and-drop range for lower two items
+                        dragAndDrop.maxY = (dragAndDrop.maxY + dragAndDrop.minY) / 2;
+                    }
+
+                    timeText.text = "10:00";
+
+                    break;
+                // Afternoon, cannot adjust schedule at all
+                case 2:
+                    // Prevents drag-and-drop on all three items
+                    dragAndDrop.enabled = false;
+                    if (i == 0 || i == 1)
+                    {
+                        // Turns on checkmark icon for first and second items
+                        checkmarkIcon.SetActive(true);
+                    }
+
+                    confirmButtonText.text = "OK";
+                    timeText.text = "14:00";
+
+                    break;
             }
+        }
 
-            numCompleted = (int)PersistentData.instance.ReadData("numCompleted");
-            date = (System.DateTime)PersistentData.instance.ReadData("date");
+        // Set next destination to dream scene if at end of day
+        if (numCompleted == 0) {
             
-            Plant narcissus = (Plant)PersistentData.instance.ReadData("Narcissus");
-            Plant cyclamen = (Plant)PersistentData.instance.ReadData("Cyclamen");
+            manualNextSceneIndex = dreamSequenceIndex;
+            useManualNextScene = true;
+        }
 
-            if (narcissus != null) {int narcissusStage = (int)narcissus.growthStage; }
-            if (cyclamen != null) {int cyclamenStage = (int)cyclamen.growthStage; }
-            
-            
+        // Check for special condition: reached end of game
+        if (PersistentData.instance.ContainsKey("$visited_RF") && PersistentData.instance.ContainsKey("$visited_GB")) {
+            Yarn.Value visitedRF = (Yarn.Value)PersistentData.instance.ReadData("$visited_RF");
+            Yarn.Value visitedGB = (Yarn.Value)PersistentData.instance.ReadData("$visited_GB");
 
-            if (PersistentData.instance.ContainsKey("todaysSchedule")) {
+            // Set next destination to conclusion scene if completed all dialog and plants fully upgraded
+            if (visitedRF.AsNumber > 2 && visitedGB.AsNumber > 2) {
+                confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Reflect";
+                manualNextSceneIndex = conclusionIndex;
+                useManualNextScene = true;
 
-            IList<int> newScheduleOrder = (IList<int>)PersistentData.instance.ReadData("todaysSchedule");
-
-            for (int i = 0; i < 3; i++) {
-                int newOrder = System.Array.IndexOf(buildIndexes, newScheduleOrder[i]);
-
-                float oldX = scheduleItems[newOrder].transform.position.x;
-                float newY = sceneOrder.Keys[i];
-
-                scheduleItems[newOrder].transform.position = new Vector3(oldX, newY, 0f);
-
-                DragAndDrop dnd = scheduleItems[newOrder].GetComponent<DragAndDrop>();
-
-                confirmButton.transform.parent.GetChild(1).GetComponent<Text>().text = date.ToString("M月d日(ddd)", new System.Globalization.CultureInfo("ja-JP"));
-
-                Debug.Log("numCompleted: " +  numCompleted);
-
-                switch (numCompleted)
-                {
-                    case 0:
-                        if (confirmButton.GetComponentInChildren<Text>().text != "Start") {
-                            confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Start a New Day";
-                        }   
-                        
-                        confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "18:00";
-
-                        break;
-                    case 1:
-                        if (i == 0)
-                        {
-                            dnd.enabled = false;
-                            scheduleItems[newOrder].transform.GetChild(1).GetChild(1).gameObject.SetActive(true);
-                        }
-                        else
-                        {
-                            dnd.maxY = (dnd.maxY + dnd.minY) / 2;
-                        }
-
-                        confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "10:00";
-
-                        break;
-                    case 2:
-                        dnd.enabled = false;
-                        if (i == 0 || i == 1)
-                        {
-                            scheduleItems[newOrder].transform.GetChild(1).GetChild(1).gameObject.SetActive(true);
-                        }
-
-                        confirmButton.transform.GetChild(0).GetComponent<Text>().text = "OK";
-                        confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "14:00";
-
-                        break;
-                        // case 3 is for if there is a "Start of Day" scene like at MC's bedroom or something
-                    //case 3:
-                    //    dnd.enabled = false;
-                    //    scheduleItems[newOrder].transform.GetChild(1).GetChild(1).gameObject.SetActive(true);
-
-                    //    confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Enter the Void";
-                    //    confirmButton.transform.parent.GetChild(2).GetComponent<Text>().text = "18:00";
-
-                    //    break;
-                }
-            }
+                // Clear all persistent data except volume
+                float volume = (float)PersistentData.instance.ReadData("Volume");
+                PersistentData.instance.Clear();
+                PersistentData.instance.StoreData("Volume", volume);
 
             }
         }
     }
 
     // Shows large date at beginning of the day for 2 seconds
-    private IEnumerator WaitAndFade() {
+    private IEnumerator DisplayNewDayText() {
         yield return new WaitForSeconds(3);
 
         newDayText.gameObject.SetActive(false);
@@ -279,13 +324,13 @@ public class OrderedSceneNavigator : MonoBehaviour
 
     // Fade out a SpriteRenderer as it disappears
     public void FadeAway(SpriteRenderer sr) {
-        spriteRenderer = sr;
+        fadeOutSpriteRenderer = sr;
         StartCoroutine(Fade(FadeDirection.Out, sr));
     }
 
     // Fade in a SpriteRenderer as it appears
     public void FadeAppear(SpriteRenderer sr) {
-        spriteRenderer = sr;
+        fadeOutSpriteRenderer = sr;
         sr.enabled = true;
         print(sr);
         StartCoroutine(Fade(FadeDirection.In, sr));
@@ -336,13 +381,18 @@ public class OrderedSceneNavigator : MonoBehaviour
 
         // Load next scene once fade is complete if in a load transition
         if (sr == null && loading && !fadeCompleted) {
-            if (scheduleItems.Length > 0) {
+            // If we have a schedule, update it to be ready for next scene
+            if ((!useManualNextScene && scheduleItems.Length > 0) || manualNextSceneIndex == dreamSequenceIndex) {
                 SetSchedule();
             }
 
-            int sceneIndex = (scheduleItems.Length > 0 && SceneManager.GetActiveScene().buildIndex != 0) ? sceneOrder.Values[numCompleted] : mainMenuIndex;
-            Debug.Log("Loading scene at index " + sceneIndex);
-            StartCoroutine(FinishLoadScene(sceneIndex));
+            // If we have a schedule, load next scene from it. Otherwise, load the manual override scene
+            bool haveSchedule =
+                (!useManualNextScene && scheduleItems.Length > 0) &&
+                activeSceneIndex != mainMenuIndex;
+            int nextSceneIndex = haveSchedule ? sceneOrder.Values[numCompleted] : manualNextSceneIndex;
+
+            StartCoroutine(FinishLoadScene(nextSceneIndex));
         }
             
         fadeCompleted = true;
@@ -373,10 +423,10 @@ public class OrderedSceneNavigator : MonoBehaviour
 
     // Helper function for setting transparency on a SpriteRenderer
     private void SetTransparencySR(FadeDirection fadeDirection) {
-        spriteRenderer.color = new Color(
-            spriteRenderer.color.r,
-            spriteRenderer.color.g,
-            spriteRenderer.color.b,
+        fadeOutSpriteRenderer.color = new Color(
+            fadeOutSpriteRenderer.color.r,
+            fadeOutSpriteRenderer.color.g,
+            fadeOutSpriteRenderer.color.b,
             fadeStartValue
             );
         if (fadeDirection == FadeDirection.Out)
