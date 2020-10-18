@@ -511,7 +511,7 @@ PrefabInstance:
     - target: {fileID: 6557618055608245396, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -61.999985
+      value: -62
       objectReference: {fileID: 0}
     - target: {fileID: 6637374862997714633, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
@@ -573,7 +573,7 @@ PrefabInstance:
         type: 3}
       propertyPath: sprites.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 9cfcb45e46f20f54ca69b8e1780c558d,
+      objectReference: {fileID: 21300000, guid: a37c8f73f31c9fa40b7772f75f019671,
         type: 3}
     - target: {fileID: 7742929572228943095, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}

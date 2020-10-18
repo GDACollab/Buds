@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -215,8 +214,8 @@ public class Plant: MonoBehaviour, IDraggable
         soil.color = new Color(soilColor, soilColor, soilColor);
         waterLevelBar.value = soilDarkness;
 
-        plant.sprite = growthSprites[(int)growthStage];
-        mask.sprite = growthSprites[(int)growthStage];
+        plant.sprite = growthSprites[((int)growthStage)/2];
+        mask.sprite = growthSprites[((int)growthStage)/2];
 
         if (hasEnoughSun) {
             sunlightIcon.sprite = sunlightIcons[1];

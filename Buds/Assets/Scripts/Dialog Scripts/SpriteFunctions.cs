@@ -12,7 +12,7 @@ public class SpriteFunctions : MonoBehaviour
 
     //fade related variables
     public Image fadeOutUIImage;
-    public enum FadeDirection { In, Out };
+    public enum FadeDirection { In, Out }
 
     private SortedList<float, int> sceneOrder;
     private int numCompleted;

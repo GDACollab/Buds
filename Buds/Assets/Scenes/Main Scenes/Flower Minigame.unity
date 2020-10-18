@@ -1356,6 +1356,11 @@ PrefabInstance:
       propertyPath: waterUsePerDay
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -5869354531142706318, guid: 8bf820368603745e3a1fde16aa2c1c29,
+        type: 3}
+      propertyPath: daysBetweenStages
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 272292068081407336, guid: 8bf820368603745e3a1fde16aa2c1c29,
         type: 3}
       propertyPath: m_IsActive
@@ -2783,6 +2788,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621950927058995860, guid: 822325eabfbe16046a4362b7e3a0a001,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 354
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621950927058995860, guid: 822325eabfbe16046a4362b7e3a0a001,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -332.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621950927721809180, guid: 822325eabfbe16046a4362b7e3a0a001,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -784.25
       objectReference: {fileID: 0}
     - target: {fileID: 3951124161080422991, guid: 822325eabfbe16046a4362b7e3a0a001,
         type: 3}
@@ -5511,6 +5531,11 @@ PrefabInstance:
         type: 3}
       propertyPath: waterUsePerDay
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5869354531142706318, guid: 8bf820368603745e3a1fde16aa2c1c29,
+        type: 3}
+      propertyPath: daysBetweenStages
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 272292068081407336, guid: 8bf820368603745e3a1fde16aa2c1c29,
         type: 3}
