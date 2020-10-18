@@ -117,6 +117,25 @@ public class OrderedSceneNavigator : MonoBehaviour
 
     // Opens phone
     public bool ShowMenu() {
+        // Check for special condition: reached end of game
+        if (PersistentData.instance.ContainsKey("$visited_RF") && PersistentData.instance.ContainsKey("$visited_GB")) {
+            Yarn.Value visitedRF = (Yarn.Value)PersistentData.instance.ReadData("$visited_RF");
+            Yarn.Value visitedGB = (Yarn.Value)PersistentData.instance.ReadData("$visited_GB");
+
+            // Set next destination to conclusion scene if completed all dialog and plants fully upgraded
+            if (visitedRF.AsNumber > 2 && visitedGB.AsNumber > 2) {
+                confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Reflect";
+                manualNextSceneIndex = conclusionIndex;
+                useManualNextScene = true;
+
+                // Clear all persistent data except volume
+                float volume = (float)PersistentData.instance.ReadData("Volume");
+                PersistentData.instance.Clear();
+                PersistentData.instance.StoreData("Volume", volume);
+
+            }
+        }
+
         if (!phoneAnim.gameObject.activeInHierarchy) return false;
 
         phoneAnim.SetBool("finished", false);
@@ -286,25 +305,6 @@ public class OrderedSceneNavigator : MonoBehaviour
             
             manualNextSceneIndex = dreamSequenceIndex;
             useManualNextScene = true;
-        }
-
-        // Check for special condition: reached end of game
-        if (PersistentData.instance.ContainsKey("$visited_RF") && PersistentData.instance.ContainsKey("$visited_GB")) {
-            Yarn.Value visitedRF = (Yarn.Value)PersistentData.instance.ReadData("$visited_RF");
-            Yarn.Value visitedGB = (Yarn.Value)PersistentData.instance.ReadData("$visited_GB");
-
-            // Set next destination to conclusion scene if completed all dialog and plants fully upgraded
-            if (visitedRF.AsNumber > 2 && visitedGB.AsNumber > 2) {
-                confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Reflect";
-                manualNextSceneIndex = conclusionIndex;
-                useManualNextScene = true;
-
-                // Clear all persistent data except volume
-                float volume = (float)PersistentData.instance.ReadData("Volume");
-                PersistentData.instance.Clear();
-                PersistentData.instance.StoreData("Volume", volume);
-
-            }
         }
     }
 

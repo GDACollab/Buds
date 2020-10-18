@@ -3,6 +3,10 @@ tags: GamerBrat
 colorID: 0
 position: 111, 111
 ---
+<<if $visited_GB >= 2>>
+<<changeFace Background RamenShop_PowerOut>>
+<<endif>>
+
 <<if $unfinished_GB>>
 [[GB_Dialogue.Unfinished]]
 <<endif>>
@@ -283,7 +287,6 @@ tags: GamerBrat
 colorID: 0
 position: 111, 117
 ---
-<<changeFace Background RamenShop_PowerOut>>
 <<changeSpeaker MC>>
 <i>The Mizushima family has been asking me to {{look over Senko| }} every so often when the restaurant would get busy.</i>
 <i>They don’t know that I’ve noticed, but they {{seem really happy| }} that I’ve been leaving my apartment more often...</i>
