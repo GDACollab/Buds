@@ -116,10 +116,14 @@ public class OrderedSceneNavigator : MonoBehaviour
     }
 
     // Opens phone
-    public void ShowMenu() {
+    public bool ShowMenu() {
+        if (!phoneAnim.gameObject.activeInHierarchy) return false;
+
         phoneAnim.SetBool("finished", false);
 
         menuEnabled = true;
+
+        return true;
     }
 
     // Closes phone

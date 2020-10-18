@@ -4,10 +4,10 @@ colorID: 0
 position: 311, 311
 ---
 
-[[HS.Dialogue.Dream1]]
+[[HS_Dialogue.Dream1]]
 
 <<if $visited_HS >= 1>>
-[[HS.Dialogue.Dream1]]
+[[HS_Dialogue.Dream1]]
 <<endif>>
 
 <<if $visited_GB >= 1>>

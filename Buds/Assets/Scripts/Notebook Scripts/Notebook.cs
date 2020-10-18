@@ -125,11 +125,14 @@ public class Notebook : MonoBehaviour
             sceneUnfinished = ((Yarn.Value)PersistentData.instance.ReadData("$unfinished_RF")).AsBool;
             arrayIndex = (int)((Yarn.Value)PersistentData.instance.ReadData("$visited_RF")).AsNumber;
         }
-        else
+        else if(character.Equals("GB"))
         {
             isItRF = false;
             sceneUnfinished = ((Yarn.Value)PersistentData.instance.ReadData("$unfinished_GB")).AsBool;
             arrayIndex = (int)((Yarn.Value)PersistentData.instance.ReadData("$visited_GB")).AsNumber;
+        }
+        else { // dream sequence
+            return;
         }
 
         Debug.Log(arrayIndex);
