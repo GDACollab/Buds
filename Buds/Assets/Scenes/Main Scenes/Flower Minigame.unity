@@ -1356,6 +1356,11 @@ PrefabInstance:
       propertyPath: waterUsePerDay
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -5869354531142706318, guid: 8bf820368603745e3a1fde16aa2c1c29,
+        type: 3}
+      propertyPath: daysBetweenStages
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 272292068081407336, guid: 8bf820368603745e3a1fde16aa2c1c29,
         type: 3}
       propertyPath: m_IsActive
@@ -5511,6 +5516,11 @@ PrefabInstance:
         type: 3}
       propertyPath: waterUsePerDay
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5869354531142706318, guid: 8bf820368603745e3a1fde16aa2c1c29,
+        type: 3}
+      propertyPath: daysBetweenStages
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 272292068081407336, guid: 8bf820368603745e3a1fde16aa2c1c29,
         type: 3}

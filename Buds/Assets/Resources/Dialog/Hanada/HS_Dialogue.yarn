@@ -3,21 +3,63 @@ tags: HanadaSister
 colorID: 0
 position: 511, 501
 ---
-[[HS_Dialogue.Dream1]]
+
 
 <<if $visited_RF >= 5>>
 <<if $visited_GB >= 5>>
-[[RF_Dialogue.Unfinished]]
+[[HS_Dialogue.Dream5]]
 <<endif>>
 <<endif>>
 
+<<if $visited_HS == 4>>
+[[HS_Dialogue.Nothing1]]
+<<endif>>
+
+<<if $visited_RF >= 4>>
+<<if $visited_GB >= 4>>
+[[HS_Dialogue.Dream4]]
+<<endif>>
+<<endif>>
+
+<<if $visited_HS == 3>>
+[[HS_Dialogue.Nothing1]]
+<<endif>>
+
+<<if $visited_RF >= 3>>
+<<if $visited_GB >= 3>>
+[[HS_Dialogue.Dream3]]
+<<endif>>
+<<endif>>
+
+<<if $visited_HS == 2>>
+[[HS_Dialogue.Nothing1]]
+<<endif>>
+
+<<if $visited_RF >= 2>>
+<<if $visited_GB >= 2>>
+[[HS_Dialogue.Dream2]]
+<<endif>>
+<<endif>>
+
+<<if $visited_HS == 1>>
+[[HS_Dialogue.Nothing1]]
+<<endif>>
+
+<<if $visited_RF >= 1>>
+<<if $visited_GB >= 1>>
+[[HS_Dialogue.Dream1]]
+<<endif>>
+<<endif>>
 
 ===
+
 title: HS_Dialogue.Dream1
 tags: HanadaSister
 colorID: 0
 position: 511, 510
 ---
+<<changeFace Background OS_Dream1_1>>
+
 <<changeSpeaker MC>>
 <i> I have to say I’m really {{lucky.| }} <i>
 <i> My family was fairly {{well off.| }} <i>
@@ -30,11 +72,503 @@ position: 511, 510
 <i> She pretty much {{took care of me| }}, and I didn’t have to worry about college planning like the other kids. <i>
 <i> It was a really {{huge burden| }} off my shoulders. <i>
 <i> All I had to do was walk a steady path that was {{already paved| }} for me. <i>
-<i> And whenever I got off the path, my sister would make sure I stayed on it. <i>
+<i> And whenever I got off the path, my sister would {{make sure| }} I got back on it. <i>
 <i> She also {{helped me| }} out in high school and picked a college. <i>
 <i> If it wasn’t for her, I think I’d {{probably be broke| }} trying to sell to sell my art online <I>
 <i> She’s always {{watching over me.| }} <i>
 <i> I’m {{thankful| }} for that… <i>
 <i> Spending time with her was {{always fun.|}} <i>
 <i> Yep. Everything went {{by the books.| }} <i>
+
+<<set $visited_HS to 1>>
+===
+
+title: HS_Dialogue.Dream2
+tags: HanadaSister
+colorID: 0
+position: 511, 520
+---
+<<changeFace Background OS_Dream2_1>>
+<<changeSpeaker MC>>
+<i> Back then, I felt like I had {{too much| }} time on my hands… </i>
+<i> Winter break was usually the time to spend with {{family and friends.| }} </i>
+<i> {{However| }} my parents were usually on business trips, and I never had anyone from school who I could call a friend. </i>
+<i> It’s not like I had a hard time {{making friends.| }} </i>
+<i> I’d just rather spend my free time {{playing games.| }} </i>
+<i> My sister insisted I study. She said that everything I’ve learned from last semester will seep out {{if I don’t.| }} </i>
+<i> But I didn’t see why I had to when all my classmates were {{having fun| }} during their break. </i>
+<i> Don’t get me wrong, I admire my sister. She has been {{a role model| }} for me all my life. </i>
+<i> Since my older sister is always around, I was {{never| }} lonely. </i>
+<<changeFace Background OS_Dream2_1>>
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line1>>
+Ugh, do you {{ever stop| }} playing that game?
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{…| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line2>>
+{{Hellooo?| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+<i>She turned the TV {{off.| }}<i>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{What the...!| }}
+What did you do that for? {{I was so close| }} to catching enough crawfish to pay off my farm mortgage.
+<<changeFace Background OS_Dream2_2 fade>>
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line3>>
+Didn’t you say you paid off your farm mortgage yesterday? You were {{jumping| }} up and down in excitement!
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+That was three days ago, but then Ms. Kappa {{told me| }} I can expand my farm to twice its size if I gave her 250,000 buttons!
+<<changeSpeaker OS>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line4>>
+{{Buttons?| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+It’s a currency - 100 button is {{worth 1 yen.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line5>>
+How is that fun? Like, aren’t you just working to get money that {{you can’t even use?| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+What do you mean? It’s really fun! The game updates with {{new creatures| }} to catch each week. 
+And I get to {{display them| }} in my aquarium and petting zoo. Plus, I can sell the creatures to buy all sorts of flowers for my garden.
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line6>>
+I can't even keep up with you. You’re {{wasting| }} your valuable break!
+<<PlayAudio VoiceActing Hanada_Scene2_Line7>>
+Seriously--{{how many hours| }} have you spent on this game?
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+I guess… maybe around {{50.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line8>>
+Fifty? {{Fifty hours!| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{………| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line9>>
+Think of how many things {{you could have done| }} for those fifty hours!
+<<PlayAudio VoiceActing Hanada_Scene2_Line10>>
+{{Study,| }} or go outside for instance.
+<<PlayAudio VoiceActing Hanada_Scene2_Line11>>
+Did you get a chance to {{look at that high school| }} I texted you about?
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Umm I... I actually {{haven’t| }} looked into that yet.
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line12>>
+Come on, this school is known for its specialization in business. 85 percent of the school's graduates get into the {{top business colleges| }} in the city.
+<<PlayAudio VoiceActing Hanada_Scene2_Line13>>
+I’m doing this for you. It wouldn’t hurt if you could {{think| }} about your future more.
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{………| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line14>>
+Is it because of {{those games?| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+<i> I didn’t want {{to look| }} at her <i>
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line15>>
+Look. I’m not trying to make you upset. I’m just {{looking out| }} for you.
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{I’m sorry.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line16>>
+{{I know.| }}
+<<PlayAudio VoiceActing Hanada_Scene2_Line17>>
+There are so many things to do out there that are {{meaningful.| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{...I guess.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line18>>
+I hate to say it, but video games are just a {{waste of time.| }} That’s all they’ve ever been.
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Umm… {{I mean…| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line19>>
+{{Right…???| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{…Yes.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line20>>
+The reason we study is to land a {{great career| }} that’ll support us.
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+It’s {{not your responsibility!| }} I can take care of myself!
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line21>>
+It is! {{I’m your sister.| }}
+<<PlayAudio VoiceActing Hanada_Scene2_Line22>>
+I have {{to make sure| }} you can take care of yourself when you grow up.
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{………| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line23>>
+I miss {{mom and dad.| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+It’s okay. It’s just three more days ‘til they {{come home.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line24>>
+{{Sure, kid.| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+I’ll get out more and I'll look at that high school {{first thing tomorrow.| }} It’ll be okay.
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene2_Line25>>
+{{Thank you.| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+<i> After that night, I took all my games and {{shoved them| }} in the back of my closet. </i>
+<i> I {{never| }} touched them again. </i>
+<i> I {{didn’t take the games| }} with me to Hitachinaka. </i>
+<i> I wonder if {{Senko would’ve liked them.| }} </i>
+<i> {{It’s 3:00am.| }} </i>
+<i> I guess I should {{go back to bed.| }} </i>
+
+<<set $visited_HS to 2>>
+===
+
+title: HS_Dialogue.Dream3
+tags: HanadaSister
+colorID: 0
+position: 511, 530
+---
+<<changeFace Background OS_Dream3_1>>
+<<changeSpeaker MC>>
+<i> From taking care of me, to pursuing her ambitions at her demanding job, my older sister {{never allowed any arguments| }} about the decisions she was making about my life. </i>
+<i> For someone who felt like an only child most of the time, with no time to make playmates without "slacking in my studies", I would often {{play by myself| }} in the yard, marvelling at the brilliant blue nemophilas, dazzling yellow daffodils, and fuschia stained tulips.</i>
+<i> This eventually led to me {{sneakily drawing| }} little flower doodles in the corners of my notebook. </i>
+<i> During high school, I expanded to making {{larger art pieces| }}, the flowers are always a central subject. </i>
+<i> Of course, I made sure to keep all of this a secret from my sister, knowing that she would {{definitely disapprove| }} of and probably even stop me from drawing my flowers.</i>
+<i> I was drawing in class one day, when a classmate {{came over.| }} </i>
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Classmate_Line1>>
+Oh I didn’t know {{you could draw!| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+O-oh, I mean, I’m not really good at it. This is {{just a random scribble.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Classmate_Line2>>
+Really? {{You're really good| }} at it!
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+No, no, {{I don't think so.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Classmate_Line3>>
+That's not true! This is really good! {{I mean it!| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{Really?| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Classmate_Line4>>
+{{Yes!| }} Really!
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{...Thank you.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Classmate_Line5>>
+I'm actually part of the art club, and you know, we meet every every day. We take people of all levels, {{you should come!| }}
+<<changeFace Background OS_Dream3_2 fade>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+<i> After some time, I took him up on the offer and started {{going to the art club.| }} </i>
+<i> Over time, {{I got better and better| }}, and started seriously considering studying art in college. </i>
+<i> {{I didn’t tell my sister| }} though. </i>
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene3_Line1>>
+What {{do you think| }} you're doing?
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Oh... um, I'm {{just... painting.| }}
+<i> She stared at me. {{I knew| }} what was coming. </i>
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene3_Line2>>
+{{How long| }} have you been doing this for?
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Ah, I've just been {{dabbling| }} in it here and there..I'm-
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene3_Line3>>
+But what about your classes? Your art hasn't gotten in the way of {{your grades,| }} has it?
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Oh no, I've been {{keeping my grades up,| }} and doing art in my free time.
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene3_Line4>>
+Isn’t the college entrance exam coming up? {{You should be studying| }} for it instead of wasting your time.
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Actually....I'm thinking of {{pursuing art| }} in college.
+<i> {{She was exasperated,| }} pacing around the room.</i>
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene3_Line5>>
+What? When were you going to {{tell me this?| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+I-I'm sorry I didn't talk to you about this before, but I {{didn't want to say| }} anything until I was sure!
+The art teacher at my high school thinks {{I can really do it,| }} and I've improved a lot since--
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene3_Line6>>
+{{Do you really think| }} you can get a job doing art?
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+<i> She {{took a look| }} at my art that I had scattered around the table. </i>
+<<changeFace Background OS_Dream3_3 fade>>
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene3_Line7>>
+{{You've got to be realistic here.| }} You're pretty good, but so is everyone else! Out in the real world, artists are a dime a dozen.
+<<PlayAudio VoiceActing Hanada_Scene3_Line8>>
+Easy to find, and easy to replace. Your art just {{isn't good enough| }} to compete with others in that industry.
+<<PlayAudio VoiceActing Hanada_Scene3_Line9>>
+I'm not saying this because I want to upset you. You've been managing to juggle all your classes and extracurriculars, and your grades are pretty good. You have a very good chance of passing the college entrance exam. {{You know I care about you, right?| }} That's why I want to make sure you have a good future.
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+...yes. {{You’re right.| }}
+<i> She gave me a pamphlet for college. I stare at the pamphlet, {{feeling numb| }} inside. </i>
+<i> Looking at the paintings I’ve worked so hard on, I think back to my sister’s words. I slowly {{take down all of the paintings| }} and set them aside. </i>
+<i> It’s as if {{my vision has tunneled,| }} and I watch as a stranger’s hands take some tape and display the pamphlet above my desk. </i>
+<i> Those hands drop to my sides, and I feel the heat clouding my vision, my head on the {{brink of exploding.| }} </i>
+<i> A tear slides down my cheek and I wipe it away. {{I have to be strong.| }} I don’t want my sister to worry, I know that she truly cares about me and doesn't want our parents to worry. </i>
+
+<<set $visited_HS to 3>>
+===
+
+title: HS_Dialogue.Dream4
+tags: HanadaSister
+colorID: 0
+position: 511, 540
+---
+<<changeFace Background BlankWhiteBG>>
+<<changeSpeaker MC>>
+<i> College was a bit {{scary without her| }} here. </i>
+<i> But in some way, it also helped. I couldn’t {{rely on her forever.| }} </i>
+<i> I needed to figure out how to do things {{myself.| }} </i>
+<i> I did keep to her advice though. I don’t know {{what would have happened| }} if I ended up following that art major. </i>
+<i> Business was a bit boring, but it wasn’t anything I couldn’t do. {{I guess it’s a good thing| }} she prepared me for all this. </i>
+<i> But she had to keep reminding me. She visited me a few times during college. Now that I think about it, those {{didn’t go too well.| }} Especially the first one. </i>
+<<changeFace Background OS_Dream4_1 fade>>
+<i> I was in my dorm room {{watching anime,| }} and I took a look at the calendar. The current day was circled, and I wrote family visit day in the circle. </i>
+<i> I looked around the room, and {{I knew my sister wouldn’t be happy| }} if she saw it like that. </i>
+<i> There were ramen cups laying about, my bed wasn't made, and my school material was randomly stacked in a corner. I remember {{I panicked to clean up my dorm.| }} </i>
+<i> Afterwards, {{I rushed out to the quad| }} to meet her. </i>
+<<changeFace Background OS_Dream4_2 fade>>
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line1>>
+Hey. {{How are you?| }}
+<<changeSpeaker MC>>
+{{I’m doing gre--| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line2>>
+{{Has school been good?| }}
+<<changeSpeaker MC>>
+Yes, {{it’s been--| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line3>>
+You’re cooking healthy meals, {{right?| }}
+<<changeSpeaker MC>>
+Um… {{yeah…| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line4>>
+That’s good, {{that’s good.| }}
+<<PlayAudio VoiceActing Hanada_Scene4_Line5>>
+{{What classes| }} are you taking?
+<<changeSpeaker MC>>
+Just... some {{general classes…| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line6>>
+{{Which ones?| }}
+<<changeSpeaker MC>>
+Uh... Microeconomics, {{umm..| }} Statistics, Calculus...
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line7>>
+{{What’s your last one?| }}
+<<changeSpeaker MC>>
+Uhhh, {{Introduction to Drawing?| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line8>>
+Is that a {{Gen Ed class?| }}
+<<changeSpeaker MC>>
+Yeah! Yeah… {{just a Gen Ed.| }} You don’t have to worry about it.
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line9>>
+Well, it’s good that you’re taking those so soon, but {{I’d prefer| }} if you cleared all of your prerequisites during your first few years.
+<<PlayAudio VoiceActing Hanada_Scene4_Line10>>
+{{Gives you more room later.| }}
+<<changeSpeaker MC>>
+That’s right, {{I get that.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line11>>
+Good. Why don’t you {{show me around campus?| }}
+<<changeSpeaker MC>>
+Yes, {{of course!| }}
+<i> I showed her around campus, {{but eventually| }} we made it back to my dorm. </i>
+<<changeFace Background OS_Dream4_1 fade>>
+<i> I didn’t have to look at her. {{I could feel her disappointment.| }} </i>
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line12>>
+{{Ahh…| }} so this is your room.
+<<changeSpeaker MC>>
+I had a friend help me {{pick out the posters| }} and all… 
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line13>>
+Oh. {{How much| }} did these posters cost?
+<<changeSpeaker MC>>
+{{Huh?| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line14>>
+{{How much did it cost?| }}
+<<changeSpeaker MC>>
+{{N...not much.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line15>>
+Do you have {{a number?| }}
+<<changeSpeaker MC>>
+It was {{around 3000 yen.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line16>>
+{{3000 yen?!| }}
+<<changeSpeaker MC>>
+That was {{for all of them.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line17>>
+What is all this anyway? I didn’t know you were into {{such childish things.| }}
+<<changeSpeaker MC>>
+They’re {{just decoration--| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line18>>
+Yes, but no one should be spending so much money on decorations, {{especially this.| }}
+<<changeSpeaker MC>>
+{{I… I| }} don’t think I can return these.
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line19>>
+Didn’t keep a receipt either. You know, {{I shouldn’t have to keep watching over you| }} like this.
+<<changeSpeaker MC>>
+{{I’m sorry.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line20>>
+Well, {{if that’s the only thing… | }}
+<<changeSpeaker MC>>
+<i> Then she saw {{the light novels| }} </i>
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line21>>
+{{What is that you’re reading?| }}
+<<changeSpeaker MC>>
+Aah! They’re uh, {{they’re just some books.| }}
+{{I didn’t buy those!| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line22>>
+{{Why do you have them?| }}
+<<changeSpeaker MC>>
+{{I-I um…| }} thought they looked interesting...
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line23>>
+{{How much time did you spend| }} reading these things?
+<<changeSpeaker MC>>
+{{Not a lot of time.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line24>>
+You have {{whole volumes| }} here.
+<<changeSpeaker MC>>
+{{Some are my friend’s.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line25>>
+Sure. {{What are you doing with these| }} in the first place?
+<<changeSpeaker MC>>
+{{They just look cool.| }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line26>>
+You know what happens to people that read these things? They turn you into a NEET that does nothing but stay home and drain mom and dad’s money. {{Do you want to do that to them?| }}
+<<changeSpeaker MC>>
+{{No… | }}
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line27>>
+Good. {{Stay away from it.| }}
+<<changeSpeaker MC>>
+<i> She put a copy of {{Daughter of the Sword| }} in my hand. </i>
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene4_Line28>>
+Here. If you really want to go into the fantasy world, read these. It’s much better than {{all this trashy stuff.| }}
+<<changeSpeaker MC>>
+{{...alright.| }}
+<<changeFace Background BlankWhiteBG fade>>
+<i> {{I guess| }} that’s how it happened. She kept coming back after this day. </i>
+<i> Not even on the family days, but {{just randomly.| }} Sometimes just once a semester, and sometimes a few times a month. </i>
+<i> {{I guess it was nice of her| }} to do that, to care so much. </i>
+<i> I wonder what would have happened if I kept watching anime and reading those types of books. {{She would have been mad| }} if I kept it up. </i>
+<i> It’s good that she stopped me. {{I wouldn’t be who I was today without her.| }} </i>
+<i> {{………| }} </i>
+<i> I keep telling myself that. But, why do I feel like shit. I did what she wanted me to do. But {{everything feels wrong.| }}</i>
+
+<<set $visited_HS to 4>>
+===
+
+title: HS_Dialogue.Dream5
+tags: HanadaSister
+colorID: 0
+position: 511, 550
+---
+<<changeFace Background BlankWhiteBG>>
+<<changeSpeaker MC>>
+<i> {{She was always there for me.| }} From the first time I opened my eyes, until the final time she closed hers. </i>
+<i> Did I cause this? Was it because I wasn’t there for her? {{I didn’t even take her last call.| }} I was in a meeting with a client in New York. It went to voicemail. </i>
+<<changeFace Background OS_Dream5_1 fade>>
+<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Hanada_Scene5_Line1>>
+{{Hey.| }}
+<<PlayAudio VoiceActing Hanada_Scene5_Line2>>
+{{How’s it going?| }}
+<<PlayAudio VoiceActing Hanada_Scene5_Line3>>
+I know {{it’s been a long time| }} since we talked.
+<<PlayAudio VoiceActing Hanada_Scene5_Cough1>>
+{{...............| }}
+<<PlayAudio VoiceActing Hanada_Scene5_Line4>>
+{{Mom and Dad stopped by| }} to visit.
+<<PlayAudio VoiceActing Hanada_Scene5_Line5>>
+I asked them about you, but they said {{they didn’t talk to you much either.| }}
+<<PlayAudio VoiceActing Hanada_Scene5_Line6>>
+{{You had gotten so busy| }} after college that I couldn’t come to check on you.
+<<PlayAudio VoiceActing Hanada_Scene5_Line7>>
+But I guess {{you don’t need the help anymore.| }}
+<<PlayAudio VoiceActing Hanada_Scene5_Line8>>
+Don’t get me wrong, {{I’m happy| }} that you got that job with the Nakamara Group.Mom and Dad seem to be happy too.
+<<PlayAudio VoiceActing Hanada_Scene5_Line9>>
+I guess {{you’re working a lot.| }} Remember to get sleep, and eat well.
+<<PlayAudio VoiceActing Hanada_Scene5_Line10>>
+{{Take a break sometimes| }} too. Don’t overwork yourself.
+<<PlayAudio VoiceActing Hanada_Scene5_Line11>>
+Maybe you should {{start playing video games again,| }} just to take the stress off. Those new games look nothing like what they used to. Don’t get sucked in though.
+<<PlayAudio VoiceActing Hanada_Scene5_Line12>>
+Drawing is another option too. Mom found some of the art you used to draw up in a box of your old stuff. {{They were pretty good.| }} And she's proud of you.
+<<PlayAudio VoiceActing Hanada_Scene5_Cough2>>
+{{...............| }}
+<<PlayAudio VoiceActing Hanada_Scene5_Line13>>
+You should come back to visit. I’d love to see you again. If they let you, of course. I wouldn’t want you to upset your boss {{just because of me.| }}
+<<PlayAudio VoiceActing Hanada_Scene5_Line14>>
+{{I’m so proud of you.| }}
+<<changeFace Background BlankWhiteBG fade>>
+
+<<set $visited_HS to 5>>
+===
+title: HS_Dialogue.Nothing1
+tags: HanadaSister
+colorID: 0
+position: 511, 550
+---
+<<changeFace Background BlankWhiteBG>>
+
+<i>{{...............| }} </i>
+<i>I should get up. </i>
 ===

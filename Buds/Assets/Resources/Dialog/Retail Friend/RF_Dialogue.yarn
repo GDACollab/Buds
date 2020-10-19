@@ -9,10 +9,26 @@ position: 222, 222
 
 <<set $unfinished_RF to true>>
 
-<<if $visited_RF >= 2>>
+<<if $visited_RF >= 4>>
+
+<<if $cyclamen_growth_stage >= 4>>
+[[RF_Dialogue.ReviewCopy]]
+<<else>>
+[[RF_Dialogue.Busy]]
+<<endif>>
+
+<<else if $visited_RF >= 3>>
+
+<<if $cyclamen_growth_stage >= 3>>
+[[RF_Dialogue.Revelations]]
+<<else>>
+[[RF_Dialogue.Busy]]
+<<endif>>
+
+<<else if $visited_RF >= 2>>
 
 <<if $cyclamen_growth_stage >= 2>>
-[[RF_Dialogue.OpeningUp]]
+[[RF_Dialogue.LastName]]
 <<else>>
 [[RF_Dialogue.Busy]]
 <<endif>>
@@ -47,6 +63,7 @@ position: 222, 225
 Welcome! Are we looking for anything in particular {{today?| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Um… yes. I was just wondering what books you have that are {{similar| }} to Magic of the Earth
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
@@ -54,6 +71,7 @@ Um… yes. I was just wondering what books you have that are {{similar| }} to Ma
 Do you like {{urban fantasy?| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 What’s {{that?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
@@ -61,6 +79,7 @@ What’s {{that?| }}
 That’s the {{genre| }} Samuel and the Mythical Columbianus and Daughter of the Sword are in.
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Oh, then {{yes.| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
@@ -68,6 +87,7 @@ Oh, then {{yes.| }}
 Well, the most popular new releases for urban fantasy are right over {{here.| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Hm… alright, {{thank you.| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
@@ -75,6 +95,7 @@ Hm… alright, {{thank you.| }}
 Let me {{kn—| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Do you have ones you {{like?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
@@ -82,6 +103,7 @@ Do you have ones you {{like?| }}
 I’m {{sorry?| }}
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Which urban fantasy books do you {{like?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
@@ -89,6 +111,7 @@ Which urban fantasy books do you {{like?| }}
 Oh Well… I will admit, I’m not a huge fan of the new releases. I prefer books like The Dawn of the Crooked, but those aren’t particularly {{well-received| }} either.
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Where would that be {{at?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
@@ -96,6 +119,7 @@ Where would that be {{at?| }}
 I believe you can {{find| }} it over here.
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 This {{one?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
@@ -103,39 +127,46 @@ This {{one?| }}
 Yeah, that’s the {{one!| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 What do you {{like| }} about it?
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 <<PlayAudio VoiceActing Shiori_Scene1_Line10>>
-Well—um… It’s interesting because it does something that the newer releases seem kind of {{scared| }} to do—
-—and the fact that they put this character in, Adelaide, might seem a bit cliche, but then you look at the release {{dates| }} and this is actually—
-—the first time someone did something like that in an urban fantasy book. The writing is great. They don’t bore you with {{flowery| }} words and—
-—long descriptions of meaningless things, they just get right to the point. I really hate how {{newer| }} books do that, and—
-—you can never really go back after you’ve {{read| }} something like this… 
+Well—um… It’s interesting because it does something that the newer releases seem kind of scared to do—
+—and the fact that they put this character in, Adelaide, might seem a bit cliche, but then you look at the release dates and this is actually—
+—the first time someone did something like that in an urban fantasy book. The writing is great. They don’t bore you with flowery words and—
+—long descriptions of meaningless things, they just get right to the point. I really hate how newer books do that, and—
 <<changeFace Character RF_Smile_Closed>>
 <<changeFace Character RF_Confused_Open>>
-{{It’s—| }}
-{{Ah…| }}
+<<PlayAudio VoiceActing Shiori_Scene1_Line14>>
+—you can never really go back after you’ve read something like this… {{It’s— Ah…| }}
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 That does sound {{interesting.| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-<<PlayAudio VoiceActing Shiori_Scene1_Line11>>
+<<PlayAudio VoiceActing Shiori_Scene1_Line15>>
 Hahum…- It’s a good book, but The Maiden of the Silver Sea is far more {{popular| }} right now.
 <<changeFace Character RF_Confused_Closed>>
 <<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene1_Line16>>
 It’s a thrilling tale about a young woman who finds herself travelling through the sea and meeting a charming, handsome {{prince.| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Hmm… I think I’ll take the one you {{recommended| }} instead.
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene1_Line17>>
 {{Oh…!| }}
+<<PlayAudio VoiceActing Shiori_Scene1_Line18>>
 Okay, I can ring you up right over {{here.| }}
+<<PlayAudio VoiceActing Shiori_Scene1_Line19>>
 Thank you for your purchase, please come {{again!| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Yeah… this book definitely seems more {{interesting| }} to me. 
 I’ll tell you what I think about it {{next| }} time.
 
@@ -148,153 +179,211 @@ tags: RetailFriend
 colorID: 0
 position: 222, 228
 ---
-<<changeSpeaker RF>>
-<<changeFace Character RF_Smile_Closed>>
-{{...| }}
 <<changeSpeaker MC>>
-Hello! {{Kawakuma was it?| }} It’s nice to see you again. 
-<<changeSpeaker RF>>
-<<changeFace Character RF_Confused_Open>>
-Oh! Hello… sorry, I didn’t notice you came in. You can call me {{Shiori,| }} by the way.
-<<changeFace Character RF_Confused_Closed>>
-<<changeSpeaker MC>>
-Ah, that’s my bad. I didn’t mean to {{scare you.| }}
-<<changeSpeaker RF>>
-<<changeFace Character RF_Confused_Open>>
-Oh no, I’m fine—really. Um... {{what brings you here?| }} Did you need help finding anything?
-<<changeFace Character RF_Confused_Closed>>
-<<changeSpeaker MC>>
-Well, I was actually hoping to {{talk to you| }} for a bit. 
-<<changeSpeaker RF>>
-<<changeFace Character RF_Confused_Open>>
-...! {{Ah…| }}
-<<changeFace Character RF_Confused_Closed>>
-<<changeSpeaker MC>>
-I mean—if you aren’t {{too busy,| }} of course. 
-<<changeSpeaker RF>>
-<<changeFace Character RF_Confused_Open>>
-Do you mind if I ask what you {{want to talk about,| }} exactly?
-<<changeFace Character RF_Confused_Closed>>
-<<changeSpeaker MC>>
-Well... the book I bought, The Dawn of the Crooked. {{You| }} were the one who recommended it to me, right?
+Hello! Kawakuma was it? It’s nice to {{see| }} you again
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Yes, it’s one of my favorites! Not... a lot of people are really into those sorts of fiction though, so I understand if {{you didn’t really like—| }}
+<<PlayAudio VoiceActing Shiori_Scene2_Line1>>
+Oh! Hello… sorry, I didn't see you come in. {{You can call me Shiori,| }} by the way.
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-It’s {{not that bad,| }} actually.
+<<PlayAudio VoiceActing Blank_File>>
+Ah, that’s my bad. I didn’t mean to {{scare| }} you.
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-... {{huh—?| }}
+<<PlayAudio VoiceActing Shiori_Scene2_Line2>>
+Oh no, I’m fine... {{really.| }}
+<<PlayAudio VoiceActing Shiori_Scene2_Line3>>
+Um… what brings you {{here?| }}
+<<PlayAudio VoiceActing Shiori_Scene2_Line4>>
+Did you need help {{finding| }} anything?
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
-I thought it was written in a really {{unique way,| }} like you said. I liked the story too. 
+<<PlayAudio VoiceActing Blank_File>>
+Well, I was actually hoping to talk to {{you| }} for a bit.
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-{{Really| }}...?
+<<PlayAudio VoiceActing Shiori_Scene2_Line5>>
+Oh…! {{Uh…| }}
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
-Yeah, I actually wanted to talk with you about the book for a bit if you have time. I mean... {{your thoughts about it| }}, that is.
+<<PlayAudio VoiceActing Blank_File>>
+I mean... if you aren’t too {{busy,| }} of course.
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-Oh—sure! It’s {{not a busy day today,| }} so…
+<<PlayAudio VoiceActing Shiori_Scene2_Line6>>
+Do you mind if I ask what you want to {{talk| }} about, exactly?
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
-Thanks! To start, I found the genre to be interesting. It’s really not like {{anything I’ve read lately.| }}
-I haven’t finished the book yet, but I think it’s intriguing that it combines fantasy and modern elements to create a {{unique experience.| }}
-I also enjoyed the way it explored the {{interactions between them| }} in a much darker way than I had expected. 
+<<PlayAudio VoiceActing Blank_File>>
+Well… the book I {{bought,| }} The Dawn of the Crooked. 
+You were the one who {{recommended| }} it to me, right?
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-I feel the exact same way about the book…! {{I’m really glad you enjoyed it!| }} Urban fantasy is also one of my favorite genres for a lot of the same reasons.
+<<PlayAudio VoiceActing Shiori_Scene2_Line7>>
+Yes, it’s one of my {{favorites!| }}
 <<changeFace Character RF_Smile_Closed>>
-<<changeSpeaker MC>>
-Yeah! I didn’t know the exact genre name before, but {{my sister| }} was really into those types of fiction.
-<<changeSpeaker RF>>
-<<changeFace Character RF_Smile_Open>>
-Does she {{live around here?| }}
-<<changeFace Character RF_Smile_Closed>>
-<<changeSpeaker MC>>
-... I guess you {{could say that.| }}
-<<changeSpeaker RF>>
-<<changeFace Character RF_Smile_Open>>
-She should {{come here| }} sometime, then! I’d be happy to talk about books with her, or maybe recommend some of my favorites. 
-<<changeFace Character RF_Smile_Closed>>
-<<changeSpeaker MC>>
-Yes, {{maybe…| }}
-Oh—I remember you like the {{writing style| }} a lot?
-<<changeSpeaker RF>>
-<<changeFace Character RF_Smile_Open>>
-Yes! I really do. To be honest, {{I wish I could write like that...| }}
-<<changeFace Character RF_Smile_Closed>>
-<<changeSpeaker MC>>
-...! {{You’re a writer?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-Ah—haha, {{not really…| }}
+<<PlayAudio VoiceActing Shiori_Scene2_Line8>>
+Not… a lot of people are really into those sorts of fiction though, so I {{understand| }} if you didn’t really like—
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
-{{What do you mean?| }}
+<<PlayAudio VoiceActing Blank_File>>
+It’s not that bad, {{actually.| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-Well, I just… wouldn’t say I’m the {{best at it.| }} 
+<<PlayAudio VoiceActing Shiori_Scene2_Line9>>
+{{…huh?| }}
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>
-Awh, I’m sure it’s fine! {{I really do.| }} 
-<<changeSpeaker RF>>
-<<changeFace Character RF_Confused_Open>>
-{{…| }}
-<<changeFace Character RF_Confused_Closed>>
-<<changeSpeaker MC>>
-Do you have {{something of yours| }} I could take a look at?
-<<changeSpeaker RF>>
-<<changeFace Character RF_Confused_Open>>
-S...sorry, no. I don’t {{at the moment.| }} 
-<<changeFace Character RF_Confused_Closed>>
-<<changeSpeaker MC>>
-That’s completely alright, don’t worry about it. Then, I was wondering if maybe you had any {{other book recommendations?| }}
+<<PlayAudio VoiceActing Blank_File>>
+I thought it was written in a really unique way, like you said. I liked the {{story| }} too.
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Wow, {{finished| }} the last one already?
+<<PlayAudio VoiceActing Shiori_Scene2_Line10>>
+{{Really?| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-Not... just yet. I tend to have a habit of {{collecting books| }} even though I haven’t finished them, haha...
+<<PlayAudio VoiceActing Blank_File>>
+Yeah, I actually wanted to talk with you about the {{book| }} for a bit if you have time. 
+I mean… your {{thoughts| }} about it that is.
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene2_Line11>>
+Oh... sure! It’s not a busy {{day| }} today, so…
+<<changeFace Character RF_Confused_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{Thanks!| }}
+To start, I found the genre to be {{interesting.| }} 
+It’s really not like anything I’ve {{read| }} lately.
+I haven’t finished the book yet, but I think it’s captivating that it combines fantasy and modern elements to create a {{unique| }} experience.
+I also enjoy how it explored the interactions between them in a much darker way than I had {{expected.| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-No worries! Were you looking for more {{urban fantasy| }} or...?
+<<PlayAudio VoiceActing Shiori_Scene2_Line12>>
+I feel the same way about the book! I’m really glad you {{enjoyed| }} it! 
+<<PlayAudio VoiceActing Shiori_Scene2_Line13>>
+Urban fantasy is also one of my favorite genres for a lot of the same {{reasons.| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{Yeah!| }} 
+I didn’t know the exact genre name before, but my {{sister| }} was really into those types of fiction.
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene2_Line14>>
+I see! Does she {{live| }} around here?
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+…I suppose you could {{say| }} that.
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene2_Line15>>
+She should come here sometime then. I’d be happy to talk about books with her as well, and maybe {{recommend| }} some of my favorites!
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{Maybe…| }}
+Oh... I remember you like the {{writing| }} style a lot?
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene2_Line16>>
+{{Yes!| }} I really do.
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene2_Line17>>
+To be honest, I wish I could {{write| }} like that… 
+<<changeFace Character RF_Confused_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+You’re a {{writer?| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene2_Line18>>
+Ah... haha, {{not really…| }}
+<<changeFace Character RF_Confused_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+What do you {{mean?| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene2_Line19>>
+Well, I just… wouldn’t say I’m the {{best| }} at it.
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Awh, I’m sure it’s {{fine!| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene2_Line20>>
+Well, some people think it’s a bit too {{wordy…| }}
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Do you have something of yours I could {{look| }} at?
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene2_Line21>>
+S…sorry, no. I don’t at the {{moment.| }}
+<<changeFace Character RF_Confused_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+That’s completely alright, don’t {{worry| }} about it. 
+Then, I was wondering if maybe you had any other book {{recommendations?| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene2_Line22>>
+Wow, finished the last one {{already?| }}
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Not… just {{yet.| }} 
+I tend to have a habit of collecting books even though I haven’t {{finished| }} them, haha…
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene2_Line23>>
+No worries! Were you looking for more {{urban fantasy| }} or… ?
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 That would be {{great.| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Okay, hmm... I think maybe {{you’d like this one.| }} It’s called The Cloaked Oracle. 
+<<PlayAudio VoiceActing Shiori_Scene2_Line24>>
+Okay, hmmm… I think maybe you’d {{like| }} this one. It’s called The Cloaked Oracle.
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-That looks interesting to me. I’m sure it’s good if {{you recommend it!| }} 
-<<changeSpeaker RF>>
-<<changeFace Character RF_Confused_Open>>
-Ah—okay. I’ll {{ring you up| }} then.
-<<changeFace Character RF_Confused_Closed>>
-<<changeSpeaker RF>>
-<<changeFace Character RF_Smile_Open>>
-Thank you, {{please come again!| }}
-<<changeFace Character RF_Smile_Closed>>
-<<changeSpeaker MC>>
-For sure. {{Thank you again| }} for talking with me.
+<<PlayAudio VoiceActing Blank_File>>
+That looks {{interesting| }} to me. 
+I’m sure it’s good if you {{recommend| }} it!
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-... likewise to {{you too!| }} 
+<<PlayAudio VoiceActing Shiori_Scene2_Line25>>
+Ah... okay. I’ll {{ring| }} you up then.
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene2_Line26>>
+Thank you, please come {{again!| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-<i> I left the bookstore with another book in hand, and {{something new| }} I learned about Shiori. </i>
-<i> I’m very curious to know what their {{writing is like,| }} but I won’t pressure them about it either. </i>
-<i> They tend to have {{something interesting| }} to say, on top of being easy to talk to.
-<i>I have a feeling that their works will {{reflect that.| }} </i>
+<<PlayAudio VoiceActing Blank_File>>
+For sure. Thank you again for {{talking| }} with me.
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene2_Line27>>
+{{…likewise!| }}
+<<changeFace Character RF_Smile_Closed>>
 
 <<set $visited_RF to 2>>
 <<set $unfinished_RF to false>>
 ===
 
-title: RF_Dialogue.OpeningUp
+title: RF_Dialogue.LastName
 tags: RetailFriend
 colorID: 0
 position: 222, 231
@@ -303,128 +392,444 @@ position: 222, 231
 <i> Over the last couple of weeks, I continued to visit the {{bookstore.| }} </i>
 <i> At first, it was really only to {{buy new books| }} to distract myself with, </i>
 <i> but lately I’ve found myself looking forward to {{talking with Shiori| }} as well. </i>
-<i> I stopped by again today to {{get another book…| }}</i>
-
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-{{Welcome!| }}
+<<PlayAudio VoiceActing Shiori_Scene3_Line1>>
+Welcome- {{oh hey!| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-Hello, {{Shiori!| }}
+<<PlayAudio VoiceActing Blank_File>>
+Hi {{Shirori!| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Oh hey, {{it’s you!| }} How’s it been? 
+<<PlayAudio VoiceActing Shiori_Scene3_Line2>>
+How's it {{been?| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
-You know...it’s been {{pretty alright.| }} 
+<<PlayAudio VoiceActing Blank_File>>
+You know... I think {{it's been pretty alright.| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Great to hear! Did you like {{the book| }} I picked out the last time? 
-<<changeFace Character RF_Smile_Closed>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line3>>
+Great to hear! Did you like {{the book I picked out| }} the last time?
 <<changeSpeaker MC>>
-I did! I loved the {{battle scene| }} where the wizard defeats the dark dragon.
+<<PlayAudio VoiceActing Blank_File>>
+<<changeFace Character RF_Smile_Closed>>
+Yeah! Well, I still haven’t finished this one either, but I really do enjoy {{the magic system| }} they’ve implemented.
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Oh yes! I thought that was {{really exciting| }} too! It’s one of my favorite scenes in the book.
-{{Another scene I liked| }} would definitely have to be when the wizard and the princess get married though. 
-<<changeFace Character RF_Smile_Closed>>
-<<changeSpeaker MC>>
-Have you read the {{second book| }} in the series? I hear the dark dragon rises again and seeks revenge against a friend of the wizard. 
-<<changeSpeaker RF>>
-<<changeFace Character RF_Smile_Closed>>
- {{…| }}
-<<changeSpeaker MC>>
- {{...Shiori?| }}
-<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line4>>
+I agree! The author spent a lot of time fleshing that one out. It’s very close to the hard magic system from more fantastical stories, {{but the modern twist…| }}
 <<changeFace Character RF_Confused_Open>>
-{{Hm?| }}
-Oh, sorry! I was {{spacing out a bit.| }}
-...I’ve just been tired today. It was busy earlier and I’ve been a little stressed... doesn’t really help any that I forgot to bring {{my lunch with me... | }}
-<<changeFace Character RF_Confused_Closed>>
+<<PlayAudio VoiceActing Blank_File>>
+.........
+<<PlayAudio VoiceActing Shiori_Scene3_Line5>>
+Sorry… {{what was I saying?| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+<<changeFace Character RF_Confused_Closed>>
+You were talking about {{the modern twist—| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line6>>
+Yes! Sorry. I just {{spaced out| }} a bit.
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line7>>
+I’ve just been tired today. It was busy earlier and I’ve {{been a little stressed…| }} doesn’t help that I forgot to bring my lunch with me… 
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+<<changeFace Character RF_Confused_Closed>>
 Would you like {{mine?| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-I…{{I’m sorry?| }}
-<<changeFace Character RF_Confused_Closed>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line8>>
+I'm {{sorry?| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+<<changeFace Character RF_Confused_Closed>>
 I packed a lunch since I was planning to be out for a while today. It’s nothing special, but {{it’ll help.| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-But, won’t {{you| }} get hungry later, then? I really think you should keep this! 
-<<changeFace Character RF_Confused_Closed>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line9>>
+But, won’t you get hungry later, then? I really think {{you should keep this!| }}
 <<changeSpeaker MC>>
-No, {{it’s okay.| }} Don’t worry, I live right above a restaurant. I can just grab a bite once I get home. 
-<<changeSpeaker RF>>
-<<changeFace Character RF_Confused_Open>>
-Well... okay, if you’re really sure about it. {{Thank you so much—!| }}
+<<PlayAudio VoiceActing Blank_File>>
 <<changeFace Character RF_Confused_Closed>>
-<<changeSpeaker MC>>
-{{No problem!| }}
-By the way... I also wanted to ask—do you know if {{this book| }} is any good?
+No, it’s okay. Don’t worry, I live right above a restaurant. {{I can just grab a bite once I get home.| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Oh! Yes, I rather like it myself... but, just asking to be sure: you know this {{isn’t an urban fantasy book| }}, right?
+<<PlayAudio VoiceActing Shiori_Scene3_Line10>>
+Well… alright, if you’re really sure about it. {{Thank you so much!| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 <<changeFace Character RF_Smile_Closed>>
+No {{problem!| }}
+By the way… I wanted to ask— Why do you only go by {{Shiori, not Kawakuma?| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line11>>
+{{Huh?| }}
 <<changeSpeaker MC>>
-I know, thought I would get something... {{different for a change.| }} 
+<<PlayAudio VoiceActing Blank_File>>
+<<changeFace Character RF_Confused_Closed>>
+You don’t {{have to answer| }} if you don’t want to.
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-I see. That’s neat, it’s always fun to {{try new things!| }} In that case, are you ready for me to ring you up?
+<<PlayAudio VoiceActing Shiori_Scene3_Line12>>
+No, it’s okay. {{I just didn’t expect to be asked that.| }}
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line13>>
+I just don’t like my {{family name,| }} that’s all.
+<<PlayAudio VoiceActing Shiori_Scene3_Line14>>
+It brings up a lot of {{stress and expectations| }} that I couldn’t bear.
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+<<changeFace Character RF_Confused_Closed>>
+{{Oh…| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line15>>
+I know that stuff is {{a little taboo| }} to talk about, I apologize.
+<<PlayAudio VoiceActing Shiori_Scene3_Line16>>
+But a lot more people have been {{opening up recently…| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+<<changeFace Character RF_Confused_Closed>>
+No… you’re totally fine! It’s not {{that| }} that got me.
+You just remind me a lot about {{myself.| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line17>>
+I guess {{the problem| }} is pretty common these days…
+<<PlayAudio VoiceActing Shiori_Scene3_Line18>>
+But yes, they wanted me {{to do something else.| }}
+<<PlayAudio VoiceActing Shiori_Scene3_Line19>>
+I really liked books and reading, {{and I didn’t want to give it up.| }}
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line20>>
+And {{here we are| }} I guess.
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 <<changeFace Character RF_Smile_Closed>>
+It's {{not bad.| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line21>>
+Maybe if I kept at it, {{I wouldn’t be selling books here,| }} but…
+<<PlayAudio VoiceActing Shiori_Scene3_Line22>>
+I’m sorry. I shouldn’t really be {{saying all this to a customer.| }}
 <<changeSpeaker MC>>
-{{Sure!| }}
+<<PlayAudio VoiceActing Blank_File>>
+<<changeFace Character RF_Confused_Closed>>
+It’s all right, {{I get it.| }}
+Trust me, {{the other life| }} isn’t much better.
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-Alright, {{here you are.| }} 
+<<PlayAudio VoiceActing Shiori_Scene3_Line23>>
+Maybe. {{Who knows.| }}
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line24>>
+Oh, shoot! My manager is going to be mad at me if I {{don't get back to work.| }}
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line25>>
+Hey! Would you like {{a new book?| }}
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 <<changeFace Character RF_Smile_Closed>>
-<<changeSpeaker MC>>
-Thanks, I’ll be {{seein—| }}
+I don’t know, shouldn’t I finish {{the previous one| }} first?
 <<changeSpeaker RF>>
 <<changeFace Character RF_Confused_Open>>
-Um, {{actually…!| }}
-<<changeFace Character RF_Confused_Closed>>
-<<changeSpeaker MC>>
-{{What’s up?| }}
-<<changeSpeaker RF>>
-<<changeFace Character RF_Confused_Open>>
-W... well—if you don’t mind, I have something I want to {{give you.| }}
-<<changeFace Character RF_Confused_Closed>>
-<<changeSpeaker MC>>
-Me...? {{What is it?| }}
-<<changeSpeaker RF>>
-<<changeFace Character RF_Confused_Open>>
-A while ago, you asked to see something I’ve written, right? {{I brought a few things| }}, if you’re still interested that is...
-<<changeFace Character RF_Confused_Closed>>
-<<changeSpeaker MC>>
-Really? Of course I’m interested! {{What are they?| }}
-<<changeSpeaker RF>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line26>>
+Don’t worry about that one, {{I feel like you won’t finish| }} that one.
 <<changeFace Character RF_Smile_Open>>
-{{It’s not much| }} if I’m being honest, just some things I had laying around.
-A few short stories... some poems... hopefully they aren’t too long or anything. I do tend to {{ramble on| }} a bit... 
-<<changeFace Character RF_Confused_Closed>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line27>>
+Here, try {{this one.| }}
 <<changeSpeaker MC>>
-There’s nothing wrong with {{rambling| }}, Shiori.
-Short and sweet language may get to the point, but it does have a different charm from texts that can reveal something perhaps {{deeper about the writer.| }}
-Even “flowery descriptions” can have meaning, which I... personally find {{valuable.| }}
-So don’t worry, I don’t mind at all. Thank you for letting me take a look at these! I’ll {{let you know what I think.| }}
-<<changeSpeaker RF>>
-<<changeFace Character RF_Confused_Open>>
-{{...!| }}
-{{....| }}
-<<changeFace Character RF_Smile_Open>>
-... Oh...! Yes, {{of course.| }}
-{{I’ll look forward to it...!| }}
+<<PlayAudio VoiceActing Blank_File>>
 <<changeFace Character RF_Smile_Closed>>
+{{“The Hartford Crisis Commission?”| }}
+This doesn’t sound like an {{urban fantasy book.| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line28>>
+{{That's true,| }} technically it's not.
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene3_Line29>>
+It’s more gaslamp fantasy than urban fantasy, {{but I have a feeling you’ll like it.| }}
 <<changeSpeaker MC>>
-{{Until next time,| }} then!
+<<PlayAudio VoiceActing Blank_File>>
+<<changeFace Character RF_Smile_Closed>>
+{{Hmmmmm.| }}
+Alright, I guess if you recommend it, {{then I'll try it.| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
-{{Take care!| }}
-<<changeFace Character RF_Confused_Open>>
-And... {{thank you.| }}
+<<PlayAudio VoiceActing Shiori_Scene3_Line30>>
+Great! {{Let me ring you up.| }}
+<<changeFace Character RF_Smile_Closed>>
 
 <<set $visited_RF to 3>>
+<<set $unfinished_RF to false>>
+===
+
+title: RF_Dialogue.Revelations
+tags:RetailFriend
+colorID: 0
+position: 222, 260
+---
+<<changeSpeaker MC>>
+{{SHIORI!!!| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene4_Line1>>
+Oh hey, {{welcome!| }}
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+I NEED to talk about this {{book.| }}
+Wait, hold on... is your manager going to be {{mad?| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene4_Line2>>
+No, she saw that everytime I finished talking with you, you {{bought| }} a book, so she said to keep doing it.
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Works for me, because every book you {{recommend| }} is amazing.
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene4_Line3>>
+Can I assume that you liked the last {{book| }} then?
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{Yes.| }} 
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene4_Line4>>
+Did you {{finish| }} it?
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{YES!!!| }}
+The beginning was so weird when Jacob was just following the other officers around the city, but then the Mage Society started chasing after him and the Zalios Crystal, and then Evbris came right when the Titan {{showed| }} up!
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene4_Line5>>
+With the airship! That was such a good {{moment.| }} I didn’t really like that they spent so much time describing the fight scene, but I think without it, you wouldn’t have known the extent to which Omera has been hiding her powers.
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{Really?| }} 
+I liked the airship and all the {{combat.| }} 
+All of it made sense, the magic and all the strange machines and crystals that make the {{magic| }} work. 
+The descriptions of all the {{fantasy| }} objects made them seem so cool.
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene4_Line6>>
+I knew you'd {{like| }} it!
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+How did {{you...?| }} 
+This is so different from what I {{normally| }} like.
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene4_Line7>>
+I don’t think you enjoyed the Urban Fantasy genre because you liked the realism, I think you enjoyed it because of the {{fantasy.| }}
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{Really?| }} 
+I always thought of myself as more of a grounded-in-reality type of {{person.| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene4_Line8>>
+I really think that’s who you are, but do you like {{reading| }} it?
+<<changeFace Character RF_Confused_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+{{I…| }}
+I… I guess I thought it was good since my {{sister| }} recommended it.
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene4_Line9>>
+Hmmm… I don’t know what your sister’s {{interests| }} are, but I don’t think Urban Fantasy is for you.
+<<PlayAudio VoiceActing Shiori_Scene4_Line10>>
+To be honest, I'm not entirely sure that gaslamp fantasy is for you {{either.| }}
+<<changeFace Character RF_Confused_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Well, then what do you {{recommend?| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene4_Line11>>
+Well… I’m not sure if you’ll {{like| }} this…
+<<PlayAudio VoiceActing Shiori_Scene4_Line12>>
+And it’s for a much more niche audience, so don’t take any offense to the {{recommendation.| }}
+<<changeFace Character RF_Confused_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Don’t worry. I won’t be {{mad.| }} 
+<i> Shiori put {{a manga book| }} in my hands. </i>
+{{Oh...?| }} 
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene4_Line13>>
+I don’t normally recommend these either, but you seem like you would really {{like| }} it.
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+No, this makes {{sense.| }} 
+I used to read manga in {{college.| }} 
+But then I got into the Urban Fantasy {{genre…| }} in a way.
+Oh... but I don’t know {{about| }} this...
+Don’t graphic novels kind of lead you to {{nowhere?| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene4_Line14>>
+There’s nothing wrong with reading manga, but if you’d like to be more discreet, there are {{light novels| }} too.
+<<PlayAudio VoiceActing Shiori_Scene4_Line15>>
+It’s where most of our sales are, so you’re not {{alone.| }}
+<<PlayAudio VoiceActing Shiori_Scene4_Line16>>
+And I’d feel better that I got you a book that you actually wanted to read instead of books that you'll never {{finish.| }}
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+...I suppose you’re {{right.| }} 
+Maybe it’s time I revisit a little bit of my {{younger| }} days.
+
+<<set $visited_RF to 4>>
+<<set $unfinished_RF to false>>
+===
+
+title: RF_Dialogue.ReviewCopy
+tags: RetailFriend
+colorID: 0
+position: 222, 280
+---
+<<changeFace Character blank>>
+<<changeSpeaker MC>>
+<i> I ended up {{really liking the manga| }} Shiori recommended. </i>
+<i> {{I didn't want to ask for help to find a new one,| }} so I just went in myself to find the next volume. </i>
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene5_Line1>>
+Are you finding {{everything| }} all right?
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Yep, yes! I... I was just looking at the pictures of this one. Very {{nice…| }} 
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene5_Line2>>
+It’s okay. You know, I come to this section to check out some of the {{books| }} as well.
+<<PlayAudio VoiceActing Shiori_Scene5_Line3>>
+Some of them are pretty {{good.| }}
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+You don’t seem to like most of them, {{though.| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene5_Line4>>
+Well... they’re {{not exactly my style.| }} And some of them are…
+<<changeFace Character RF_Confused_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+I can {{tell.| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene5_Line5>>
+You’re right on the pictures though. Some of {{these drawings are very impressive.| }}
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Yeah, I used to draw for my favorite manga whenever I had {{time.| }} 
+I even had this pipe dream in college that I would become a successful business-person selling my art to publishers and {{writers.| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene5_Line6>>
+What happened to {{that?| }}
+<<changeFace Character RF_Confused_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Ehh… it was squashed pretty {{quickly.| }}
+Doesn’t really make sense to be an art and a {{business| }} major together.
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene5_Line7>>
+Well, if you’re ever interested in selling your art again, I need someone to draw the {{cover| }} for my...
+<<PlayAudio VoiceActing Shiori_Scene5_Line8>>
+...first {{book.| }}
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+First book? {{Really?| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene5_Line9>>
+Yeah… When I publish it... Not quite sure when that will be... But {{I’ll definitely call you| }} when I do.
+<<changeFace Character RF_Confused_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Wow... What made you want to {{publish?| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene5_Line10>>
+I thought a lot more about what I {{wanted| }} to do, and why I was here.
+<<PlayAudio VoiceActing Shiori_Scene5_Line11>>
+And I figured if you wanted to go back to doing what you loved, I’d give it a {{shot| }} as well.
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+I’m really glad I could be an {{inspiration.| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene5_Line12>>
+{{Yeah…| }}
+<<PlayAudio VoiceActing Shiori_Scene5_Line13>>
+I feel like that could’ve been the plot point of a {{manga.| }}
+<<PlayAudio VoiceActing Shiori_Scene5_Line14>>
+But... would you like to {{read| }} what I have so far?
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Of {{course!| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Confused_Open>>
+<<PlayAudio VoiceActing Shiori_Scene5_Line15>>
+{{It’s not much| }} if I’m being honest, just a few short stories…. Some poems… Hopefully they aren't too long or anything. I do tend to ramble on a bit...
+<<changeFace Character RF_Confused_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+There’s nothing wrong with {{rambling,| }} Shiori.
+Short and sweet language may get to the point, but it does have a different charm from texts that can reveal something {{deeper| }} about the writer.
+Even “flowery descriptions” can have meaning, which I... personally find {{valuable.| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene5_Line16>>
+Well... from what I know about you, you’ll really {{like| }} it then.
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+Thank you for letting me take a look at these. I swear I’ll finish them this {{time.| }}
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene5_Line17>>
+Oh...! Haha, yes, of {{course.| }}
+<<changeFace Character RF_Smile_Closed>>
+<<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
+I’ll see you {{later| }} then.
+<<changeSpeaker RF>>
+<<changeFace Character RF_Smile_Open>>
+<<PlayAudio VoiceActing Shiori_Scene5_Line18>>
+Take {{care!| }}
+<<PlayAudio VoiceActing Shiori_Scene5_Line19>>
+And... {{thank you.| }}
+<<changeFace Character RF_Smile_Closed>>
+
+<<set $visited_RF to 5>>
 <<set $unfinished_RF to false>>
 ===
 
