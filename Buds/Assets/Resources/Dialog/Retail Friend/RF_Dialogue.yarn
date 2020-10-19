@@ -9,7 +9,7 @@ position: 222, 222
 
 <<set $unfinished_RF to true>>
 
-<<if $visited_RF >= 4>>
+<<if $visited_RF == 4>>
 
 <<if $cyclamen_growth_stage >= 4>>
 [[RF_Dialogue.ReviewCopy]]
@@ -17,7 +17,7 @@ position: 222, 222
 [[RF_Dialogue.Busy]]
 <<endif>>
 
-<<else if $visited_RF >= 3>>
+<<else if $visited_RF == 3>>
 
 <<if $cyclamen_growth_stage >= 3>>
 [[RF_Dialogue.Revelations]]
@@ -25,7 +25,7 @@ position: 222, 222
 [[RF_Dialogue.Busy]]
 <<endif>>
 
-<<else if $visited_RF >= 2>>
+<<else if $visited_RF == 2>>
 
 <<if $cyclamen_growth_stage >= 2>>
 [[RF_Dialogue.LastName]]

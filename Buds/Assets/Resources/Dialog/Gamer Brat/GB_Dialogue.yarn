@@ -13,7 +13,7 @@ position: 111, 111
 
 <<set $unfinished_GB to true>>
 
-<<if $visited_GB >= 4>>
+<<if $visited_GB == 4>>
 
 <<if $narcissus_growth_stage >= 4>>
 [[GB_Dialogue.Friendship]]
@@ -21,7 +21,7 @@ position: 111, 111
 [[GB_Dialogue.Busy]]
 <<endif>>
 
-<<else if $visited_GB >= 3>>
+<<else if $visited_GB == 3>>
 
 <<if $narcissus_growth_stage >= 3>>
 [[GB_Dialogue.KappaKrossing]]
@@ -29,7 +29,7 @@ position: 111, 111
 [[GB_Dialogue.Busy]]
 <<endif>>
 
-<<else if $visited_GB >= 2>>
+<<else if $visited_GB == 2>>
 
 <<if $narcissus_growth_stage >= 2>>
 [[GB_Dialogue.NoPower]]

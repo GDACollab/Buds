@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -46,7 +47,7 @@ public class Plant: MonoBehaviour, IDraggable
     public float daysToNextWatering;
 
     [Tooltip("How much the plant has grown")]
-    public LifeStage growthStage = LifeStage.Seedling;
+    public int growthStage;
 
     [Tooltip("The number of days the plant needs to grow to the next stage")]
     public float daysToNextStage;
@@ -155,13 +156,13 @@ public class Plant: MonoBehaviour, IDraggable
         string character = name == "Cyclamen" ? "$unfinished_RF" : "$unfinished_GB";
 
         if (hasEnoughSun && hasEnoughWater &&
-                growthStage != LifeStage.Blossom &&
+                growthStage != 5 &&
                 !((Yarn.Value)PersistentData.instance.ReadData(character)).AsBool) {
 
             daysToNextStage--;
+            growthStage++;
 
             if (daysToNextStage <= 0) {
-                growthStage++;
                 daysToNextStage = daysBetweenStages;
             }
         }
@@ -215,8 +216,8 @@ public class Plant: MonoBehaviour, IDraggable
         soil.color = new Color(soilColor, soilColor, soilColor);
         waterLevelBar.value = soilDarkness;
 
-        plant.sprite = growthSprites[(int)growthStage];
-        mask.sprite = growthSprites[(int)growthStage];
+        plant.sprite = growthSprites[(int)Math.Floor(growthStage/daysBetweenStages)];
+        mask.sprite = growthSprites[(int)Math.Floor(growthStage / daysBetweenStages)];
 
         if (hasEnoughSun) {
             sunlightIcon.sprite = sunlightIcons[1];
