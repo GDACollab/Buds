@@ -6,31 +6,30 @@ position: 0, 0
 <<changeSpeaker MC>>
 <<changeFace Background BlackScreen_OpeningScene>>
 ... Alright. Let’s call it a {{day.| }}
-<i> If I’m not mistaken, it’s been about a year since she {{passed away.| }} </i> 
-<i> My {{sister.| }} </i> 
+<i> If I’m not mistaken, it’s been about a year since my sister {{passed away.| }} </i>
 <i> In memory of her, I started {{taking care of flowers| }} around her grave because I knew how much she loved them. </i>
 
 <<changeFace Background Graveyard_OpeningScene fade>>
-<i> I was {{really close| }} with her while she was still around. </i>
-<i> She was like a best friend to me—the only person I was really {{close to| }}. </i> 
-<i> I didn’t realize how much I’ve missed her until I started {{visiting her grave| }} again. </i> 
-<i> Now that I think about it... I don’t even remember how I got here. {{It all feels like a dream.| }} </i> 
+<i> We were {{really close| }} while she was still around. </i>
+<i> She was like a best friend to me-- the only person I was really {{open| }} with. </i> 
+<i> I didn’t realize how much I missed her until I started {{visiting her grave| }} again. </i> 
+<i> Now that I think about it... I don’t even remember how I got here. {{It all feels like a dream.| }} </i>
 
 <<changeFace Background RamenShop_OpeningScene fade>>
-<i> In order to process my feelings better, I decided to move to {{Hitachinaka.| }} It’s a considerable distance away, but close enough for me to still visit her. </i> 
-<i> I found a small but comfy place right above a ramen shop. The family who runs it are also my landlords, and they’ve been {{really kind to me| }} since I’ve moved in. </i> 
-<i> It’s convenient especially since I can just drop by to eat. Since then, it’s been much easier to {{put something in my stomach.| }} </i> 
+<i> In order to process my feelings better, {{I decided to move to Hitachinaka.| }} It’s pretty far, but close enough for me to still visit her. </i> 
+<i> I found a small but comfy place right above a ramen shop. The family who runs it are also my landlords, and they’ve been {{rather kind to me| }} since I’ve moved in. </i> 
+<i> It’s convenient-- especially since they feed me. Since then, it’s been much easier to {{put something in my stomach.| }} </i> 
 
 <<changeFace Background Bookstore_OpeningScene fade>>
-<i> It has been a little hard picking back up on hobbies though, so moving to a new city really helped give me a {{fresh start.| }} </i> 
-<i> I remember how my sister used to love reading books, and conveniently enough there’s a {{bookstore| }} just nearby. </i> 
-<i> Maybe I’ll {{drop by someday| }} and give books a try again. </i> 
+<i> It has been a little hard picking back up on hobbies though, so moving to a new city helped give me a {{fresh start.| }} </i> 
+<i> I remember how my sister used to love reading books, and conveniently enough, there’s a {{bookstore| }} just nearby. </i> 
+<i> I hope to give {{books a try again| }}. </i> 
 
 <<changeFace Background BlackScreen_OpeningScene fade>>
 <i> {{…| }} <i> 
-<i> ... I know I’ve been too dependent on her. I know she {{wasn’t the best sister.| }} </i> 
+<i> ... I know I’ve been too dependent on her. I know she {{was rather controlling.| }} </i> 
 <i> But {{I still love her.| }} She was my sister and my friend. </i> 
-<i> At the very least, I’d like to honor that by trying to {{live out my own life…| }} </i> 
+<i> At the very least, I’d like to honor that by trying to {{live my life to the fullest…| }} </i> 
 <i> ... and perhaps even {{make friends here| }} in Hitachinaka. </i> 
-<i> Maybe then, {{I can move on.| }} </i> 
+<i> Maybe then, {{I can move on.| }} </i>
 ===

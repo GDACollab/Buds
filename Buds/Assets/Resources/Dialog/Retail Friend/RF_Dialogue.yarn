@@ -132,12 +132,15 @@ What do you {{like| }} about it?
 <<changeFace Character RF_Smile_Open>>
 <<PlayAudio VoiceActing Shiori_Scene1_Line10>>
 Well—um… It’s interesting because it does something that the newer releases seem kind of scared to do—
+<<wait 2.0>>
 —and the fact that they put this character in, Adelaide, might seem a bit cliche, but then you look at the release dates and this is actually—
+<<wait 1.4>>
 —the first time someone did something like that in an urban fantasy book. The writing is great. They don’t bore you with flowery words and—
+<<wait 3.3>>
 —long descriptions of meaningless things, they just get right to the point. I really hate how newer books do that, and—
+<<wait 2.0>>
 <<changeFace Character RF_Smile_Closed>>
 <<changeFace Character RF_Confused_Open>>
-<<PlayAudio VoiceActing Shiori_Scene1_Line14>>
 —you can never really go back after you’ve read something like this… {{It’s— Ah…| }}
 <<changeFace Character RF_Confused_Closed>>
 <<changeSpeaker MC>>

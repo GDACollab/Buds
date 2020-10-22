@@ -425,7 +425,7 @@ PrefabInstance:
         type: 3}
       propertyPath: yarnScripts.Array.data[0]
       value: 
-      objectReference: {fileID: 2480198943629176163, guid: 25485b93747b1594fa40a3e6e5648c2e,
+      objectReference: {fileID: 2480198943629176163, guid: a86b064621907e44d8e62f9a880c95cd,
         type: 3}
     - target: {fileID: 5935829475398715329, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}
@@ -1282,7 +1282,7 @@ PrefabInstance:
     - target: {fileID: 1217878100689427672, guid: a1fb5c519ebd9d74daa1d36858a15c2e,
         type: 3}
       propertyPath: voiceLines.Array.size
-      value: 120
+      value: 122
       objectReference: {fileID: 0}
     - target: {fileID: 1217878100689427672, guid: a1fb5c519ebd9d74daa1d36858a15c2e,
         type: 3}
@@ -1884,6 +1884,16 @@ PrefabInstance:
       propertyPath: voiceLines.Array.data[119]
       value: 
       objectReference: {fileID: 8300000, guid: 652616f6928248842b92229cf024618d, type: 3}
+    - target: {fileID: 1217878100689427672, guid: a1fb5c519ebd9d74daa1d36858a15c2e,
+        type: 3}
+      propertyPath: voiceLines.Array.data[120]
+      value: 
+      objectReference: {fileID: 8300000, guid: af3f90846c57b4e40a54d229c6652dae, type: 3}
+    - target: {fileID: 1217878100689427672, guid: a1fb5c519ebd9d74daa1d36858a15c2e,
+        type: 3}
+      propertyPath: voiceLines.Array.data[121]
+      value: 
+      objectReference: {fileID: 8300000, guid: 81b2fdef4c4ca5a4cb1b6b215301623a, type: 3}
     - target: {fileID: 6774547274668195698, guid: a1fb5c519ebd9d74daa1d36858a15c2e,
         type: 3}
       propertyPath: m_LocalPosition.x

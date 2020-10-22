@@ -3,10 +3,6 @@ tags: GamerBrat
 colorID: 0
 position: 111, 111
 ---
-<<if $visited_GB >= 2>>
-<<changeFace Background RamenShop_PowerOut>>
-<<endif>>
-
 <<if $unfinished_GB>>
 [[GB_Dialogue.Unfinished]]
 <<endif>>
@@ -14,42 +10,38 @@ position: 111, 111
 <<set $unfinished_GB to true>>
 
 <<if $visited_GB == 4>>
-
 <<if $narcissus_growth_stage >= 4>>
 [[GB_Dialogue.Friendship]]
 <<else>>
 [[GB_Dialogue.Busy]]
 <<endif>>
+<<endif>>
 
-<<else if $visited_GB == 3>>
-
+<<if $visited_GB == 3>>
 <<if $narcissus_growth_stage >= 3>>
 [[GB_Dialogue.KappaKrossing]]
 <<else>>
 [[GB_Dialogue.Busy]]
 <<endif>>
+<<endif>>
 
-<<else if $visited_GB == 2>>
-
+<<if $visited_GB == 2>>
 <<if $narcissus_growth_stage >= 2>>
 [[GB_Dialogue.NoPower]]
 <<else>>
 [[GB_Dialogue.Busy]]
 <<endif>>
+<<endif>>
 
-<<elseif $visited_GB == 1>>
-
+<<if $visited_GB == 1>>
 <<if $narcissus_growth_stage >= 1>>
 [[GB_Dialogue.ReadingTheBook]]
 <<else>>
 [[GB_Dialogue.Busy]]
 <<endif>>
-
-<<else>>
+<<endif>>
 
 [[GB_Dialogue.AwkwardBabysitting]]
-
-<<endif>>
 ===
 
 title: GB_Dialogue.AwkwardBabysitting
@@ -65,6 +57,7 @@ Hello, {{Senko.| }}
 {{Huh?| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Hi! Your parents told me to {{watch over you| }} for a bit.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -72,6 +65,7 @@ Hi! Your parents told me to {{watch over you| }} for a bit.
 Wait, what? It’s {{you?!| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 It’s me...? What do you mean it’s {{me| }}?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -79,6 +73,7 @@ It’s me...? What do you mean it’s {{me| }}?
 {{Nothing.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{Oh…?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -86,6 +81,7 @@ It’s me...? What do you mean it’s {{me| }}?
 No, no... I’m not surprised by {{anything.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{Uh...| }}
 So... what do you have {{there?| }}
 <<changeSpeaker GB>>
@@ -94,6 +90,7 @@ So... what do you have {{there?| }}
 A {{game.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 What kind of {{game?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -101,6 +98,7 @@ What kind of {{game?| }}
 {{DAMN IT!!!| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{????| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -108,6 +106,7 @@ What kind of {{game?| }}
 PIECE OF CRAP THINKS THEY CAN DO THAT TO ME? {{I’LL SHOW YOU!| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Hey... I think you’re {{scaring| }} some of the other people in the restaurant.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -115,19 +114,23 @@ Hey... I think you’re {{scaring| }} some of the other people in the restaurant
 {{SHUT UP!| }} Let me focus.
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 … {{Okay...| }}
 <<changeSpeaker GB>>
 {{…| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{Um…| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Closed>>
 {{…| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Hey, {{Senko?| }}
 <<changeSpeaker GB>>
 {{…| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Everything {{okay?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -135,6 +138,7 @@ Everything {{okay?| }}
 Ugh... {{I got killed.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{Oh—| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -142,6 +146,7 @@ Ugh... {{I got killed.| }}
 I’m {{done| }} with this game.
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 That’s good—er, I mean... I’m sorry that {{happened| }} to you.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -149,6 +154,7 @@ That’s good—er, I mean... I’m sorry that {{happened| }} to you.
 What are you {{sorry| }} for??
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 They {{killed| }} you, right? Or—something…
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -156,6 +162,7 @@ They {{killed| }} you, right? Or—something…
 You didn’t {{cause| }} it.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 I know, but… ah—{{never mind.| }} 
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -163,12 +170,15 @@ I know, but… ah—{{never mind.| }}
 Never mind {{what?| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 I just {{felt bad| }} for you… since...
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
+<<PlayAudio VoiceActing Senko_Scene1_Line14>>
 I {{don’t need you| }} to feel bad for me.
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 ... {{never mind,| }} then.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -176,6 +186,7 @@ I {{don’t need you| }} to feel bad for me.
 You’re so {{weird.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{…| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -183,6 +194,7 @@ You’re so {{weird.| }}
 ... yeah. I’m {{done| }} with this game.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{Oh?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -190,6 +202,7 @@ You’re so {{weird.| }}
 I {{need a break| }} or something.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 <i> That was my first strange encounter with the Mizushimas’ {{daughter, Senko.| }} </i>
 <i> I’m not exactly sure what to {{make of her…| }} </i>
 <i> She’s still young, so I {{shouldn’t expect much| }}. </i>
@@ -212,6 +225,7 @@ So… what are you {{playing| }} today?
 A {{game,| }} obviously.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Yes, but {{what game| }} is it?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -219,6 +233,7 @@ Yes, but {{what game| }} is it?
 A {{fun| }} game.
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
  Why do I even {{bother...| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -226,6 +241,7 @@ A {{fun| }} game.
 What do you {{want?| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 I was curious about {{what game| }} you were playing.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -233,6 +249,7 @@ I was curious about {{what game| }} you were playing.
 Ugh, fine. It’s called {{Super Fabio 64.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Oh. What’s... it {{about?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -244,6 +261,7 @@ He uses it to {{fight,| }} kinda like Gunaneta.
 He also {{keeps talking| }} about butter for some reason.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Ah. Are you… trying to be {{sarcastic?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Jeer_Open>>
@@ -254,11 +272,13 @@ Do you {{think| }} so?
 <<PlayAudio VoiceActing Senko_Scene2_Line10>>
 Gee whiz! How can you {{tell?| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 <<changeFace Character GB_Jeer_Closed>>
 Fine. If you don’t want to tell me, {{that’s alright.| }}
 I can just sit here and {{read| }} my book…
 {{… out loud.| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 <<changeFace Character GB_Neutral_Closed>>
 The Princess Bride, by S. Morgenstern. {{Chapter One.| }}
 {{Buttercup| }} was raised on a small farm in the country of Florin.
@@ -271,6 +291,7 @@ Nothing gave Buttercup as much pleasure as {{ordering Westley around...| }}
 Okay! Okay, just please {{shut up.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 There we go. {{Not a fan| }} of the classics?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -278,6 +299,7 @@ There we go. {{Not a fan| }} of the classics?
 Books are {{boring.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 How can you {{say that?| }}
 Books are one of the {{most captivating| }} things out there.
 When you read a good book, you can {{escape| }} into its world and ignore our own.
@@ -288,6 +310,7 @@ Just like what you do with {{video games.| }}
 So what? I don’t care. Reading is {{boring| }} and so are books!
 <<changeFace Character GB_Jeer_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{Hmm…| }}
 <<changeFace Character GB_Neutral_Closed>>
 What about {{audiobooks?| }}
@@ -301,6 +324,7 @@ Audio {{what| }}?
 {{I don’t have| }} any of those.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Alright, how about {{this.| }}
 I won't bother you for the rest of the day, {{but—| }}
 —you {{listen| }} to one audiobook of my choice while you play a game.
@@ -314,6 +338,7 @@ I won't bother you for the rest of the day, {{but—| }}
 {{Fine,| }} I guess.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Great! Here, {{plug your headphones| }} into your phone.
 If you don’t mind, I downloaded an audiobook about {{gods and mythical beings| }} for you.
 In the book, the gods are {{fighting| }} each other and their demigod children.
@@ -324,6 +349,7 @@ In fact, their kids are {{a lot like you| }} in some ways.
 Whatever, just play the damn {{book.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 <i>She started {{listening| }} to the book.</i>
 <i>Hours passed in a slightly {{comfortable silence.| }}</i>
 <i>Eventually {{her parents| }} took her off my hands.</i>
@@ -350,6 +376,7 @@ position: 111, 117
 {{AHHHHH!!! Stupid Racoon!| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 You have to {{stop| }} doing that.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -357,6 +384,7 @@ You have to {{stop| }} doing that.
 {{Doing what?| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Yelling in the {{restaurant.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -364,6 +392,7 @@ Yelling in the {{restaurant.| }}
 It’s not my fault. Ms. Kappa keeps making me get these {{loans!| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{Loans?| }} Aren’t you too young for those?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -371,6 +400,7 @@ It’s not my fault. Ms. Kappa keeps making me get these {{loans!| }}
 No, it’s in the game, {{stupid.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Ha, I figured. That was {{sarcasm, Senko.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -378,6 +408,7 @@ Ha, I figured. That was {{sarcasm, Senko.| }}
 I have to keep getting these in order to advance the {{game.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 I feel like there’s an {{allegory| }} for life in there somewhere.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -385,6 +416,7 @@ I feel like there’s an {{allegory| }} for life in there somewhere.
 A what? {{An allergy?| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Don’t {{worry| }} about it.
 Just go catch some butterflies and {{sell| }} them.
 <<changeSpeaker GB>>
@@ -398,6 +430,7 @@ I would, but the stock prices for the butterflies are so bad right now! I can’
 Wait… are you talking about real life or a {{game?| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 The {{game| }} of course. 
 The only place you’ll find a butterfly around here is at the {{cemetery.| }}
 <<changeSpeaker GB>>
@@ -410,6 +443,7 @@ Wait— you know this {{game?| }}
 ...YOU {{PLAY| }} GAMES!?!?!?!?
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Huh? I suppose I used to play games when I was around your {{age.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -417,6 +451,7 @@ Huh? I suppose I used to play games when I was around your {{age.| }}
 How did you know I was playing {{Kappa Crossing?| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 I used to play {{Kappa Crossing!| }}
 I would stay up until {{midnight| }} getting cash to pay off my loan.
 When I heard Ms. Kappa and loans, I figured you were playing {{Kappa Crossing.| }}
@@ -426,6 +461,7 @@ When I heard Ms. Kappa and loans, I figured you were playing {{Kappa Crossing.| 
 {{H O L Y  S H I T!!!| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{What?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Jeer_Open>>
@@ -433,6 +469,7 @@ When I heard Ms. Kappa and loans, I figured you were playing {{Kappa Crossing.| 
 YOU’RE A {{GAMER!| }}
 <<changeFace Character GB_Jeer_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{...what?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -441,6 +478,7 @@ YEAH! Well, {{you used to be| }} at least.
 Now you’re just a {{wrinkly boring old person that likes books.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Just {{because…| }}
 {{I…| }}
 Now hold on there for a {{sec…| }}
@@ -454,6 +492,7 @@ You can’t deny it. You {{like| }} this stuff too.
 Can’t yell at me for {{gaming| }} anymore.
 <<changeFace Character GB_Jeer_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 I still very much {{can.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -461,6 +500,7 @@ I still very much {{can.| }}
 Why’d you {{stop?| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Stop {{what?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -468,6 +508,7 @@ Stop {{what?| }}
 Being {{cool.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 You mean {{playing games?| }}
 Same reason why you {{should.| }}
 It doesn’t really help you {{later on.| }}
@@ -477,6 +518,7 @@ It doesn’t really help you {{later on.| }}
 That’s {{dumb.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 You’re not going to get a job {{playing video games.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -490,6 +532,7 @@ Why do you {{read books?| }}
 You can’t make money off of {{reading.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Look, I’m not trying to make you upset, I’m just {{looking out| }} for you.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -503,6 +546,7 @@ Maybe I’ll go work forever, staring at the computer screen and doing {{taxes a
 And then when I’m done with work, I’ll just go home and {{read about the economy| }} or something.
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{Senko…| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -512,6 +556,7 @@ You {{boomers| }} never get it!
 I’m done with {{you!| }}
 <<changeFace Character blank>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 <i> {{She ran off,| }} upstairs. </i>
 <i> Her parents told me that she was {{just throwing one of her tantrums.| }} </i>
 <i> {{I hope that's the case.| }} </i>
@@ -534,10 +579,12 @@ position: 111, 175
 <<changeFace Character GB_Neutral_Closed>>
 …
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 ……
 <<changeSpeaker GB>>
 ………
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 …………
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -545,6 +592,7 @@ position: 111, 175
 Would you {{stop| }} reading?
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 What...? {{Why?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -552,6 +600,7 @@ What...? {{Why?| }}
 {{Say something.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 I thought you didn’t want to {{talk| }} to me.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -559,6 +608,7 @@ I thought you didn’t want to {{talk| }} to me.
 Yeah, but there’s {{nothing to do| }} here.
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{Well…| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -566,6 +616,7 @@ Yeah, but there’s {{nothing to do| }} here.
 No. Don’t {{say it.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 You could {{read| }} a book.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -575,6 +626,7 @@ You could {{read| }} a book.
 Reading is so boring. I don’t get why people would spend so long {{staring at words.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Well, there’s still {{audiobooks.| }} 
 And we have to wait for your parents to come back, so do you have anything {{to do?| }}
 <<changeSpeaker GB>>
@@ -583,6 +635,7 @@ And we have to wait for your parents to come back, so do you have anything {{to 
 {{No…| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Don’t you have that {{game| }} thingy or something?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -590,6 +643,7 @@ Don’t you have that {{game| }} thingy or something?
 I forgot to {{charge| }} it.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Oh, that’s pretty {{unfortunate.| }}
 Well I guess if Senko-chan wants to talk, then we will {{talk.| }}
 <<changeSpeaker GB>>
@@ -598,14 +652,17 @@ Well I guess if Senko-chan wants to talk, then we will {{talk.| }}
 Ewww. Don’t {{call| }} me that.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{...| }}
 <<changeSpeaker GB>>
 {{...| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Well, what do you want to {{talk| }} about?
 <<changeSpeaker GB>>
 {{...| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 You don’t know, {{do you?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -613,6 +670,7 @@ You don’t know, {{do you?| }}
 No! Geez, just make something up. {{Tell me about your life| }} or whatever.
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 What? What do you want to know {{about my life?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Jeer_Open>>
@@ -620,6 +678,7 @@ What? What do you want to know {{about my life?| }}
 Aren’t you old? Don’t you have, like, {{folk stories| }} to tell or something??
 <<changeFace Character GB_Jeer_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 What? I’m not {{that| }} old.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -629,6 +688,7 @@ Really? You {{look old.| }}
 Probably why you don’t like {{video games.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 No… It’s something {{different.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -636,6 +696,7 @@ No… It’s something {{different.| }}
 Then {{why?| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 I was just told they were no {{good.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -643,6 +704,7 @@ I was just told they were no {{good.| }}
 {{Why?| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 I… {{don’t know.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Jeer_Open>>
@@ -652,6 +714,7 @@ You don’t even {{know?| }}
 That’s so dumb. I bet you just {{do whatever people tell you to do.| }}
 <<changeFace Character GB_Jeer_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{I…| }} 
 {{Maybe…| }} 
 {{...| }}
@@ -665,6 +728,7 @@ I figured it’d be easier to listen to them, than trying to figure out everythi
 My mom told me never to never follow people {{blindly.| }}
 <<changeFace Character GB_Jeer_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 That’s good advice, but you seem to listen to your mom {{blindly.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -672,6 +736,7 @@ That’s good advice, but you seem to listen to your mom {{blindly.| }}
 Because she’s my {{mom.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Well, my sister is kinda like a {{mom.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -679,6 +744,7 @@ Well, my sister is kinda like a {{mom.| }}
 {{Eww…| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Not like {{that.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -688,6 +754,7 @@ But the things my mom says {{makes sense.| }}
 Your thing {{doesn’t.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 How would you {{know?| }}
 Do you know {{everything?| }}
 <<changeSpeaker GB>>
@@ -696,6 +763,7 @@ Do you know {{everything?| }}
 Yep. I’m never {{wrong.| }}
 <<changeFace Character GB_Jeer_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 I severely {{doubt| }} that.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Jeer_Open>>
@@ -707,6 +775,7 @@ Just because you’re {{older| }} than me?
 Times change, {{boomer.| }} 
 <<changeFace Character GB_Jeer_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 I’m not a {{boomer.| }}
 And I guess that’s {{true.| }}
 There’s no {{perfect| }} way to do anything.
@@ -717,6 +786,7 @@ If there was, then there would just be a book about how to get through {{life.| 
 Why does it have to be a {{book?| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Or a website or whatever you {{zoomers| }} use these days
 Like in this {{situation.| }}
  We’re stuck here with no power, you can’t play your games, so now we’re talking about our {{lives.| }}
@@ -728,6 +798,7 @@ Humph. {{Whatever.| }}
 Hey, give me your {{phone.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 What? Why? It doesn’t have any {{games.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -737,6 +808,7 @@ I didn’t want the {{games.| }}
 It has that audio-book {{thingy| }} on it.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Wait, you actually want to {{listen| }} to the book?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -744,6 +816,7 @@ Wait, you actually want to {{listen| }} to the book?
 Shut up, there’s nothing to do and I’m {{bored.| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 
 <<set $visited_GB to 4>>
 <<set $unfinished_GB to false>>
@@ -760,6 +833,7 @@ position: 111, 185
 {{Ughhhhhhhhhh…| }}
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 What’s wrong {{now?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -767,6 +841,7 @@ What’s wrong {{now?| }}
 This butthole who promised he’d get online today bailed on me {{again.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Your {{friend?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -774,6 +849,7 @@ Your {{friend?| }}
 NO. Not {{anymore.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Wait, why {{not?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -781,6 +857,7 @@ Wait, why {{not?| }}
 He got a damn girlfriend. Now the idiot doesn’t have time to play anymore. It’s {{annoying.| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 So you’re just going to stop being {{friends| }} with him?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -788,6 +865,7 @@ So you’re just going to stop being {{friends| }} with him?
 Yeah. If he doesn’t have time for me, I don’t have {{time| }} for him.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 I’m sure he’ll want to play again in the {{future.| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -798,6 +876,7 @@ And what, am I supposed to just {{wait?| }}
 We keep making plans and he keeps flaking. Like… {{seriously??| }}
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Well, how important are your {{plans?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
@@ -805,6 +884,7 @@ Well, how important are your {{plans?| }}
 Very important. More important than that {{girlfriend| }} of his.
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Have you {{told| }} him that?
 I bet he actually {{cares.| }}
 <<changeSpeaker GB>>
@@ -813,6 +893,7 @@ I bet he actually {{cares.| }}
 Doubt it. Not if he keeps brushing me {{aside| }} like that.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Relationships can really… occupy a person’s mind, especially at your age so… it’s {{natural.| }}
 I don’t think he stopped caring or forgot, stuff just {{comes up.| }}
 <<changeSpeaker GB>>
@@ -821,6 +902,7 @@ I don’t think he stopped caring or forgot, stuff just {{comes up.| }}
 As if. He should just tell me he doesn’t have {{time| }}, then.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Isn’t it better that he keeps {{trying?| }}
 I think it’s because he still wants to {{hang| }} out with you.
 <<changeSpeaker GB>>
@@ -831,6 +913,7 @@ Or he’s just a coward that’s too scared to say he doesn’t {{care| }} about
 Besides, why are you {{defending| }} him?
 <<changeFace Character GB_Angry_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 It’s because I sort of understand him. I used to be really {{busy| }} all the time.
 Sometimes you just forget, or something {{important| }} comes up.
 It’s not like we don’t want to, {{life| }} just makes it hard.
@@ -842,6 +925,7 @@ Why can’t he {{tell| }} me that?
 Instead I get you, this old person who doesn’t even know the first thing about {{games.| }}
 <<changeFace Character GB_Jeer_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 You did call me a {{gamer| }} once.
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -853,6 +937,7 @@ You’re not a {{gamer.| }}
 But since you’re here… and you {{know| }} the game… 
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Wait, {{what?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -860,6 +945,7 @@ Wait, {{what?| }}
 Help me {{fish| }} for the great bass.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 You {{serious?| }}
 <<changeSpeaker GB>>
 <<changeFace Character GB_Neutral_Open>>
@@ -871,6 +957,7 @@ I’ll stay {{friends| }} with him if you actually get it.
 Plus, I listened to your whole audiobook thingy. I think you {{owe| }} me.
 <<changeFace Character GB_Neutral_Closed>>
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Oh, already? How did you {{like| }} it?
 <<changeSpeaker GB>>
 <<changeFace Character GB_Angry_Open>>
