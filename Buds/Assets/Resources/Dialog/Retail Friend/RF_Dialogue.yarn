@@ -568,6 +568,7 @@ Alright, I guess if you recommend it, {{then I'll try it.| }}
 <<PlayAudio VoiceActing Shiori_Scene3_Line30>>
 Great! {{Let me ring you up.| }}
 <<changeFace Character RF_Smile_Closed>>
+<<PlayAudio VoiceActing Blank_File>>
 
 <<set $visited_RF to 3>>
 <<set $unfinished_RF to false>>

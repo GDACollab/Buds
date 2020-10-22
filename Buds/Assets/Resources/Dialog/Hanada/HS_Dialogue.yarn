@@ -374,6 +374,7 @@ Hey. {{How are you?| }}
 <<PlayAudio VoiceActing Hanada_Scene4_Line2>>
 {{Has school been good?| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Yes, {{it’s been--| }}
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line3>>
@@ -386,21 +387,25 @@ That’s good, {{that’s good.| }}
 <<PlayAudio VoiceActing Hanada_Scene4_Line5>>
 {{What classes| }} are you taking?
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Just... some {{general classes…| }}
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line6>>
 {{Which ones?| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Uh... Microeconomics, {{umm..| }} Statistics, Calculus...
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line7>>
 {{What’s your last one?| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Uhhh, {{Introduction to Drawing?| }}
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line8>>
 Is that a {{Gen Ed class?| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Yeah! Yeah… {{just a Gen Ed.| }} You don’t have to worry about it.
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line9>>
@@ -408,11 +413,13 @@ Well, it’s good that you’re taking those so soon, but {{I’d prefer| }} if 
 <<PlayAudio VoiceActing Hanada_Scene4_Line10>>
 {{Gives you more room later.| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 That’s right, {{I get that.| }}
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line11>>
 Good. Why don’t you {{show me around campus?| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Yes, {{of course!| }}
 <i> I showed her around campus, {{but eventually| }} we made it back to my dorm. </i>
 <<changeFace Background OS_Dream4_1 fade>>
@@ -421,87 +428,104 @@ Yes, {{of course!| }}
 <<PlayAudio VoiceActing Hanada_Scene4_Line12>>
 {{Ahh…| }} so this is your room.
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 I had a friend help me {{pick out the posters| }} and all… 
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line13>>
 Oh. {{How much| }} did these posters cost?
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{Huh?| }}
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line14>>
 {{How much did it cost?| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{N...not much.| }}
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line15>>
 Do you have {{a number?| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 It was {{around 3000 yen.| }}
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line16>>
 {{3000 yen?!| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 That was {{for all of them.| }}
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line17>>
 What is all this anyway? I didn’t know you were into {{such childish things.| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 They’re {{just decoration--| }}
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line18>>
 Yes, but no one should be spending so much money on decorations, {{especially this.| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{I… I| }} don’t think I can return these.
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line19>>
 Didn’t keep a receipt either. You know, {{I shouldn’t have to keep watching over you| }} like this.
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{I’m sorry.| }}
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line20>>
 Well, {{if that’s the only thing… | }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 <i> Then she saw {{the light novels| }} </i>
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line21>>
 {{What is that you’re reading?| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 Aah! They’re uh, {{they’re just some books.| }}
 {{I didn’t buy those!| }}
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line22>>
 {{Why do you have them?| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{I-I um…| }} thought they looked interesting...
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line23>>
 {{How much time did you spend| }} reading these things?
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{Not a lot of time.| }}
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line24>>
 You have {{whole volumes| }} here.
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{Some are my friend’s.| }}
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line25>>
 Sure. {{What are you doing with these| }} in the first place?
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{They just look cool.| }}
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line26>>
 You know what happens to people that read these things? They turn you into a NEET that does nothing but stay home and drain mom and dad’s money. {{Do you want to do that to them?| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{No… | }}
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line27>>
 Good. {{Stay away from it.| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 <i> She put a copy of {{Daughter of the Sword| }} in my hand. </i>
 <<changeSpeaker RF>>
 <<PlayAudio VoiceActing Hanada_Scene4_Line28>>
 Here. If you really want to go into the fantasy world, read these. It’s much better than {{all this trashy stuff.| }}
 <<changeSpeaker MC>>
+<<PlayAudio VoiceActing Blank_File>>
 {{...alright.| }}
 <<changeFace Background BlankWhiteBG fade>>
 <i> {{I guess| }} that’s how it happened. She kept coming back after this day. </i>

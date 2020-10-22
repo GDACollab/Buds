@@ -224,11 +224,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2126908177}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -450, y: -4251}
+  m_AnchoredPosition: {x: -450, y: -4811.3}
   m_SizeDelta: {x: 350.04922, y: 423.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &195355113
@@ -299,11 +299,11 @@ RectTransform:
   m_Children:
   - {fileID: 1240728912}
   m_Father: {fileID: 2126908177}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -4250}
+  m_AnchoredPosition: {x: 0, y: -4810.3}
   m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &431296655
@@ -438,12 +438,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2126908177}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -262.9, y: -983}
-  m_SizeDelta: {x: 441.9, y: 3086.6}
+  m_AnchoredPosition: {x: -262.9, y: 1496.6997}
+  m_SizeDelta: {x: 441.9, y: 3177.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &603667720
 MonoBehaviour:
@@ -477,7 +477,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
   m_Text: 'Artists
-
 
 
 
@@ -538,7 +537,10 @@ MonoBehaviour:
 
 
 
-    Creative Lead'
+    Creative Lead
+
+
+    GDA Officers'
 --- !u!222 &603667721
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -559,7 +561,7 @@ GameObject:
   - component: {fileID: 695280610}
   - component: {fileID: 695280609}
   m_Layer: 5
-  m_Name: Special Thanks (1)
+  m_Name: Summer Development
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -577,11 +579,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2126908177}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.6, y: -2599}
+  m_AnchoredPosition: {x: 8.6, y: -640.2001}
   m_SizeDelta: {x: 1529, y: 79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &695280609
@@ -615,7 +617,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Special Thanks To \r\n"
+  m_Text: 'Summer Development
+
+'
 --- !u!222 &695280610
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -727,11 +731,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2126908177}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: -4251}
+  m_AnchoredPosition: {x: 450, y: -4811.3}
   m_SizeDelta: {x: 350.04922, y: 423.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &770479959
@@ -770,7 +774,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770479957}
   m_CullTransparentMesh: 0
---- !u!1 &798843186
+--- !u!1 &778557632
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -778,42 +782,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 798843187}
-  - component: {fileID: 798843189}
-  - component: {fileID: 798843188}
+  - component: {fileID: 778557633}
+  - component: {fileID: 778557635}
+  - component: {fileID: 778557634}
   m_Layer: 5
-  m_Name: Special Thanks
+  m_Name: Academic Development
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &798843187
+--- !u!224 &778557633
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798843186}
+  m_GameObject: {fileID: 778557632}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2126908177}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.3, y: -2935.1}
-  m_SizeDelta: {x: 1515, y: 601.6}
+  m_AnchoredPosition: {x: 8.6, y: 3136.7998}
+  m_SizeDelta: {x: 1529, y: 79}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &798843188
+--- !u!114 &778557634
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798843186}
+  m_GameObject: {fileID: 778557632}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -826,9 +830,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b5b78900742e64e3c966562312dadec9, type: 3}
+    m_Font: {fileID: 12800000, guid: dd57835903b464ad4b5746dceb6a3d35, type: 3}
     m_FontSize: 48
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 48
@@ -837,39 +841,15 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.9
-  m_Text: 'Charles Miller
-
-    Herman Wu
-
-    Holly Cheng
-
-    Thomas Applewhite
-
-    Justin
-    Hammer
-
-    Madeleine Glenn
-
-    Molly Thompson
-
-    Seiji Emery
-
-    Gigi Bachtel
-
-    Jeven
-    Zarate-McCoy
-
-    Valentino Abate
-
-'
---- !u!222 &798843189
+    m_LineSpacing: 1
+  m_Text: "GDA Academic Development \r\n"
+--- !u!222 &778557635
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798843186}
+  m_GameObject: {fileID: 778557632}
   m_CullTransparentMesh: 0
 --- !u!1001 &874112338
 PrefabInstance:
@@ -1228,7 +1208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.9, y: 783.6999}
+  m_AnchoredPosition: {x: -10.9, y: 3717.8003}
   m_SizeDelta: {x: 1500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1178536758
@@ -1378,12 +1358,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2126908177}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -61, y: -987}
-  m_SizeDelta: {x: 67.1, y: 3086.6}
+  m_AnchoredPosition: {x: -61, y: 1350.8}
+  m_SizeDelta: {x: 67.1, y: 3461.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1537369815
 MonoBehaviour:
@@ -1416,7 +1396,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.9
-  m_Text: "\u273F\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u273F\n\n\n\u273F\n\n\u273F\n\n\n\n\n\n\n\n\n\n\n\n\n\u273F\n\n\n\n\n\n\n\n\n\u273F\n\n\n\u273F\n\n\u273F\n\n\n\n\u273F\n\n\n\u273F\n\n\u273F"
+  m_Text: "\u273F\n\n\n\n\n\n\n\n\n\n\n\n\n\u273F\n\n\n\u273F\n\n\u273F\n\n\n\n\n\n\n\n\n\n\n\n\n\u273F\n\n\n\n\n\n\n\n\n\u273F\n\n\n\u273F\n\n\u273F\n\n\n\n\u273F\n\n\n\u273F\n\n\u273F\n\n\n\n\n\n\u273F"
 --- !u!222 &1537369816
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1560,6 +1540,337 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1668020104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1668020105}
+  - component: {fileID: 1668020107}
+  - component: {fileID: 1668020106}
+  m_Layer: 5
+  m_Name: Summer Makers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1668020105
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668020104}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2126908177}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 357.3, y: -2138.1997}
+  m_SizeDelta: {x: 731.5, y: 2893.2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1668020106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668020104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: b5b78900742e64e3c966562312dadec9, type: 3}
+    m_FontSize: 48
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 48
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 0.9
+  m_Text: 'Drew Parker
+
+    
+
+    Artis Anderson
+
+    
+
+    Seraphim
+
+    
+
+    Eric
+    Long
+
+
+    Annie Zhang
+
+    Ben Schwartz
+
+    Chiara Villanueva
+
+    Gillian
+    Yu
+
+    Ryoma Marta-Sugawara
+
+    
+
+    Eric Long
+
+    
+
+    Ben Schwartz
+
+    Eric
+    Long
+
+    Ethan Salzman
+
+    Gillian Yu
+
+    
+
+    Chiara Villanueva
+
+    Ryoma
+    Marta-Sugawara
+
+    
+
+    Eric Long
+
+    Ethan Salzman
+
+    Ryoma Marta-Sugawara
+
+    
+
+    Thomas
+    Noell
+
+    
+
+    Eric Long
+
+    Thomas Noell
+
+    Ray Nelson
+
+    
+
+    Eric
+    Long
+
+    
+
+
+    Ethan Salzman
+
+    Ryoma Marta-Sugawara
+
+    
+
+    Dallas
+    Truong
+
+    
+
+    Thomas Noell
+
+
+    
+
+    Chiara Villanueva
+
+    Ryoma
+    Marta-Sugawara
+
+    
+
+
+    Andrew Dunne
+
+    Collyn Noda
+
+    Niko Sanchez
+
+    Saenz
+
+    Game
+    Design and Art Collaboration'
+--- !u!222 &1668020107
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668020104}
+  m_CullTransparentMesh: 0
+--- !u!1 &1771710086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1771710087}
+  - component: {fileID: 1771710089}
+  - component: {fileID: 1771710088}
+  m_Layer: 5
+  m_Name: Summer Categories
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1771710087
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771710086}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2126908177}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -262.9, y: -2280.9}
+  m_SizeDelta: {x: 441.9, y: 3177.7}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1771710088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771710086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: dd57835903b464ad4b5746dceb6a3d35, type: 3}
+    m_FontSize: 48
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 48
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 0.9
+  m_Text: 'Shiori
+
+
+    Senko
+
+
+    Older Sister
+
+
+    Production Lead
+
+
+    Dream
+    Sequence Art
+
+
+
+
+
+
+    Main Story Revisions
+
+
+    Dialogue Writing
+
+
+
+
+
+    Dialogue
+    Editing
+
+
+
+    Dialogue Formatting
+
+
+
+
+    Scene Programming
+
+
+    Asset Implementation
+
+
+
+
+    Voice
+    Acting Implementation
+
+
+    Voice Acting Direction
+
+
+
+    Voice Line Mastering
+
+
+    Voice
+    Line Programming
+
+
+    Outreach and Marketing
+
+
+
+    Special Thanks'
+--- !u!222 &1771710089
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771710086}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1774947695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1659,11 +1970,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2126908177}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.6, y: -3452}
+  m_AnchoredPosition: {x: 10.6, y: -4010.2998}
   m_SizeDelta: {x: 1526.8, y: 82.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1884341050
@@ -1738,12 +2049,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2126908177}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 357.3, y: -988.30023}
-  m_SizeDelta: {x: 731.5, y: 3085}
+  m_AnchoredPosition: {x: 357.3, y: 1270}
+  m_SizeDelta: {x: 731.5, y: 3619.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1912857585
 MonoBehaviour:
@@ -1778,16 +2089,14 @@ MonoBehaviour:
     m_LineSpacing: 0.9
   m_Text: 'Joann Long
 
-    Ethan Salzman
-
     Zoey Laytart
 
     Angela Yim
 
-    Mai
-    Nguyen
+    Mai Nguyen
 
-    Emily Tse
+    Emily
+    Tse
 
     Holly Cheng
 
@@ -1795,102 +2104,127 @@ MonoBehaviour:
 
     Daniel Santora
 
-    Annie
-    Zhang
+    Annie Zhang
 
-    Leanne Coronilia
+    Leanne
+    Coronilia
 
     Victor Chung
 
     Kennedy Thomas
 
-    Stevie
-    Rodriguez
+    Stevie Rodriguez
 
-    Chiara Villanueva
+    Chiara
+    Villanueva
 
 
     Jess Wake
 
     Edward Garcia
 
-    Darcy
-    Phipps
+    Darcy Phipps
 
     Derek Jean
 
-    Jess Wake
+    Jess
+    Wake
 
     Eric Long
 
     Jameson Danning
 
-    Luis
-    Acevedo
+    Luis Acevedo
 
     Nikolas Sanchez
 
-    Emily Hoang
+    Emily
+    Hoang
 
 
     Chiara Villanueva
 
-    Juan
-    Alvarado
+    Juan Alvarado
 
     Riley Dix
 
     Ryan Marcus
 
-    Ben Schwartz
+    Ben
+    Schwartz
 
     Stevie Rodriguez
 
-    Ethan
-    Salzman
+    Ethan Salzman
 
     Christine Lee
 
-    Eric Long
+    Eric
+    Long
 
 
     Ben Roisen
 
     Ray Nelson
 
-    Santiago
-    Ponce
+    Santiago Ponce
 
     Collyn Noda
 
-    Thomas Applewhite
+    Thomas
+    Applewhite
 
     Valentino Abate
 
 
-    Autumn
-    Moulios
+    Autumn Moulios
 
     Enrico Widodo
 
-    Randy Kim
+    Randy
+    Kim
 
     Andrew Dunne
 
     Dallas Truong
 
 
-    Ryoma
-    Marta-Sugawara
+    Ryoma Marta-Sugawara
 
-    Andrew Dunne
+    Andrew
+    Dunne
 
     Dallas Truong
 
     Eric Long
 
 
-    Saenz'
+    Saenz
+
+
+    Charles Miller
+
+    Herman
+    Wu
+
+    Holly Cheng
+
+    Thomas Applewhite
+
+    Tino Abate
+
+    Justin Hammer
+
+    Madeleine
+    Glenn
+
+    Molly Thompson
+
+    Seiji Emery
+
+    Gigi Bachtel
+
+    Jeven Zarate-McCoy'
 --- !u!222 &1912857586
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1898,83 +2232,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912857583}
-  m_CullTransparentMesh: 0
---- !u!1 &2035557870
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2035557871}
-  - component: {fileID: 2035557873}
-  - component: {fileID: 2035557872}
-  m_Layer: 5
-  m_Name: President
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2035557871
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035557870}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2126908177}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.3, y: -2935.1}
-  m_SizeDelta: {x: 400, y: 601.6}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2035557872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035557870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.7490196, g: 0.34509805, b: 0.45098042, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: b5b78900742e64e3c966562312dadec9, type: 3}
-    m_FontSize: 48
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 48
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 0.9
-  m_Text: "\n\n\n\n\n\n\n\n\n\n\u273F"
---- !u!222 &2035557873
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035557870}
   m_CullTransparentMesh: 0
 --- !u!1 &2126908176
 GameObject:
@@ -2001,16 +2258,17 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126908176}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3845, z: 0}
+  m_LocalPosition: {x: 0, y: -3798, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1178536757}
+  - {fileID: 778557633}
   - {fileID: 603667719}
   - {fileID: 1537369814}
   - {fileID: 1912857584}
   - {fileID: 695280608}
-  - {fileID: 798843187}
-  - {fileID: 2035557871}
+  - {fileID: 1771710087}
+  - {fileID: 1668020105}
   - {fileID: 1884341049}
   - {fileID: 195355112}
   - {fileID: 770479958}
