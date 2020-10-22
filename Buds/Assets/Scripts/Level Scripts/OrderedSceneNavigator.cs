@@ -123,7 +123,7 @@ public class OrderedSceneNavigator : MonoBehaviour
             Yarn.Value visitedGB = (Yarn.Value)PersistentData.instance.ReadData("$visited_GB");
 
             // Set next destination to conclusion scene if completed all dialog and plants fully upgraded
-            if (visitedRF.AsNumber > 2 && visitedGB.AsNumber > 2) {
+            if (visitedRF.AsNumber > 4 && visitedGB.AsNumber > 4) {
                 confirmButton.transform.GetChild(0).GetComponent<Text>().text = "Reflect";
                 manualNextSceneIndex = conclusionIndex;
                 useManualNextScene = true;
