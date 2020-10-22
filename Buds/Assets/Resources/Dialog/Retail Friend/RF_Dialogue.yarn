@@ -10,42 +10,41 @@ position: 222, 222
 <<set $unfinished_RF to true>>
 
 <<if $visited_RF == 4>>
-
 <<if $cyclamen_growth_stage >= 4>>
 [[RF_Dialogue.ReviewCopy]]
 <<else>>
 [[RF_Dialogue.Busy]]
 <<endif>>
+<<endif>>
 
-<<else if $visited_RF == 3>>
-
+<<if $visited_RF == 3>>
 <<if $cyclamen_growth_stage >= 3>>
 [[RF_Dialogue.Revelations]]
 <<else>>
 [[RF_Dialogue.Busy]]
 <<endif>>
+<<endif>>
 
-<<else if $visited_RF == 2>>
-
+<<if $visited_RF == 2>>
 <<if $cyclamen_growth_stage >= 2>>
 [[RF_Dialogue.LastName]]
 <<else>>
 [[RF_Dialogue.Busy]]
 <<endif>>
+<<endif>>
 
-<<elseif $visited_RF == 1>>
 
+<<if $visited_RF == 1>>
 <<if $cyclamen_growth_stage >= 1>>
 [[RF_Dialogue.BondOverBooks]]
 <<else>>
 [[RF_Dialogue.Busy]]
 <<endif>>
+<<endif>>
 
-<<else>>
 
 [[RF_Dialogue.firstMeeting]]
 
-<<endif>>
 ===
 
 title: RF_Dialogue.firstMeeting

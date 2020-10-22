@@ -579,7 +579,7 @@ PrefabInstance:
         type: 3}
       propertyPath: yarnScripts.Array.data[0]
       value: 
-      objectReference: {fileID: 2480198943629176163, guid: 0ed39659226405f4caf962be5f111404,
+      objectReference: {fileID: 2480198943629176163, guid: 0bc9e79f982125442967a6afc23ce81a,
         type: 3}
     - target: {fileID: 5935829475398715329, guid: de94e96c89622ef4fb7254e3f90ae04d,
         type: 3}

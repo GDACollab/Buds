@@ -1,0 +1,107 @@
+title: Header
+tags: 
+colorID: 0
+position: 550,900
+---
+<<if $visited_RF >= 5>>
+<<if $visited_GB >= 5>>
+[[HS_Dialogue.Dream5]]
+<<endif>>
+<<endif>>
+
+<<if $visited_HS == 4>>
+[[HS_Dialogue.Nothing1]]
+<<endif>>
+
+<<if $visited_RF >= 4>>
+<<if $visited_GB >= 4>>
+[[HS_Dialogue.Dream4]]
+<<endif>>
+<<endif>>
+
+<<if $visited_HS == 3>>
+[[HS_Dialogue.Nothing1]]
+<<endif>>
+
+<<if $visited_RF >= 3>>
+<<if $visited_GB >= 3>>
+[[HS_Dialogue.Dream3]]
+<<endif>>
+<<endif>>
+
+<<if $visited_HS == 2>>
+[[HS_Dialogue.Nothing1]]
+<<endif>>
+
+<<if $visited_RF >= 2>>
+<<if $visited_GB >= 2>>
+[[HS_Dialogue.Dream2]]
+<<endif>>
+<<endif>>
+
+<<if $visited_HS == 1>>
+[[HS_Dialogue.Nothing1]]
+<<endif>>
+
+<<if $visited_RF >= 1>>
+<<if $visited_GB >= 1>>
+[[HS_Dialogue.Dream1]]
+<<endif>>
+<<endif>>
+
+===
+
+title: HS_Dialogue.Dream1
+tags: HanadaSister
+colorID: 0
+position: 550, 901
+---
+<<changeSpeaker RF>>
+{{HS Test 1| }}
+
+<<set $visited_HS to 1>>
+===
+
+title: HS_Dialogue.Dream2
+tags: HanadaSister
+colorID: 0
+position: 550, 902
+---
+<<changeSpeaker RF>>
+{{HS Test 2| }}
+
+<<set $visited_HS to 2>>
+===
+
+title: HS_Dialogue.Dream3
+tags: HanadaSister
+colorID: 0
+position: 550, 903
+---
+<<changeSpeaker RF>>
+{{HS Test 3| }}
+
+<<set $visited_HS to 3>>
+===
+
+title: HS_Dialogue.Dream4
+tags: HanadaSister
+colorID: 0
+position: 550, 904
+---
+<<changeSpeaker RF>>
+{{HS Test 4| }}
+
+<<set $visited_HS to 4>>
+===
+
+title: HS_Dialogue.Dream5
+tags: HanadaSister
+colorID: 0
+position: 550, 905
+---
+<<changeSpeaker RF>>
+{{HS Test 5| }}
+
+<<set $visited_HS to 5>>
+===

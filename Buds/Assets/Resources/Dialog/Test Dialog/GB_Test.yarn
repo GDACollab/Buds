@@ -1,0 +1,132 @@
+title: Header
+tags: GamerBrat
+colorID: 0
+position: 530, 900
+---
+<<if $visited_GB >= 2>>
+<<changeFace Background RamenShop_PowerOut>>
+<<endif>>
+
+<<if $unfinished_GB>>
+[[GB_Dialogue.Unfinished]]
+<<endif>>
+
+<<set $unfinished_GB to true>>
+
+<<if $visited_GB == 4>>
+<<if $narcissus_growth_stage >= 4>>
+[[GB_Dialogue.Day5]]
+<<else>>
+[[GB_Dialogue.Busy]]
+<<endif>>
+<<endif>>
+
+<<if $visited_GB == 3>>
+<<if $narcissus_growth_stage >= 3>>
+[[GB_Dialogue.Day4]]
+<<else>>
+[[GB_Dialogue.Busy]]
+<<endif>>
+<<endif>>
+
+<<if $visited_GB == 2>>
+<<if $narcissus_growth_stage >= 2>>
+[[GB_Dialogue.Day3]]
+<<else>>
+[[GB_Dialogue.Busy]]
+<<endif>>
+<<endif>>
+
+<<if $visited_GB == 1>>
+<<if $narcissus_growth_stage >= 1>>
+[[GB_Dialogue.Day2]]
+<<else>>
+[[GB_Dialogue.Busy]]
+<<endif>>
+<<endif>>
+
+
+[[GB_Dialogue.Day1]]
+===
+
+title: GB_Dialogue.Day1
+tags: GamerBrat
+colorID: 0
+position: 530,901
+---
+<<changeSpeaker GB>>
+{{GB Test 1| }}
+
+<<set $visited_GB to 1>>
+<<set $unfinished_GB to false>>
+===
+
+title: GB_Dialogue.Day2
+tags: GamerBrat
+colorID: 0
+position: 530,902
+---
+<<changeSpeaker GB>>
+{{GB Test 2| }}
+
+<<set $visited_GB to 2>>
+<<set $unfinished_GB to false>>
+===
+
+title: GB_Dialogue.Day3
+tags: GamerBrat
+colorID: 0
+position: 530,902
+---
+<<changeSpeaker GB>>
+{{GB Test 3| }}
+
+<<set $visited_GB to 3>>
+<<set $unfinished_GB to false>>
+===
+
+title: GB_Dialogue.Day4
+tags: GamerBrat
+colorID: 0
+position: 530, 903
+---
+<<changeSpeaker GB>>
+{{GB Test 4| }}
+
+<<set $visited_GB to 4>>
+<<set $unfinished_GB to false>>
+===
+
+title: GB_Dialogue.Day5
+tags: GamerBrat
+colorID: 0
+position: 530, 905
+---
+<<changeSpeaker GB>>
+{{GB Test 5| }}
+
+<<set $visited_GB to 5>>
+<<set $unfinished_GB to false>>
+===
+
+title: GB_Dialogue.Busy
+tags: GamerBrat
+colorID: 0
+position: 530, 906
+---
+<<set $unfinished_GB to false>>
+<<changeSpeaker GB>>
+{{GB Busy| }}
+===
+
+title: GB_Dialogue.Unfinished
+tags: GamerBrat
+colorID: 0
+position: 111, 240
+---
+<<changeSpeaker GB>>
+{{GB Unfinished| }}
+
+<<set $unfinished_GB to false>>
+[[Header]]
+===

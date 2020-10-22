@@ -1,0 +1,127 @@
+title: Header
+tags: RetailFriend
+colorID: 0
+position: 540,900
+---
+<<if $unfinished_RF>>
+[[RF_Dialogue.Unfinished]]
+<<endif>>
+
+<<set $unfinished_RF to true>>
+
+<<if $visited_RF == 4>>
+<<if $cyclamen_growth_stage >= 4>>
+[[RF_Dialogue.Day5]]
+<<else>>
+[[RF_Dialogue.Busy]]
+<<endif>>
+<<endif>>
+
+<<if $visited_RF == 3>>
+<<if $cyclamen_growth_stage >= 3>>
+[[RF_Dialogue.Day4]]
+<<else>>
+[[RF_Dialogue.Busy]]
+<<endif>>
+<<endif>>
+
+<<if $visited_RF == 2>>
+<<if $cyclamen_growth_stage >= 2>>
+[[RF_Dialogue.Day3]]
+<<else>>
+[[RF_Dialogue.Busy]]
+<<endif>>
+<<endif>>
+
+
+<<if $visited_RF == 1>>
+<<if $cyclamen_growth_stage >= 1>>
+[[RF_Dialogue.Day2]]
+<<else>>
+[[RF_Dialogue.Busy]]
+<<endif>>
+<<endif>>
+
+
+[[RF_Dialogue.Day1]]
+===
+
+title: RF_Dialogue.Day1
+tags: RetailFriend
+colorID: 0
+position: 540, 901
+---
+<<changeSpeaker RF>>
+{{RF Test 1| }}
+
+<<set $visited_RF to 1>>
+<<set $unfinished_RF to false>>
+===
+title: RF_Dialogue.Day2
+tags: RetailFriend
+colorID: 0
+position: 540, 902
+---
+<<changeSpeaker RF>>
+{{RF Test 2| }}
+
+<<set $visited_RF to 2>>
+<<set $unfinished_RF to false>>
+===
+title: RF_Dialogue.Day3
+tags: RetailFriend
+colorID: 0
+position: 540, 903
+---
+<<changeSpeaker RF>>
+{{RF Test 3| }}
+
+<<set $visited_RF to 3>>
+<<set $unfinished_RF to false>>
+===
+title: RF_Dialogue.Day4
+tags: RetailFriend
+colorID: 0
+position: 540, 904
+---
+<<changeSpeaker RF>>
+{{RF Test 4| }}
+
+<<set $visited_RF to 4>>
+<<set $unfinished_RF to false>>
+===
+
+title: RF_Dialogue.Day5
+tags: RetailFriend
+colorID: 0
+position: 540, 905
+---
+<<changeSpeaker RF>>
+{{RF Test 5| }}
+
+<<set $visited_RF to 5>>
+<<set $unfinished_RF to false>>
+===
+
+title: RF_Dialogue.Busy
+tags: RetailFriend
+colorID: 0
+position: 540, 906
+---
+<<set $unfinished_RF to false>>
+<<changeSpeaker RF>>
+{{RF Busy| }}
+
+===
+
+title: RF_Dialogue.Unfinished
+tags: RetailFriend
+colorID: 0
+position: 540, 907
+---
+<<changeSpeaker RF>>
+{{RF Unfinished| }}
+
+<<set $unfinished_RF to false>>
+[[Header]]
+===
