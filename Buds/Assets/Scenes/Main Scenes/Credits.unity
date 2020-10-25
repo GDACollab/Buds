@@ -1574,8 +1574,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 357.3, y: -2138.1997}
-  m_SizeDelta: {x: 731.5, y: 2893.2}
+  m_AnchoredPosition: {x: 357.3, y: -2182.1016}
+  m_SizeDelta: {x: 731.5, y: 2981}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1668020106
 MonoBehaviour:
@@ -1610,107 +1610,91 @@ MonoBehaviour:
     m_LineSpacing: 0.9
   m_Text: 'Drew Parker
 
-    
 
     Artis Anderson
 
-    
 
     Seraphim
 
-    
 
-    Eric
-    Long
+    Eric Long
 
 
-    Annie Zhang
+    Annie
+    Zhang
 
     Ben Schwartz
 
     Chiara Villanueva
 
-    Gillian
-    Yu
+    Gillian Yu
 
     Ryoma Marta-Sugawara
 
-    
-
-    Eric Long
-
-    
-
-    Ben Schwartz
 
     Eric
     Long
+
+
+    Ben Schwartz
+
+    Eric Long
 
     Ethan Salzman
 
     Gillian Yu
 
-    
 
-    Chiara Villanueva
+    Chiara
+    Villanueva
 
-    Ryoma
-    Marta-Sugawara
+    Ryoma Marta-Sugawara
 
-    
 
     Eric Long
 
     Ethan Salzman
 
-    Ryoma Marta-Sugawara
+    Ryoma
+    Marta-Sugawara
 
-    
 
-    Thomas
-    Noell
+    Thomas Noell
 
-    
 
     Eric Long
 
     Thomas Noell
 
-    Ray Nelson
+    Ray
+    Nelson
 
-    
 
-    Eric
-    Long
+    Eric Long
 
-    
 
 
     Ethan Salzman
 
     Ryoma Marta-Sugawara
 
-    
 
     Dallas
     Truong
 
-    
 
     Thomas Noell
 
 
-    
 
     Chiara Villanueva
 
-    Ryoma
-    Marta-Sugawara
-
-    
+    Ryoma Marta-Sugawara
 
 
-    Andrew Dunne
+
+    Andrew
+    Dunne
 
     Collyn Noda
 
@@ -1718,8 +1702,8 @@ MonoBehaviour:
 
     Saenz
 
-    Game
-    Design and Art Collaboration'
+    Game Design and Art
+    Collaboration'
 --- !u!222 &1668020107
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1974,7 +1958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.6, y: -4010.2998}
+  m_AnchoredPosition: {x: 10.6, y: -4095}
   m_SizeDelta: {x: 1526.8, y: 82.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1884341050
