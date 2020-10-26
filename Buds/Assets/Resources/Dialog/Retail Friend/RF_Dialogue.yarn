@@ -9,6 +9,10 @@ position: 222, 222
 
 <<set $unfinished_RF to true>>
 
+<<if $visited_RF == 5>>
+[[RF_Dialogue.Finished]]
+<<endif>>
+
 <<if $visited_RF == 4>>
 <<if $cyclamen_growth_stage >= 4>>
 [[RF_Dialogue.ReviewCopy]]
@@ -401,7 +405,7 @@ Welcome- {{oh hey!| }}
 <<changeFace Character RF_Smile_Closed>>
 <<changeSpeaker MC>>
 <<PlayAudio VoiceActing Blank_File>>
-Hi {{Shirori!| }}
+Hi {{Shiori!| }}
 <<changeSpeaker RF>>
 <<changeFace Character RF_Smile_Open>>
 <<PlayAudio VoiceActing Shiori_Scene3_Line2>>
@@ -848,14 +852,14 @@ position: 222, 240
 Sorry, I'm too {{busy| }} to talk now. Could you come back tomorrow?
 <<changeSpeaker MC>>
 <<changeFace Character RF_Smile_Closed>>
-<i>Huh, maybe I should water my cyclamen plant...</i>
-<i>It wasn't sparkling yesterday, was it?</i>
+<i>Huh, maybe I should {{water my cyclamen plant...| }}</i>
+<i>{{It wasn't sparkling| }} yesterday, was it?</i>
 ===
 
 title: RF_Dialogue.Unfinished
 tags: RetailFriend
 colorID: 0
-position: 111, 240
+position: 222, 250
 ---
 
 <<changeSpeaker RF>>
@@ -863,8 +867,19 @@ position: 111, 240
 Oh, I think you left before I was done last time... I'm going to start over.
 <<changeSpeaker MC>>
 <<changeFace Character RF_Smile_Closed>>
-...! <i>Did my cyclamen plant not grow because I ignored Shiori?</i>
+...! <i>Did my cyclamen plant not grow {{because I ignored Shiori?| }}</i>
 
 <<set $unfinished_RF to false>>
 [[Header]]
+===
+
+title: RF_Dialogue.Finished
+tags: RetailFeind
+colorID: 0
+position: 222, 260
+---
+<<changeSpeaker MC>>
+<<changeFace Character blank>>
+Oh, Shiori seems busy. I should actually {{do some drawing.| }}
+
 ===
